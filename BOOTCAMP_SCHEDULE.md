@@ -37,9 +37,8 @@
 	- interactions terms
 
 ## Day04: Boosting
-* Boosting
-	- AdaBoost
-	- Gradient Boosting
+* Boosting 1 : AdaBoost
+* Boosting 2: Gradient Boosting
 * Feature engineering 2:
 	- one-hot encoding
 
