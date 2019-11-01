@@ -9,7 +9,7 @@
 * Regularization:
 	- Ridge
 	- Lasso
-	- Elastic-Net 
+	- Elastic-Net
 
 ## Day01: Logistic Regression
 * Logistic Cost Function
@@ -47,4 +47,7 @@
 * PCA
 * Clustering 
 
-## Rush: Un gros challenge :)
+## Rush: A big challenge :)
+* Option 1 - SANDBOX: Let students apply what they have learned during the six previous days on a fancy dataset
+* Option 2 - ONE LAST STEP: Require to study another final notion/algo. E.g. TIME SERIES
+* Option 3 - MIXED 2 & 3: No last step is required to work on the dataset BUT the final notion will be required in order to get the best score possible 
