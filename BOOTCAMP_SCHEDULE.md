@@ -43,6 +43,9 @@
 * Feature engineering 2:
 	- one-hot encoding
 
-## Day05: Unsupervized Learning
- 
+## Day05: KNN + Unsupervized Learning
+* KNN
+* PCA
+* Clustering 
 
+## Rush: Un gros challenge :)
