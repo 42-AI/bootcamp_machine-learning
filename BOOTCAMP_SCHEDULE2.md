@@ -83,4 +83,19 @@ Then magically these already 'tamed' material will be used in context and unders
 * Feature engineering 2:
 	- one-hot encoding
 
-## Rush: Un gros challenge :)
+## Rush: Classification on MNSIT handwritten digits database.
+The students have to build the best classifier for handwritten digits recognition. They will have access to two datasets:
+	- Dataset1: A sample directly from the MNSIT with two missing classes (ex. no '8' and '6')
+	- Dataset2: A bigger (and complete) but 'corrupted' sample from MNSIT with missing or abberant values.
+
+### In order to get the best performance, the student will have to use both dataset which means:	
+	- experiment several ways to find out the missing classes:
+		1) KNN, unsuppervised learning
+	- experiment several ways to deal with missing / aberrant values, e.g.: 
+		1) replacement by mean/median/mode
+		2) smarter replacement : KNN, RF, etc.
+
+### They will also have to consider the use of  mixed classifiers, such that:
+	- bagged classifiers 
+	- random forest
+
