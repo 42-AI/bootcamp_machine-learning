@@ -93,9 +93,9 @@ Then magically these already 'tamed' material will be used in context and unders
 
 ### In order to get the best performance, the student will have to use both dataset which means
 
-#### experiment several ways to find out the missing classes:
+#### - experiment several ways to find out the missing classes:
 	- KNN, unsuppervised learning
-#### experiment several ways to deal with missing / aberrant values, e.g.: 
+#### - experiment several ways to deal with missing / aberrant values, e.g.: 
 	- replacement by mean/median/mode
 	- smarter replacement : KNN, RF, etc.
 
