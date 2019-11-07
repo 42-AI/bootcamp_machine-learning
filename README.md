@@ -88,10 +88,10 @@ Then magically these already 'tamed' material will be used in context and unders
 
 ## Rush: Classification on MNSIT handwritten digits database.
 ### The students have to build the best classifier for handwritten digits recognition. They will have access to two datasets.
-	- Dataset1: A sample directly from the MNSIT with two missing classes (ex. no '8' and '6')  
+	- Dataset1: A sample from the MNSIT with two missing classes (ex. no '8' and '6')  
 	- Dataset2: A bigger (and complete) but 'corrupted' sample from MNSIT with missing or abberant values.
 
-### In order to get the best performance, the student will have to use both dataset which means
+### In order to get the best performance, the student will have to use both datasets which means
 
 #### - experiment several ways to find out the missing classes:
 	- KNN, unsuppervised learning
