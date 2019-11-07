@@ -7,8 +7,7 @@ The idea is to help the student to 'tame' the mathematical jargon.
 They will have to simply implement the functions following the formulas without knowing what it is about. 
 Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
-* Iterative delights (loop only)
-###
+### Iterative delights (loop only)
 	- sum
 	- mean
 	- variance
@@ -26,8 +25,7 @@ Then magically these already 'tamed' material will be used in context and unders
 	- Shannon's Entropy
 	- Information Gain (w/ Gini impurity, Entropy, or variance)
 
-* Vectorized delights (vectorized implementation)
- ###
+### Vectorized delights (vectorized implementation)
  	- sum
 	- mean
 	- variance
@@ -40,49 +38,51 @@ Then magically these already 'tamed' material will be used in context and unders
 	- gradient descent + reg
 
 ## Day01: Linear Regression
-* Linear Cost Function
-* Linear Gradient Descent
-* Regularization
-
-* Feature Engineering 0 - Standardization:
+### Algorithm
+	- Linear Cost Function
+	- Linear Gradient Descent
+	- Regularization
+### Feature Engineering - Standardization
 	- z score
 	- min-max
-
-* Model Evaluation:
+### Model Evaluation
 	- Regression metric
 
 
 ## Day02: Logistic Regression
-* Logistic Cost Function
-* Logistic Gradient Descent
 
-* Feature engineering 1:
+### Algorithm
+	- Logistic Cost Function
+	- Logistic Gradient Descent
+
+### Feature Engineering
 	- polynomial features
 	- interactions terms
-
-* Model Evaluation:
+### Model Evaluation
 	- Classification metric (precision, recall, specificity)
 
 
 ## Day03: Decision Tree
-* Decision Tree Algo:
-* Classification metric:
-	- Entropy
-	- Gini
-* Regression metric:
-	- Variance 
 
-* Feature Importance
+### Algorithm
+	- Decision Tree for classification
+		- Entropy
+		- Gini
+	- Decision Tree for regression
+		- Variance
+	- Feature importance
 
-* Model Evaluation: 
+### Model Evaluation
 	- Cross Validation
 
 
 ## Day04: Unsupervized Learning
-* PCA
-* Clustering 
 
-* Feature engineering 2:
+### Algorithm
+	- PCA
+	- Clustering
+	
+### Feature Engineering
 	- one-hot encoding
 
 
