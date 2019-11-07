@@ -8,37 +8,36 @@ They will have to simply implement the functions following the formulas without 
 Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
 * Iterative delights (loop only)
+###
 	- sum
 	- mean
 	- variance
 
+###
 	- zscore standardization
 	- min-max standardization
-
+###
 	- linear cost function
 	- logistic cost function
 	- gradient descent
 	- regularization (ridge regression)
-
+###
 	- Gini Impurity
 	- Shannon's Entropy
 	- Information Gain (w/ Gini impurity, Entropy, or variance)
 
 * Vectorized delights (vectorized implementation)
+ ###
  	- sum
 	- mean
 	- variance
-
+###
 	- zscore
 	- min-max
-	
-	- linear cost function
+###
 	- linear cost function + reg
-	- logistic cost function
 	- logistic cost function + reg
-	- gradient descent
 	- gradient descent + reg
-
 
 ## Day01: Linear Regression
 * Linear Cost Function
