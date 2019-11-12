@@ -35,58 +35,45 @@ $> which pip
 
 ## Part I - Iterative delights
 
-### Exercise 1 - Sum
+### Exercise 00 - Sum
 
-### Exercise 2 - Variance
+### Exercise 01 - Variance
 
-### Exercise 3 - Standardization: z-score
+### Exercise 02 - Standardization: z-score
 
-### Exercise 4 - Standardization: min-max
+### Exercise 03 - Standardization: min-max
 
-### Exercise 5 - Mean Squared Error
+### Exercise 04 - Mean Squared Error
 
-### Exercise 6 - Gradient
+### Exercise 05 - Gradient
 
-### Exercise 7 - Regularization: Ridge Regression
+### Exercise 06 - Regularization: Ridge Regression
 
-### Exercise 8 - Regularized Mean Squared Error
+### Exercise 07 - Regularized Mean Squared Error
 
-### Exercise 9 - Regularized Gradient
+### Exercise 08 - Regularized Gradient
 
 
 ## Part II - Vectorized delights
 
-### Exercise 1 - Sum
+### Exercise 00 - Sum
 
-### Exercise 2 - Variance
+### Exercise 01 - Variance
 
-### Exercise 3 - Standardization: z-score
+### Exercise 02 - Standardization: z-score
 
-### Exercise 4 - Standardization: min-max
+### Exercise 03 - Standardization: min-max
 
-### Exercise 5 - Mean Squared Error
+### Exercise 04 - Mean Squared Error
 
-### Exercise 6 - Gradient
+### Exercise 05 - Gradient
 
-### Exercise 7 - Regularization: Ridge Regression
+### Exercise 06 - Regularization: Ridge Regression
 
-### Exercise 8 - Regularized Mean Squared Error
+### Exercise 07 - Regularized Mean Squared Error
 
-### Exercise 9 - Regularized Gradient
+### Exercise 08 - Regularized Gradient
 
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
 ~
 ~
 ~
