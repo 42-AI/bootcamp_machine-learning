@@ -41,19 +41,21 @@ $> which pip
 
 ### Exercise 02 - Variance
 
-### Exercise 03 - Standardization: z-score
+### Exercise 03 - Standard deviation
 
-### Exercise 04 - Standardization: min-max
+### Exercise 04 - Standardization: z-score
 
-### Exercise 05 - Mean Squared Error
+### Exercise 05 - Standardization: min-max
 
-### Exercise 06 - Gradient
+### Exercise 06 - Mean Squared Error
 
-### Exercise 07 - Regularization: Ridge Regression
+### Exercise 07 - Gradient
 
-### Exercise 08 - Regularized Mean Squared Error
+### Exercise 08 - Regularization: Ridge Regression
 
-### Exercise 09 - Regularized Gradient
+### Exercise 09 - Regularized Mean Squared Error
+
+### Exercise 10 - Regularized Gradient
 
 
 ## Part II - Vectorized delights
@@ -64,16 +66,18 @@ $> which pip
 
 ### Exercise 02 - Variance
 
-### Exercise 03 - Standardization: z-score
+### Exercise 03 - Standard deviation
 
-### Exercise 04 - Standardization: min-max
+### Exercise 04 - Standardization: z-score
 
-### Exercise 05 - Mean Squared Error
+### Exercise 05 - Standardization: min-max
 
-### Exercise 06 - Gradient
+### Exercise 06 - Mean Squared Error
 
-### Exercise 07 - Regularization: Ridge Regression
+### Exercise 07 - Gradient
 
-### Exercise 08 - Regularized Mean Squared Error
+### Exercise 08 - Regularization: Ridge Regression
 
-### Exercise 09 - Regularized Gradient
+### Exercise 09 - Regularized Mean Squared Error
+
+### Exercise 10 - Regularized Gradient
