@@ -51,7 +51,7 @@ $> which pip
 
 ### Exercise 07 - Dot product
 
-### Exercise 08 - Gradient
+### Exercise 08 - Linear Gradient
 
 ### Exercise 09 - Regularization: Ridge Regression
 
@@ -62,26 +62,14 @@ $> which pip
 
 ## Part II - Vectorized delights
 
-### Exercise 00 - Sum
+### Exercise 00 - Matrix multiplication
 
-### Exercise 01 - Mean
+### Exercise 01 - Mean Squared Error
 
-### Exercise 02 - Variance
+### Exercise 02 - Linear Gradient
 
-### Exercise 03 - Standard deviation
+### Exercise 03 - Regularization: Ridge Regression
 
-### Exercise 04 - Standardization: z-score
+### Exercise 04 - Regularized Mean Squared Error
 
-### Exercise 05 - Standardization: min-max
-
-### Exercise 06 - Mean Squared Error
-
-### Exercise 07 - Dot product
-
-### Exercise 08 - Gradient
-
-### Exercise 09 - Regularization: Ridge Regression
-
-### Exercise 10 - Regularized Mean Squared Error
-
-### Exercise 11 - Regularized Gradient
+### Exercise 05 - Regularized Gradient
