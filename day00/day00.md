@@ -49,13 +49,15 @@ $> which pip
 
 ### Exercise 06 - Mean Squared Error
 
-### Exercise 07 - Gradient
+### Exercise 07 - Dot product
 
-### Exercise 08 - Regularization: Ridge Regression
+### Exercise 08 - Gradient
 
-### Exercise 09 - Regularized Mean Squared Error
+### Exercise 09 - Regularization: Ridge Regression
 
-### Exercise 10 - Regularized Gradient
+### Exercise 10 - Regularized Mean Squared Error
+
+### Exercise 11 - Regularized Gradient
 
 
 ## Part II - Vectorized delights
@@ -74,10 +76,12 @@ $> which pip
 
 ### Exercise 06 - Mean Squared Error
 
-### Exercise 07 - Gradient
+### Exercise 07 - Dot product
 
-### Exercise 08 - Regularization: Ridge Regression
+### Exercise 08 - Gradient
 
-### Exercise 09 - Regularized Mean Squared Error
+### Exercise 09 - Regularization: Ridge Regression
 
-### Exercise 10 - Regularized Gradient
+### Exercise 10 - Regularized Mean Squared Error
+
+### Exercise 11 - Regularized Gradient
