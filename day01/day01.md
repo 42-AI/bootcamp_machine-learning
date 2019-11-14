@@ -33,27 +33,42 @@ $> which pip
 /goinfre/miniconda/bin/pip
 ```
 
-## Algorithm
+## Algorithms
 
-### Exercise 00 - Linear Cost Function
+### Exercice 00 - Linear Regression
+Reimplement **sklearn.linear_model.LinearRegression**
+Parameters:
+  - alpha - learning rate
 
-### Exercise 01 - Linear Gradient Descent
+Methods:
+  - .score() - cost function
+  - .fit() - normal equation OR gradient descent
+  - .predict()
+  - ? .get_params()
+  - ? .set_params()
 
-### Exercise 02 - Regularized Cost Function
+### Exercise 01 - Regularized Linear Regression
+Reimplement **sklearn.linear_model.Ridge**
+Parameters:  
+  - alpha - learning rate
+  - lambda - regularisarion term
+  
+Methods:
+  - .score() - cost function
+  - .fit() - gradient descent
+  - .predict()
+  - ? .get_params()
+  - ? .set_params()
 
-### Exercise 03 - Regularized Gadrient Descent
-
-### Exercise 04 - Vectorized Linear Cost Function
-
-### Exercise 05 - Vectorized Linear Gradient Descent
-
-### Exercise 06 - Vectorized Regularized Cost Function
-
-### Exercise 07 - Vectorized Regularized Gadrient Descent
+### Exercice 02 - Normal equation
+Change the two previous classes: 
+  - add a parameter : normal=True - bool (use normal equation instead of gradient descent)
+  - change alpha to be used only if `normal == False`
+  
+  - fit() should use gradient descent or normal equation according to the parameters
 
 
 ## Feature Engineering
-
 ### Exercise 00 - Standardization: z-score
 
 ### Exercise 01 - Standardization: min-max
