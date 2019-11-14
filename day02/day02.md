@@ -76,6 +76,7 @@ Parameters:
     - degree : integer, optional (default=2)  
     - interaction_only : boolean, optional (default = False)  
     - include_bias : boolean, optional (default = True)  
+
 Methods:  
     - .fit()  
     - .fit_transform()  
