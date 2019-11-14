@@ -38,7 +38,7 @@ $> which pip
 ### Exercice 00 - Linear Regression
 Reimplement **sklearn.linear_model.LinearRegression**  
 Parameters:
-  - alpha - learning rate
+  - alpha: double - learning rate
 
 Methods:
   - .score() - cost function
@@ -50,8 +50,8 @@ Methods:
 ### Exercise 01 - Regularized Linear Regression  
 Reimplement **sklearn.linear_model.Ridge**
 Parameters:  
-  - alpha - learning rate
-  - lambda - regularisarion term
+  - alpha: double - learning rate
+  - lambda: double - regularisarion term
   
 Methods:
   - .score() - cost function
@@ -62,10 +62,11 @@ Methods:
 
 ### Exercice 02 - Normal equation
 Change the two previous classes: 
-  - add a parameter : normal=True - bool (use normal equation instead of gradient descent)
+  - add a parameter : 
+    - normal: bool, (default=True) (use normal equation instead of gradient descent)
   - change alpha to be used only if `normal == False`
   
-  - fit() should use gradient descent or normal equation according to the parameters
+  - .fit() should use gradient descent or normal equation according to the parameters
 
 
 ## Feature Engineering
@@ -89,5 +90,5 @@ Methods:
 ### Exercise 00 - Mean Squared Error
 Reimplement  **sklearn.metrics.mean_squared_error**
 Parameters:  
-  - y_true
-  - y_pred
+  - y_true: array
+  - y_pred: array
