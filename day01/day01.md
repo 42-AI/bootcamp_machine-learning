@@ -36,7 +36,7 @@ $> which pip
 ## Algorithms
 
 ### Exercice 00 - Linear Regression
-Reimplement **sklearn.linear_model.LinearRegression**
+Reimplement **sklearn.linear_model.LinearRegression**  
 Parameters:
   - alpha - learning rate
 
@@ -47,7 +47,7 @@ Methods:
   - ? .get_params()
   - ? .set_params()
 
-### Exercise 01 - Regularized Linear Regression
+### Exercise 01 - Regularized Linear Regression  
 Reimplement **sklearn.linear_model.Ridge**
 Parameters:  
   - alpha - learning rate
@@ -70,10 +70,24 @@ Change the two previous classes:
 
 ## Feature Engineering
 ### Exercise 00 - Standardization: z-score
-
+Reimplement  **sklearn.preprocessing.StandardScaler**
+Parameters:  
+  - None
+Methods:
+  - fit()
+  - fit_transform()
+  
 ### Exercise 01 - Standardization: min-max
-
-
+Reimplement  **sklearn.preprocessing.MinMaxScaler**
+Parameters:  
+  - None
+Methods:
+  - fit()
+  - fit_transform()
+  
 ## Model Evaluation
-
-### Exercise 00 - Regression metric
+### Exercise 00 - Mean Squared Error
+Reimplement  **sklearn.metrics.mean_squared_error**
+Parameters:  
+  - y_true
+  - y_pred
