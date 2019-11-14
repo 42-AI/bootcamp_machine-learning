@@ -71,15 +71,15 @@ Methods:
 
 ### Exercise 00 - Polynomial features
 
-Reimplement **sklearn.preprocessing.PolynomialFeatures**
-Parameters:
-    - degree : integer, optional (default=2)
-    - interaction_only : boolean, optional (default = False)
-    - include_bias : boolean, optional (default = True)
-Methods:
-    - .fit()
-    - .fit_transform()
-    - .transform()
+Reimplement **sklearn.preprocessing.PolynomialFeatures**  
+Parameters:  
+    - degree : integer, optional (default=2)  
+    - interaction_only : boolean, optional (default = False)  
+    - include_bias : boolean, optional (default = True)  
+Methods:  
+    - .fit()  
+    - .fit_transform()  
+    - .transform()  
 
 
 ## Model Evaluation
