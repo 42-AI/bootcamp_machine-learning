@@ -89,6 +89,7 @@ Reimplement  **sklearn.metrics.accuracy_score**
 Parameters:  
   - y_true: array
   - y_pred: array
+  - normalize : bool, optional (default=True)
 
 ### Exercise 01 - Precision
 Reimplement  **sklearn.metrics.precision_score**
