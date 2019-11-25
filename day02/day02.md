@@ -37,11 +37,11 @@ $> which pip
 
 ### Exercise 00 - Sigmoid
 
-### Exercise 01 - Logistic Cost Function
+### Exercise 01 - Logistic Loss Function
 
 ### Exercise 02 - Logistic Gradient
 
-### Exercise 03 - Vectorized Logistic Cost Function
+### Exercise 03 - Vectorized Logistic Loss Function
 
 ### Exercise 04 - Vectorized Logistic Gradient
 
