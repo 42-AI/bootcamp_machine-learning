@@ -31,8 +31,8 @@ Then magically these already 'tamed' material will be used in context and unders
 	* Regularization
 ### Model Evaluation
 	* MSE
-      	* MAE
-      	* RMSE
+	* MAE
+	* RMSE
 
 ## Day02: Logistic Regression
 ### Math
@@ -43,10 +43,10 @@ Then magically these already 'tamed' material will be used in context and unders
 	* Logistic Cost Function
 	* Logistic Gradient Descent
 ### Model Evaluation
-      	* accuracy
-      	* precision 
-      	* recall 
-      	* f1-score
+	* accuracy
+	* precision 
+	* recall 
+	* f1-score
 
 
 ## Day03: Feature Engineering and Regularization
