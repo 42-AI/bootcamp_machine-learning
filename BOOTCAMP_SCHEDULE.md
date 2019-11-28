@@ -7,21 +7,21 @@ The idea is to help the student to 'tame' the mathematical jargon.
 They will have to simply implement the functions following the formulas without knowing what it is about. 
 Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
-  * sum
+  	* sum
 	* mean
 	* variance
-  * standard deviation
+  	* standard deviation
   
-  * dot product
-  * matrix-vector multiplication
-  * matrix-matrix multiplication
+  	* dot product
+  	* matrix-vector multiplication
+  	* matrix-matrix multiplication
   
-  * MSE - iterative
-  * MSE - vectorized
-  * MSE as linear cost function - iterative
-  * MSE as linear cost function - iterative 
-  * linear gradient - iterative
-  * linear gradient - vectorized
+	* MSE - iterative
+	* MSE - vectorized
+  	* MSE as linear cost function - iterative
+  	* MSE as linear cost function - iterative 
+  	* linear gradient - iterative
+  	* linear gradient - vectorized
   
   
 ## Day01: Linear Regression
@@ -30,7 +30,6 @@ Then magically these already 'tamed' material will be used in context and unders
 	* Linear Gradient Descent
 	* Regularization
 ### Model Evaluation
-	* Regression metric: 
       * MSE
       * MAE
       * RMSE
@@ -38,13 +37,12 @@ Then magically these already 'tamed' material will be used in context and unders
 ## Day02: Logistic Regression
 ### Math
 	* logistic cost function
-  * sigmoid
-  * logistic gradient 
+  	* sigmoid
+  	* logistic gradient 
 ### Algorithm
 	* Logistic Cost Function
 	* Logistic Gradient Descent
 ### Model Evaluation
-	* Classification metric:
       * accuracy
       * precision 
       * recall 
@@ -53,14 +51,14 @@ Then magically these already 'tamed' material will be used in context and unders
 
 ## Day03: Feature Engineering and Regularization
 ### Math
-  * ridge regularization part - iterative 
-  * ridge regularization part - vectorized
-  * regularized MSE - iterative
-  * regularized MSE - vectorized
-  * regularized Linear Gradient - iterative
-  * regularized Linear Gradient - vectorized
-  * regularized Logistic Gradient - iterative
-  * regularized Logistic Gradient - vectorized
+  	* ridge regularization part - iterative 
+  	* ridge regularization part - vectorized
+  	* regularized MSE - iterative
+  	* regularized MSE - vectorized
+  	* regularized Linear Gradient - iterative
+  	* regularized Linear Gradient - vectorized
+  	* regularized Logistic Gradient - iterative
+  	* regularized Logistic Gradient - vectorized
   
 ### Feature Engineering
 #### Standardization
@@ -72,16 +70,16 @@ Then magically these already 'tamed' material will be used in context and unders
   
 ### Regularization - Ridge Regression
 #### Regularized Linear Regression
-  * regularized cost function
-  * regularized gradient descent
+  	* regularized cost function
+  	* regularized gradient descent
 #### Regularized Logistic Regression
-  * regularized cost function
-  * regularized gradient descent
+  	* regularized cost function
+  	* regularized gradient descent
 
 
 ## Day04: Decision Tree
 ### Math
-  * Gini Impurity
+  	* Gini Impurity
 	* Shannon's Entropy
 	* Information Gain (w/ Gini impurity, Entropy, or variance)
 ### Algorithm
