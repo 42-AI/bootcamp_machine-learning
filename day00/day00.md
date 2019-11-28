@@ -40,33 +40,22 @@ Python 3.7.*
 
 ### Exercise 03 - Standard deviation
 
-### Exercise 04 - Standardization: z-score
 
-### Exercise 05 - Standardization: min-max
+### Exercise 04 - Dot product
 
-### Exercise 06 - Mean Squared Error
+### Exercise 05 - Matrix-vector multiplication 
 
-### Exercise 07 - Dot product
-
-### Exercise 08 - Linear Gradient
-
-### Exercise 09 - Regularization: Ridge Regression
-
-### Exercise 10 - Regularized Mean Squared Error
-
-### Exercise 11 - Regularized Gradient
+### Exercise 06 - Matrix-matrix multiplication
 
 
-## Part II - Vectorized delights
+### Exercise 07 - Mean Squared Error - iterative
 
-### Exercise 00 - Matrix multiplication
+### Exercise 08 - Mean Squared Error - vectorized
 
-### Exercise 01 - Mean Squared Error
+### Exercise 09 - Mean Squared Error as linear cost function - iterative
 
-### Exercise 02 - Linear Gradient
+### Exercise 10 - Mean Squared Error as linear cost function - vectorized
 
-### Exercise 03 - Regularization: Ridge Regression
+### Exercise 11 - Linear Gradient - iterative
 
-### Exercise 04 - Regularized Mean Squared Error
-
-### Exercise 05 - Regularized Gradient
+### Exercise 12 - Linear Gradient - vectorized
