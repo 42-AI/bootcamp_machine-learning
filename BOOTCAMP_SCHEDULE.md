@@ -93,14 +93,6 @@ Then magically these already 'tamed' material will be used in context and unders
 	* Cross Validation
 
 
-## Day05: Unsupervised Learning
-### Algorithm
-	* PCA
-	* Clustering
-### Feature Engineering
-	* one-hot encoding
-
-
 ## Rush: Classification on MNIST handwritten digits database.
 ### The students have to build the best classifier for handwritten digits recognition. They will have access to two datasets.
 	* Dataset1: A sample from the MNIST with two missing classes (ex. no '8' and '6')  
