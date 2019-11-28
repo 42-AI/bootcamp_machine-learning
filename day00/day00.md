@@ -30,8 +30,6 @@ Python 3.7.*
 /goinfre/miniconda/bin/pip
 ```
 
-## Part I - Iterative delights
-
 ### Exercise 00 - Sum
 
 ### Exercise 01 - Mean
