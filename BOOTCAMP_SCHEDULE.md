@@ -7,53 +7,79 @@ The idea is to help the student to 'tame' the mathematical jargon.
 They will have to simply implement the functions following the formulas without knowing what it is about. 
 Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
-### Iterative delights (loop only)
-	* sum
-	* mean
-	* variance
-	* zscore standardization
-	* min-max standardization
-	* linear cost function
-	* gradient descent
-	* regularization (ridge regression)
-### Vectorized delights (vectorized implementation)
  	* sum
 	* mean
 	* variance
-	* zscore
-	* min-max
-	* linear cost function + reg
-	* logistic cost function + reg
-	* gradient descent + reg
-
+ 	* standard deviation
+  
+ 	* dot product
+ 	* matrix-vector multiplication
+ 	* matrix-matrix multiplication
+  
+	* MSE - iterative
+	* MSE - vectorized
+ 	* MSE as linear cost function - iterative
+ 	* MSE as linear cost function - iterative 
+ 	* linear gradient - iterative
+ 	* linear gradient - vectorized
+  
+  
 ## Day01: Linear Regression
 ### Algorithm
 	* Linear Cost Function
 	* Linear Gradient Descent
 	* Regularization
-### Feature Engineering - Standardization
-	* z score
-	* min-max
 ### Model Evaluation
-	* Regression metric
-
+	* MSE
+	* MAE
+	* RMSE
 
 ## Day02: Logistic Regression
 ### Math
 	* logistic cost function
+  * sigmoid
+  * logistic gradient 
 ### Algorithm
 	* Logistic Cost Function
 	* Logistic Gradient Descent
+### Model Evaluation
+	* accuracy
+	* precision 
+	* recall 
+	* f1-score
+
+
+## Day03: Feature Engineering and Regularization
+### Math
+  	* ridge regularization part - iterative 
+  	* ridge regularization part - vectorized
+  	* regularized MSE - iterative
+  	* regularized MSE - vectorized
+  	* regularized Linear Gradient - iterative
+  	* regularized Linear Gradient - vectorized
+  	* regularized Logistic Gradient - iterative
+  	* regularized Logistic Gradient - vectorized
+  
 ### Feature Engineering
+#### Standardization
+	* z score
+	* min-max
+#### Feature creation
 	* polynomial features
 	* interactions terms
-### Model Evaluation
-	* Classification metric (precision, recall, specificity)
+  
+### Regularization - Ridge Regression
+#### Regularized Linear Regression
+  	* regularized cost function
+  	* regularized gradient descent
+#### Regularized Logistic Regression
+  	* regularized cost function
+  	* regularized gradient descent
 
 
-## Day03: Decision Tree
+## Day04: Decision Tree
 ### Math
-    * Gini Impurity
+  * Gini Impurity
 	* Shannon's Entropy
 	* Information Gain (w/ Gini impurity, Entropy, or variance)
 ### Algorithm
@@ -63,16 +89,6 @@ Then magically these already 'tamed' material will be used in context and unders
 	* Decision Tree for regression
 		* Variance
 	* Feature importance
-### Model Evaluation
-	* Cross Validation
-
-
-## Day04: Unsupervised Learning
-### Algorithm
-	* PCA
-	* Clustering
-### Feature Engineering
-	* one-hot encoding
 
 
 ## Rush: Classification on MNIST handwritten digits database.
