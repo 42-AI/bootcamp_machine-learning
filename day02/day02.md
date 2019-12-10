@@ -24,7 +24,7 @@ class and to finish we will build our model evaluation functions.
 * Your exercises are going to be evaluated by someone else so make sure that variables and functions names are appropriated. 
 * Your man is internet.
 * You can also ask question in the dedicated channel in Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_python/issues.
+* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_machine-learning/issues.
 
 ## Helper 
 
@@ -98,22 +98,3 @@ Reimplement **sklearn.metrics.confusion_matrix**
 Parameters:  
   - y_true: array
   - y_pred: array
-  
-  
-  
- 
- ## To delete :
- Feature Engineering
-
-Exercise 00 - Polynomial features
-
-Reimplement **sklearn.preprocessing.PolynomialFeatures**  
-Parameters:  
-    - degree : integer, optional (default=2)  
-    - interaction_only : boolean, optional (default = False)  
-    - include_bias : boolean, optional (default = True)  
-
-Methods:  
-    - .fit()  
-    - .fit_transform()  
-    - .transform()  
