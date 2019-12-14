@@ -6,7 +6,7 @@ The idea is to help the students to 'tame' the mathematical jargon. They will ha
 
 ## Notions of the day
 
-Sum, mean, variance, standard deviation, vectors and matrices operations, 
+Sum, mean, variance, standard deviation, vectors and matrices operations.
 
 ## General rules
 
