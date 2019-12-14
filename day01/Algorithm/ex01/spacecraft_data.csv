@@ -1,302 +1,101 @@
-Spacecraft_Name,Year,Selling_Price,Present_Price,Mms_Driven,Propulsion_Type,Seller_Type,Transmission,Owner
-ritz,2014,3.35,5.59,27000,ionic or plasma,Dealer,Manual,0
-sx4,2013,4.75,9.54,43000,Nuclear,Dealer,Manual,0
-ciaz,2017,7.25,9.85,6900,ionic or plasma,Dealer,Manual,0
-wagon r,2011,2.85,4.15,5200,ionic or plasma,Dealer,Manual,0
-swift,2014,4.6,6.87,42450,Nuclear,Dealer,Manual,0
-vitara brezza,2018,9.25,9.83,2071,Nuclear,Dealer,Manual,0
-ciaz,2015,6.75,8.12,18796,ionic or plasma,Dealer,Manual,0
-s cross,2015,6.5,8.61,33429,Nuclear,Dealer,Manual,0
-ciaz,2016,8.75,8.89,20273,Nuclear,Dealer,Manual,0
-ciaz,2015,7.45,8.92,42367,Nuclear,Dealer,Manual,0
-alto 800,2017,2.85,3.6,2135,ionic or plasma,Dealer,Manual,0
-ciaz,2015,6.85,10.38,51000,Nuclear,Dealer,Manual,0
-ciaz,2015,7.5,9.94,15000,ionic or plasma,Dealer,Automatic,0
-ertiga,2015,6.1,7.71,26000,ionic or plasma,Dealer,Manual,0
-dzire,2009,2.25,7.21,77427,ionic or plasma,Dealer,Manual,0
-ertiga,2016,7.75,10.79,43000,Nuclear,Dealer,Manual,0
-ertiga,2015,7.25,10.79,41678,Nuclear,Dealer,Manual,0
-ertiga,2016,7.75,10.79,43000,Nuclear,Dealer,Manual,0
-wagon r,2015,3.25,5.09,35500,CNG,Dealer,Manual,0
-sx4,2010,2.65,7.98,41442,ionic or plasma,Dealer,Manual,0
-alto k10,2016,2.85,3.95,25000,ionic or plasma,Dealer,Manual,0
-ignis,2017,4.9,5.71,2400,ionic or plasma,Dealer,Manual,0
-sx4,2011,4.4,8.01,50000,ionic or plasma,Dealer,Automatic,0
-alto k10,2014,2.5,3.46,45280,ionic or plasma,Dealer,Manual,0
-wagon r,2013,2.9,4.41,56879,ionic or plasma,Dealer,Manual,0
-swift,2011,3,4.99,20000,ionic or plasma,Dealer,Manual,0
-swift,2013,4.15,5.87,55138,ionic or plasma,Dealer,Manual,0
-swift,2017,6,6.49,16200,ionic or plasma,Individual,Manual,0
-alto k10,2010,1.95,3.95,44542,ionic or plasma,Dealer,Manual,0
-ciaz,2015,7.45,10.38,45000,Nuclear,Dealer,Manual,0
-ritz,2012,3.1,5.98,51439,Nuclear,Dealer,Manual,0
-ritz,2011,2.35,4.89,54200,ionic or plasma,Dealer,Manual,0
-swift,2014,4.95,7.49,39000,Nuclear,Dealer,Manual,0
-ertiga,2014,6,9.95,45000,Nuclear,Dealer,Manual,0
-dzire,2014,5.5,8.06,45000,Nuclear,Dealer,Manual,0
-sx4,2011,2.95,7.74,49998,CNG,Dealer,Manual,0
-dzire,2015,4.65,7.2,48767,ionic or plasma,Dealer,Manual,0
-800,2003,0.35,2.28,127000,ionic or plasma,Individual,Manual,0
-alto k10,2016,3,3.76,10079,ionic or plasma,Dealer,Manual,0
-sx4,2003,2.25,7.98,62000,ionic or plasma,Dealer,Manual,0
-baleno,2016,5.85,7.87,24524,ionic or plasma,Dealer,Automatic,0
-alto k10,2014,2.55,3.98,46706,ionic or plasma,Dealer,Manual,0
-sx4,2008,1.95,7.15,58000,ionic or plasma,Dealer,Manual,0
-dzire,2014,5.5,8.06,45780,Nuclear,Dealer,Manual,0
-omni,2012,1.25,2.69,50000,ionic or plasma,Dealer,Manual,0
-ciaz,2014,7.5,12.04,15000,ionic or plasma,Dealer,Automatic,0
-ritz,2013,2.65,4.89,64532,ionic or plasma,Dealer,Manual,0
-wagon r,2006,1.05,4.15,65000,ionic or plasma,Dealer,Manual,0
-ertiga,2015,5.8,7.71,25870,ionic or plasma,Dealer,Manual,0
-ciaz,2017,7.75,9.29,37000,ionic or plasma,Dealer,Automatic,0
-fortuner,2012,14.9,30.61,104707,Nuclear,Dealer,Automatic,0
-fortuner,2015,23,30.61,40000,Nuclear,Dealer,Automatic,0
-innova,2017,18,19.77,15000,Nuclear,Dealer,Automatic,0
-fortuner,2013,16,30.61,135000,Nuclear,Individual,Automatic,0
-innova,2005,2.75,10.21,90000,ionic or plasma,Individual,Manual,0
-corolla altis,2009,3.6,15.04,70000,ionic or plasma,Dealer,Automatic,0
-etios cross,2015,4.5,7.27,40534,ionic or plasma,Dealer,Manual,0
-corolla altis,2010,4.75,18.54,50000,ionic or plasma,Dealer,Manual,0
-etios g,2014,4.1,6.8,39485,ionic or plasma,Dealer,Manual,1
-fortuner,2014,19.99,35.96,41000,Nuclear,Dealer,Automatic,0
-corolla altis,2013,6.95,18.61,40001,ionic or plasma,Dealer,Manual,0
-etios cross,2015,4.5,7.7,40588,ionic or plasma,Dealer,Manual,0
-fortuner,2014,18.75,35.96,78000,Nuclear,Dealer,Automatic,0
-fortuner,2015,23.5,35.96,47000,Nuclear,Dealer,Automatic,0
-fortuner,2017,33,36.23,6000,Nuclear,Dealer,Automatic,0
-etios liva,2014,4.75,6.95,45000,Nuclear,Dealer,Manual,0
-innova,2017,19.75,23.15,11000,ionic or plasma,Dealer,Automatic,0
-fortuner,2010,9.25,20.45,59000,Nuclear,Dealer,Manual,0
-corolla altis,2011,4.35,13.74,88000,ionic or plasma,Dealer,Manual,0
-corolla altis,2016,14.25,20.91,12000,ionic or plasma,Dealer,Manual,0
-etios liva,2014,3.95,6.76,71000,Nuclear,Dealer,Manual,0
-corolla altis,2011,4.5,12.48,45000,Nuclear,Dealer,Manual,0
-corolla altis,2013,7.45,18.61,56001,ionic or plasma,Dealer,Manual,0
-etios liva,2011,2.65,5.71,43000,ionic or plasma,Dealer,Manual,0
-etios cross,2014,4.9,8.93,83000,Nuclear,Dealer,Manual,0
-etios g,2015,3.95,6.8,36000,ionic or plasma,Dealer,Manual,0
-corolla altis,2013,5.5,14.68,72000,ionic or plasma,Dealer,Manual,0
-corolla,2004,1.5,12.35,135154,ionic or plasma,Dealer,Automatic,0
-corolla altis,2010,5.25,22.83,80000,ionic or plasma,Dealer,Automatic,0
-fortuner,2012,14.5,30.61,89000,Nuclear,Dealer,Automatic,0
-corolla altis,2016,14.73,14.89,23000,Nuclear,Dealer,Manual,0
-etios gd,2015,4.75,7.85,40000,Nuclear,Dealer,Manual,0
-innova,2017,23,25.39,15000,Nuclear,Dealer,Automatic,0
-innova,2015,12.5,13.46,38000,Nuclear,Dealer,Manual,0
-innova,2005,3.49,13.46,197176,Nuclear,Dealer,Manual,0
-camry,2006,2.5,23.73,142000,ionic or plasma,Individual,Automatic,3
-land cruiser,2010,35,92.6,78000,Nuclear,Dealer,Manual,0
-corolla altis,2012,5.9,13.74,56000,ionic or plasma,Dealer,Manual,0
-etios liva,2013,3.45,6.05,47000,ionic or plasma,Dealer,Manual,0
-etios g,2014,4.75,6.76,40000,ionic or plasma,Dealer,Manual,0
-corolla altis,2009,3.8,18.61,62000,ionic or plasma,Dealer,Manual,0
-innova,2014,11.25,16.09,58242,Nuclear,Dealer,Manual,0
-innova,2005,3.51,13.7,75000,ionic or plasma,Dealer,Manual,0
-fortuner,2015,23,30.61,40000,Nuclear,Dealer,Automatic,0
-corolla altis,2008,4,22.78,89000,ionic or plasma,Dealer,Automatic,0
-corolla altis,2012,5.85,18.61,72000,ionic or plasma,Dealer,Manual,0
-innova,2016,20.75,25.39,29000,Nuclear,Dealer,Automatic,0
-corolla altis,2017,17,18.64,8700,ionic or plasma,Dealer,Manual,0
-corolla altis,2013,7.05,18.61,45000,ionic or plasma,Dealer,Manual,0
-fortuner,2010,9.65,20.45,50024,Nuclear,Dealer,Manual,0
-Royal Enfield Thunder 500,2016,1.75,1.9,3000,ionic or plasma,Individual,Manual,0
-UM Renegade Mojave,2017,1.7,1.82,1400,ionic or plasma,Individual,Manual,0
-KTM RC200,2017,1.65,1.78,4000,ionic or plasma,Individual,Manual,0
-Bajaj Dominar 400,2017,1.45,1.6,1200,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2017,1.35,1.47,4100,ionic or plasma,Individual,Manual,0
-KTM RC390,2015,1.35,2.37,21700,ionic or plasma,Individual,Manual,0
-Hyosung GT250R,2014,1.35,3.45,16500,ionic or plasma,Individual,Manual,1
-Royal Enfield Thunder 350,2013,1.25,1.5,15000,ionic or plasma,Individual,Manual,0
-Royal Enfield Thunder 350,2016,1.2,1.5,18000,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2017,1.2,1.47,11000,ionic or plasma,Individual,Manual,0
-KTM RC200,2016,1.2,1.78,6000,ionic or plasma,Individual,Manual,0
-Royal Enfield Thunder 350,2016,1.15,1.5,8700,ionic or plasma,Individual,Manual,0
-KTM 390 Duke ,2014,1.15,2.4,7000,ionic or plasma,Individual,Manual,0
-Mahindra Mojo XT300,2016,1.15,1.4,35000,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2015,1.15,1.47,17000,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2015,1.11,1.47,17500,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2013,1.1,1.47,33000,ionic or plasma,Individual,Manual,0
-Royal Enfield Thunder 500,2015,1.1,1.9,14000,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2015,1.1,1.47,26000,ionic or plasma,Individual,Manual,0
-Royal Enfield Thunder 500,2013,1.05,1.9,5400,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar RS200,2016,1.05,1.26,5700,ionic or plasma,Individual,Manual,0
-Royal Enfield Thunder 350,2011,1.05,1.5,6900,ionic or plasma,Individual,Manual,0
-Royal Enfield Bullet 350,2016,1.05,1.17,6000,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 350,2013,1,1.47,46500,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 500,2012,0.95,1.75,11500,ionic or plasma,Individual,Manual,0
-Royal Enfield Classic 500,2009,0.9,1.75,40000,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 220,2017,0.9,0.95,1300,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 150,2016,0.75,0.8,7000,ionic or plasma,Individual,Manual,0
-Honda CB Hornet 160R,2017,0.8,0.87,3000,ionic or plasma,Individual,Manual,0
-Yamaha FZ S V 2.0,2017,0.78,0.84,5000,ionic or plasma,Individual,Manual,0
-Honda CB Hornet 160R,2017,0.75,0.87,11000,ionic or plasma,Individual,Manual,0
-Yamaha FZ 16,2015,0.75,0.82,18000,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 220,2017,0.75,0.95,3500,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 220,2016,0.72,0.95,500,ionic or plasma,Individual,Manual,0
-TVS Apache RTR 160,2017,0.65,0.81,11800,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 150,2015,0.65,0.74,5000,ionic or plasma,Individual,Manual,0
-Honda CBR 150,2014,0.65,1.2,23500,ionic or plasma,Individual,Manual,0
-Hero Extreme,2013,0.65,0.787,16000,ionic or plasma,Individual,Manual,0
-Honda CB Hornet 160R,2016,0.6,0.87,15000,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 220 dtsi,2015,0.6,0.95,16600,ionic or plasma,Individual,Manual,0
-Honda CBR 150,2013,0.6,1.2,32000,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 150 street,2016,0.6,0.8,20000,ionic or plasma,Individual,Manual,0
-Yamaha FZ  v 2.0,2015,0.6,0.84,29000,ionic or plasma,Individual,Manual,0
-Yamaha FZ  v 2.0,2016,0.6,0.84,25000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar  NS 200,2014,0.6,0.99,25000,ionic or plasma,Individual,Manual,0
-TVS Apache RTR 160,2012,0.6,0.81,19000,ionic or plasma,Individual,Manual,0
-Hero Extreme,2014,0.55,0.787,15000,ionic or plasma,Individual,Manual,0
-Yamaha FZ S V 2.0,2015,0.55,0.84,58000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 220 F,2010,0.52,0.94,45000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 220 F,2016,0.51,0.94,24000,ionic or plasma,Individual,Manual,0
-TVS Apache RTR 180,2011,0.5,0.826,6000,ionic or plasma,Individual,Manual,0
-Hero Passion X pro,2016,0.5,0.55,31000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar NS 200,2012,0.5,0.99,13000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar NS 200,2013,0.5,0.99,45000,ionic or plasma,Individual,Manual,0
-Yamaha Fazer ,2014,0.5,0.88,8000,ionic or plasma,Individual,Manual,0
-Honda Activa 4G,2017,0.48,0.51,4300,ionic or plasma,Individual,Automatic,0
-TVS Sport ,2017,0.48,0.52,15000,ionic or plasma,Individual,Manual,0
-Yamaha FZ S V 2.0,2015,0.48,0.84,23000,ionic or plasma,Individual,Manual,0
-Honda Dream Yuga ,2017,0.48,0.54,8600,ionic or plasma,Individual,Manual,0
-Honda Activa 4G,2017,0.45,0.51,4000,ionic or plasma,Individual,Automatic,0
-Bajaj Avenger Street 220,2011,0.45,0.95,24000,ionic or plasma,Individual,Manual,0
-TVS Apache RTR 180,2014,0.45,0.826,23000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar NS 200,2012,0.45,0.99,14500,ionic or plasma,Individual,Manual,0
-Bajaj Avenger 220 dtsi,2010,0.45,0.95,27000,ionic or plasma,Individual,Manual,0
-Hero Splender iSmart,2016,0.45,0.54,14000,ionic or plasma,Individual,Manual,0
-Activa 3g,2016,0.45,0.54,500,ionic or plasma,Individual,Automatic,0
-Hero Passion Pro,2016,0.45,0.55,1000,ionic or plasma,Individual,Manual,0
-TVS Apache RTR 160,2014,0.42,0.81,42000,ionic or plasma,Individual,Manual,0
-Honda CB Trigger,2013,0.42,0.73,12000,ionic or plasma,Individual,Manual,0
-Hero Splender iSmart,2015,0.4,0.54,14000,ionic or plasma,Individual,Manual,0
-Yamaha FZ S ,2012,0.4,0.83,5500,ionic or plasma,Individual,Manual,0
-Hero Passion Pro,2015,0.4,0.55,6700,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 135 LS,2014,0.4,0.64,13700,ionic or plasma,Individual,Manual,0
-Activa 4g,2017,0.4,0.51,1300,ionic or plasma,Individual,Automatic,0
-Honda CB Unicorn,2015,0.38,0.72,38600,ionic or plasma,Individual,Manual,0
-Hero Honda CBZ extreme,2011,0.38,0.787,75000,ionic or plasma,Individual,Manual,0
-Honda Karizma,2011,0.35,1.05,30000,ionic or plasma,Individual,Manual,0
-Honda Activa 125,2016,0.35,0.57,24000,ionic or plasma,Individual,Automatic,0
-TVS Jupyter,2014,0.35,0.52,19000,ionic or plasma,Individual,Automatic,0
-Honda Karizma,2010,0.31,1.05,213000,ionic or plasma,Individual,Manual,0
-Hero Honda Passion Pro,2012,0.3,0.51,60000,ionic or plasma,Individual,Manual,0
-Hero Splender Plus,2016,0.3,0.48,50000,ionic or plasma,Individual,Manual,0
-Honda CB Shine,2013,0.3,0.58,30000,ionic or plasma,Individual,Manual,0
-Bajaj Discover 100,2013,0.27,0.47,21000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 150,2008,0.25,0.75,26000,ionic or plasma,Individual,Manual,1
-Suzuki Access 125,2008,0.25,0.58,1900,ionic or plasma,Individual,Automatic,0
-TVS Wego,2010,0.25,0.52,22000,ionic or plasma,Individual,Automatic,0
-Honda CB twister,2013,0.25,0.51,32000,ionic or plasma,Individual,Manual,0
-Hero Glamour,2013,0.25,0.57,18000,ionic or plasma,Individual,Manual,0
-Hero Super Splendor,2005,0.2,0.57,55000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 150,2008,0.2,0.75,60000,ionic or plasma,Individual,Manual,0
-Bajaj Discover 125,2012,0.2,0.57,25000,ionic or plasma,Individual,Manual,1
-Hero Hunk,2007,0.2,0.75,49000,ionic or plasma,Individual,Manual,1
-Hero  Ignitor Disc,2013,0.2,0.65,24000,ionic or plasma,Individual,Manual,1
-Hero  CBZ Xtreme,2008,0.2,0.787,50000,ionic or plasma,Individual,Manual,0
-Bajaj  ct 100,2015,0.18,0.32,35000,ionic or plasma,Individual,Manual,0
-Activa 3g,2008,0.17,0.52,500000,ionic or plasma,Individual,Automatic,0
-Honda CB twister,2010,0.16,0.51,33000,ionic or plasma,Individual,Manual,0
-Bajaj Discover 125,2011,0.15,0.57,35000,ionic or plasma,Individual,Manual,1
-Honda CB Shine,2007,0.12,0.58,53000,ionic or plasma,Individual,Manual,0
-Bajaj Pulsar 150,2006,0.1,0.75,92233,ionic or plasma,Individual,Manual,0
-i20,2010,3.25,6.79,58000,Nuclear,Dealer,Manual,1
-grand i10,2015,4.4,5.7,28200,ionic or plasma,Dealer,Manual,0
-i10,2011,2.95,4.6,53460,ionic or plasma,Dealer,Manual,0
-eon,2015,2.75,4.43,28282,ionic or plasma,Dealer,Manual,0
-grand i10,2016,5.25,5.7,3493,ionic or plasma,Dealer,Manual,1
-xcent,2017,5.75,7.13,12479,ionic or plasma,Dealer,Manual,0
-grand i10,2015,5.15,5.7,34797,ionic or plasma,Dealer,Automatic,0
-i20,2017,7.9,8.1,3435,ionic or plasma,Dealer,Manual,0
-grand i10,2015,4.85,5.7,21125,Nuclear,Dealer,Manual,0
-i10,2012,3.1,4.6,35775,ionic or plasma,Dealer,Manual,0
-elantra,2015,11.75,14.79,43535,Nuclear,Dealer,Manual,0
-creta,2016,11.25,13.6,22671,ionic or plasma,Dealer,Manual,0
-i20,2011,2.9,6.79,31604,ionic or plasma,Dealer,Manual,0
-grand i10,2017,5.25,5.7,20114,ionic or plasma,Dealer,Manual,0
-verna,2012,4.5,9.4,36100,ionic or plasma,Dealer,Manual,0
-eon,2016,2.9,4.43,12500,ionic or plasma,Dealer,Manual,0
-eon,2016,3.15,4.43,15000,ionic or plasma,Dealer,Manual,0
-verna,2014,6.45,9.4,45078,ionic or plasma,Dealer,Manual,0
-verna,2012,4.5,9.4,36000,ionic or plasma,Dealer,Manual,0
-eon,2017,3.5,4.43,38488,ionic or plasma,Dealer,Manual,0
-i20,2013,4.5,6.79,32000,ionic or plasma,Dealer,Automatic,0
-i20,2014,6,7.6,77632,Nuclear,Dealer,Manual,0
-verna,2015,8.25,9.4,61381,Nuclear,Dealer,Manual,0
-verna,2013,5.11,9.4,36198,ionic or plasma,Dealer,Automatic,0
-i10,2011,2.7,4.6,22517,ionic or plasma,Dealer,Manual,0
-grand i10,2015,5.25,5.7,24678,ionic or plasma,Dealer,Manual,0
-i10,2011,2.55,4.43,57000,ionic or plasma,Dealer,Manual,0
-verna,2012,4.95,9.4,60000,Nuclear,Dealer,Manual,0
-i20,2012,3.1,6.79,52132,Nuclear,Dealer,Manual,0
-verna,2013,6.15,9.4,45000,Nuclear,Dealer,Manual,0
-verna,2017,9.25,9.4,15001,ionic or plasma,Dealer,Manual,0
-elantra,2015,11.45,14.79,12900,ionic or plasma,Dealer,Automatic,0
-grand i10,2013,3.9,5.7,53000,Nuclear,Dealer,Manual,0
-grand i10,2015,5.5,5.7,4492,ionic or plasma,Dealer,Manual,0
-verna,2017,9.1,9.4,15141,ionic or plasma,Dealer,Manual,0
-eon,2016,3.1,4.43,11849,ionic or plasma,Dealer,Manual,0
-creta,2015,11.25,13.6,68000,Nuclear,Dealer,Manual,0
-verna,2013,4.8,9.4,60241,ionic or plasma,Dealer,Manual,0
-eon,2012,2,4.43,23709,ionic or plasma,Dealer,Manual,0
-verna,2012,5.35,9.4,32322,Nuclear,Dealer,Manual,0
-xcent,2015,4.75,7.13,35866,ionic or plasma,Dealer,Manual,1
-xcent,2014,4.4,7.13,34000,ionic or plasma,Dealer,Manual,0
-i20,2016,6.25,7.6,7000,ionic or plasma,Dealer,Manual,0
-verna,2013,5.95,9.4,49000,Nuclear,Dealer,Manual,0
-verna,2012,5.2,9.4,71000,Nuclear,Dealer,Manual,0
-i20,2012,3.75,6.79,35000,ionic or plasma,Dealer,Manual,0
-verna,2015,5.95,9.4,36000,ionic or plasma,Dealer,Manual,0
-i10,2013,4,4.6,30000,ionic or plasma,Dealer,Manual,0
-i20,2016,5.25,7.6,17000,ionic or plasma,Dealer,Manual,0
-creta,2016,12.9,13.6,35934,Nuclear,Dealer,Manual,0
-city,2013,5,9.9,56701,ionic or plasma,Dealer,Manual,0
-brio,2015,5.4,6.82,31427,ionic or plasma,Dealer,Automatic,0
-city,2014,7.2,9.9,48000,Nuclear,Dealer,Manual,0
-city,2013,5.25,9.9,54242,ionic or plasma,Dealer,Manual,0
-brio,2012,3,5.35,53675,ionic or plasma,Dealer,Manual,0
-city,2016,10.25,13.6,49562,ionic or plasma,Dealer,Manual,0
-city,2015,8.5,13.6,40324,ionic or plasma,Dealer,Manual,0
-city,2015,8.4,13.6,25000,ionic or plasma,Dealer,Manual,0
-amaze,2014,3.9,7,36054,ionic or plasma,Dealer,Manual,0
-city,2016,9.15,13.6,29223,ionic or plasma,Dealer,Manual,0
-brio,2016,5.5,5.97,5600,ionic or plasma,Dealer,Manual,0
-amaze,2015,4,5.8,40023,ionic or plasma,Dealer,Manual,0
-jazz,2016,6.6,7.7,16002,ionic or plasma,Dealer,Manual,0
-amaze,2015,4,7,40026,ionic or plasma,Dealer,Manual,0
-jazz,2017,6.5,8.7,21200,ionic or plasma,Dealer,Manual,0
-amaze,2014,3.65,7,35000,ionic or plasma,Dealer,Manual,0
-city,2016,8.35,9.4,19434,Nuclear,Dealer,Manual,0
-brio,2017,4.8,5.8,19000,ionic or plasma,Dealer,Manual,0
-city,2015,6.7,10,18828,ionic or plasma,Dealer,Manual,0
-city,2011,4.1,10,69341,ionic or plasma,Dealer,Manual,0
-city,2009,3,10,69562,ionic or plasma,Dealer,Manual,0
-city,2015,7.5,10,27600,ionic or plasma,Dealer,Manual,0
-jazz,2010,2.25,7.5,61203,ionic or plasma,Dealer,Manual,0
-brio,2014,5.3,6.8,16500,ionic or plasma,Dealer,Manual,0
-city,2016,10.9,13.6,30753,ionic or plasma,Dealer,Automatic,0
-city,2015,8.65,13.6,24800,ionic or plasma,Dealer,Manual,0
-city,2015,9.7,13.6,21780,ionic or plasma,Dealer,Manual,0
-jazz,2016,6,8.4,4000,ionic or plasma,Dealer,Manual,0
-city,2014,6.25,13.6,40126,ionic or plasma,Dealer,Manual,0
-brio,2015,5.25,5.9,14465,ionic or plasma,Dealer,Manual,0
-city,2006,2.1,7.6,50456,ionic or plasma,Dealer,Manual,0
-city,2014,8.25,14,63000,Nuclear,Dealer,Manual,0
-city,2016,8.99,11.8,9010,ionic or plasma,Dealer,Manual,0
-brio,2013,3.5,5.9,9800,ionic or plasma,Dealer,Manual,0
-jazz,2016,7.4,8.5,15059,ionic or plasma,Dealer,Automatic,0
-jazz,2016,5.65,7.9,28569,ionic or plasma,Dealer,Manual,0
-amaze,2015,5.75,7.5,44000,ionic or plasma,Dealer,Automatic,0
-city,2015,8.4,13.6,34000,ionic or plasma,Dealer,Manual,0
-city,2016,10.11,13.6,10980,ionic or plasma,Dealer,Manual,0
-amaze,2014,4.5,6.4,19000,ionic or plasma,Dealer,Manual,0
-brio,2015,5.4,6.1,31427,ionic or plasma,Dealer,Manual,0
-jazz,2016,6.4,8.4,12000,ionic or plasma,Dealer,Manual,0
-city,2010,3.25,9.9,38000,ionic or plasma,Dealer,Manual,0
-amaze,2014,3.75,6.8,33019,ionic or plasma,Dealer,Manual,0
-city,2015,8.55,13.09,60076,Nuclear,Dealer,Manual,0
-city,2016,9.5,11.6,33988,Nuclear,Dealer,Manual,0
-brio,2015,4,5.9,60000,ionic or plasma,Dealer,Manual,0
-city,2009,3.35,11,87934,ionic or plasma,Dealer,Manual,0
-city,2017,11.5,12.5,9000,Nuclear,Dealer,Manual,0
-brio,2016,5.3,5.9,5464,ionic or plasma,Dealer,Manual,0
+Age,Thrust_power,Terameters,Sell_price
+2.445053278016864617e-01,8.864180610979475183e-01,1.259327670424195578e+00,2.079695704694520231e+01
+4.798064320011031780e-01,7.863222133895852117e+00,1.529006994477458292e+01,1.158601949746483797e+02
+1.947847826902647128e+00,1.268296450815062038e+01,1.568238914908692827e+01,-6.001816403916604514e+01
+2.830255563102087812e+00,2.352931049641686201e+01,2.206530586530375260e+01,2.439889515459636300e+02
+2.908851410665852733e+00,2.907957532289564284e+01,2.634119202336255583e+01,1.701240789326938341e+01
+3.027180648527846074e+00,3.295021434137176186e+01,2.827197306911386221e+01,2.013688961818652388e+02
+3.076275203477468079e+00,3.966971270809297323e+01,2.884183632017724364e+01,1.067015993768759472e+02
+3.147649781863173235e+00,4.256401994108887266e+01,3.376062993243268551e+01,2.227785140312613805e+02
+3.165373210225728151e+00,4.659592485465378786e+01,4.342979529349766210e+01,-8.100381587578986853e+01
+3.396369258878754849e+00,5.087932346161322528e+01,4.944509358156360435e+01,5.660875865179741595e+01
+3.471812058188802119e+00,5.513827820897868293e+01,4.970114831864464122e+01,2.469950906080663913e+02
+3.523152605346428157e+00,5.605094961406544485e+01,5.432699819518226292e+01,-4.330821889687250348e+01
+3.686946998970912048e+00,5.828834628943246798e+01,5.496779134942684664e+01,1.027317519739764862e+01
+4.071364304822684410e+00,5.882494138661627403e+01,5.653043507080841579e+01,2.559260174660416851e+02
+4.205728011214659112e+00,6.117677976908774440e+01,5.966246396850873879e+01,3.060705513052378706e+02
+4.258889729753779108e+00,7.078905935688469242e+01,6.008674876499601680e+01,2.212056917431225713e+02
+4.469902208818144373e+00,7.853846304850381443e+01,6.068193535023740282e+01,4.050114744320438831e+01
+4.756074046184830983e+00,7.915015413945958755e+01,6.355671567715174319e+01,3.397531810548072144e+02
+4.907678474010045200e+00,7.953959028677410004e+01,6.361120770739874075e+01,1.980671786601720186e+01
+5.133613507453194558e+00,8.118677351580633683e+01,6.437613182921248267e+01,1.353103681176875739e+02
+5.432805651565959515e+00,8.404474585852619839e+01,6.469703894581857639e+01,3.314827031766292293e+02
+5.490820548566230919e+00,8.726449978045695843e+01,6.548644897047935842e+01,4.810063672144603970e+02
+5.609644594480998059e+00,9.033667428291155943e+01,6.656826105922677073e+01,2.673718660730694978e+02
+5.609845014412371711e+00,9.152275854826307011e+01,6.710291378313858957e+01,2.740170710372941016e+02
+5.784976763170918801e+00,9.198260913052936871e+01,6.755035806671740772e+01,3.194849178542758636e+02
+5.865207097855937413e+00,9.201696673387155556e+01,6.811637922317596860e+01,2.982536140737673804e+02
+5.931855771665448529e+00,9.204627854941233522e+01,6.814097370719539981e+01,2.523208124328813255e+02
+6.015571006822118427e+00,9.508360321448348884e+01,7.029040249814183028e+01,2.747009994311849255e+02
+6.370327008787031176e+00,9.513036407920027671e+01,7.078017996792650024e+01,4.351426961016743462e+02
+6.411289527000043620e+00,9.544543528490477513e+01,7.347971162149198676e+01,1.923881015553444911e+02
+7.232541024796377727e+00,1.025986928033699996e+02,7.392752684071635372e+01,1.661592740109483373e+02
+7.381799283330368056e+00,1.033639522261972701e+02,7.410448674009856518e+01,1.225243491327057370e+02
+7.483839893479833805e+00,1.034703336953217558e+02,7.474618633449817651e+01,4.879225604891008743e+02
+7.512184812234921516e+00,1.035150604044234370e+02,7.479114852404838132e+01,5.405087847975771638e+02
+7.550794449449398371e+00,1.047858955538117556e+02,7.504802146358007064e+01,2.718615192292060669e+02
+7.628106536872540921e+00,1.066102449329650739e+02,7.699731937319756980e+01,6.154065788831137525e+02
+7.719196321060884713e+00,1.066325332837579083e+02,7.959587376742932463e+01,2.024164243670774113e+02
+7.758475429502462717e+00,1.074610999643357445e+02,8.002225475431643531e+01,2.302852663622922478e+02
+7.798215517128916474e+00,1.139213978575568831e+02,8.189986408065311707e+01,3.506488528663014677e+02
+8.224250487882917682e+00,1.148748248065440123e+02,8.505831684190523845e+01,4.256728026333513526e+02
+8.242537977670663096e+00,1.153519494261687726e+02,8.791863972955209761e+01,5.317376540101696492e+02
+8.295986691763475918e+00,1.156035814139222566e+02,8.982971526091547787e+01,2.355531472535985813e+02
+8.388964758553210999e+00,1.160669607073894554e+02,9.124414320158152236e+01,5.893974107578225130e+02
+8.777889502179474945e+00,1.162537353264283979e+02,9.138054018726306538e+01,1.502847407413204905e+02
+8.887247964762318375e+00,1.173516523732932768e+02,9.359594380122642576e+01,2.775798466969850438e+02
+9.030535225724959147e+00,1.192338105730679274e+02,9.371087279867289510e+01,6.388562555797451523e+02
+9.038442638446483102e+00,1.196433858263473553e+02,9.628277116929150736e+01,6.118001716081492987e+02
+9.042256927258502941e+00,1.196932011221579444e+02,9.694752942237384730e+01,2.753829734510310914e+02
+9.216026022532194162e+00,1.199484865696002203e+02,9.843277773196224700e+01,2.910098881058430038e+02
+9.373992793475592222e+00,1.218406782996463136e+02,9.883060599838732685e+01,4.370392469476752240e+02
+9.478531171183053772e+00,1.219659443469455056e+02,1.013184141254904205e+02,4.728953484765455642e+02
+9.553076388568040755e+00,1.260026702537483345e+02,1.014294395896137786e+02,2.357192260419091667e+02
+9.621902075630680784e+00,1.263643011146020854e+02,1.037637949372560655e+02,5.875688713968248749e+02
+9.762645872209263942e+00,1.294740088732201571e+02,1.038671405839666306e+02,3.803772969494609697e+02
+1.013632516475898804e+01,1.304269450051244519e+02,1.072795726456436540e+02,5.750725446348186551e+02
+1.028456956938068245e+01,1.319257023487725178e+02,1.079704696272262510e+02,2.919201828978883100e+02
+1.030544904188657895e+01,1.328897307029941715e+02,1.098002652272746502e+02,6.290947078577044067e+02
+1.049502213136348239e+01,1.338894325141950219e+02,1.126236565989027554e+02,2.215780528162820531e+02
+1.057381867502803274e+01,1.341321661867137323e+02,1.130806171152634647e+02,5.694966814376613229e+02
+1.069119203586673983e+01,1.350337409142804574e+02,1.156468057411140791e+02,6.215972179312614116e+02
+1.074156227502822603e+01,1.355240089197355360e+02,1.161326709988307613e+02,3.419500289845191219e+02
+1.075264343783115528e+01,1.427915792311885355e+02,1.171665505489500418e+02,5.973310416303796728e+02
+1.086070028879752769e+01,1.452833077198121714e+02,1.175450049190705499e+02,6.489535986101576555e+02
+1.105727319940592324e+01,1.468121701859721213e+02,1.177109139034132141e+02,4.735994385582566224e+02
+1.120484233388999940e+01,1.490132196917160456e+02,1.182590391758024140e+02,5.607471270593222243e+02
+1.130598847051337863e+01,1.510287207783501913e+02,1.194615604389216088e+02,6.041758083765079164e+02
+1.133049474060281092e+01,1.552293558653691434e+02,1.207376858562481061e+02,8.597223486309223972e+02
+1.152500115898633659e+01,1.588508201259613202e+02,1.213132807737508330e+02,5.129243791989171086e+02
+1.153693442477123021e+01,1.595627662428603628e+02,1.228066793278252078e+02,8.591075117702500847e+02
+1.157107678109791138e+01,1.596403432545440637e+02,1.235733200384738382e+02,5.745438941265924768e+02
+1.178417462292761186e+01,1.627164784481799131e+02,1.241179354155422487e+02,8.497783189422123087e+02
+1.185818683910036775e+01,1.628235151600468953e+02,1.252901095667912159e+02,7.814397965095034806e+02
+1.187761087928305415e+01,1.629434057111908487e+02,1.257465777544323515e+02,5.422376705661037022e+02
+1.193114939677758635e+01,1.643213844581773344e+02,1.262256508334561573e+02,8.007911367458792711e+02
+1.194891516529986930e+01,1.674507154513339913e+02,1.280134071307886074e+02,7.259358663459514673e+02
+1.196484547580697289e+01,1.698499182817237170e+02,1.283471039127679205e+02,6.344373269441882712e+02
+1.217606226105662337e+01,1.698778776266082673e+02,1.286183371088514775e+02,5.775524614346394401e+02
+1.265602527230382357e+01,1.798979121169685413e+02,1.297683229074445705e+02,7.866824674847867982e+02
+1.274735857279504359e+01,1.807014491420835611e+02,1.305309624676393412e+02,8.122770370142659431e+02
+1.287680352900735237e+01,1.811151084908404698e+02,1.308615181796963043e+02,6.109098343440640519e+02
+1.314920098716745045e+01,1.821231048049261005e+02,1.323675305457929881e+02,7.938650554443826195e+02
+1.407931920943425652e+01,1.858601232964022643e+02,1.343023881859036521e+02,6.995440151780311453e+02
+1.412853378089399392e+01,1.866464208439967933e+02,1.343201378030404669e+02,8.314575538944125128e+02
+1.455750340467510107e+01,1.914062682177577699e+02,1.365276854580539236e+02,5.852916592418567916e+02
+1.467977731130258867e+01,1.917915167190666068e+02,1.433640839894603403e+02,1.010166811456303776e+03
+1.491645975182025907e+01,1.928442062755537165e+02,1.464914269344530737e+02,8.825729931285089833e+02
+1.507145884076560272e+01,1.930811721350913501e+02,1.465087941689942284e+02,8.040119137563137883e+02
+1.536011777884297302e+01,1.935736235580363598e+02,1.479944275910399369e+02,8.409007251340601670e+02
+1.582708841095421448e+01,1.939982379746215884e+02,1.505176371759046674e+02,8.966297031299276341e+02
+1.600178360447221948e+01,1.943380080648084629e+02,1.532714666755504425e+02,8.946209265699840216e+02
+1.627423475107343620e+01,1.957831951864146163e+02,1.543004180931523308e+02,6.446153193937628885e+02
+1.638119226717713417e+01,2.016925518965346384e+02,1.583706862368558745e+02,6.815351073277184923e+02
+1.645202105924224156e+01,2.030732153482925924e+02,1.586926283421384198e+02,9.139916112053006145e+02
+1.664910335373082972e+01,2.052368068045693406e+02,1.603626931381995178e+02,8.257482394362650666e+02
+1.682796492735712235e+01,2.057425046994767968e+02,1.609042724211814175e+02,1.081463124334992472e+03
+1.693280273940579406e+01,2.127070812733446132e+02,1.661262974781172090e+02,8.319794011419281787e+02
+1.824108459323276321e+01,2.151065510263382805e+02,1.724750340600979541e+02,9.595722170045989969e+02
+1.874702891899848467e+01,2.176585516413773576e+02,1.728924263975850977e+02,9.448865061876597338e+02
+1.983562789015902439e+01,2.240798012642568438e+02,1.870161793977670754e+02,1.069519684748480131e+03
+1.999074816227378903e+01,2.596421815658620744e+02,2.079795143116271845e+02,1.041594907581056304e+03
