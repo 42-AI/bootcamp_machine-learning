@@ -1,10 +1,12 @@
 # Day00 - Mathematical Delights
 
-A brief description of the day goes here.
+
+Starting by recoding some usefull functions and formulas used later during the week.  
+The idea is to help the students to 'tame' the mathematical jargon. They will have to simply implement the functions following the formulas without knowing what it is about. Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
 ## Notions of the day
 
-Notion 1, Notion 2, ...
+Sum, mean, variance, standard deviation, vectors and matrices operations, 
 
 ## General rules
 
