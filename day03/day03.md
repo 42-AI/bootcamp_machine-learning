@@ -2,11 +2,17 @@
 
 # Day03 - Decision Tree
 
-A brief description of the day goes here.
+This day aims to present a different kind of ML algorithm: decision trees.
+Decision trees are historically quite popular as it is easy to demonstrate the thought process of the algorithm when 
+making a prediction. They are also the base of more complex algorithms (random trees...) that have very good performances.
+
+If you don't have the time to recode everything try to at least grasps the key concepts to be able to use them wisely in the future.
+
 
 ## Notions of the day
 
-Notion 1, Notion 2, ...
+Gini impurity, entropy, information gain. Decision trees.
+
 
 ## General rules
 
@@ -31,26 +37,4 @@ Python 3.7.*
 $> which pip
 /goinfre/miniconda/bin/pip
 ```
-
-## Mathematical delights (continued)
-
-### Exercise 00 - Gini Impurity
-
-### Exercise 01 - Shannon's Entropy
-
-
-## Algorithm
-
-### Exercise 00 - Information Gain
-
-### Exercise 01 - Decision Tree for Classification
-
-### Exercise 02 - Decision Tree for Regression
-
-### Exercise 03 - Feature importance
-
-
-## Model Evaluation
-
-### Exercise 00 - Cross Validation
 
