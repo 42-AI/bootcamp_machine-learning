@@ -4,10 +4,15 @@
 # Day01 - Linear Regression
 
 A brief description of the day goes here.
+During this day you will learn the first concepts constituing the field of machine learning.
+ 
+
+
+
 
 ## Notions of the day
 
-Notion 1, Notion 2, ...
+Matrix operations, gradient descent, cost function, normal equation, MSE, RMSE R-score and learning rate. 
 
 ## General rules
 
@@ -18,7 +23,7 @@ Notion 1, Notion 2, ...
 * Your exercices are going to be evaluated by someone else so make sure that variables and functions names are appropriated. 
 * Your man is internet.
 * You can also ask question in the dedicated channel in Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_python/issues.
+* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_machine-larning/issues.
 
 ## Helper 
 
@@ -36,59 +41,30 @@ $> which pip
 ## Algorithms
 
 ### Exercice 00 - Linear Regression
-Reimplement **sklearn.linear_model.LinearRegression**  
-Parameters:
-  - alpha: double - learning rate
+Reimplement a part of **sklearn.linear_model.LinearRegression** 
 
 Methods:
-  - .score() - cost function
-  - .fit() - normal equation OR gradient descent
-  - .predict()
-  - ? .get_params()
-  - ? .set_params()
+  - .get_params() - get the parameters theta of the hypothesis,
+  - .set_params() - set the parameters theta of the hypothesis,
+  - .predict() - calculate the predicted values based on the fitted linear model,
 
-### Exercise 01 - Regularized Linear Regression  
-Reimplement **sklearn.linear_model.Ridge**
-Parameters:  
-  - alpha: double - learning rate
-  - lambda: double - regularisarion term
-  
-Methods:
-  - .score() - cost function
-  - .fit() - gradient descent
-  - .predict()
-  - ? .get_params()
-  - ? .set_params()
+Metric:
+  - .mse() - mean square error metric.
 
-### Exercice 02 - Normal equation
-Change the two previous classes: 
-  - add a parameter : 
-    - normal: bool, (default=True) (use normal equation instead of gradient descent)
-  - change alpha to be used only if `normal == False`
+### Exercise 01 - Multiples Features and Linear Gradient Descent  
+Reimplement a part of **sklearn.linear_model.LinearRegression** and the metric RMSE:
   
-  - .fit() should use gradient descent or normal equation according to the parameters
+Method:
+  - .fit() - fit based on the method of the linear gradient descent.
 
+Metric:
+  - .rmse() - root mean square error metric.
 
-## Feature Engineering
-### Exercise 00 - Standardization: z-score
-Reimplement  **sklearn.preprocessing.StandardScaler**
-Parameters:  
-  - None
-Methods:
-  - fit()
-  - fit_transform()
-  
-### Exercise 01 - Standardization: min-max
-Reimplement  **sklearn.preprocessing.MinMaxScaler**
-Parameters:  
-  - None
-Methods:
-  - fit()
-  - fit_transform()
-  
-## Model Evaluation
-### Exercise 00 - Mean Squared Error
-Reimplement  **sklearn.metrics.mean_squared_error**
-Parameters:  
-  - y_true: array
-  - y_pred: array
+### Exercice 02 - Multiples Features and Normal Equation
+Implement the normal equation and the metric R-score:
+
+Method:
+  - .normalequation() - fit based on the method of the normal equation.
+
+Metric:
+  - .rscore() - R score metric.
