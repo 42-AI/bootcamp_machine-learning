@@ -1,6 +1,5 @@
 # Day00 - Mathematical Delights
 
-
 Starting by recoding some usefull functions and formulas used later during the week.  
 The idea is to help the students to 'tame' the mathematical jargon. They will have to simply implement the functions following the formulas without knowing what it is about. Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
@@ -24,11 +23,11 @@ Sum, mean, variance, standard deviation, vectors and matrices operations.
 Ensure that you have the right Python version.
 
 ```
-\$> which python
+> which python
 /goinfre/miniconda/bin/python
-\$> python -V
+> python -V
 Python 3.7.*
-\$> which pip
+> which pip
 /goinfre/miniconda/bin/pip
 ```
 
@@ -40,13 +39,11 @@ Python 3.7.*
 
 ### Exercise 03 - Standard deviation
 
-
 ### Exercise 04 - Dot product
 
 ### Exercise 05 - Matrix-vector multiplication 
 
 ### Exercise 06 - Matrix-matrix multiplication
-
 
 ### Exercise 07 - Mean Squared Error - iterative
 

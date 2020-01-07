@@ -1,13 +1,6 @@
-
-# Bootcamp ML
-
 # Day01 - Linear Regression
 
 During this day you will learn the first concepts constituing the field of machine learning.
-
-
-
-
 
 ## Notions of the day
 
@@ -29,41 +22,19 @@ Matrix operations, gradient descent, cost function, normal equation, MSE, RMSE R
 Ensure that you have the right Python version.
 
 ```
-$> which python
+> which python
 /goinfre/miniconda/bin/python
-$> python -V
+> python -V
 Python 3.7.*
-$> which pip
+> which pip
 /goinfre/miniconda/bin/pip
 ```
 
-## Algorithms
-
 ### Exercice 00 - Linear Regression
-Reimplement a part of **sklearn.linear_model.LinearRegression** 
-
-Methods:
-  - .get_params() - get the parameters theta of the hypothesis,
-  - .set_params() - set the parameters theta of the hypothesis,
-  - .predict() - calculate the predicted values based on the fitted linear model,
-
-Metric:
-  - .mse() - mean square error metric.
 
 ### Exercise 01 - Multiples Features and Linear Gradient Descent  
-Reimplement a part of **sklearn.linear_model.LinearRegression** and the metric RMSE:
-  
-Method:
-  - .fit() - fit based on the method of the linear gradient descent.
-
-Metric:
-  - .rmse() - root mean square error metric.
 
 ### Exercice 02 - Multiples Features and Normal Equation
-Implement the normal equation and the metric R-score:
 
-Method:
-  - .normalequation() - fit based on the method of the normal equation.
+### Exercise 03 - Learning Rate and Quadratic Hypothesis
 
-Metric:
-  - .rscore() - R score metric.
