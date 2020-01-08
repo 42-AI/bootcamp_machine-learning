@@ -31,11 +31,11 @@ class and to finish we will build our model evaluation functions.
 Ensure that you have the right Python version.
 
 ```
-$> which python
+> which python
 /goinfre/miniconda/bin/python
-$> python -V
+> python -V
 Python 3.7.*
-$> which pip
+> which pip
 /goinfre/miniconda/bin/pip
 ```
 
@@ -51,50 +51,19 @@ $> which pip
 
 ### Exercise 04 - Vectorized Logistic Gradient
 
-
 ## Algorithm
 
 ### Exercise 05 - Logistic Regression
-Reimplement **sklearn.linear_model.LogisticRegression**
-Parameters:
-  - alpha - learning rate
-  - max_iter - int, optional (default=1000)
-  - verbose - display epochs with log loss
-  - learning_rate - str, 'constant' or 'invscaling'
-
-Methods:
-    .fit() - gradient descent
-    .predict() - model predictions
-    .score() - score on predictions
 
 ## Model Evaluation
 
 ### Exercice 06 - Accuracy
-Reimplement **sklearn.metrics.accuracy_score**
-Parameters:  
-  - y_true: array
-  - y_pred: array
 
 ### Exercise 07 - Precision
-Reimplement **sklearn.metrics.precision_score**
-Parameters:  
-  - y_true: array
-  - y_pred: array
 
 ### Exercise 08 - Recall
-Reimplement **sklearn.metrics.recall_score**
-Parameters:  
-  - y_true: array
-  - y_pred: array
   
 ### Exercise 09 - F1 Score
-Reimplement **sklearn.metrics.f1_score**
-Parameters:  
-  - y_true: array
-  - y_pred: array
-  
- ### Exercise 10 - Confusion matrix
-Reimplement **sklearn.metrics.confusion_matrix**
-Parameters:  
-  - y_true: array
-  - y_pred: array
+
+### Exercise 10 - Confusion matrix
+
