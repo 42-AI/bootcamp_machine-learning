@@ -30,11 +30,28 @@ Gini impurity, entropy, information gain. Decision trees.
 Ensure that you have the right Python version.
 
 ```
-$> which python
+> which python
 /goinfre/miniconda/bin/python
-$> python -V
+> python -V
 Python 3.7.*
-$> which pip
+> which pip
 /goinfre/miniconda/bin/pip
 ```
 
+## Exercices
+
+### Exercise 00 - Shannon's Entropy
+
+### Exercise 01 - Gini Impurity
+
+### Exercise 02 - Information Gain
+
+### Exercise 03 - Understanding the Mathematical Concepts
+
+### Exercise 04 - Understanding better Decision Tree for Classification
+
+### Exercise 05 - Code the DecisionTreeClassifier Fit Function
+
+### Exercise 06 - Code the DecisionTreeClassifier Prediction Functions
+
+### Exercise 07 - Using Decision Trees for Regression 
