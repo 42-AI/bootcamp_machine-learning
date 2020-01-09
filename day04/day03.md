@@ -1,6 +1,6 @@
 # Bootcamp ML
 
-# Day03 - Decision Tree
+# Day04 - Decision Tree
 
 This day aims to present a different kind of ML algorithm: decision trees.
 Decision trees are historically quite popular as it is easy to demonstrate the thought process of the algorithm when 
