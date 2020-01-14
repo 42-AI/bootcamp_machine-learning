@@ -1,0 +1,5 @@
+#Patient: number of the patient.
+
+#Micrograms: quantity of blue pills patient has takern (in micrograms).
+
+#Score: Standardized score at the spacecraft drivimng test.

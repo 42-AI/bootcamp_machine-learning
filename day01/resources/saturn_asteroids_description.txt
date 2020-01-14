@@ -1,0 +1,5 @@
+#Mean_speed: Mean speed of the spacecrafts at the impact (im 100 Km/h)
+
+#N_spacecraft: number of spacecraft crashed during the weekly wild spacecraft rides.
+
+#ASLB : Asteroids Leaving Saturn Belt, it is the number of asteroids leaving the asteroid belt of Saturn due to spacecraft crash.
