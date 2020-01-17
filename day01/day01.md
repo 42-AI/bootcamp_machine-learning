@@ -15,7 +15,7 @@ Matrix operations, gradient descent, cost function, normal equation, MSE, RMSE R
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
 * You can also ask question in the dedicated channel in Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_machine-larning/issues.
+* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_machine-learning/issues.
 
 ## Helper 
 
@@ -30,11 +30,18 @@ Python 3.7.*
 /goinfre/miniconda/bin/pip
 ```
 
-### Exercice 00 - Linear Regression
+### Exercise 00 - Hypothesis Concept in Machine Learning
 
-### Exercise 01 - Multiples Features and Linear Gradient Descent  
+### Exercise 01 - Cost Function Concept  
 
-### Exercice 02 - Multiples Features and Normal Equation
+### Exercice 02 - Descent Gradient
 
-### Exercise 03 - Learning Rate and Quadratic Hypothesis
+### Exercise 03 - The Linear Regression with Class
 
+### Exercise 04 - Linear Regression
+
+### Exercise 05 - Multiples features and Linear Gradient Descent
+
+### Exercise 06 - Multiples features and Normal Equation
+
+### Exercise 07 (Bonus) - Learning Rate and Quadratic Hypothesis
