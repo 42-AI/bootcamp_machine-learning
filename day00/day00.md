@@ -7,6 +7,28 @@ The idea is to help the students to 'tame' the mathematical jargon. They will ha
 
 Sum, mean, variance, standard deviation, vectors and matrices operations.
 
+## Useful Ressources  
+  
+Machine Learning MOOC - Stanford:  
+https://www.coursera.org/learn/machine-learning/home/week/1  
+
+- Week 1: 
+  - Introduction: 
+    - What is Machine Learning? (Video + Reading)
+    - Supervised Learning (Video + Reading)
+    - Unsupervised Learning (Video + Reading)
+    - Review (Reading + Quiz)
+    
+  - Linear Algebra Review:
+    - Matrices and Vectors (Video + Reading)
+    - Addition and Scalar Multiplication (Video + Reading)
+    - Matrix Vector Multiplication (Video + Reading)
+    - Matrix Maxtrix Multiplication (Video + Reading)
+    - Matrix Multiplication Properties (Video + Reading)
+    - Inverse and Transpose (Video + Reading)
+    - Review (Reading + Quiz)
+
+
 ## General rules
 
 * The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
