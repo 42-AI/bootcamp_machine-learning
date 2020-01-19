@@ -23,7 +23,7 @@ https://www.coursera.org/learn/machine-learning/home/week/1
     - Matrices and Vectors (Video + Reading)
     - Addition and Scalar Multiplication (Video + Reading)
     - Matrix Vector Multiplication (Video + Reading)
-    - Matrix Maxtrix Multiplication (Video + Reading)
+    - Matrix Matrix Multiplication (Video + Reading)
     - Matrix Multiplication Properties (Video + Reading)
     - Inverse and Transpose (Video + Reading)
     - Review (Reading + Quiz)
