@@ -14,7 +14,22 @@ Welcome to the day03 of the machine learning bootcamp ! Today you will see the L
 * min-max standardization
 * Polynomial features
 * Interaction terms 
-​
+
+
+## Useful Ressources  
+  
+Machine Learning MOOC - Stanford:  
+https://www.coursera.org/learn/machine-learning/home/week/3
+
+- Week 3: 
+  - Regularization: 
+    - The Problem of Overfitting (Video + Reading)
+    - Cost Function (Video + Reading)
+    - Regularized Linear Regression (Video + Reading)
+    - Regularized Logistic Regression (Video + Reading)
+    - Review (Reading + Quiz)
+ 
+ 
 ## General rules
 ​
 * The version of Python to use is 3.7.x, you can check the version of Python with the following command: `python -V`
