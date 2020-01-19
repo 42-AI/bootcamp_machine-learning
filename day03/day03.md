@@ -21,13 +21,15 @@ Welcome to the day03 of the machine learning bootcamp ! Today you will see the L
 Machine Learning MOOC - Stanford:  
 https://www.coursera.org/learn/machine-learning/home/week/3
 
-- Week 3: 
-  - Regularization: 
-    - The Problem of Overfitting (Video + Reading)
-    - Cost Function (Video + Reading)
-    - Regularized Linear Regression (Video + Reading)
-    - Regularized Logistic Regression (Video + Reading)
-    - Review (Reading + Quiz)
+### Week 3: 
+
+**Regularization:**
+
+* The Problem of Overfitting (Video + Reading)
+* Cost Function (Video + Reading)
+* Regularized Linear Regression (Video + Reading)
+* Regularized Logistic Regression (Video + Reading)
+* Review (Reading + Quiz)
  
  
 ## General rules
