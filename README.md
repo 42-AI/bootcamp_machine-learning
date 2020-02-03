@@ -41,15 +41,15 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 > Sigmoid, Log loss, Gradient descent, Logistic regression, Model evaluation, Confusion matrix.
 
 ### Day03 - Feature Engineering and Regularization
-**Time for some formulas kata. :martial_arts_uniform:**
-> More implementation!
+**See the L2 regularization and a few ways to process your data in order to improve significantly the performance of your models!**
+> Regularization, Regularized linear regression, Regularized logistic regression, z-score standardization, min-max standardization, Polynomial features, Interaction terms 
 
 ### Day04 - Decision Tree :deciduous_tree:
 **Be able to use Decision trees algorithms wisely in the future**
 > Gini impurity, entropy, information gain. Decision trees.
 
 ### Rush - Classification on MNIST handwritten digits database
-**Build the best classifier for handwritten digits recognition!**
+**Build the best classifier for handwritten digits recognition! :fire:**
 > Finding out the missing classes, experimenting several ways to deal with missing / aberrant values.
 <br/>
 
