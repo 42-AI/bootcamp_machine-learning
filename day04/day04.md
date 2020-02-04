@@ -2,11 +2,11 @@
 
 # Day04 - Decision Tree
 
-This day aims to present a different kind of ML algorithm: decision trees.
-Decision trees are historically quite popular as it is easy to demonstrate the thought process of the algorithm when 
-making a prediction. They are also the base of more complex algorithms (random trees...) that have very good performances.
+This day aims to present a different kind of ML algorithm: Decision Trees.
+Decision Trees are historically quite popular as demonstrating the thought process of the algorithm when 
+making a prediction is easy. They are also the base of more complex algorithms (random trees...) that are higly efficient.
 
-If you don't have the time to recode everything try to at least grasps the key concepts to be able to use them wisely in the future.
+If you don't have the time to recode everything try to grasp at least the key concepts in order to be able to use them wisely in the future.
 
 
 ## Notions of the day
