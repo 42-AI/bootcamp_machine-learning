@@ -1,6 +1,6 @@
 # Day01 - Linear Regression
 
-During this day you will learn the first concepts constituing the field of machine learning.
+During this day you will learn the first concepts constituting the field of machine learning.
 
 ## Notions of the day
 
