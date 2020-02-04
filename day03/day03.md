@@ -10,7 +10,7 @@ Congratulations! You made it to the day03 of the machine learning bootcamp! Toda
 * Regularization 
 * Regularized linear regression
 * Regularized logistic regression
-* z-score standardization
+* Z-score standardization
 * min-max standardization
 * Polynomial features
 * Interaction terms 

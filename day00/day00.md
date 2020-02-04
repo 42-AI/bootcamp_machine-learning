@@ -1,7 +1,7 @@
 # Day00 - Mathematical Delights
 
 Let's start by recoding some useful functions and formulas that will be used later in the week.  
-The idea is to help the students to 'tame' the mathematical jargon. They will have to simply implement the functions following the formulas without knowing what it is about. Then magically these already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
+The idea is to help the students to 'tame' the mathematical jargon. They will have to simply implement the functions following the formulas without knowing what it is about. Then magically this already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
 
 ## Notions of the day
 
