@@ -62,12 +62,11 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 * Pierre Peigné (ppeigne@student.42.fr)
 * Matthieu David (mdavid@student.42.fr)
 * Benjamin Carlier (bcarlier@student.42.fr)
-* Nicolas Vergnac (nvergnac@student.42.fr)
+* Pablo Clement (pclement@student.42.fr)
 
 
 ### Beta-testers
 
 * Richard Blanc (riblanc@student.42.fr)
-* Lorenzo Amar (loamar@student.42.fr)
 * Solveig Gaydon Ohl (sgaydon-@student.42.fr)
 * Quentin Feuillade Montixi (qfeuilla@student.42.fr)
