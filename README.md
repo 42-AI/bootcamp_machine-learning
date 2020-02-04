@@ -33,24 +33,20 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 > Sum, mean, variance, standard deviation, vectors and matrices operations.
 
 ### Day01 - Linear Regression
-**Get started with the first concepts constituing the field of Machine Learning**
+**Get started with the first concepts constituting the field of Machine Learning**
 > Matrix operations, gradient descent, cost function, normal equation, MSE, RMSE R-score and learning rate.
 
 ### Day02 - Logistic Regression
 **Implement a Logistic Regression class using a Gradient Descent algorithm**
-> Sigmoid, Log loss, Gradient descent, Logistic regression, Model evaluation, Confusion matrix.
+> Sigmoid, log loss, gradient descent, logistic regression, model evaluation, confusion matrix.
 
 ### Day03 - Feature Engineering and Regularization
 **See the L2 regularization and a few ways to process your data in order to improve significantly the performance of your models!**
-> Regularization, Regularized linear regression, Regularized logistic regression, z-score standardization, min-max standardization, Polynomial features, Interaction terms 
+> Regularization, regularized linear regression, regularized logistic regression, Z-score standardization, min-max standardization, polynomial features, interaction terms.
 
 ### Day04 - Decision Tree :deciduous_tree:
-**Be able to use Decision trees algorithms wisely in the future**
-> Gini impurity, entropy, information gain. Decision trees.
-
-### Rush - Classification on MNIST handwritten digits database
-**Build the best classifier for handwritten digits recognition! :fire:**
-> Finding out the missing classes, experimenting several ways to deal with missing / aberrant values.
+**Be able to use Decision Trees algorithms wisely in the future**
+> Gini impurity, entropy, information gain and Decision Trees.
 <br/>
 
 ## Acknowledgements
