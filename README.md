@@ -46,7 +46,7 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 
 ### Day04 - Decision Tree :deciduous_tree:
 **Be able to use Decision Trees algorithms wisely in the future**
-> Gini impurity, entropy, information gain and Decision Trees.
+> Gini impurity, entropy, information gain and decision trees.
 <br/>
 
 ## Acknowledgements
