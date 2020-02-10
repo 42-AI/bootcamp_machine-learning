@@ -1,4 +1,8 @@
-### Multivariate gradient
+### Improve 
+
+<img src="day00/assets/Predict.png" />  
+
+#### Multivariate gradient
 
 From our multivariate linear hypothesis we can derive our multivariate gradient:  
 $$
