@@ -1,4 +1,4 @@
-## A simple tricks
+### A simple linear algebra trick
 
 Let's do a little linear algebra trick to optimise the way we calculate predictions.  
 If we add a column full of ones to our vector of examples $x$ we can create the following matrix: 

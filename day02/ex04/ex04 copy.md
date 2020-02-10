@@ -11,7 +11,7 @@
 
 You must implement the following formula as a function:    
 $$
-\nabla(J) = \frac{1}{m} X^T(x\theta - y)
+\nabla(J) = \frac{1}{m} X^T(X\theta - y)
 $$  
 
 Where:  
@@ -28,7 +28,7 @@ def gradient(x, y, theta):
     Args:
       x: has to be an numpy.ndarray, a matrice of dimension m * n.
       y: has to be an numpy.ndarray, a vector of dimension m * 1.
-      theta: has to be an numpy.ndarray, a vector n * 1.
+      theta: has to be an numpy.ndarray, a vector (n +1) * 1.
     Returns:
       The gradient as a numpy.ndarray, a vector of dimensions n * 1, containg the result of the formula for all j.
       None if x, y, or theta are empty numpy.ndarray.
