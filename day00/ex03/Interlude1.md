@@ -7,7 +7,7 @@
 [Intro : simple data set + plot
 We have some data.   We want to model it. First we need to make some assumptions, some hypothesis about the relationship tying together]
 
-Let's start with a very simple **assumption**: the relation between our variables can be represented using a linear equation.  
+Let's start with a very simple **hypothesis**: the relation between our variables can be represented using a linear equation.  
 
 This means that we are trying to represent $\hat{y} = ax + b$.  
 
@@ -35,17 +35,20 @@ With theta, you just have to increment the number to name the parameter: $\hat{y
 So now, we have $\hat{y} = \theta_0 + \theta_1 x$.  
 If $\theta_0 = 33$ and $\theta_1 = 5$, then $\hat{y} = 33+ 5x$.    
 
-This simple equation is now our **model**. This model draws a **relation between $y$ and $x$**.  
+This simple equation is now our **model**, also called our **hypothesis**. This model draws a **relation between $y$ and $x$**.  
 Using directly $y$ and not $\hat{y}$ in the previous sentence was done on purpose: **the relation we are looking for is not between our prediction and our inputs values, but between what we want to predict and our inputs values**.  
+   
+Because $\hat{y}$ is build from our hypothesis, using $\theta$ and $x$, it is sometimes written as $h_{\theta}(x)$.  
+The $h$ stands for *hypothesis*, and can be read as *"the result of our hypothesis h given x and theta"*.  
 
-Then if $x = 7$ we can calculate that $\hat{y} = 33 + 5 \times 7 = 68$.
+Then if $x = 7$ we can calculate that $\hat{y} = h_{\theta}(x) = 33 + 5 \times 7 = 68$.
 We can now say that according to our linear model, the **predicted value** of $y$ given $x  = 7$ is 68.     
 
 To go a little further, lets consider a dataset containing $m$ data points called **examples**.  
 
 What we have now are not single values for $x$ and $hat{y}$ but vectors of dimensions m * 1. The relation between our vectors can then be represented by the following formula:  
 $$
-\hat{y}_i = \theta_0 + \theta_1 x_i \text{ for i = 1, ..., m}
+\hat{y}_i = h_{\theta}(x) = \theta_0 + \theta_1 x_i \text{ for i = 1, ..., m}
 $$  
   
 Where:
@@ -56,5 +59,5 @@ Which can be experessed as:
 $$\hat{y} = \begin{bmatrix}\theta_0 + \theta_1 \times x_1 \\ \vdots \\  \theta_0 + \theta_1 \times x_m\ \end{bmatrix}$$  
 
 For example,
-$$\text{given } \theta = \begin{bmatrix}33 \\ 5 \end{bmatrix} \text{ and } x = \begin{bmatrix}1 \\ 3 \end{bmatrix} \text{: }$$    
-$$\hat{y} = \begin{bmatrix} 33 +  1 \times 5 \\ 33 + 3 \times 5\theta_1 \end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} $$    
+$$\text{given } \theta = \begin{bmatrix}33 \\ 5 \end{bmatrix} \text{ and } x = \begin{bmatrix}1 \\ 3 \end{bmatrix} \text{: }$$
+$$\hat{y} = h_{\theta}(x) = \begin{bmatrix} 33 +  1 \times 5 \\ 33 + 3 \times 5\theta_1 \end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} $$    
