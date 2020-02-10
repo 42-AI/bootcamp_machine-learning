@@ -14,6 +14,6 @@ If the model is good, we will not lost that much, if it's terrible it will cost 
 
 The metric you choose will impact deeply the results of your model.   
 
-A very usual way to evaluate the performances of a regression model is to measure the distance between each predicted value and the true value it tries to predict. The smaller, the better.  
+A very usual way to evaluate the performances of a regression model is to measure the absolute or squared distance between each predicted value and the true value it tries to predict and average all these distance. The smaller, the better.  
 
 [img NEEDED HERE]
