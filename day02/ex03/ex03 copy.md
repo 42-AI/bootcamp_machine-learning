@@ -1,4 +1,4 @@
-# Exercise 03 - Simple Prediction
+# Exercise 03 - Simple Prediction with mutiple variables
 
 |                         |                    |
 | -----------------------:| ------------------ |
