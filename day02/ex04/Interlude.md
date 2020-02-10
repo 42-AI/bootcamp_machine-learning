@@ -8,7 +8,7 @@ $$
 
 Where:  
 - $\nabla(J)$ is a vector of size n * 1,
-- $X$ is a matrix of size m * n (i.e. a matrix containing m vectors of dimension n * 1)
+- $X$ is a matrix of dimension m * n, the matrix of examples
 - $y$ is a vector of dimension m * 1
 - $\theta$ is a vector of dimension n * 1
 - $x_i$ is the ith component of vector $x$
@@ -19,11 +19,12 @@ Where:
 Therefore, as in the previous day, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
 
 $$
-\nabla(J) = \frac{1}{m} X^T(X\theta - y)
+\nabla(J) = \frac{1}{m} X'^T(X\theta - y)
 $$  
 
 Where:  
 - $\nabla(J)$ is a vector of size (n + 1) * 1
-- $X$ is a matrix of size m * n 
+- $X$ is a matrix of dimension m * n, the matrix of examples
+- $X'$ is a matrix of dimension m * (n + 1), the matrix of examples onto which a column of ones is added as first column
 - $y$ is a vector of size m * 1
 - $\theta$ is a vector of size (n + 1) * 1 
