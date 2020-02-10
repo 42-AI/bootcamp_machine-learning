@@ -23,7 +23,7 @@ Where:
 Therefore, as in the previous days, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
 
 $$
-\nabla(J) = \frac{1}{m} X'^T(X\theta - y)
+\nabla(J) = \frac{1}{m} X'^T(X'\theta - y)
 $$  
 
 Where:  
