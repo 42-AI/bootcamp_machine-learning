@@ -16,7 +16,7 @@ Where:
 - $\nabla(J)_j$ is the jth component of $\nabla(J)$
 - $h_{\theta}(x_i)$ is our prediction for $y_i$: the result of the dot product of the vector $\theta$ and the vector $x_i$  
 
-Therefore, as in the previous day, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
+Therefore, as in the previous days, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
 
 $$
 \nabla(J) = \frac{1}{m} X'^T(X\theta - y)
