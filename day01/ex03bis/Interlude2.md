@@ -1,3 +1,5 @@
+### Linear Algebra tricks II
+
 Remember the linear algebra trick of yesterday? Lets use it again! 
 If you add a column of ones to the vector $x$, for any example i in our new matrix X, $X_{i}^{(0)} = 1$.  
   
