@@ -1,13 +1,13 @@
 ### Linear Algebra tricks II
 
 Remember the linear algebra trick of yesterday? Lets use it again! 
-If you add a column of ones to the vector $x$, for any example i in our new matrix X, $X_{i}^{(0)} = 1$.  
+If you add a column of ones to the vector $x$, for any example i in our new matrix X', $X_{i}^{(0)} = 1$.  
   
 Therefore:  
 $$
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)\cdot 1 
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)X_{i}^{(0)}
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X'_i) - y_i)
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X'_i) - y_i)\cdot 1 
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X'_i) - y_i)X'_{i}^{(0)}
 $$
 
 This means that you can encapsulate the gradient for both $\theta_0$ and $\theta_1$ with the same calculation! 
