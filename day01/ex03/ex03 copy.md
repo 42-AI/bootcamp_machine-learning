@@ -13,7 +13,7 @@ You must implement the following formula as a function:
 
 $$
 \nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)
-\nabla(J)_1 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)X_{i}^{(n)} \text{ for j = 1, ..., n}
+\nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)X_{i}^{(j)} \text{ for j = 1, ..., n}
 $$
 
 Where:  
