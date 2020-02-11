@@ -6,11 +6,11 @@
 
 To be said to learn you have to improve.  
 To improve you have to evaluate your performance.  
-To evaluate your performance you have to start to perform the task you want to be good at.  
+To evaluate your performance you need to start performing on the task you want to be good at.  
   
 
-One of the most common task in Machine Learning is **prediction**.  
-This will be the task of your algorithms.  
+One of the most common tasks in Machine Learning is **prediction**.  
+This will be your algorithm's task.
 This will be your task.  
 
 <img src="day00/assets/Default.png" />
