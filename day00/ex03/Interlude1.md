@@ -1,7 +1,6 @@
-### Predict 
+# Predict 
 
 <img src="day00/assets/Predict.png" />
-
 
 ## A very simple model
 [Intro : simple data set + plot
@@ -18,7 +17,7 @@ For example, if $a = 5$ and $b = 33$, then $\hat{y} = 5x + 33$.
 
 We are going to do a slightly change in our notation now.  
 Instead of $\hat{y} = ax + b$ we will use the following notation:  
-$$\hat{y} = \theta_0 + \theta_1 x$$.  
+$\hat{y} = \theta_0 + \theta_1 x$$.  
 
 You might have two questions at the moment:  
 - WTF is that weird $\theta$ symbol?
@@ -56,8 +55,12 @@ Where:
 - $x_i$ is the *ith* component of vector $x$   
 
 Which can be experessed as:  
-$$\hat{y} = \begin{bmatrix}\theta_0 + \theta_1 \times x_1 \\ \vdots \\  \theta_0 + \theta_1 \times x_m\ \end{bmatrix}$$  
+$$
+\hat{y} = \begin{bmatrix}\theta_0 + \theta_1 \times x_1 \\ \vdots \\  \theta_0 + \theta_1 \times x_m\ \end{bmatrix}
+$$  
 
 For example,
-$$\text{given } \theta = \begin{bmatrix}33 \\ 5 \end{bmatrix} \text{ and } x = \begin{bmatrix}1 \\ 3 \end{bmatrix} \text{: }$$
-$$\hat{y} = h_{\theta}(x) = \begin{bmatrix} 33 +  1 \times 5 \\ 33 + 3 \times 5\theta_1 \end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} $$    
+$$
+\text{given } \theta = \begin{bmatrix}33 \\ 5 \end{bmatrix} \text{ and } x = \begin{bmatrix}1 \\ 3 \end{bmatrix} \text{: }$$
+$$\hat{y} = h_{\theta}(x) = \begin{bmatrix} 33 +  1 \times 5 \\ 33 + 3 \times 5\end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} 
+$$    
