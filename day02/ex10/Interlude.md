@@ -18,4 +18,4 @@ This situation is called overfitting, because our model do a too good job at fit
 
 ### The training set, the test set, and the happy data scientist
 To avoid overfitting, you should **always** evaluate your model on new data.  
-To do so, now and forever you must allways divide your dataset in two parts: one for the training, and one for the evaluation of your model. 
+To do so, now and forever you must always divide your dataset in two parts: one for the training, and one for the evaluation of your model. 
