@@ -1,8 +1,8 @@
-## Evaluate
+# Evaluate
 
 <img src="day00/assets/Evaluate.png" />
 
-### Introducing the cost function
+## Introducing the cost function
 
 How good is our model ?
 It is hard to say by just looking at the plot. We can obviously observe that some lines seem to fit our data better than  others but it is not enough. 
