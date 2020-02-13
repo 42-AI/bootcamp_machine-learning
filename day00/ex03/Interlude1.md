@@ -20,16 +20,16 @@ Instead of $\hat{y} = ax + b$ we will use the following notation:
 $\hat{y} = \theta_0 + \theta_1 x$$.  
 
 You might have two questions at the moment:  
-- WTF is that weird $\theta$ symbol?
+- **WTF is that weird $\theta$ symbol?**  
 This strange symbol, $\theta$, is called "theta".  
 
-- Why change for this notation?  
+- **Why change for this notation?**  
 We are using the theta notation because, despite the fact it will a first seem more complicated, it is actually done to simplify the notation later.  
 Why?  
 Imagine we have to build a more complex model using a lot of parameters.  
-Something like $\hat{y} = ax_1 + bx_2 + ... + z$. How do you handle more than 23 paremeters?  
+Something like $\hat{y} = ax_1 + bx_2 + ... + z$. What if we run out of letters?  
 On the other hand, if you describe all your parameters using the theta notation, you can use as much parameters as you need. 
-With theta, you just have to increment the number to name the parameter: $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_2468 x_2468$ ... Easy right?
+With theta, you just have to increment the number to name the parameter: $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_{2468} x_{2468}$ ... Easy right?
   
 
 So now, we have $\hat{y} = \theta_0 + \theta_1 x$.  
@@ -47,7 +47,9 @@ To go a little further, lets consider a dataset containing $m$ data points calle
 
 What we have now are not single values for $x$ and $hat{y}$ but vectors of dimensions m * 1. The relation between our vectors can then be represented by the following formula:  
 $$
-\hat{y}_i = h_{\theta}(x) = \theta_0 + \theta_1 x_i \text{ for i = 1, ..., m}
+\begin{matrix}
+\hat{y}_i = \theta_0 + \theta_1 x_i & & \text{ for i = 1, ..., m}
+\end{matrix}
 $$  
   
 Where:
