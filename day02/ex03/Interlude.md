@@ -7,9 +7,9 @@ Then, you can calculate $\hat{y}$ with a simple product between $X'$ and $\theta
 
 $$\hat{y} = X' \cdot \theta = 
 \begin{bmatrix} 
-1 & X_{1}^{(1)} & \dots & X_{1}^{(n)}\\
+1 & X_{1}^{(1)} & \dots & X_{n}^{(1)}\\
 \vdots & \vdots & \ddots & \vdots\\
-1 & X_{m}^{(1)} & \dots &  X_{m}^{(n)}\end{bmatrix}
+1 & X_{1}^{(m)} & \dots &  X_{n}^{(m)}\end{bmatrix}
 \cdot
 \begin{bmatrix}
 \theta_0 \\ 
@@ -19,7 +19,7 @@ $$\hat{y} = X' \cdot \theta =
 \end{bmatrix} 
 = 
 \begin{bmatrix} 
-\theta_0 + \theta_{1} X_{1}^{(1)} + \dots + \theta_{n} X_{1}^{(n)}\\ 
+\theta_0 + \theta_{1} X_{1}^{(1)} + \dots + \theta_{n} X_{n}^{(1)}\\ 
 \vdots \\ 
-\theta_0 + \theta_{1} x_{m}^{(1)} + \dots + \theta_{n} X_{m}^{(n)}
+\theta_0 + \theta_{1} X_{1}^{(m)} + \dots + \theta_{n} X_{n}^{(m)}
 \end{bmatrix} $$
