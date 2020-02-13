@@ -7,7 +7,7 @@
 |   Forbidden functions : |  None                   |
 |   Remarks :             |  n/a                    |
 
-**Objectives:**
+## Objectives:
 
 Now that you understood how we can calculate the gradient, you will see how to do it with vectorized operations.
 The goal of this exercise is to produce the same result as in ex02 but this time you will use numpy ndarrays.
