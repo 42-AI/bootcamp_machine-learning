@@ -14,15 +14,15 @@ Such cases are called **multivariate models**. We are going to study them today.
 The first thing is to consider our training examples. If x was a vector of dimensions m * 1, it should now become a matrix of dimension m * n, where n is the number of parameters (sometimes called **features**) we want to use in our model.   
 $$
 X = \begin{bmatrix} 
-X_{1}^{(1)} & \dots & X_{1}^{(n)}\\
+X_{1}^{(1)} & \dots & X_{n}^{(1)}\\
 \vdots & \ddots & \vdots\\
-X_{m}^{(1)} & \dots & X_{m}^{(n)}\end{bmatrix}
+X_{1}^{(m)} & \dots & X_{n}^{(m)}\end{bmatrix}
 $$
 
 Where:
-- $X_i$ is the *ith* row of our matrix X, a vector of dimension n * 1
-- $X^{(i)}$ is the *ith* column of our matrix X, a vector of dimension m * 1
-- $X_i^{(j)}$ is the intersection of the *ith* row and the *jth* column of our matrix X, a real number
+- $X^{(i)}$ is the *ith* row of our matrix X, a vector of dimension n * 1
+- $X_{j}$ is the *jth* column of our matrix X, a vector of dimension m * 1
+- $X_j^{(i)}$ is the intersection of the *ith* row and the *jth* column of our matrix X, a real number
   
 
 #### The multivariate hypothesis
