@@ -12,15 +12,15 @@
 You must implement the following formula as a function:  
 
 $$
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)\\
 \nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)X_{i}^{(j)} \text{ for j = 1, ..., n}
 $$
 
 Where:  
-- $\nabla(J)$ is a vector of size n * 1, (this strange symbol : $\nabla$ is called nabla)
-- $X$ is a matrix of size m * n (i.e. a matrix containing m vectors of dimension n * 1)
+- $\nabla(J)$ is a vector of size (n+1) * 1, (this strange symbol : $\nabla$ is called nabla)
+- $X$ is a matrix of size m * n (i.e. a matrix containing m vectors of dimension 1 * n)
 - $y$ is a vector of dimension m * 1
-- $\theta$ is a vector of dimension n * 1
+- $\theta$ is a vector of dimension (n+1) * 1
 - $x_i$ is the ith component of vector $x$
 - $y_i$ is the ith component of vector $y$
 - $\nabla(J)_j$ is the jth component of $\nabla(J)$
@@ -35,9 +35,9 @@ def simple_gradient(x, y, theta):
     Args:
       x: has to be an numpy.ndarray, a matrice of dimension m * n.
       y: has to be an numpy.ndarray, a vector of dimension m * 1.
-      theta: has to be an numpy.ndarray, a vector n * 1.
+      theta: has to be an numpy.ndarray, a vector (n+1) * 1.
     Returns:
-      The gradient as a numpy.ndarray, a vector of dimensions n * 1, containg the result of the formula for all j.
+      The gradient as a numpy.ndarray, a vector of dimensions (n+1) * 1, containg the result of the formula for all j.
       None if x, y, or theta are empty numpy.ndarray.
       None if x, y and theta do not have compatible dimensions.
     Raises:
@@ -57,13 +57,13 @@ def simple_gradient(x, y, theta):
         [  1,  -5,  11],
         [  9, -11,   8]])
 >>> Y = np.array([2, 14, -13, 5, 12, 4, -19])
->>> Z = np.array([3,0.5,-6])
+>>> Z = np.array([0, 3, 0.5, -6])
 >>> vec_gradient(X, Y, Z)
-array([ -37.35714286,  183.14285714, -393.        ])
+array([-37.35714286, 183.14285714, -393.])
 >>>
->>> W = np.array([0,0,0])
+>>> W = np.array([0, 0, 0, 0])
 >>> vec_gradient(X, Y, W)
-array([  0.85714286,  23.28571429, -26.42857143])
+array([0.85714286, 23.28571429, -26.42857143])
 >>>
 >>> vec_gradient(X, X.dot(Z), Z)
 array([0., 0., 0.])

@@ -14,7 +14,7 @@ On the figure above, we can see that some value of $\theta_1$ are very bad to ma
 
 Knowing that fact, we can see that there is a specific value for $\theta_1$ which gives the minimum cost. This value is at the bottom of our graph. 
 
-Therefore, given any value of $theta_1$, improving our prediction means getting closer to the minimum of the cost function (the bottom of the curve). In other word: if we change the value of $theta_1$ to get closer to that minimum, our prediction will be better.  
+Therefore, given any value of $\theta_1$, improving our prediction means getting closer to the minimum of the cost function (the bottom of the curve). In other word: if we change the value of $\theta_1$ to get closer to that minimum, our prediction will be better.  
 
 #### But, how to get closer to the minimum?
 
