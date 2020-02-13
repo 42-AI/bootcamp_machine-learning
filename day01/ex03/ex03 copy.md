@@ -7,7 +7,7 @@
 |   Forbidden functions : |  None              |
 |   Remarks :             |  n/a               |
 
-**Objective:**
+## Objectives:
 
 You must implement the following formula as a function:  
 
@@ -27,7 +27,7 @@ Where:
 - $h_{\theta}(x_i)$ is our prediction for $y_i$: the result of the dot product of the vector $\theta$ and the vector $x_i$
 
 
-**Instructions:**
+## Instructions:
 In the gradient.py file create the following function as per the instructions given below:
 ```python
 def simple_gradient(x, y, theta):

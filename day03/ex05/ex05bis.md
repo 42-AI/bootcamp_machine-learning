@@ -24,7 +24,7 @@ Where:
 * $h$ also called y_pred or y_hat, is the calculated hypothesis and it represents the vector of predicted outputs (cf ex01).
 * $y$, also called y_true, represents the vector of desired outputs, either 1 or 0.
 
-**Instructions:**
+## Instructions:
 
 In the vec_log_loss.py file create the following function as per the instructions below: 
 ```python
@@ -46,7 +46,7 @@ def vec_log_loss_(y_true, y_pred, m, eps=1e-15):
 
 N.B: you might want to update your sigmoid function to work with numpy ndarrays ;) !
 
-**Examples:**
+## Examples:
 ```python
 import numpy as np
 from sigmoid import sigmoid_

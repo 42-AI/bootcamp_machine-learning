@@ -13,7 +13,7 @@ Now that you understood how we can calculate the gradient, you will see how to d
 The goal of this exercise is to produce the same result as in ex02 but this time you will use numpy ndarrays.
 You should only need one line of code to do this (`return ______`).
 
-**Instructions:**
+## Instructions:
 
 In the vec_log_gradient.py file create the following function as per the instructions below: 
 ```python
@@ -35,7 +35,7 @@ def vec_log_gradient_(x, y_true, y_pred):
 * x length (x.shape[0] if it is a 2d ndarray) should match y_true and y_pred length, i.e. we should have the same number of observations.
 * x width (x.shape[1] if it is a 2d ndarray) will be the number of variables of your model (add 1 if you choose to add an intercept value) and it should match theta's length, but this is for later when we will update theta in our gradient descent algorithm.
 
-**Examples:**
+## Examples:
 ```python
 import numpy as np
 from sigmoid import sigmoid_
