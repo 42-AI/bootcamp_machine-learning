@@ -1,6 +1,7 @@
 ## To the multivariate universe and beyond!
 
-Until now we used only very simple hypothesis: $h_{\theta}(x) = \theta_0 + \theta_1 x$. From this very simple hypothesis we have find a way to evaluate and improve our initial hypothesis.   
+Until now we used only very simple hypothesis: $h_{\theta}(x) = \theta_0 + \theta_1 x$.  
+From this very simple hypothesis we found a way to evaluate and improve our initial hypothesis.   
 But we are living a complex world, full of complex phenomenons.  
 How to build a model where more than one parameter (or even thousands of parameters) are involved?  
 Such cases are called **multivariate models**. We are going to study them today.  
@@ -28,7 +29,9 @@ Where:
 Then, we must update our hypothesis to take more than one parameter into account. 
 
 $$
-\hat{y}_i = \theta_0 + \theta_1 X_{i}^{(1)} + \dots + \theta_n X_{i}^{(n)} \text{ for i = 1, ..., m}
+\begin{matrix}
+\hat{y}_i = \theta_0 + \theta_1 X_{i}^{(1)} + \dots + \theta_n X_{i}^{(n)} & & \text{ for i = 1, ..., m}    
+\end{matrix}
 $$  
 
 Where:
