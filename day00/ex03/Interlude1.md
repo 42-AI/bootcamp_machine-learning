@@ -24,16 +24,16 @@ So if $\theta_0 = 33$ and $\theta_1 = 5$, then $\hat{y} = 33+ 5x$.
 
 To recap, this linear equation is our **hypothesis**. Then, all we will need to do is find the right values for our parameters $\theta_0$ and $\theta_1$ and we will get a fully-functional prediction **model**. 
 
-
 Now, how can we generate a set of predictions on an entire dataset? Let's consider a dataset containing $m$ data points (or space ships), called **examples**.  
 
 What we do is stack the $x$ and $\hat{y}$ values of all examples in vectors of length $m$. The relation between the elements in our vectors can then be represented by the following formula:  
+
 $$
 \begin{matrix}
 \hat{y}_i = \theta_0 + \theta_1 x_i & & \text{ for i = 1, ..., m}
 \end{matrix}
 $$  
-  
+
 Where:
 - $\hat{y}_i$ is the *ith* component of vector $y$
 - $x_i$ is the *ith* component of vector $x$   
