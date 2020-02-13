@@ -29,8 +29,10 @@ Now, how can we generate a set of predictions on an entire dataset? Let's consid
 
 What we do is stack the $x$ and $\hat{y}$ values of all examples in vectors of length $m$. The relation between the elements in our vectors can then be represented by the following formula:  
 $$
-\hat{y}_i = \theta_0 + \theta_1 x_i$$ 
-$$\text{for } i = 1, ..., m$$  
+\begin{matrix}
+\hat{y}_i = \theta_0 + \theta_1 x_i & & \text{ for i = 1, ..., m}
+\end{matrix}
+$$  
   
 Where:
 - $\hat{y}_i$ is the *ith* component of vector $y$
@@ -52,7 +54,7 @@ $$
 
 ## More information
 
-### Why the $\theta$ notation ?
+### Why the $\theta$ notation?
 
 You might have two questions at the moment:  
 - WTF is that weird  symbol?
@@ -67,7 +69,7 @@ On the other hand, if you describe all your parameters using the theta notation,
 With theta, you just have to increment the number to name the parameter: $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_2468 x_2468$ ... Easy right?  
 
 
-### Other notations you might encounter online
+### Other notation you might encounter online
 
 Because $\hat{y}$ is calculated with our linear hypothesis using $\theta$ and $x$, it is sometimes written as $h_{\theta}(x)$.
 The $h$ stands for *hypothesis*, and can be read as *"the result of our hypothesis h given x and theta"*.  
