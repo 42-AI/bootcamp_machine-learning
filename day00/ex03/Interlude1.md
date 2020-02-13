@@ -20,17 +20,39 @@ For example, if $a = 5$ and $b = 33$, then $\hat{y} = 5x + 33$.
 But in Machine Learning, we don't like using the letters $a$ and $b$. Instead we will use the following notation: 
 $$\hat{y} = \theta_0 + \theta_1 x$$  
 
+<<<<<<< HEAD
 So if $\theta_0 = 33$ and $\theta_1 = 5$, then $\hat{y} = 33+ 5x$.    
 
 To recap, this linear equation is our **hypothesis**. Then, all we will need to do is find the right values for our parameters $\theta_0$ and $\theta_1$ and we will get a fully-functional prediction **model**. 
+=======
+You might have two questions at the moment:  
+- **WTF is that weird $\theta$ symbol?**  
+This strange symbol, $\theta$, is called "theta".  
+
+- **Why change for this notation?**  
+We are using the theta notation because, despite the fact it will a first seem more complicated, it is actually done to simplify the notation later.  
+Why?  
+Imagine we have to build a more complex model using a lot of parameters.  
+Something like $\hat{y} = ax_1 + bx_2 + ... + z$. What if we run out of letters?  
+On the other hand, if you describe all your parameters using the theta notation, you can use as much parameters as you need. 
+With theta, you just have to increment the number to name the parameter: $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_{2468} x_{2468}$ ... Easy right?
+  
+>>>>>>> cc5b048d8ba6c4506bf3b3b5fde34370583f5e1a
 
 
 Now, how can we generate a set of predictions on an entire dataset? Let's consider a dataset containing $m$ data points (or space ships), called **examples**.  
 
 What we do is stack the $x$ and $\hat{y}$ values of all examples in vectors of length $m$. The relation between the elements in our vectors can then be represented by the following formula:  
 $$
+<<<<<<< HEAD
 \hat{y}_i = \theta_0 + \theta_1 x_i$$ 
 $$\text{for } i = 1, ..., m$$  
+=======
+\begin{matrix}
+\hat{y}_i = \theta_0 + \theta_1 x_i & & \text{ for i = 1, ..., m}
+\end{matrix}
+$$  
+>>>>>>> cc5b048d8ba6c4506bf3b3b5fde34370583f5e1a
   
 Where:
 - $\hat{y}_i$ is the *ith* component of vector $y$
