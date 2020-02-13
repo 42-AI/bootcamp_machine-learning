@@ -3,57 +3,39 @@
 <img src="day00/assets/Predict.png" />
 
 ## A very simple model
-[Intro : simple data set + plot
-We have some data.   We want to model it. First we need to make some assumptions, some hypothesis about the relationship tying together]
+[Intro : simple data set + plot]  
+We have some data.   We want to model it. First we need to make an assumption, or hypothesis, about the structure of the data and the relationship between the variables.
 
-Let's start with a very simple **hypothesis**: the relation between our variables can be represented using a linear equation. 
-[hypothesis: We will consider that the larger a house is, the more expensive it is. Furthermore, we will assume that the price increase is proportional to the size increase. By saying that, we assume that there is a linear relationship between the two variables. Then, all we need to do is to use the **linear equation** and adjust its parameters.]
+Let's start with a very simple and intuitive **hypothesis** on how the price of a spaceship can be predicted based on the power of its engines. We will consider that the more powerful the engines are, the more expensive the spaceship is. Furthermore, we will assume that the price increase is **proportional** to the power increase. In other words, we will look for a **linear relationship** between the two variables.
 
-This means that we are trying to represent the prediction as $\hat{y} = ax + b$.  
+This means that we will formulate the price prediction with a **linear equation**, that you might be already familiar with :  
+$$
+\hat{y} = ax + b
+$$
 
-We are putting this symbol '^' over the $y$ to represent the fact that $\hat{y}$ is a **prediction** of the true value of $y$ given the **parameters** $a$ and $b$ and the input value $x$.  
+We add the '^' symbol over the $y$ to specify that $\hat{y}$ *(pronounced y-hat)* is a **prediction**, or estimation, of the actual value of $y$, given the **parameters** $a$ and $b$ and the input value $x$.  
 
 For example, if $a = 5$ and $b = 33$, then $\hat{y} = 5x + 33$.  
 
-We are going to do a slightly change in our notation now.  
-Instead of $\hat{y} = ax + b$ we will use the following notation:  
-$\hat{y} = \theta_0 + \theta_1 x$$.  
+But in Machine Learning, we don't like using the letters $a$ and $b$. Instead we will use the following notation: 
+$$\hat{y} = \theta_0 + \theta_1 x$$  
 
-You might have two questions at the moment:  
-- **WTF is that weird $\theta$ symbol?**  
-This strange symbol, $\theta$, is called "theta".  
+So if $\theta_0 = 33$ and $\theta_1 = 5$, then $\hat{y} = 33+ 5x$.    
 
-- **Why change for this notation?**  
-We are using the theta notation because, despite the fact it will a first seem more complicated, it is actually done to simplify the notation later.  
-Why?  
-Imagine we have to build a more complex model using a lot of parameters.  
-Something like $\hat{y} = ax_1 + bx_2 + ... + z$. What if we run out of letters?  
-On the other hand, if you describe all your parameters using the theta notation, you can use as much parameters as you need. 
-With theta, you just have to increment the number to name the parameter: $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_{2468} x_{2468}$ ... Easy right?
-  
+To recap, this linear equation is our **hypothesis**. Then, all we will need to do is find the right values for our parameters $\theta_0$ and $\theta_1$ and we will get a fully-functional prediction **model**. 
 
-So now, we have $\hat{y} = \theta_0 + \theta_1 x$.  
-If $\theta_0 = 33$ and $\theta_1 = 5$, then $\hat{y} = 33+ 5x$.    
+Now, how can we generate a set of predictions on an entire dataset? Let's consider a dataset containing $m$ data points (or space ships), called **examples**.  
 
-This simple equation represents our **model**, also called our **hypothesis**. This model draws a **linear relationship between $\hat{y}$ and $x$**.  
+What we do is stack the $x$ and $\hat{y}$ values of all examples in vectors of length $m$. The relation between the elements in our vectors can then be represented by the following formula:  
 
-Because $\hat{y}$ is build from our hypothesis, using $\theta$ and $x$, it is sometimes written as $h_{\theta}(x)$.
-The $h$ stands for *hypothesis*, and can be read as *"the result of our hypothesis h given x and theta"*.  
-
-Then if $x = 7$ we can calculate that $\hat{y} = h_{\theta}(x) = 33 + 5 \times 7 = 68$.
-We can now say that according to our linear model, the **predicted value** of $y$ given $x  = 7$ is 68.     
-
-To go a little further, lets consider a dataset containing $m$ data points called **examples**.  
-
-What we have now are not single values for $x$ and $hat{y}$ but vectors of dimensions m * 1. The relation between our vectors can then be represented by the following formula:  
 $$
 \begin{matrix}
 \hat{y}_i = \theta_0 + \theta_1 x_i & & \text{ for i = 1, ..., m}
 \end{matrix}
 $$  
-  
+
 Where:
-- $y_i$ is the *ith* component of vector $y$
+- $\hat{y}_i$ is the *ith* component of vector $y$
 - $x_i$ is the *ith* component of vector $x$   
 
 Which can be experessed as:  
@@ -64,5 +46,33 @@ $$
 For example,
 $$
 \text{given } \theta = \begin{bmatrix}33 \\ 5 \end{bmatrix} \text{ and } x = \begin{bmatrix}1 \\ 3 \end{bmatrix} \text{: }$$
-$$\hat{y} = h_{\theta}(x) = \begin{bmatrix} 33 +  1 \times 5 \\ 33 + 3 \times 5\end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} 
+$$\hat{y} = h_{\theta}(x) = \begin{bmatrix} 33 +  5 \times 1 \\ 33 + 5 \times 3\end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} 
 $$    
+
+
+
+
+## More information
+
+### Why the $\theta$ notation?
+
+You might have two questions at the moment:  
+- WTF is that weird  symbol?
+This strange symbol, $\theta$, is called "theta".  
+
+- Why use for this notation? Why not letters like $ax + b$ ?
+We are using the theta notation because, despite the fact it will at first seem more complicated, it is actually done to simplify the notation later.  
+Why?  
+Imagine we have to build a more complex model using a lot of parameters.  
+Something like $\hat{y} = ax_1 + bx_2 + ... + z$. How do you handle more than 26 paremeters?  
+On the other hand, if you describe all your parameters using the theta notation, you can use as many parameters as you need. 
+With theta, you just have to increment the number to name the parameter: $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_2468 x_2468$ ... Easy right?  
+
+
+### Other notation you might encounter online
+
+Because $\hat{y}$ is calculated with our linear hypothesis using $\theta$ and $x$, it is sometimes written as $h_{\theta}(x)$.
+The $h$ stands for *hypothesis*, and can be read as *"the result of our hypothesis h given x and theta"*.  
+
+Then if $x = 7$ we can calculate that $\hat{y} = h_{\theta}(x) = 33 + 5 \times 7 = 68$.
+We can now say that according to our linear model, the **predicted value** of $y$ given $x  = 7$ is 68. 
