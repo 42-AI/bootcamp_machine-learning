@@ -30,17 +30,17 @@ What we do is stack the $x$ and $\hat{y}$ values of all examples in vectors of l
 
 $$
 \begin{matrix}
-\hat{y}_i = \theta_0 + \theta_1 x_i & & \text{ for i = 1, ..., m}
+\hat{y}^{(i)} = \theta_0 + \theta_1 x^{(i)} & & \text{ for i = 1, ..., m}
 \end{matrix}
 $$  
 
 Where:
-- $\hat{y}_i$ is the *ith* component of vector $y$
-- $x_i$ is the *ith* component of vector $x$   
+- $\hat{y}^{(i)}$ is the *ith* component of vector $y$
+- $x^{(i)}$ is the *ith* component of vector $x$   
 
 Which can be experessed as:  
 $$
-\hat{y} = \begin{bmatrix}\theta_0 + \theta_1 \times x_1 \\ \vdots \\  \theta_0 + \theta_1 \times x_m\ \end{bmatrix}
+\hat{y} = \begin{bmatrix}\theta_0 + \theta_1 \times x^{(1)} \\ \vdots \\  \theta_0 + \theta_1 \times x^{(m)}\ \end{bmatrix}
 $$  
 
 For example,
