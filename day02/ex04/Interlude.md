@@ -7,7 +7,7 @@
 From our multivariate linear hypothesis we can derive our multivariate gradient:  
 $$
 \nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}X^{(i)} - y^{(i)}) \\
-\nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X^{(i)} - y^{(i)})X_{j}^{(i)} \text{ for j = 1, ..., n}
+\nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X^{(i)} - y^{(i)})x_{j}^{(i)} \text{ for j = 1, ..., n}
 $$
 
 Where:  
