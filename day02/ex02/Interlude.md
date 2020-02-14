@@ -14,15 +14,15 @@ Such cases are called **multivariate models**. We are going to study them today.
 The first thing is to consider our training examples. If x was a vector of dimensions m * 1, it should now become a matrix of dimension m * n, where n is the number of parameters (sometimes called **features**) we want to use in our model.   
 $$
 X = \begin{bmatrix} 
-X_{1}^{(1)} & \dots & X_{n}^{(1)}\\
+x_{1}^{(1)} & \dots & x_{n}^{(1)}\\
 \vdots & \ddots & \vdots\\
-X_{1}^{(m)} & \dots & X_{n}^{(m)}\end{bmatrix}
+x_{1}^{(m)} & \dots & x_{n}^{(m)}\end{bmatrix}
 $$
 
 Where:
-- $X^{(i)}$ is the *ith* row of our matrix X, a vector of dimension n * 1
-- $X_{j}$ is the *jth* column of our matrix X, a vector of dimension m * 1
-- $X_j^{(i)}$ is the intersection of the *ith* row and the *jth* column of our matrix X, a real number
+- $x^{(i)}$ is the *ith* row of our matrix $X$
+- $x_{j}$ is the *jth* column of our matrix X
+- $x_{j}^{(i)}$ is the intersection of the *ith* row and the *jth* column of our matrix X, a real number
   
 
 #### The multivariate hypothesis
@@ -30,7 +30,7 @@ Then, we must update our hypothesis to take more than one parameter into account
 
 $$
 \begin{matrix}
-\hat{y}_i = \theta_0 + \theta_1 X_{i}^{(1)} + \dots + \theta_n X_{i}^{(n)} & & \text{ for i = 1, ..., m}    
+\hat{y}_i = \theta_0 + \theta_1 x_{1}^{(i)} + \dots + \theta_n x_{n}^{(i)} & & \text{ for i = 1, ..., m}    
 \end{matrix}
 $$  
 
