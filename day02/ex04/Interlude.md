@@ -18,7 +18,7 @@ Where:
 - $X^{(i)}$ is the ith column of matrix $X$, a vector of dimension m * 1
 - $y^{(i)}$ is the ith component of vector $y$
 - $\nabla(J)_j$ is the jth component of $\nabla(J)$
-- $h_{\theta}(X^{(i)})$ is our prediction for $y_i$: the result of the dot product of the vector $\theta$ and the vector $X^{(i)}$  
+- $h_{\theta}(X^{(i)})$ is our prediction for $y^{(i)}$: the result of the dot product of the vector $\theta$ and the vector $X^{(i)}$  
 
 Therefore, as in the previous days, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
 
