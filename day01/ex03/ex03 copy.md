@@ -12,8 +12,8 @@
 You must implement the following formula as a function:  
 
 $$
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)\\
-\nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y_i)X_{i}^{(j)} \text{ for j = 1, ..., n}
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y^{(i)})\\
+\nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(X_i) - y^{(i)})X_{i}^{(j)} \text{ for j = 1, ..., n}
 $$
 
 Where:  
@@ -21,10 +21,10 @@ Where:
 - $X$ is a matrix of size m * n (i.e. a matrix containing m vectors of dimension 1 * n)
 - $y$ is a vector of dimension m * 1
 - $\theta$ is a vector of dimension (n+1) * 1
-- $x_i$ is the ith component of vector $x$
-- $y_i$ is the ith component of vector $y$
+- $x^{(i)}$ is the ith component of vector $x$
+- $y^{(i)}$ is the ith component of vector $y$
 - $\nabla(J)_j$ is the jth component of $\nabla(J)$
-- $h_{\theta}(x_i)$ is our prediction for $y_i$: the result of the dot product of the vector $\theta$ and the vector $x_i$
+- $h_{\theta}(x^{(i)})$ is our prediction for $y^{(i)}$: the result of the dot product of the vector $\theta$ and the vector $x^{(i)}$
 
 
 ## Instructions:
