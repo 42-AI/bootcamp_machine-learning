@@ -1,13 +1,6 @@
-
-# Bootcamp ML
-
 # Day01 - Linear Regression
 
-During this day you will learn the first concepts constituing the field of machine learning.
-
-
-
-
+During this day you will learn the first concepts constituting the field of machine learning.
 
 ## Notions of the day
 
@@ -18,52 +11,37 @@ Matrix operations, gradient descent, cost function, normal equation, MSE, RMSE R
 * The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
 * The norm: during this bootcamp you will follow the Pep8 standards https://www.python.org/dev/peps/pep-0008/
 * The function eval is never allowed.
-* The exercices are ordered from the easiest to the hardest.
+* The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask question in the dedicated channel in Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github: https://github.com/42-AI/bootcamp_machine-larning/issues.
+* You can also ask questions in the dedicated channel in the 42 AI Slack: 42-ai.slack.com.
+* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github:  https://github.com/42-AI/bootcamp_machine-learning/issues.
 
 ## Helper 
 
 Ensure that you have the right Python version.
 
 ```
-$> which python
+> which python
 /goinfre/miniconda/bin/python
-$> python -V
+> python -V
 Python 3.7.*
-$> which pip
+> which pip
 /goinfre/miniconda/bin/pip
 ```
 
-## Algorithms
+### Exercise 00 - Hypothesis Concept in Machine Learning
 
-### Exercice 00 - Linear Regression
-Reimplement a part of **sklearn.linear_model.LinearRegression** 
+### Exercise 01 - Cost Function Concept  
 
-Methods:
-  - .get_params() - get the parameters theta of the hypothesis,
-  - .set_params() - set the parameters theta of the hypothesis,
-  - .predict() - calculate the predicted values based on the fitted linear model,
+### Exercice 02 - Descent Gradient
 
-Metric:
-  - .mse() - mean square error metric.
+### Exercise 03 - The Linear Regression with Class
 
-### Exercise 01 - Multiples Features and Linear Gradient Descent  
-Reimplement a part of **sklearn.linear_model.LinearRegression** and the metric RMSE:
-  
-Method:
-  - .fit() - fit based on the method of the linear gradient descent.
+### Exercise 04 - Linear Regression
 
-Metric:
-  - .rmse() - root mean square error metric.
+### Exercise 05 - Multiples features and Linear Gradient Descent
 
-### Exercice 02 - Multiples Features and Normal Equation
-Implement the normal equation and the metric R-score:
+### Exercise 06 - Multiples features and Normal Equation
 
-Method:
-  - .normalequation() - fit based on the method of the normal equation.
-
-Metric:
-  - .rscore() - R score metric.
+### Exercise 07 (Bonus) - Learning Rate and Quadratic Hypothesis
