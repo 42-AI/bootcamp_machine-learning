@@ -57,7 +57,7 @@ Python 3.7.*
 
 ## Model Evaluation
 
-### Exercice 06 - Accuracy
+### Exercise 06 - Accuracy
 
 ### Exercise 07 - Precision
 

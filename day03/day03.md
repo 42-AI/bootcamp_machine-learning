@@ -58,34 +58,34 @@ Python 3.7.*
 
 ## Mathematical delights (continued)
 
-### Exercice 00 - Ridge - iterative version 
+### Exercise 00 - Regularization - iterative version
 
-### Exercice 01 - Ridge - vectorized version
+### Exercise 01 - Regularization - vectorized version
 
-### Exercice 02 - Regularized MSE
+### Exercise 02 - Regularized Mean Squared Error
 
-### Exercice 03 - Regularized Linear Gradient - iterative version
+### Exercise 03 - Regularized Linear Gradient - iterative version
 
-### Exercice 04 - Regularized Linear Gradient - vectorized version
+### Exercise 04 - Regularized Linear Gradient - vectorized version
 
-### Exercice 05 - Regularized Logistic Loss
+### Exercise 05 - Regularized Logistic Loss Function
 
-### Exercice 06 - Regularized Logistic Gradient - iterative version
+### Exercise 06 - Regularized Logistic Gradient - iterative version
 
-### Exercice 07 - Regularized Logistic Gradient - vectorized version
+### Exercise 07 - Regularized Logistic Gradient - vectorized version
 
 
 ## Algorithm
 
-### Exercice 08 - Ridge regression
+### Exercise 08 - Ridge Regression Method
 
-### Exercice 09 - Regularized Logistic regression
+### Exercise 09 - Regularized Logistic regression
 
 
 ## Feature Engineering
 
-### Exercice 10 - Z-score standardization
+### Exercise 10 - Z-score standardization
 
-### Exercice 11 - Min-max standardization
+### Exercise 11 - Min-max standardization
 
-### Exercice 12 - Polynomial features + interaction terms
+### Exercise 12 - Polynomial Features
