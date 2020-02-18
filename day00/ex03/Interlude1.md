@@ -1,6 +1,6 @@
 # Predict 
 
-<img src="day00/assets/Predict.png" />
+<img src="../assets/Predict.png" />
 
 ## A very simple model
 [Intro : simple data set + plot]  

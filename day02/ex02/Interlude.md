@@ -8,7 +8,7 @@ Such cases are called **multivariate models**. We are going to study them today.
 
 
 ### Predict 
-<img src="day00/assets/Predict.png" />  
+<img src="../assets/Predict.png" />  
 
 #### The examples as a m * n matrix
 The first thing is to consider our training examples. If x was a vector of dimensions m * 1, it should now become a matrix of dimension m * n, where n is the number of parameters (sometimes called **features**) we want to use in our model.   
