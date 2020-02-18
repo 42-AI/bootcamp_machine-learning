@@ -1,6 +1,6 @@
 ## Improve 
 
-<img src="day00/assets/Predict.png" />  
+<img src="../assets/Predict.png" />  
 
 #### Multivariate gradient
 

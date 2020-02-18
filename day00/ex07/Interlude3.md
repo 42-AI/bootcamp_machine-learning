@@ -1,6 +1,6 @@
 # Evaluate
 
-<img src="day00/assets/Evaluate.png" />
+<img src="../assets/Evaluate.png" />
 
 ## Introducing the cost function
 
