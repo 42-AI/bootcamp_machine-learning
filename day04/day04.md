@@ -19,21 +19,19 @@ If you don't have the time to recode everything try to grasp at least the key co
 
 ## Useful Ressources
 
-- Gini impurity:
-  * https://victorzhou.com/blog/gini-impurity/
-- Shannon entropy:
-  * https://www.youtube.com/watch?v=9r7FIXEAGvs&feature=youtu.be
-- Decision trees:
-  * Statquest: https://www.youtube.com/watch?v=7VeUPuFGJHk&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=34
-  * Building a decision tree step by step: https://www.youtube.com/watch?v=LDRbO9a6XPU&feature=youtu.be
-  * Sklearn doc: https://scikit-learn.org/stable/modules/tree.html#tree
-  * On decision tree regressors: https://gdcoder.com/decision-tree-regressor-explained-in-depth/
-  * ML course on decision trees. Beware principles are the same but implementation algorithm is not sklearn's one.
-  https://www.youtube.com/watch?v=eKD5gxPPeY0&list=PLBv09BD7ez_4temBw7vLA19p3tdQH6FYO
-- Digging deeper:
-  * Nice article. Not everything relevant for the day: https://mlcourse.ai/articles/topic3-dt-knn/
-  * Stackoverflow on difference between several decision trees algorithms:
-  https://stackoverflow.com/questions/9979461/different-decision-tree-algorithms-with-comparison-of-complexity-or-performance
+- Gini impurity:  
+  * [A Simple Explanation of Gini Impurity (with examples)](https://victorzhou.com/blog/gini-impurity/)  
+- Shannon entropy:  
+  * [Shannon Entropy and Information Gain](https://www.youtube.com/watch?v=9r7FIXEAGvs&feature=youtu.be)  
+- Decision trees:  
+  * [Statquest](https://www.youtube.com/watch?v=7VeUPuFGJHk&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=34)  
+  * [Building a decision tree step by step](https://www.youtube.com/watch?v=LDRbO9a6XPU&feature=youtu.be)  
+  * [Sklearn doc](https://scikit-learn.org/stable/modules/tree.html#tree)  
+  * [On decision tree regressors](https://gdcoder.com/decision-tree-regressor-explained-in-depth/)  
+  * [ML course on decision trees](https://www.youtube.com/watch?v=eKD5gxPPeY0&list=PLBv09BD7ez_4temBw7vLA19p3tdQH6FYO). Beware principles are the same but implementation algorithm is not sklearn's one.  
+- Digging deeper:  
+  * [Nice article](https://mlcourse.ai/articles/topic3-dt-knn/). Not everything relevant for the day.  
+  * [Stackoverflow on difference between several decision trees algorithms](https://stackoverflow.com/questions/9979461/different-decision-tree-algorithms-with-comparison-of-complexity-or-performance)  
 
 
 ## General rules

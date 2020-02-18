@@ -9,8 +9,7 @@ Sum, mean, variance, standard deviation, vectors and matrices operations.
 
 ## Useful Ressources  
   
-Machine Learning MOOC - Stanford:  
-https://www.coursera.org/learn/machine-learning/home/week/1  
+[Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/1)  
 
 ### Week 1: 
 
