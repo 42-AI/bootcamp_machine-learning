@@ -18,8 +18,7 @@ Congratulations! You made it to the day03 of the machine learning bootcamp! Toda
 
 ## Useful Ressources  
   
-Machine Learning MOOC - Stanford:  
-https://www.coursera.org/learn/machine-learning/home/week/3
+[Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/3)  
 
 ### Week 3: 
 
