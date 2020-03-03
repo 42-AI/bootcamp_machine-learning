@@ -1,0 +1,5 @@
+Link to train_dataset_clean.csv and test_dataset_clean.csv:
+https://drive.google.com/file/d/1thPCFmGDTmD8QDuvvlrvhUxXtRiqrcX_/view
+
+Link to the Toward Data Science article evoked in ex05:
+https://towardsdatascience.com/logistic-regression-classifier-on-census-income-data-e1dbef0b5738?gi=7e99adc47095
