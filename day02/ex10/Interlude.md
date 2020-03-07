@@ -11,12 +11,12 @@ But, if you look at the plots of the previous model evaluated as the best one, y
 ### Something is rotten in the state of our model...
 Take a look at the following plot. 
 
-<img src="day03/assets/overfitt.png" />  
+<img src="../assets/overfitt.png" />  
 
 You can see that the prediction line fits perfectly each data points but miss totaly to capture properly the relationship between $x$ and $y$.  
 And now, if we add some data points to our model, we see that the prediction on such new examples will be performed terribly. 
 
-<img src="day03/assets/overfitt_with_dots.png" />  
+<img src="../assets/overfitt_with_dots.png" />  
 
 This situation is called overfitting, because our model do a too good job at fitting the data. Because of that is now impossible for the model to properly generalise to new data.
 
