@@ -1,6 +1,6 @@
 ### Improve
 
-<img src="../assets/Improve.png" />
+<img src="../../day00/assets/Improve.png" />
 
 Yesterday, you saw the first two steps of the learning process: start with a prediction and evaluate it. Now we are going to learn the third part: how to improve it!  
 

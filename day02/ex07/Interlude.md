@@ -5,10 +5,10 @@ Being able to handle multivariate linear regression allows us to manipulate poly
 
 Polynomial hypothesis look like this: 
 $$
-\hat{y}_i = \theta_0 + \theta_1 x  +\theta_2 x^{2} + \dots + \theta_n x^{n}
+\hat{y} = \theta_0 + \theta_1 x  +\theta_2 x^{2} + \dots + \theta_n x^{n}
 $$  
 
-In the above formula, the same parameter $x^{(i)}$ is duplicated and raised to some power. This allows more complex hypothesis to be represented.  
+In the above formula, the same parameter $x$ is duplicated and raised to some power. This allows more complex hypothesis to be represented.  
 Sometimes (often?) the relationship between the variables is not linear.  
   
 For example, the predicted variable could be better represented by a formula such as $\hat{y}_i = 17 -  3x  + 5 x^{2}$.
