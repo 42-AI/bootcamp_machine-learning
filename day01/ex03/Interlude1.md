@@ -1,25 +1,25 @@
 ### Improve
 
-<img src="../../day00/assets/Improve.png" />
+<img src="../assets/Improve.png" />
 
 Yesterday, you saw the first two steps of the learning process: start with a prediction and evaluate it. Now we are going to learn the third part: how to improve it!  
 
-Given our measure of performance, improvement imply to **reduce the loss** measured by our cost function. If we plot the cost of our prediction given $\theta_1$ we obtain a curve like this one: 
+Given our measure of performance, improvement implies **reducing the loss (or cost)** measured by our cost function. If we plot the cost of our prediction given $\theta_1$ we obtain a curve like this one: 
 
 [IMG cost func]
 
-On the figure above, we can see that some value of $\theta_1$ are very bad to makes predictions and some others are way better to predict the values of $y$.
+On the graph above, we can see that some values of $\theta_1$ generate awful predictions, while others are way better at predicting the value of $y$.
 
 [IMG BAD / VS GOOD]
 
-Knowing that fact, we can see that there is a specific value for $\theta_1$ which gives the minimum cost. This value is at the bottom of our graph. 
+Knowing that fact, we can expect to find one specific value of $\theta_1$ for which the resulting cost is minimal. This value is at the bottom of our graph. 
 
-Therefore, given any value of $\theta_1$, improving our prediction means getting closer to the minimum of the cost function (the bottom of the curve). In other word: if we change the value of $\theta_1$ to get closer to that minimum, our prediction will be better.  
+Therefore, given any value of $\theta_1$, improving our prediction means getting closer to the minimum of the cost function (the bottom of the curve). In other words: if we change the value of $\theta_1$ in order to move closer to that minimum, our prediction will be better.  
 
 #### But, how to get closer to the minimum?
 
 Excellent question dear reader. I am glad you asked!  
-The first step is to find the direction in which you want to go.  
+The first step is to find the direction in which you want to go. Typically, we get that information with the __*slope*__ of the curve.  
 This can be done by calculating the derivative of our cost function. 
 
-(If you do not feel comfortable with derivatives, having an overview of what it is about could be a good idea)
+The story gets a little more complicated, however, since we have two parameters to adjust: $\theta_0$ and $\theta_1$. Not just $\theta_1$. Therefore we need to calculate separate __*partial derivatives*__ of our cost function for each theta parameter, and package them in a vector, which is called __*gradient*__ (noted $\nabla$).
