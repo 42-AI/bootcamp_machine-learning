@@ -43,7 +43,7 @@ $$
 \nabla(J)_j = \frac{1}{m} (X'\theta - y)X'_{j} & & \text{ for j = 0, 1}
 \end{matrix}
 $$
-- Second, we need to tweak the equation a bit so that it directly returns a $\nabla(J)$ vector with two components.
+- Second, we need to tweak the equation a bit so that it directly returns a $\nabla(J)$ vector containing both $\nabla(J)_0$ and $\nabla(J)_1$.
 $$
 \nabla(J) = \frac{1}{m} X'^\mathsf{T}(X'\theta - y)    
 $$  
