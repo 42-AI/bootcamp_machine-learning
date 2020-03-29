@@ -18,7 +18,7 @@ And now, if we add some data points to our model, we see that the prediction on 
 
 <img src="../assets/overfitt_with_dots.png" />  
 
-This situation is called overfitting, because our model do a too good job at fitting the data. Because of that is now impossible for the model to properly generalise to new data.
+This situation is called overfitting, because our model do a too good job at fitting the data. Because of that, it is now impossible for the model to properly generalise to new data.
 
 ### The training set, the test set, and the happy data scientist
 To avoid overfitting, **you should always evaluate your model on new data**.  
