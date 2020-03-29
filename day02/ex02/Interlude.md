@@ -21,8 +21,8 @@ $$
 
 Where:
 - $x^{(i)}$ is the *ith* row of our matrix $X$
-- $x_{j}$ is the *jth* column of our matrix X
-- $x_{j}^{(i)}$ is the intersection of the *ith* row and the *jth* column of our matrix X, a real number
+- $x_{j}$ is the *jth* column of our matrix $X$
+- $x_{j}^{(i)}$ is the intersection of the *ith* row and the *jth* column of our matrix $X$, a real number
   
 
 #### The multivariate hypothesis
