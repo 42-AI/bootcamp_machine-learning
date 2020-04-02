@@ -1,17 +1,22 @@
-## To the multivariate universe and beyond!
+## To the Multivariate Universe and Beyond!
 
-Until now we used only very simple hypothesis: $h_{\theta}(x) = \theta_0 + \theta_1 x$.  
-From this very simple hypothesis we found a way to evaluate and improve our initial hypothesis.   
-But we are living a complex world, full of complex phenomenons.  
-How to build a model where more than one parameter (or even thousands of parameters) are involved?  
-Such cases are called **multivariate models**. We are going to study them today.  
+Until now we've used a very simple hypothesis: $h_{\theta}(x) = \theta_0 + \theta_1 x$  
+With this very simple hypothesis we found a way to evaluate and improve our predictions.  
+
+That's all very neat, but we live in a world full of complex phenomena, that a model using this hypothesis would fail miserably at predicting. If we take weather forecasting for example, how easy do you think it would be to predict tomorrow's temperature with just one variable (say, the current atmospheric pressure). A model based on just one variable is too simple to account for the complexity of this phenomenon.  
+
+ Now what if, on top of the atmospheric pressure, we could take into account the current temperature, humidity, wind, sunlight, and any useful information we can get our hands on?
+
+We'd need a model where more than one variable (and even thousands of variables) can be involved. That's what we call a **multivariate model**. And that's today's topic!  
 
 
 ### Predict 
 <img src="../../day00/assets/Predict.png" />  
 
-#### The examples as a m * n matrix
-The first thing is to consider our training examples. If x was a vector of dimensions m * 1, it should now become a matrix of dimension m * n, where n is the number of parameters (sometimes called **features**) we want to use in our model.   
+#### Representing the examples as an $m * n$ matrix
+First we need to reconsider how we represent the training examples.  Now that we want to describe each training example with not just one, but many variables, we need more than a vector. We need a __matrix__!  
+
+So instead of an $x$ vector of dimension $m * 1$, we now have a matrix of dimension $m * n$, where $n$ is the number of **features** that describe each training example. The notation for that matrix is a capital $X$.   
 $$
 X = \begin{bmatrix} 
 x_{1}^{(1)} & \dots & x_{n}^{(1)}\\
@@ -20,9 +25,9 @@ x_{1}^{(m)} & \dots & x_{n}^{(m)}\end{bmatrix}
 $$
 
 Where:
-- $x^{(i)}$ is the *ith* row of our matrix $X$
-- $x_{j}$ is the *jth* column of our matrix $X$
-- $x_{j}^{(i)}$ is the intersection of the *ith* row and the *jth* column of our matrix $X$, a real number
+- $x^{(i)}$ is the $i^{th}$ row in our $X$ matrix 
+- $x_{j}$ is the $j^{th}$ column in our $X$ matrix 
+- $x_{j}^{(i)}$ is the intersection of the $i^{th}$ row and the $j^{th}$ column of in our $X$ matrix. It's a real number.
   
 
 #### The multivariate hypothesis
@@ -30,13 +35,16 @@ Then, we must update our hypothesis to take more than one parameter into account
 
 $$
 \begin{matrix}
-\hat{y}_i = \theta_0 + \theta_1 x_{1}^{(i)} + \dots + \theta_n x_{n}^{(i)} & & \text{ for i = 1, ..., m}    
+\hat{y}^{(i)} = \theta_0 + \theta_1 x_{1}^{(i)} + \dots + \theta_n x_{n}^{(i)} & & \text{ for i = 1, ..., m}    
 \end{matrix}
 $$  
 
 Where:
-- $X$ is a matrix of dimension m * n, the matrix of examples
-- $\hat{y}$ is a vector of dimension m * 1, the vector of predicted values
-- $\theta$ is a vector of dimension (n + 1) * 1, the vector of parameters
+- $\hat{y}^{(i)}$ is the model's prediction for the $i^{th}$example
+- $x_{1}^{(i)}$ is the first feature of the $i^{th}$example
+- $\theta$ is a vector of dimension $(n + 1) * 1$, the parameter vector
   
+You will notice that we now have two indices: $i$ and $j$. They should not be confused:
+- $i$ refers to one of the $m$ examples in the dataset (line number in the $X$ matrix)
+- $j$ refers to one of the $n$ features that describe each example (column number in the $X$ matrix)
 
