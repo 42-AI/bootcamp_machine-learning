@@ -16,7 +16,7 @@ We'd need a model where more than one variable (and even thousands of variables)
 #### Representing the examples as an $m * n$ matrix
 First we need to reconsider how we represent the training examples.  Now that we want to describe each training example with not just one, but many variables, we need more than a vector. We need a __matrix__!  
 
-So instead of an $x$ vector of dimension $m * 1$, we now have a matrix of dimension $m * n$, where $n$ is the number of **features** that describe each training example. The notation for that matrix is a capital $X$.   
+So instead of an $x$ vector of dimension $m * 1$, we now have a matrix of dimension $m * n$, where $n$ is the number of **features** that describe each training example. We call it the **design matrix**, denoted by a capital $X$.   
 $$
 X = \begin{bmatrix} 
 x_{1}^{(1)} & \dots & x_{n}^{(1)}\\
