@@ -1,4 +1,4 @@
-## To the Multivariate Universe and Beyond!
+# To the Multivariate Universe and Beyond!
 
 Until now we've used a very simple hypothesis: $h_{\theta}(x) = \theta_0 + \theta_1 x$  
 With this very simple hypothesis we found a way to evaluate and improve our predictions.  
@@ -10,10 +10,10 @@ That's all very neat, but we live in a world full of complex phenomena, that a m
 We'd need a model where more than one variable (and even thousands of variables) can be involved. That's what we call a **multivariate model**. And that's today's topic!  
 
 
-### Predict 
+# Predict 
 <img src="../../day00/assets/Predict.png" />  
 
-#### Representing the examples as an $m * n$ matrix
+## Representing the examples as an $m * n$ matrix
 First we need to reconsider how we represent the training examples.  Now that we want to describe each training example with not just one, but many variables, we need more than a vector. We need a __matrix__!  
 
 So instead of an $x$ vector of dimension $m * 1$, we now have a matrix of dimension $m * n$, where $n$ is the number of **features** that describe each training example. We call it the **design matrix**, denoted by a capital $X$.   
@@ -30,7 +30,7 @@ Where:
 - $x_{j}^{(i)}$ is the intersection of the $i^{th}$ row and the $j^{th}$ column of in our $X$ matrix. It's a real number.
   
 
-#### The multivariate hypothesis
+## The multivariate hypothesis
 Then, we must update our hypothesis to take more than one parameter into account. 
 
 $$
