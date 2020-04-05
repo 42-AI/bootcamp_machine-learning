@@ -1,16 +1,18 @@
-## Introducting polynomial models
+## Introducing Polynomial Models
 
-### Polynomial hypothesis
-Being able to handle multivariate linear regression allows us to manipulate polynomial features and then create polynomial hypothesis. 
+You probably noticed that the method we use is called *linear regression* for a reason: the model generates all of its predictions on a straight line. However, we often encounter features that don't have a linear relationship with the predicted variable, like in the figure below:
 
-Polynomial hypothesis look like this: 
+<img src="../assets/polynomial_straight_line.png"/>
+
+In that case, we are stuck with a straight line that can't fit the data points properly. In this example, what if we could express $y$ not as a function of $x$, but also of $x^2$, and maybe even $x^3$ and $x^4$? We could make a hypothesis that draws a nice **curve** that would better fit the data. That's where polynomial features can help!
+
+### Polynomial features
+First we get to do some *feature engineering*. We create new features by raising our initial feature to the power of 2, and then 3, 4... as far as we want to go. For each new feature we need to create a new column in the dataset.
+
+### Polynomial Hypothesis
+Now that we created our new features, we can combine them in a linear hypothesis that looks just the same as what we're used to: 
 $$
 \hat{y} = \theta_0 + \theta_1 x  +\theta_2 x^{2} + \dots + \theta_n x^{n}
 $$  
+It's a little strange beacause we are building a linear combination, not with different features but with different powers of the same feature. But that's a first way of introducing non-linearity in a regression model! 
 
-In the above formula, the same parameter $x$ is duplicated and raised to some power. This allows more complex hypothesis to be represented.  
-Sometimes (often?) the relationship between the variables is not linear.  
-  
-For example, the predicted variable could be better represented by a formula such as $\hat{y}_i = 17 -  3x  + 5 x^{2}$.
-
-In order to do polynomial models, you have to add more columns to your dataset. Each new column contains a version of your original vector raised to some given power. 
