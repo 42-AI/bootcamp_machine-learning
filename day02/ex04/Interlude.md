@@ -1,41 +1,26 @@
-# Improve 
+# Evaluate
 
-<img src="../../day00/assets/Improve.png" />  
+<img src="../../day00/assets/Evaluate.png" />
 
-## Multivariate Gradient
+## Back to the Cost Function
 
-From our multivariate linear hypothesis we can derive our multivariate gradient. It looks a lot like the one we saw yesterday, but instead of having just two components, the gradient now has as many as there are parameters. This means that now we need to calculate $\nabla(J)_0,\nabla(J)_1,\dots,\nabla(J)_n$  
+How is our model doing?  
 
-If we take the univariate equations we used yesterday and replace the formula for $\nabla(J)_1$ by a more general $\nabla(J)_j$, we get the following:
+To evaluate our model, remember before we used a **metric** called the **cost function** (also known as **loss function**). The cost function is basically just a measure of how wrong the model is, in all its predictions.   
+
+Two days ago, we defined the cost function as the average of the squared distances between each prediction and its expected value : 
+<img src="../../day00/assets/bad_pred_with_distance.png" />
+
+The formula was the following: 
 $$
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) \\
-\nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} \text{ for j = 1, ..., n}
+J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2
 $$
-
-Where:  
-- $\nabla(J)$ is a vector of size $(n + 1) * 1$,
-- $\nabla(J)_j$ is the $j^{th}$ component of $\nabla(J)$
-- $X$ is a matrix of dimension $m * n$, the design matrix
-- $y$ is a vector of dimension $m * 1$
-- $\theta$ is a vector of dimension $(n+1) * 1$, the parameter vector
-- $x^{(i)}$ is the $i^{th}$ row of the $X$ matrix, a vector of dimension $m * 1$
-- $y^{(i)}$ is the $i^{th}$ component of vector $y$
-- $h_{\theta}(x^{(i)})$ is the model's prediction for $y^{(i)}$: the result of  $\theta^T \cdot x^{(i)}$  
-
-
-### Vectorized Form
-
-As usual, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
-
+And its vectorized form:
 $$
-\nabla(J) = \frac{1}{m} X'^T(X'\theta - y)
+\begin{matrix}
+J(\theta) = \frac{1}{2m}(\hat{y} - y)^{T}(\hat{y}- y)
+\end{matrix}
 $$  
 
-Where:  
-- $\nabla(J)$ is the gradient vector of size $(n + 1) * 1$
-- $X'$ is a matrix of dimension $m * (n + 1)$, the design matrix onto which a column of ones is added as the first column
-- $X'^T$ means the matrix has been transposed
-- $\theta$ is a vector of size $(n + 1) * 1$ 
-- $y$ is a vector of size $m * 1$
-
-The vectorized equation can output the entire gradient vector all at once, in one calculation! So if you understand the linear algebra operations, you can forget about the equations we presented at the top of the page and just use the vectorized one.
+#### So, now that we moved to multivariate linear regression, what needs to change?
+You may have noticed that variables such as $x_j$ and $\theta_j$ don't intervene in the equation. Indeed, the cost function only uses the predictions ( $\hat{y}$ ) and the expected values ( $y$ ), so the internal working of the model doesn't matter. This means we can use the exact same cost function as we did before! 
