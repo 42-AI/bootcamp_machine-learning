@@ -1,8 +1,8 @@
-## Improve 
+# Improve 
 
 <img src="../../day00/assets/Improve.png" />  
 
-### Multivariate Gradient
+## Multivariate Gradient
 
 From our multivariate linear hypothesis we can derive our multivariate gradient. It looks a lot like the one we saw yesterday, but instead of having just two components, the gradient now has as many as there are parameters. This means that now we need to calculate $\nabla(J)_0,\nabla(J)_1,\dots,\nabla(J)_n$  
 
@@ -25,7 +25,7 @@ Where:
 
 ### Vectorized Form
 
-As in the previous days, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
+As usual, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
 
 $$
 \nabla(J) = \frac{1}{m} X'^T(X'\theta - y)
