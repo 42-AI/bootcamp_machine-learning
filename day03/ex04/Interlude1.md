@@ -1,9 +1,8 @@
-# Predict II : the hypothesis
-  <img src="../../day00/assets/Predict.png"/>  
+# Predict II : the hypothesis 
 
 If you were curious, you have plot the results of your sigmoid function from the las exercercise. If you don't, well ... here is a plot of it:
 
-<img src="../assets/sigmoid.png"/>  
+<img src="../../day00/assets/sigmoid.png"/>  
 
 As you can see, **the results of the sigmoid are in the range (0,1)**.  
 You can take real numbers as big as you want (positives or negatives), they will always land in this range. This will be helpfull for the next part.
