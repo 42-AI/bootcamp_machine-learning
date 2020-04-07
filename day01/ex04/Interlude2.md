@@ -9,7 +9,7 @@ $$X' = \begin{bmatrix} 1 & x^{(1)} \\ \vdots & \vdots \\ 1 & x^{(m)}\end{bmatrix
 
 Actually, this transformation is convenient because we can rewrite each $1$ as $x_0^{(i)}$, and each $x^{(i)}$ as $x_1^{(i)}$. Now the $0$ and $1$ indices indicate which component should be multiplied by $\theta_0$ or by $\theta_1$. So now the $X'$ matrix looks like this:
 
-$$X' = \begin{bmatrix} x_0^{(i)} & x_1^{(1)} \\ \vdots & \vdots \\ x_0^{(m)} & x_1^{(m)}\end{bmatrix}$$
+$$X' = \begin{bmatrix} x_0^{(1)} & x_1^{(1)} \\ \vdots & \vdots \\ x_0^{(m)} & x_1^{(m)}\end{bmatrix}$$
   
 Why does this matter?  
 Well, if we take the equation from the previous exercise:  
