@@ -1,8 +1,9 @@
-# Predict I: introducing the Sigmoid
+# Predict I: Introducing the Sigmoid Function
   <img src="../../day00/assets/Predict.png"/>  
 
-**The first step is to build a model from our hypothesis.**  
-You will soon discover that our classification's hypothesis is **very close** to our previous regression's one.
+### **Formulating a Hypothesis**  
+Remember that a hypothesis is an equation (with parameters) that allows a model to calculate predictions based on a set of features. The linear hypothesis we used before worked fine to predict continuous values but how could it be useful to tell, for example, if a patient is sick or not?
 
-Our classification hypothesis makes use of a function: the **sigmoid**.  
-Please don't be frighten by this fancy name. The **sigmoid function** is just a way to **map the result of a linear regression into a range of values from 0 to 1**.  
+To get started, let's set an output range within which we'll work: sick patients will be assigned the value of 1, and healthy patients will be assigned to 0. The goal will be to build a hypothesis that outputs a [0-1] probability  that a patient is sick.
+
+The good news is that we can keep the linear equation we already worked with! All we need is sqash its output through another function that is bounded between 0 and 1. That's the **Sigmoid function** and your next exercise is to implement it!

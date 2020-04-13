@@ -1,16 +1,15 @@
-# Classification: the art of putting labels on things
-During the last three days you have implemented your first machine learning algorithm. You also discovered the three main steps on which all **learners** are build upon:   
-    - Prediction  
-    - Evaluation  
-    - Improvement  
-  
-  <img src="../../day00/assets/Default.png"/>
+# Classification: The Art of Labelling Things
+Over the last three days you have implemented your first machine learning algorithm. You also discovered the three main steps we follow when we build **learning algorithms**: 
+<img src="../../day00/assets/Default.png"/>
 
-Your first algorithm, the **multivariate linear regression** can now be used to predict a numerical values from several features using gradient descent to optimise its cost function.  
+The first algorithm you discovered, **Multivariate Linear Regression**, can now be used to predict a numerical value, based on several features. This algorithm uses gradient descent to optimize its cost function.  
 
-Now you are going to meet your first **classification algorithm**: the **logistic regression**. Classification task means that you are not predicting numerical values (like price, age, grades...) but **labels** (like dog, cat, sick or not...).   
+Now let's introduce you to your first **classification algorithm**: it is named **Logistic Regression**. It peforms a *classification task*, which means that you are not predicting a numerical value (like price, age, grades...) but **categories**, or **labels** (like dog, cat, sick/healty...).   
 
-**Be careful!**  
-Don't be confused by the fact the name **logistic regression** contains the term *'regression'*: it is not a regression task at all!  
-We are doing regular classification here. The name is a bit tricky but you will quickly get used to it.  
-Once again: **logistic regression is a classification algorithm** which predicts labels for a given example.  
+#### **Be careful!**  
+Don't be confused by the fact the name **Logistic Regression** contains the term *'regression'*: it really is a *classification task*! The name is a bit tricky but you will quickly get used to it.  
+
+Once again: **Logistic Regression is a classification algorithm** which assigns a given example to a category.  
+
+#### **Terminolgy:**
+In this bootcamp we will use the following terms interchangeably: **class, cagegory,** and **label**. They all refer to the *groups* to which each training example can be assigned to.
