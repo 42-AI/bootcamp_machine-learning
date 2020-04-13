@@ -1,6 +1,7 @@
 # Predict II : the hypothesis 
 
-If you were curious, you have plot the results of your sigmoid function from the las exercercise. If you don't, well ... here is a plot of it:
+If you were curious, you have plot the results of your sigmoid function from the last exercise.  
+If you don't, well ... here is a plot of it:
 
 <img src="../../day00/assets/sigmoid.png"/>  
 
