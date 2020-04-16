@@ -9,7 +9,7 @@ $$
 J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}[(\hat{y}^{(i)} - y^{(i)}) (\hat{y}^{(i)} - y^{(i)})]
 $$
 
-Therefore, according to the definition of the dot product.
+Therefore, according to the definition of the dot product:
 
 $$
 J(\theta) = \frac{1}{2m}(\hat{y} - y) \cdot(\hat{y}- y)
