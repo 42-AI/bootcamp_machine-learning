@@ -15,6 +15,11 @@ If the model is good, we won't lose that much, if it's terrible it will cost us 
 The metric you choose will deeply impact the evaluation (and therefore also the training) of your model.   
 
 A usual way to evaluate the performance of a regression model is to measure the distance between each predicted value ($\hat{y}^{(i)}$) and the true value it tries to predict (${y}^{(i)}$) and average the sum of distances found on all examples.  
+
+$$
+J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2
+$$
+
 The smaller, the better! 
 
 <img src="../assets/bad_pred_with_distance.png" />
