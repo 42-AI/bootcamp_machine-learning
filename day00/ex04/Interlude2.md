@@ -6,6 +6,16 @@ If we add a column full of ones to our vector of examples $x$, we can create the
 
 $$X' = \begin{bmatrix} 1 & x^{(1)} \\ \vdots & \vdots \\ 1 & x^{(m)}\end{bmatrix}$$
   
-We can now get to the same result as in the previous exercise with just a singla multiplication between our brand new $X'$ matrix and the $\theta$ vector!
+We can then rewrite our hypothesis as: 
+
+$$
+\hat{y}^{(i)} = \theta \cdot X'^{(i)} = \begin{bmatrix}\theta_0 \\ \theta_1 \end{bmatrix}  \cdot \begin{bmatrix} 1 & x^{(i)} \end{bmatrix} = \theta_0 + \theta_1 x^{(i)}
+$$
+
+Therefore, the calculation of each $\hat{y}^{(i)}$can be done with only one vector multiplication. 
+
+But we can even go further, by calculating the whole $\hat{y}$ vector in one operation: 
 
 $$\hat{y} = X' \cdot \theta = \begin{bmatrix} 1 & x^{(1)} \\ \vdots & \vdots \\ 1 & x^{(m)}\end{bmatrix}\cdot\begin{bmatrix}\theta_0 \\ \theta_1 \end{bmatrix} = \begin{bmatrix} \theta_0 + \theta_1 x^{(1)} \\ \vdots \\ \theta_0 + \theta_1 x^{(m)} \end{bmatrix} $$
+
+We can now get to the same result as in the previous exercise with just a single multiplication between our brand new $X'$ matrix and the $\theta$ vector!

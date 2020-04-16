@@ -13,11 +13,20 @@ Now you have your sigmoid function, let's look at **the logistic regression's hy
 
 $$
 \begin{matrix}
-\hat{y}^{(i)} = sigmoid(h_{ \theta }(x^{(i)})) = \frac{1} {1 + e^{-\theta \cdot x^{(i)}}} & &\text{ for i = 1, \dots, m}    
+\hat{y}^{(i)} & = & \text{sigmoid}(\theta \cdot X'^{(i)}) 
+& =  &\frac{1} {1 + e^{-\theta \cdot X'^{(i)}}} & &\text{ for i = 1, \dots, m}    
 \end{matrix}
 $$
 
 **This is simply the sigmoid function applied to the output of the linear regression hypothesis!!**  
+
+Which can be vectorized as: 
+
+$$
+\begin{matrix}
+\hat{y} & = & \text{sigmoid}(X' \cdot \theta) & =  &\frac{1} {1 + e^{-X' \cdot \theta}}    
+\end{matrix}
+$$
 
 As we said before: the **sigmoid function** is just a way to **map the result of a linear equation onto a range of values between 0 and 1**.  
 
