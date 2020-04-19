@@ -22,7 +22,7 @@ Where:
 - $\theta$ is a vector of dimension $(n+1) * 1$, the parameter vector
 - $x^{(i)}$ is the $i^{th}$ row of the $X$ matrix, a vector of dimension $m * 1$
 - $y^{(i)}$ is the $i^{th}$ component of vector $y$
-- $h_{\theta}(x^{(i)})$ is the model's prediction for $y^{(i)}$: the result of  $\theta^T \cdot x^{(i)}$  
+- $h_{\theta}(x^{(i)})$ is the model's prediction for $y^{(i)}$: the result of  $\theta \cdot x^{(i)}$  
 
 
 ### Vectorized Form
