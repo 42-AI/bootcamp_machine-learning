@@ -1,4 +1,4 @@
-## The vectorized logistic gradient 
+## Vectorized Logistic Gradient 
 
 Given the previous logistic gradient formula, it is quite easy to produce a vectorized version.  
 
