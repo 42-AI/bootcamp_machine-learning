@@ -4,23 +4,23 @@ We hope your curiosity led you to plot your sigmoid function. If you didn't, wel
 
 <img src="../../day03/assets/sigmoid.png"/>  
 
-As you can see, **the results of the sigmoid are in the (0,1) range**.  
-You can take real numbers as big as you want (positive or negative), they will always land within this range. This will be very helpfull for the next part.
+As you can see, **the sigmoid's output values range from $0$ to $1$**.  
+You can input real numbers as big as you want (positive or negative), they will always land within this range. This will be very helpful for the next part.
 
 # Logistic Hypothesis
 
-Now you have your sigmoid function, let's look at **the logistic regression's hypothesis**.
+Now you've written your sigmoid function, let's look at **the logistic regression hypothesis**.
 
 $$
 \begin{matrix}
-\hat{y}^{(i)} & = & h_\theta(X^{(i)}) & = & \text{sigmoid}(\theta \cdot X'^{(i)}) 
-& =  &\frac{1} {1 + e^{-\theta \cdot X'^{(i)}}} & &\text{ for i = 1, \dots, m}    
+\hat{y}^{(i)} & = & h_\theta(x^{(i)}) & = & \text{sigmoid}(\theta \cdot x'^{(i)}) 
+& =  &\frac{1} {1 + e^{-\theta \cdot x'^{(i)}}} & &\text{ for i = 1, \dots, m}    
 \end{matrix}
 $$
 
-**This is simply the sigmoid function applied to the output of the linear regression hypothesis!!**  
+**This is simply the sigmoid function applied on top of the linear regression hypothesis!!**  
 
-Which can be vectorized as: 
+It can be vectorized as: 
 
 $$
 \begin{matrix}
@@ -28,7 +28,6 @@ $$
 \end{matrix}
 $$
 
-As we said before: the **sigmoid function** is just a way to **map the result of a linear equation onto a range of values between 0 and 1**.  
+As we said before: the **sigmoid function** is just a way to **map the result of a linear equation onto a [0,1] value range**.  
 
-This transformation allows us to interpret the the result as a **probability for an individual to be a member of a class**.
-
+This transformation allows us to interpret the results as a **probability that an individual is a member of a class**.
