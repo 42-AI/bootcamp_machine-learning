@@ -15,15 +15,13 @@ $$
 $$
 
 Where:  
-- $\nabla(J)$ is a vector of size $(n + 1) * 1$,
-- $\nabla(J)_j$ is the $j^{th}$ component of $\nabla(J)$
-- $X$ is a matrix of dimension $m * n$, the design matrix
-- $y$ is a vector of dimension $m * 1$
-- $\theta$ is a vector of dimension $(n+1) * 1$, the parameter vector
-- $x^{(i)}$ is the $i^{th}$ row of the $X$ matrix, a vector of dimension $m * 1$
-- $y^{(i)}$ is the $i^{th}$ component of vector $y$
-- $h_{\theta}(x^{(i)})$ is the model's prediction for $y^{(i)}$: the result of  $\theta \cdot x^{(i)}$  
-
+- $\nabla(J)$ is a vector of size $(n + 1) * 1$, the gradient vector
+- $\nabla(J)_j$ is the $j^{th}$ component of $\nabla(J)$, the partial derivative of $J$ with respect to $\theta_j$
+- $y$ is a vector of dimension $m * 1$, the vector of expected values
+- $y^{(i)}$ is a scalar, the $i^{th}$ component of vector $y$
+- $x^{(i)}$ is the feature vector of the $i^{th}$ example
+- $x^{(i)}_j$ is a scalar, the $j^{th}$ feature value of the $i^{th}$ example
+- $h_{\theta}(x^{(i)})$ is a scalar, the model's estimation of $y^{(i)}$
 
 ### Vectorized Form
 
