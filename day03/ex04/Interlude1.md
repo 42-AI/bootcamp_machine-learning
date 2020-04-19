@@ -13,7 +13,7 @@ Now you have your sigmoid function, let's look at **the logistic regression's hy
 
 $$
 \begin{matrix}
-\hat{y}^{(i)} & = & \text{sigmoid}(\theta \cdot X'^{(i)}) 
+\hat{y}^{(i)} & = & h_\theta(X^{(i)}) & = & \text{sigmoid}(\theta \cdot X'^{(i)}) 
 & =  &\frac{1} {1 + e^{-\theta \cdot X'^{(i)}}} & &\text{ for i = 1, \dots, m}    
 \end{matrix}
 $$
@@ -24,7 +24,7 @@ Which can be vectorized as:
 
 $$
 \begin{matrix}
-\hat{y} & = & \text{sigmoid}(X' \cdot \theta) & =  &\frac{1} {1 + e^{-X' \cdot \theta}}    
+\hat{y} & = & h_\theta(X) & = & \text{sigmoid}(X' \cdot \theta) & =  &\frac{1} {1 + e^{-X' \cdot \theta}}    
 \end{matrix}
 $$
 
