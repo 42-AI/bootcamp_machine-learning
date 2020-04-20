@@ -31,7 +31,7 @@ $$
 
 Therefore 
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} \cancel{y^{(i)}\log(\hat{y}^{(i)})} + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}\log(\hat{y}^{(i)})}}^{0} + \overbrace{\cancel{(1 - y^{(i)})}}^{1}\log(1 - \hat{y}^{(i)})\rbrack
 $$
 $$
 J( \theta) = -\frac{1} {m} \sum_{i = 1}^{m} \log(1 - \hat{y}^{(i)})
@@ -64,7 +64,7 @@ $$
 
 Therefore 
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + \cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}\rbrack
+J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}}}^{1}\log(\hat{y}^{(i)}) + \overbrace{\cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}}^{0}\rbrack
 $$
 $$
 J( \theta) = -\frac{1} {m} \sum_{i = 1}^{m} \log(\hat{y}^{(i)})
