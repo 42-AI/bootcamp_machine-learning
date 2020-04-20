@@ -1,6 +1,6 @@
 # More evaluation metrics!
 
-One your classifier is trained, additionnaly to the cross-entropy, there is a lot of ways to evaluate its performances. Depending on which you'll choose, you will consider some errors more important than others.  
+Once your classifier is trained, additionnaly to the cross-entropy, there is a lot of ways to evaluate its performances. Depending on which you'll choose, you will consider some errors more important than others.  
 
 ## Types of errors
 Classification errors falls into two categories:
