@@ -14,7 +14,7 @@ Given the fact that classification tasks imply only two possible values:
 
 For this reason, we are going to use another cost function, called the **cross-entropy**, given by the following formula:  
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
 $$
 
 This formula is simpler that it looks. It encapsulates the two possibles cases:  
@@ -22,21 +22,27 @@ This formula is simpler that it looks. It encapsulates the two possibles cases:
 $$
 \begin{matrix}
 y^{(i)} & = & 0 \\
-y^{(i)}\log(\hat{y}^{(i)})) & = & 0   
+y^{(i)}\log(\hat{y}^{(i)})) & = & 0   \\
+\\
+1 - y^{(i)} & = & 1 \\
+(1 - y^{(i)})\log(1 - \hat{y}^{(i)}) & = & \log(1 - \hat{y}^{(i)})
 \end{matrix}
 $$
 
 Therefore 
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} \cancel{y^{(i)}\log(\hat{y}^{(i)}))} + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} \cancel{y^{(i)}\log(\hat{y}^{(i)})} + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
 $$
 $$
-J( \theta) = -\frac{1} {m} \sum_{i = 1}^{m} (1 - y^{(i)})\log(1 - \hat{y}^{(i)})
+J( \theta) = -\frac{1} {m} \sum_{i = 1}^{m} \log(1 - \hat{y}^{(i)})
+$$
+$$
+J( \theta) = \frac{1} {m} \sum_{i = 1}^{m} -\log(1 - \hat{y}^{(i)})
 $$
 
-The function $\log(1 - x)$ looks like that: 
+The function $-\log(1 - x)$ looks like that: 
 
-  <img src="../../day00/assets/log_1-x.png"/>  
+  <img src="../../day03/assets/-log_1-x.png"/>  
 
 
 You can see from the plot that: 
@@ -49,22 +55,27 @@ You can see from the plot that:
 $$
 \begin{matrix}
 y^{(i)} & = & 1 \\
+y^{(i)}\log(\hat{y}^{(i)}) & = & \log(\hat{y}^{(i)})\\
+\\
 1 - y^{(i)} & = & 0 \\ 
-(1 - y^{(i)})\log(1 - \hat{y}^{(i)}) & = & 0     
+(1 - y^{(i)})\log(1 - \hat{y}^{(i)}) & = & 0  
 \end{matrix}
 $$
 
 Therefore 
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + \cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}\rbrack
+J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + \cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}\rbrack
 $$
 $$
-J( \theta) = -\frac{1} {m} \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}))
+J( \theta) = -\frac{1} {m} \sum_{i = 1}^{m} \log(\hat{y}^{(i)})
+$$
+$$
+J( \theta) = \frac{1} {m} \sum_{i = 1}^{m} -\log(\hat{y}^{(i)})
 $$
 
-The function $\log(x)$ looks like that: 
+The function $-\log(x)$ looks like that: 
 
-  <img src="../../day00/assets/log_x.png"/>  
+  <img src="../../day03/assets/-log_x.png"/>  
 
 
 You can see from the plot that: 
@@ -74,4 +85,4 @@ You can see from the plot that:
 
 Therefore, the plot of the logistic loss looks like this:   
 
-  <img src="../../day00/assets/log_loss.png"/>  
+  <img src="../../day03/assets/log_loss.png"/>  
