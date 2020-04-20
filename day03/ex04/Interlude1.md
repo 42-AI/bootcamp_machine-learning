@@ -24,7 +24,7 @@ It can be vectorized as:
 
 $$
 \begin{matrix}
-\hat{y} & = & h_\theta(X) & = & \text{sigmoid}(X' \cdot \theta) & =  &\frac{1} {1 + e^{-X' \cdot \theta}}    
+\hat{y} & = & h_\theta(X) & = & \text{sigmoid}(X'\theta) & =  &\frac{1} {1 + e^{-X'\theta}}    
 \end{matrix}
 $$
 
