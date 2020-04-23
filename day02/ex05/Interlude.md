@@ -1,6 +1,6 @@
 # Improve 
 
-<img src="../../day00/assets/Improve.png" />  
+![titre](../../day00/assets/Improve.png){width=400px}  
 
 ## Multivariate Gradient
 

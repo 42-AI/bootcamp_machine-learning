@@ -2,7 +2,7 @@
 
 You probably noticed that the method we use is called *linear regression* for a reason: the model generates all of its predictions on a straight line. However, we often encounter features that don't have a linear relationship with the predicted variable, like in the figure below:
 
-<img src="../assets/polynomial_straight_line.png"/>
+![titre](../assets/polynomial_straight_line.png"/>
 
 In that case, we are stuck with a straight line that can't fit the data points properly. In this example, what if we could express $y$ not as a function of $x$, but also of $x^2$, and maybe even $x^3$ and $x^4$? We could make a hypothesis that draws a nice **curve** that would better fit the data. That's where polynomial features can help!
 
