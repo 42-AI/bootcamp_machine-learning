@@ -1,6 +1,6 @@
 # Improve
 
-  <img src="../../day00/assets/Improve.png"/>  
+  ![titre](../../day00/assets/Improve.png"/>  
 
 Now we want to improve the algorithm's performance, or in other words, reduce the cost of its predictions. This brings us (again) to calculating the gradient, which will tell us how much and in what direction we should adjust each of the theta parameters that belong to the model.
 

@@ -1,6 +1,6 @@
 # Predict 
 
-<img src="../assets/Predict.png" />
+![titre](../assets/Predict.png){width=400px}
 
 ## A very simple model
 [Intro : simple data set + plot]  

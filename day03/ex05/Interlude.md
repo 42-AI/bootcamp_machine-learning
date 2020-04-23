@@ -1,6 +1,6 @@
 # Evaluate
 
-  <img src="../../day00/assets/Evaluate.png"/>  
+  ![titre](../../day00/assets/Evaluate.png"/>  
 
 Our **model** can **predict the probability** for a given example **to be part of the class labeled as 1**.  
 Now it is time to evaluate how good it is.  
@@ -42,7 +42,7 @@ $$
 
 The function $-\log(1 - x)$ looks like that: 
 
-  <img src="../../day03/assets/-log_1-x.png"/>  
+  ![titre](../../day03/assets/-log_1-x.png"/>  
 
 
 You can see from the plot that: 
@@ -75,7 +75,7 @@ $$
 
 The function $-\log(x)$ looks like that: 
 
-  <img src="../../day03/assets/-log_x.png"/>  
+  ![titre](../../day03/assets/-log_x.png"/>  
 
 
 You can see from the plot that: 
@@ -85,4 +85,4 @@ You can see from the plot that:
 
 Therefore, the plot of the logistic loss looks like this:   
 
-  <img src="../../day03/assets/log_loss.png"/>  
+  ![titre](../../day03/assets/log_loss.png"/>  

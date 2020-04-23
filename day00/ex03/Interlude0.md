@@ -13,4 +13,4 @@ One of the most common tasks in Machine Learning is **prediction**.
 This will be your algorithm's task.
 This will be your task.  
 
-<img src="../assets/Default.png" />
+![titre](../assets/Default.png){width=400px}
