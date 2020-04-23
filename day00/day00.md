@@ -1,15 +1,16 @@
-# Day00 - Step into Machine Learning
+# Day00 - Stepping Into Machine Learning
 
 You will start by reviewing some linear algebra and statistics. Then you will implement your first model and learn how to evaluate its performances. 
 
-## Notions of the day
+## Notions of the Day
 Sum, mean, variance, standard deviation, vectors and matrices operations.  
 Hypothesis, model, regression, cost function. 
 
 ## Useful Ressources  
   
-We strongly advise you to use the following ressources:
+We strongly advise you to use the following resource:
 [Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/1)  
+Here are the sections of the MOOC that are relevant for today's exercises: 
 
 ### Week 1: 
 
@@ -40,14 +41,14 @@ We strongly advise you to use the following ressources:
 
 ## General rules
 
-* The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
-* The norm: during this bootcamp you will follow the Pep8 standards https://www.python.org/dev/peps/pep-0008/
-* The function eval is never allowed.
+* The Python version to use is 3.7, you can check with the following command: `python -V`
+* The norm: during this bootcamp you will follow the [Pep8 standards](https://www.python.org/dev/peps/pep-0008/)
+* The function `eval` is never allowed.
 * The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask questions in the dedicated channel in the 42 AI Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github:  https://github.com/42-AI/bootcamp_machine-learning/issues.
+* You can also ask questions in the `#bootcamps` channel in [42AI's Slack workspace](42-ai.slack.com).
+* If you find any issues or mistakes in this document, please create an issue on our [dedicated Github repository](https://github.com/42-AI/bootcamp_machine-learning/issues).
 
 ## Helper
 
@@ -63,9 +64,9 @@ Python 3.7.*
 ```
 
 
-### Exercise 00 - The vector
+### Exercise 00 - The Vector
 
-### Exercise 01 - The matrix
+### Exercise 01 - The Matrix
 
 ### Exercise 02 - TinyStatistician
 
@@ -75,24 +76,24 @@ Python 3.7.*
 
 ### Exercise 03 - Simple Prediction
 
-### Interlude - A simple linear algebra trick
+### Interlude - A Simple Linear Algebra Trick
 
-### Exercise 04 - Add intercept
+### Exercise 04 - Add Intercept
 
 ### Exercise 05 - Prediction
 
-### Exercise 06 - Lets do some nice plots
+### Exercise 06 - Let's Make Nice Plots
 
 ### Interlude - Evaluate
 
-### Exercise 07 - Cost function
+### Exercise 07 - Cost Function
 
-### Interlude - Fifty shades of linear algebra
+### Interlude - Fifty Shades of Linear Algebra
 
-### Exercise 08 - Vectorized cost function
+### Exercise 08 - Vectorized Cost Function
 
-### Exercise 09 - Lets do some nice plots again
+### Exercise 09 - Lets Make Nice Plots Again
 
 ### Exercise 10 - Question time!
 
-### Exercise 11 - Other cost functions
+### Exercise 11 - Other Cost Runctions
