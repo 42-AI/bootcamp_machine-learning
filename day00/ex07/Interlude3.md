@@ -1,13 +1,13 @@
 # Evaluate
 
-<img src="../assets/Evaluate.png" />
+![titre](../assets/Evaluate.png){width=400px}
 
 ## Introducing the cost function
 
 How good is our model ?  
 It is hard to say just by looking at the plot. We can clearly observe that some regression lines seem to fit our data better than others, but it is not enough. 
 
-<img src="../assets/bad_prediction.png" />
+![titre](../assets/bad_prediction.png){width=400px}
 
 To evaluate our model, we are going to use a **metric**, called a **cost function** (sometimes called **loss function**). The cost function tells us how bad our model is, how much it *costs* us to use it, how much information we *lose* when we use it.  
 If the model is good, we won't lose that much, if it's terrible it will cost us a lot!    
@@ -22,4 +22,4 @@ $$
 
 The smaller, the better! 
 
-<img src="../assets/bad_pred_with_distance.png" />
+![titre](../assets/bad_pred_with_distance.png){width=400px}

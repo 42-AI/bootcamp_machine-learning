@@ -2,7 +2,7 @@
 
 We hope your curiosity led you to plot your sigmoid function. If you didn't, well here is what it looks like:
 
-<img src="../../day03/assets/sigmoid.png"/>  
+![titre](../../day03/assets/sigmoid.png"/>  
 
 As you can see, **the sigmoid's output values range from $0$ to $1$**.  
 You can input real numbers as big as you want (positive or negative), they will always land within this range. This will be very helpful for the next part.
