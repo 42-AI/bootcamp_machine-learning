@@ -23,9 +23,10 @@ You can see that we are starting the sum at $j = 1$, because we do not want to p
 Machine Learning is essentially done by computer scientists (not mathematicians) which tends to be sometimes a bit messy in the way they represent things mathematically.  
 For example: the fact we are using the notation $\theta_0$ to represent the y-intercept makes things easy fo applying linear algebra tricks, **but** it completly messed the overall matrix notation!  
 
+
 According to that notation, the matrix $X'$ has the following properties: 
-* its row index, $x^{(i)}$, use the mathematical indexing: starting at 1.
-* its column index, $x_j$, use the computer indexing: starting at 0. 
+* its row index, $x'^{(i)}$, use the mathematical indexing: starting at 1.
+* its column index, $x'_j$, use the computer indexing: starting at 0. 
 
 $$
 X' =
