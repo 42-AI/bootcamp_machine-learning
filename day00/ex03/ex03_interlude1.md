@@ -1,6 +1,6 @@
 # Predict 
 
-![cycle_predict](../assets/Predict.png){width=400px}
+![cycle_predict](../assets/Predict.png){width=300px}
 
 ## A very simple model
 
@@ -79,7 +79,11 @@ With $\theta$, you just have to increment the number to name the parameter:
 $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_{2468} x_{2468}$ ... Easy right?  
 
 
-### Another common notation: $\begin{matrix} & & \hat{y} & = & h_{\theta}(x)\end{matrix}$
+### Another common notation: 
+
+$$
+\begin{matrix} & & \hat{y} & = & h_{\theta}(x)\end{matrix}
+$$
 
 Because $\hat{y}$ is calculated with our linear hypothesis using $\theta$ and $x$, it is sometimes written as $h_{\theta}(x)$.
 The $h$ stands for *hypothesis*, and can be read as *"the result of our hypothesis h given x and theta"*.  
