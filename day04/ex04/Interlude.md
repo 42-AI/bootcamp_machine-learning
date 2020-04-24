@@ -51,6 +51,6 @@ $$
 
 ### Terminology:
 The kind of regularization we are introducing here is named $L_2 \text{ regularization}$, because it add the $L_2 \text{ norm}$ of the vector $\theta$ to the cost function.  
-The $L_2 \text{ norm}$ (written $||x||_2$, as the norm in $L_2$ of vector $x$) is the *euclidean norm* : it is the sum of the components squared.  
+The $L_2 \text{ norm}$, written $||x||_2$, for a given vector $x$, is the *euclidean norm* : it is the sum of the components squared.  
 
 It exists an infinite number of norms which could be used as regularization terms, and which leads to different kinds of results. Here, we will use only the $L_2 \text{ norm}$, which is the most commonly used.
