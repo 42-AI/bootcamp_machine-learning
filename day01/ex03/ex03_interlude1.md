@@ -9,11 +9,11 @@ Lets take a new dataset:
 ![Dataset](../assets/ex03_interlude_plot.png){width=400px} 
 
 
-Given our measure of performance, improvement entails **reducing the cost (or loss)** measured by the cost function. If we plot the cost of a model's predictions as a function of its $\theta_1$ parameter, we obtain a curve like this one: 
+Given our measure of performance, improvement entails **reducing the cost (or loss)** measured by the cost function. If we plot the cost of a model's predictions as a function of its $\theta_1$ parameter (with a fixed value for $\theta_0$), we obtain a curve like this one: 
 
 ![Cost function given theta_1](../assets/ex03_interlude_cost.png){width=400px} 
 
-On the graph below, we can see that extreme $\theta_1$ values correspond to a very high cost. However, as we get closer to the middle, the cost is reduced.  
+On the graphs below, we can see that extreme $\theta_1$ values correspond to a very high cost. However, as we get closer to the middle, the cost is reduced.  
 
 ![A quite bad model](../assets/ex03_cost_1.png){width=600px} 
 
