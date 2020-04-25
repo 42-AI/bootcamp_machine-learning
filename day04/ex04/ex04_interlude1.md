@@ -1,5 +1,6 @@
-# Fighting overfitting... enter Regularisation. 
+# Fighting overfitting... 
 
+## Enter Regularisation   
 In the **day02**, we talked about the problem of overfitting and how to be able to detect it by splitting the dataset into a **training set** and a **test set**.  
 
 However, being able to detect overfitting does not mean being able to avoid it.  
@@ -9,7 +10,7 @@ To do so, we are now introducing an important new notion: the **regularization**
 The idea beahind regularization is to **penalize the model for putting too much weight on certain** (usually heavy polynomials) **features**.  
 
 $$
-\text{regularized cost function} = \text{cost function} + \lambda \sum_{j = 1}^n \theta_j^2
+\text{regularized cost function} = \text{cost function} + \frac{\lambda}{2m} \sum_{j = 1}^n \theta_j^2
 $$
 
 By doing so, **we are encouraging the model to keep its** $\theta$ **values as small as possible**. Indeed, the values of $\theta$ are now took into account to calculate the loss function of the model.  
@@ -20,7 +21,7 @@ $\lambda$ (called 'lambda') is the parameter wich will directly determine how mu
 
 You can see that we are starting the sum at $j = 1$, because we do not want to penalize the value of $\theta_0$, corresponding to the y-intercept.
 
-**Be carefull!**  
+## Be carefull!  
 Machine Learning is essentially done by computer scientists (not mathematicians) which tends to be sometimes a bit messy in the way they represent things mathematically.  
 For example: the fact we are using the notation $\theta_0$ to represent the y-intercept makes things easy fo applying linear algebra tricks, **but** it completly messed the overall matrix notation!  
 
@@ -52,8 +53,18 @@ x_0^{(m)} & x_1^{(m)} & \dots & x_n^{(m)} \\
 \right \} i = 1, \dots, m
 $$
 
-### Terminology:
-The kind of regularization we are introducing here is named $L_2 \text{ regularization}$, because it add the $L_2 \text{ norm}$ of the vector $\theta$ to the cost function.  
-The $L_2 \text{ norm}$, written $||x||_2$, for a given vector $x$, is the *euclidean norm* : it is the sum of the components squared.  
+## Terminology:
+The kind of regularization we are introducing here is named $L_2 \text{ regularization}$, because it add the squared $L_2 \text{ norm}$ of the vector $\theta$to the cost function.  
+The $L_2 \text{ norm}$ of a given vector $x$, written
+$$
+L_2(x) = ||x||_2 = \sqrt{\sum_i x_i^2 } \\
+L_2(x)^2 = ||x||_2^2 = \sum_i x_i^2  \\
+
+$$ 
+is its **euclidean norm** (i.e. the sum of the components squared).  
 
 It exists an infinite number of norms which could be used as regularization terms, and which leads to different kinds of results. Here, we will use only the $L_2 \text{ norm}$, which is the most commonly used.
+
+## Our old friend vectorization ...
+
+It is not a surprise, we can use vectorization to calculate $L_2(x)^2$ more efficiently. It could be a good exercise for you to try to find by yourself how to do it. We suggest you to think by yourself about it and to check the answer on the next page.
