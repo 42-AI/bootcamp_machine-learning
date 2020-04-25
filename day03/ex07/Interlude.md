@@ -28,7 +28,7 @@ This formula should be very familiar to you.  It is the same as the linear regre
 The only difference is that $h_{\theta}(x^{(i)})$ corresponds to **the logistic regression hypothesis instead of the linear regression hypothesis**.  
 
 In other words:  
-$h_{\theta}(x^{(i)}) = sigmoid( \theta \cdot x'^{(i)}) = \frac{1} {1 + e^{-\theta \cdot x'^{(i)}}}$   
+$h_{\theta}(x^{(i)}) = \text{sigmoid}( \theta \cdot x'^{(i)}) = \frac{1} {1 + e^{-\theta \cdot x'^{(i)}}}$   
 
 instead of   
 $\cancel{h_{\theta}(x^{(i)}) = \theta \cdot x'^{(i)}}$.  
