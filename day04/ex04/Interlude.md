@@ -13,6 +13,7 @@ $$
 $$
 
 By doing so, **we are encouraging the model to keep its** $\theta$ **values as small as possible**. Indeed, the values of $\theta$ are now took into account to calculate the loss function of the model.  
+
 $\lambda$ (called 'lambda') is the parameter wich will directly determine how much we want the reglarization to drive the model's construction.  
 - If $\lambda = 0$, we are in the case usual models we built until now: there is no regularization.
 - If $\lambda$ is very big, it will drive all the $\theta$ to be $0$.
@@ -36,7 +37,9 @@ X' =
 \vdots & \vdots & \ddots & \vdots \\ 
 1 & x_1^{(m)} & \dots & x_n^{(m)} \\ 
 \end{bmatrix}  
-}_{j = 0, \dots, n}
+}_{\begin{matrix}
+    j = 0, \dots, n
+\end{matrix}}
 =     
 
 
