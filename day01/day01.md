@@ -1,13 +1,13 @@
 # Day01 - Univariate Linear Regression
 
-You will now implement a way to improve your model performances, using gradient descent. Then you will discover the principle of normalization.
+Today you will implement a method to improve your model's performance: **gradient descent**. Then you will discover the notion of normalization.
 
-## Notions of the day
-Gradient descent, linear regression, standardization. 
+## Notions of the Day
+Gradient descent, linear regression, normalization. 
 
-## Useful Ressources  
+## Useful Resources  
   
-We strongly advise you to use the following ressources:
+We strongly advise you to use the following resources:
 [Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/1)  
 
 ### Week 1: 
@@ -19,17 +19,20 @@ We strongly advise you to use the following ressources:
 * Gradient Descent For Linear Regression (Video + Reading)
 * Review (Reading + Quiz)
 
-
-## General rules
+### Week 2:
+**Multivariate Linear Regression**
+- Gradient Descent in Practice 1 - Feature Scaling (Video + Reading)  
+  
+## General Rules
 
 * The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
-* The norm: during this bootcamp you will follow the Pep8 standards https://www.python.org/dev/peps/pep-0008/
-* The function eval is never allowed.
+* The norm: during this bootcamp you will follow the [Pep8 standards](https://www.python.org/dev/peps/pep-0008/)
+* The function `eval` is never allowed.
 * The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask questions in the dedicated channel in the 42 AI Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github:  https://github.com/42-AI/bootcamp_machine-learning/issues.
+* You can also ask questions in the `#bootcamps` channel in [42AI's Slack Workspace](42-ai.slack.com).
+* If you find any issues or mistakes in this document, please create an issue on our dedicated [Github repository](https://github.com/42-AI/bootcamp_machine-learning/issues).
 
 ## Helper
 
@@ -56,7 +59,7 @@ Python 3.7.*
 
 ### Interlude - Linear algebra tricks II
 
-### Exercise 04 - Linear Gradient - vectorized version
+### Exercise 04 - Linear Gradient - Vectorized Version
 
 ### Interlude - Gradient Descent
 
@@ -70,6 +73,6 @@ Python 3.7.*
 
 ### Interlude - Normalization
 
-### Exercise 09 - Normalization I: Z-score standardization
+### Exercise 09 - Normalization I: Z-score Standardization
 
-### Exercise 10 - Normalization I: min-max standardization
+### Exercise 10 - Normalization II: min-max Standardization
