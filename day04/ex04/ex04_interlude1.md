@@ -54,7 +54,7 @@ x_0^{(m)} & x_1^{(m)} & \dots & x_n^{(m)} \\
 $$
 
 ## Terminology:
-The kind of regularization we are introducing here is named $L_2 \text{ regularization}$, because it add the squared $L_2 \text{ norm}$ of the vector $\theta$to the cost function.  
+The kind of regularization we are introducing here is named $L_2 \text{ regularization}$, because it add the squared $L_2 \text{ norm}$ of the vector $\theta$ to the cost function.  
 The $L_2 \text{ norm}$ of a given vector $x$, written
 $$
 L_2(x) = ||x||_2 = \sqrt{\sum_i x_i^2 } \\
@@ -63,7 +63,7 @@ L_2(x)^2 = ||x||_2^2 = \sum_i x_i^2  \\
 $$ 
 is its **euclidean norm** (i.e. the sum of the components squared).  
 
-It exists an infinite number of norms which could be used as regularization terms, and which leads to different kinds of results. Here, we will use only the $L_2 \text{ norm}$, which is the most commonly used.
+It exists an infinite number of norms which could be used as regularization terms, and which leads to different kinds of results. Here, we will use only $L_2$, which is the most commonly used.
 
 ## Our old friend vectorization ...
 
