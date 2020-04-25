@@ -1,4 +1,4 @@
-# Ansewer to the vectorization problem
+# Answers to the vectorization problem
 
 How to vectorize the following? 
 
@@ -6,7 +6,7 @@ $$
 L_2(\theta)^2 = ||\theta||_2^2 = \sum_i \theta_i^2
 $$ 
 
-It looks very much alike a **dot product** of $\theta$ by itslef.  
+It looks very much alike a **dot product** of $\theta$ by itself.  
 The only problem here is to find a way to not take $\theta_0$ into account.  
 
 Lets construct the following vector $\theta'$ with the following rules : 
