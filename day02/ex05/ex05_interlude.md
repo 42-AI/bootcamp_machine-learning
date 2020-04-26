@@ -1,6 +1,6 @@
-# Improve 
+# Interlude - Improve 
 
-![titre](../../day00/assets/Improve.png){width=400px}  
+![The Learning Cycle: Improve](../assets/Improve.png){width=400px}  
 
 ## Multivariate Gradient
 
@@ -21,11 +21,20 @@ Where:
 - $y^{(i)}$ is a scalar, the $i^{th}$ component of vector $y$
 - $x^{(i)}$ is the feature vector of the $i^{th}$ example
 - $x^{(i)}_j$ is a scalar, the $j^{th}$ feature value of the $i^{th}$ example
-- $h_{\theta}(x^{(i)})$ is a scalar, the model's estimation of $y^{(i)}$
+- $h_{\theta}(x^{(i)})$ is a scalar, the model's estimation of $y^{(i)}$. (It can also be denoted $\hat{y}^{(i)}$)
 
 ### Vectorized Form
 
-As usual, we can use some linear algebra magic to get a more comptact (and computationally efficient) formula: 
+As usual, we can use some linear algebra magic to get a more compact (and computationally efficient) formula.
+
+First we can use our convention that each training example has an extra $x_0 = 1$ feature, and replace the gradient formulas above by one single equation that is valid for all $j$ components:
+$$
+\begin{matrix}
+\nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 0, ..., n}
+\end{matrix}
+$$
+
+And this generic equation can then be rewritten in a vectorized form:
 
 $$
 \nabla(J) = \frac{1}{m} X'^T(X'\theta - y)
@@ -33,9 +42,9 @@ $$
 
 Where:  
 - $\nabla(J)$ is the gradient vector of size $(n + 1) * 1$
-- $X'$ is a matrix of dimension $m * (n + 1)$, the design matrix onto which a column of ones is added as the first column
+- $X'$ is a matrix of dimension $m * (n + 1)$, the design matrix onto which a column of $1$'s was added as the first column
 - $X'^T$ means the matrix has been transposed
-- $\theta$ is a vector of size $(n + 1) * 1$ 
-- $y$ is a vector of size $m * 1$
+- $\theta$ is a vector of size $(n + 1) * 1$, the parameter vector 
+- $y$ is a vector of size $m * 1$, the vector of expected values
 
-The vectorized equation can output the entire gradient vector all at once, in one calculation! So if you understand the linear algebra operations, you can forget about the equations we presented at the top of the page and just use the vectorized one.
+The vectorized equation can output the entire gradient vector all at once, in one calculation! So if you understand the linear algebra operations, you can forget about the equations we presented at the top of the page and simply use the vectorized one.
