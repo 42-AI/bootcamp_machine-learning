@@ -64,13 +64,13 @@ Python 3.7.*
 
 ### Exercise 04 - Vectorized Cost Function
 
-### Interlude - Improve
+### Interlude - Improve with the Gradient
 
 ### Exercise 05 - Multivariate Linear Gradient
 
 ### Interlude - Gradient Descent
 
-## Exercise 06 - Multivariate Gradient Descent
+### Exercise 06 - Multivariate Gradient Descent
 
 ### Exercise 07 - Multivariate Linear Regression with Class
 

@@ -1,6 +1,6 @@
 # Interlude - Evaluate
 
-![The Learning Cycle: Evaluate](../assets/Evaluate.png){width=400px}
+![The Learning Cycle - Evaluate](../assets/Evaluate.png){width=400px}
 
 ## Back to the Cost Function
 

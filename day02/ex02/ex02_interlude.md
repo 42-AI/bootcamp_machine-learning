@@ -11,7 +11,7 @@ We'd need a model where more than one variable (or even thousands of variables) 
 
 
 ## Predict 
-![The Learning Cycle: Predict](../assets/Predict.png){width=400px}  
+![The Learning Cycle - Predict](../assets/Predict.png){width=400px}  
 
 ## Representing the examples as an m * n matrix
 First we need to reconsider how we represent the training examples.  Now that we want to characterize each training example with not just one, but many variables, we need more than a vector. We need a __matrix__!  
@@ -34,9 +34,9 @@ Where:
 Then, we must update our hypothesis to take more than one feature into account. 
 
 $$
-\begin{matrix}
+\begin{matrix}\large
 \hat{y}^{(i)} = \theta_0 + \theta_1 x_{1}^{(i)} + \dots + \theta_n x_{n}^{(i)} & & \text{ for i = 1, ..., m}    
-\end{matrix}
+\end{matrix}\normalsize
 $$  
 
 Where:

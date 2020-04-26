@@ -1,13 +1,17 @@
-# Gradient Descent
-Now comes the fun part: _gradient descent_! The algorithm is not that different from the one used in univariate linear regression. As you might have guessed, what will change is that the $j$ indice needs to run from $0$ to $n$ instead of $0$ to $1$. So all you need is a more generic algorithm, which can be expressed in pseudocode as the following:
+# Interlude - Gradient Descent
+Now comes the fun part: _gradient descent_!  
+
+The algorithm is not that different from the one used in univariate linear regression. As you might have guessed, what will change is that the $j$ indice needs to run from $0$ to $n$ instead of $0$ to $1$. So all you need is a more generic algorithm, which can be expressed in pseudocode as the following:
 $$
 \begin{matrix}
 \text{repeat until convergence} \hspace{1cm}\{\\
     \text{compute } \nabla{(J)}  \\
 	\theta_j := \theta_j - \alpha \nabla(J)_j  \\ 
-	\} \hspace{0.5cm} \text{ simultaneously update $\theta$ for $j=0,1,...,n$}
+	\} \hspace{0.5cm} \text{ simultaneously update $\theta$ for $j=0,1,...,n$}  \\ 
+    \\
 \end{matrix}
 $$
+
 If you started to like vectorized forms, you might have noticed that that the $\theta_j$ notation is actually redundant here, since all components of $\theta$ need to be updated simultaneously. $\theta$ is a vector, $\nabla{(J)}$ also, they both have dimension $(n+1) * 1$. So all we need to do is this:  
 $$\begin{matrix}
     &   \text{repeat until convergence} \hspace{1cm} &  \{  \\

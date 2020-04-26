@@ -1,4 +1,4 @@
-# Interlude - Improve 
+# Interlude - Improve with the Gradient 
 
 ![The Learning Cycle: Improve](../assets/Improve.png){width=400px}  
 
@@ -8,10 +8,10 @@ From our multivariate linear hypothesis we can derive our multivariate gradient.
 
 If we take the univariate equations we used yesterday and replace the formula for $\nabla(J)_1$ by a more general $\nabla(J)_j$, we get the following:
 $$
-\begin{matrix}
+\large\begin{matrix}
 \nabla(J)_0 &  = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
 \nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
-\end{matrix}
+\end{matrix}\normalsize
 $$
 
 Where:  
@@ -29,21 +29,21 @@ As usual, we can use some linear algebra magic to get a more compact (and comput
 
 First we can use our convention that each training example has an extra $x_0 = 1$ feature, and replace the gradient formulas above by one single equation that is valid for all $j$ components:
 $$
-\begin{matrix}
+\large\begin{matrix}
 \nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 0, ..., n}
-\end{matrix}
+\end{matrix}\normalsize
 $$
 
 And this generic equation can then be rewritten in a vectorized form:
 
-$$
-\nabla(J) = \frac{1}{m} X'^T(X'\theta - y)
-$$  
+$$\large
+\nabla(J) = \frac{1}{m} {X'}^T(X'\theta - y)
+\normalsize$$  
 
 Where:  
 - $\nabla(J)$ is the gradient vector of size $(n + 1) * 1$
 - $X'$ is a matrix of dimension $m * (n + 1)$, the design matrix onto which a column of $1$'s was added as the first column
-- $X'^T$ means the matrix has been transposed
+- ${X'}^T$ means the matrix has been transposed
 - $\theta$ is a vector of size $(n + 1) * 1$, the parameter vector 
 - $y$ is a vector of size $m * 1$, the vector of expected values
 
