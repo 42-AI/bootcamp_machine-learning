@@ -1,7 +1,7 @@
 # Plotting curves with matplotlib
 
 We asked you to plot straight lines in the day00. Now you are working with polynomial models, the results are not straight lines but curves.   
-Plotting curves is a bit more tricky, beacause if you do not have enough data point, you will get an ugly succession of little straight lines instead of a curve.  
+Plotting curves is a bit more tricky, because if you do not have enough data point, you will get an ugly succession of little straight lines instead of a curve.  
 Here is a way to do it.  
 
 Lets begin with a simple dataset:
