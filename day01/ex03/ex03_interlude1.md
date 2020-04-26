@@ -1,19 +1,19 @@
 # Interlude - Improve
 
-![cycle_improve](../assets/Improve.png){width=400px}  
+![The Learning Cycle - Improve](../assets/Improve.png){width=400px}  
 
 Yesterday, you discovered the first two steps of the learning process: starting with a model that makes naive predictions and evaluating it. Now we are going to tackle the third part: improving it!  
 
 Lets take a new dataset:  
 
-![Dataset](../assets/ex03_interlude_plot.png){width=400px} 
+![Scatter plot of a given dataset](../assets/ex03_interlude_plot.png){width=400px} 
 
 
 Given our measure of performance, improvement entails **reducing the cost (or loss)** measured by the cost function. If we plot the cost of a model's predictions as a function of its $\theta_1$ parameter (with a fixed value for $\theta_0$), we obtain a curve like this one: 
 
 ![Cost function given theta_1](../assets/ex03_interlude_cost.png){width=400px} 
 
-On the graphs below, we can see that extreme $\theta_1$ values correspond to a very high cost. However, as we get closer to the bottom of the curve, the cost is reduced.  
+On the graphs below, you can see the we can see that extreme $\theta_1$ values (which modifies the slope of the hypothesis curve - in orange) correspond to a very high cost. On the other hand, as we get closer to the bottom of the curve, the cost is reduced.  
 
 ![A quite bad model](../assets/ex03_cost_1.png){width=600px} 
 
