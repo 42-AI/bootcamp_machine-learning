@@ -1,5 +1,5 @@
 # Gradient Descent
-Now comes the fun part: gradient descent! The algorithm is not that different from the one in univariate linear regression. As you might have guessed, what will change is that the $j$ indice needs to run from $0$ to $n$ instead of just $0$ to $1$. So all you need is a more general algorithm, which can be expressed in pseudocode as the following:
+Now comes the fun part: _gradient descent_! The algorithm is not that different from the one used in univariate linear regression. As you might have guessed, what will change is that the $j$ indice needs to run from $0$ to $n$ instead of $0$ to $1$. So all you need is a more generic algorithm, which can be expressed in pseudocode as the following:
 $$
 \begin{matrix}
 \text{repeat until convergence} \hspace{1cm}\{\\
@@ -22,4 +22,4 @@ Where:
 - $\nabla{(J)}$ is the entire gradient vector
 
 ### Note: Do you still wonder why there is a subtraction in the equation?  
-Actually, the gradient indicates the direction to move if we wanted to **increase** the output of the cost function. So since our optimization objective is to **minimize** the cost, we move in the opposite direction of the gradient (hence the name *gradient descent*).
+By definition, the gradient indicates the direction towards which we should adjust the $\theta$ parameters if we wanted to *increase* the cost. But since our optimization objective is to *minimize* the cost, we move $\theta$ in the opposite direction of the gradient (hence the name *gradient descent*).

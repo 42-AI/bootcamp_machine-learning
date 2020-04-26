@@ -1,9 +1,9 @@
-## Even More Linear Algebra Tricks!
+# Interlude - Even More Linear Algebra Tricks!
 
 As you already did before with the univariate hypothesis, the multivariate hypothesis can be vectorized as well.  
 
-If you add a column of ones as the first column of the $X$ matrix, you got the $X'$ matrix.  
-Then, you can calculate $\hat{y}$ with a simple product between $X'$ and $\theta$.
+If you add a column of $1$'s as the first column of the $X$ matrix, you get what we'll call the $X'$ matrix.  
+Then, you can calculate $\hat{y}$ by multiplying $X'$ and $\theta$.
 
 $$X' \cdot \theta = 
 \begin{bmatrix} 
@@ -33,4 +33,6 @@ $$X' \cdot \theta =
 =
 \hat{y} $$
 
-Another way of understanding this is that we created a fake $x_0$ that is always equal to $1$. This facilitates the calculations because now, each $x_j$ feature has its corresponding $\theta_j$ parameter in the matrix multiplication.
+Another way of understanding this algebra trick is to pretend that each training example has an artificial $x_0$ feature that is always equal to $1$. This simplifies the equations because now, each $x_j$ feature has its corresponding $\theta_j$ parameter in the multiplication.
+
+$$\theta_0x_0^{(i)} + \theta_{1} x_{1}^{(i)} + \dots + \theta_{n} x_{n}^{(i)} = \theta \cdot x'^{(i)}$$
