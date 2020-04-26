@@ -33,7 +33,7 @@ from mylinearregression import MyLinearRegression as MyLR
 
 # Build the model:
 x_ = add_polynomial_features(x, 3)
-my_lr = MyLR(np.one(4)).fit(x_, y)
+my_lr = MyLR(np.one(4).reshape(-1,1)).fit(x_, y)
 
 # Plot:
 ## To get a smooth curve, we need a lot of data points
