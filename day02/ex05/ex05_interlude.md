@@ -1,6 +1,10 @@
 # Interlude - Improve 
 
+<<<<<<< HEAD
 ![The Learning Cycle: Improve](../assets/Improve.png){width=400px}  
+=======
+![titre](../assets/Improve.png){width=400px}  
+>>>>>>> 8f80eb9edc0cfd22b482cb7a0373ef60ef4d9a00
 
 ## Multivariate Gradient
 
