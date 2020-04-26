@@ -1,10 +1,6 @@
 # Interlude - Evaluate
 
-<<<<<<< HEAD
 ![The Learning Cycle: Evaluate](../assets/Evaluate.png){width=400px}
-=======
-![titre](../assets/Evaluate.png){width=400px}
->>>>>>> 8f80eb9edc0cfd22b482cb7a0373ef60ef4d9a00
 
 ## Back to the Cost Function
 
@@ -12,13 +8,8 @@ How is our model doing?
 
 To evaluate our model, remember before we used a **metric** called the **cost function** (also known as **loss function**). The cost function is basically just a measure of how wrong the model is, in all of its predictions.   
 
-<<<<<<< HEAD
 Two days ago, we defined the cost function as the average of the squared distances between each prediction and its expected value (distances represented by the dotted lines in the figure below) :   
 ![Distances between predicted and expected values](../assets/bad_pred_with_distance.png){width=400px}
-=======
-Two days ago, we defined the cost function as the average of the squared distances between each prediction and its expected value : 
-![titre](../assets/bad_pred_with_distance.png){width=400px}
->>>>>>> 8f80eb9edc0cfd22b482cb7a0373ef60ef4d9a00
 
 The formula was the following: 
 $$

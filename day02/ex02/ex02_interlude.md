@@ -10,13 +10,8 @@ That's all very neat, but we live in a world full of complex phenomena that a mo
 We'd need a model where more than one variable (or even thousands of variables) are involved. That's what we call a **multivariate model**. And that's today's topic!  
 
 
-<<<<<<< HEAD
 ## Predict 
 ![The Learning Cycle: Predict](../assets/Predict.png){width=400px}  
-=======
-# Predict 
-![titre](../assets/Predict.png){width=400px}  
->>>>>>> 8f80eb9edc0cfd22b482cb7a0373ef60ef4d9a00
 
 ## Representing the examples as an m * n matrix
 First we need to reconsider how we represent the training examples.  Now that we want to characterize each training example with not just one, but many variables, we need more than a vector. We need a __matrix__!  
