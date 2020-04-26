@@ -1,5 +1,5 @@
 # Predict I: Introducing the Sigmoid Function
-  ![titre](../../day00/assets/Predict.png"/>  
+  ![titre](../assets/Predict.png){width=300px}  
 
 ### **Formulating a Hypothesis**  
 Remember that a hypothesis is an equation (with parameters) that allows a model to calculate predictions based on a set of features. The linear hypothesis we used before worked fine to predict continuous values but how could it be useful to tell, for example, if a patient is sick or not?
