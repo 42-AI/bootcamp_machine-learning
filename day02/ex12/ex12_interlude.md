@@ -38,7 +38,7 @@ my_lr = MyLR(np.one(4).reshape(-1,1)).fit(x_, y)
 
 # Plot:
 ## To get a smooth curve, we need a lot of data points
-continuous_x = np.arange(1,10.1, 0.1).reshape(-1,1)
+continuous_x = np.arange(1,10.01, 0.01).reshape(-1,1)
 x_ = add_polynomial_features(continuous_x, 3)
 y_hat = my_lr.predict(continuous_x)
 
