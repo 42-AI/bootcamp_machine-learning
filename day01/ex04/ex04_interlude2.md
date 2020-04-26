@@ -48,10 +48,10 @@ $$
 $$
 - Second, we need to tweak the equation a bit so that it directly returns a $\nabla(J)$ vector containing both $\nabla(J)_0$ and $\nabla(J)_1$.
 $$
-\nabla(J) = \frac{1}{m} X'^\mathsf{T}(X'\theta - y)    
+\nabla(J) = \frac{1}{m} {X'}^{\mathsf{T}}(X'\theta - y)    
 $$  
 If the equation does not seems obvious, play a bit with your vectors, on paper and in your code, until you get it. 
 
 ### Notation Remark: 
-$X'^\mathsf{T}$ : You might wonder what the $^\mathsf{T}$ is for. It means the $X'$ matrix must be **transposed**. Transposing a matrix flips it on its diagonal so that its rows become its columns and vice versa. Here we need to do it so that matrix dimensions are appropriate multiplication and to multiply the right elements together. 
+${X'}^{\mathsf{T}}$ : You might wonder what the $^\mathsf{T}$ is for. It means the $X'$ matrix must be **transposed**. Transposing a matrix flips it on its diagonal so that its rows become its columns and vice versa. Here we need to do it so that matrix dimensions are appropriate multiplication and to multiply the right elements together. 
 
