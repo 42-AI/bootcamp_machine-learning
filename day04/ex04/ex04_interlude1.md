@@ -1,5 +1,7 @@
 # Fighting overfitting... 
 
+  ![titre](../assets/Evaluate.png){width=300px}  
+
 ## Enter Regularisation   
 In the **day02**, we talked about the problem of overfitting and how to be able to detect it by splitting the dataset into a **training set** and a **test set**.  
 
