@@ -1,8 +1,7 @@
-# Fighting overfitting... 
+# Fighting overfitting... enter Regularization
 
   ![titre](../assets/Evaluate.png){width=300px}  
 
-## Enter Regularisation   
 In the **day02**, we talked about the problem of overfitting and how to be able to detect it by splitting the dataset into a **training set** and a **test set**.  
 
 However, being able to detect overfitting does not mean being able to avoid it.  
@@ -26,7 +25,6 @@ You can see that we are starting the sum at $j = 1$, because we do not want to p
 ## Be carefull!  
 Machine Learning is essentially done by computer scientists (not mathematicians) which tends to be sometimes a bit messy in the way they represent things mathematically.  
 For example: the fact we are using the notation $\theta_0$ to represent the y-intercept makes things easy fo applying linear algebra tricks, **but** it completly messed the overall matrix notation!  
-
 
 According to that notation, the matrix $X'$ has the following properties: 
 * its row index, $x'^{(i)}$, use the mathematical indexing: starting at 1.
