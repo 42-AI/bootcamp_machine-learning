@@ -1,15 +1,15 @@
 # Day03 - Logistic Regression
 
-Today, you will discover your first classification algorithm: the logistic regression. You will learn its cost function, gradient descent and some metrics to evaluate its performances.
+Today, you will discover your first classification algorithm: logistic regression. You will learn its cost function, gradient descent and some metrics to evaluate its performance.
 
 ## Notions of the Day
 
 Logistic hypothesis, logistic gradient descent, logistic regression, multiclass classification. 
 Accuracy, precision, recall, F1-score, confusion matrix.
 
-## Useful Ressources  
+## Useful Resources  
   
-We strongly advise you to use the following resource:
+We strongly advise that you use the following resource:
 [Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/3)  
 Here are the sections of the MOOC that are relevant for today's exercises: 
 
@@ -73,7 +73,7 @@ Python 3.7.*
 
 ### Exercise 05 - Logistic Loss Function
 
-### Interlude - Linear Algebra strikes again!
+### Interlude - Linear Algebra Strikes again!
 
 ### Exercise 06 - Vectorized Logistic Loss Function
 

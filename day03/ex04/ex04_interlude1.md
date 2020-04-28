@@ -1,11 +1,11 @@
-# Predict II : Hypothesis 
+# Interlude - Predict II : Hypothesis 
 
 We hope your curiosity led you to plot your sigmoid function. If you didn't, well here is what it looks like:
 
-![titre](../../day03/assets/sigmoid.png){width=300px}  
+![Sigmoid](../assets/sigmoid.png){width=300px}  
 
 As you can see, **the sigmoid's output values range from $0$ to $1$**.  
-You can input real numbers as big as you want (positive or negative), they will always land within this range. This will be very helpful for the next part.
+You can input real numbers as big as you want (positive or negative), the output will always land within this range. This will be very helpful for the next part.
 
 # Logistic Hypothesis
 
@@ -30,4 +30,4 @@ $$
 
 As we said before: the **sigmoid function** is just a way to **map the result of a linear equation onto a [0,1] value range**.  
 
-This transformation allows us to interpret the results as a **probability that an individual is a member of a class**.
+This transformation allows us to interpret the result as a **probability that an individual is a member of a given class**.
