@@ -4,7 +4,9 @@
 ## Formulating a Hypothesis  
 Remember that a hypothesis, denoted $h(\theta)$, is an equation that combines a set of **features** (that characterize an example) with **parameters** in order to output a **prediction**. Remember the hypothesis we used in linear regression?  
 
-$$h(\theta) = \theta_0 + \theta_{1} x_{1}^{(i)} + \dots + \theta_{n} x_{n}^{(i)} = \theta \cdot x'^{(i)}$$
+$$
+h(\theta) = \theta_0 + \theta_{1} x_{1}^{(i)} + \dots + \theta_{n} x_{n}^{(i)} = \theta \cdot x'^{(i)}
+$$
 
 It worked fine to predict continuous values, but could we also use it to tell, for example, if a patient is sick or not?  
 That's a yes-or-no question, so the output from the hypothesis function should reflect that.

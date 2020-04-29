@@ -14,7 +14,7 @@ Now you've written your sigmoid function, let's look at **the logistic regressio
 $$
 \begin{matrix}
 \hat{y}^{(i)} & = & h_\theta(x^{(i)}) & = & \text{sigmoid}(\theta \cdot x'^{(i)}) 
-& =  &\frac{1} {1 + e^{-\theta \cdot x'^{(i)}}} & &\text{ for i = 1, \dots, m}    
+& =  &\cfrac{1} {1 + e^{-\theta \cdot x'^{(i)}}} & &\text{ for i = 1, \dots, m}    
 \end{matrix}
 $$
 
@@ -24,7 +24,7 @@ It can be vectorized as:
 
 $$
 \begin{matrix}
-\hat{y} & = & h_\theta(X) & = & \text{sigmoid}(X'\theta) & =  &\frac{1} {1 + e^{-X'\theta}}    
+\hat{y} & = & h_\theta(X) & = & \text{sigmoid}(X'\theta) & =  &\cfrac{1} {1 + e^{-X'\theta}}    
 \end{matrix}
 $$
 
