@@ -9,8 +9,8 @@ As with the previous exercice, **the only thing you have to change is your hypot
 $$
 \large
 \begin{matrix}
-\nabla(J)_0 &  = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
-\nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
+\nabla(J)_0 &  = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
+\nabla(J)_j & = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
 \end{matrix}
 \normalsize
 $$
@@ -19,5 +19,5 @@ $$
 
 Can be vectorized the same way as you did before:
 $$
-\nabla(J) = \frac{1}{m} X'^T(h_\theta(X) - y)
+\nabla(J) = \cfrac{1}{m} X'^T(h_\theta(X) - y)
 $$  
