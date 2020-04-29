@@ -20,8 +20,8 @@ $$
     1 \\
     \vdots \\
     1
-\end{bmatrix
-}$$
+\end{bmatrix}
+$$
 
 ## Note: Operations Between Vectors and Scalars 
 
