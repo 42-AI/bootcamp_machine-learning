@@ -26,7 +26,6 @@ $$X' \cdot \theta =
 =
 \begin{bmatrix}
 \hat{y}^{(1)} \\ 
-
 \vdots \\
 \hat{y}^{(m)}
 \end{bmatrix} 
