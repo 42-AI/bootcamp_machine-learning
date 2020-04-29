@@ -1,6 +1,6 @@
 # Interlude - Evaluate
 
-  ![The Learning Cycle - Evaluate](../assets/Evaluate.png){width=300px}  
+![The Learning Cycle - Evaluate](../assets/Evaluate.png){width=300px}  
 
 Our **model** can **predict the probability** for a given example **to be part of the class labeled as 1**.  
 Now it's time to evaluate how good it is.  
@@ -24,12 +24,13 @@ Here we need a function that will penalize the classifier with a high cost if it
 
 
 
- $$
+$$
 cost_1 = -\log(\hat{y})
- $$
+$$
+
+\newpage
 
 ![Cost function when y = 1](../assets/-log_x.png){width=300px}  
-
 
 You can see from the plot that: 
 - if the prediction ( $\hat{y}$ ) is close to $0$, the cost will be great, 
@@ -76,7 +77,8 @@ cost = cost_0 = -\log(1- \hat{y}^{(i)})
 $$
 
 And we can represent it like this:   
-  ![cost_0 and cost_1](../assets/log_loss.png){width=300px}  
+
+![cost_0 and cost_1](../assets/log_loss.png){width=300px}  
 
 How do you switch between $cost_0$ and $cost_1$ depending on the value of $y^{(i)}$? We could use an if-else statement in the code, but that's not very pretty and it doesn't provide a cost function that can be expressed as a single mathematical expression. It turns out there is a little mathematical trick we can use to make everything stand in one equation.
 
