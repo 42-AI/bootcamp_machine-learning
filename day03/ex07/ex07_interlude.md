@@ -11,8 +11,8 @@ If you remember, to calculate the gradient, we start with the cost function and 
 $$
 \large
 \begin{matrix}
-\nabla(J)_0 &  = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
-\nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
+\nabla(J)_0 &  = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
+\nabla(J)_j & = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
 \end{matrix}
 \normalsize
 $$
@@ -30,7 +30,11 @@ This formula should be very familiar to you, as it's the same as the linear regr
 The only difference is that $h_{\theta}(x^{(i)})$ corresponds to **the logistic regression hypothesis instead of the linear regression hypothesis**.  
 
 In other words:  
-$h_{\theta}(x^{(i)}) = \text{sigmoid}( \theta \cdot x'^{(i)}) = \frac{1} {1 + e^{-\theta \cdot x'^{(i)}}}$   
+$$
+h_{\theta}(x^{(i)}) = \text{sigmoid}( \theta \cdot x'^{(i)}) = \cfrac{1} {1 + e^{-\theta \cdot x'^{(i)}}}
+$$   
 
 Instead of:   
-$\cancel{h_{\theta}(x^{(i)}) = \theta \cdot x'^{(i)}}$.  
+$$
+\cancel{h_{\theta}(x^{(i)}) = \theta \cdot x'^{(i)}}
+$$  

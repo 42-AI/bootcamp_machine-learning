@@ -2,12 +2,12 @@
 You've become quite used to vectorization by now. You may have already tried to vectorize the logistic cost function by yourself. Let's look one last time at the former equation:
 
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
 $$
 ## Vectorized Logistic Cost Function
 In the **vectorized version**, we remove the sum ( $\sum$ )because it is captured by the dot products:
 $$
-J( \theta) = -\frac{1} {m} \lbrack y \cdot \log(\hat{y}) + (\vec{1} - y) \cdot \log(\vec{1} - \hat{y})\rbrack
+J( \theta) = -\cfrac{1} {m} \lbrack y \cdot \log(\hat{y}) + (\vec{1} - y) \cdot \log(\vec{1} - \hat{y})\rbrack
 $$
 
 Where: 
