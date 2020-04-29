@@ -4,7 +4,9 @@ You've become quite used to vectorization by now. You may have already tried to 
 $$
 J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
 $$
+
 ## Vectorized Logistic Cost Function
+
 In the **vectorized version**, we remove the sum ( $\sum$ )because it is captured by the dot products:
 $$
 J( \theta) = -\cfrac{1} {m} \lbrack y \cdot \log(\hat{y}) + (\vec{1} - y) \cdot \log(\vec{1} - \hat{y})\rbrack
@@ -12,11 +14,14 @@ $$
 
 Where: 
 - $\vec{1}$ is a vector full of $1$'s with the same dimensions as $y$ : $(m * 1)$  
-$$\vec{1} = \begin{bmatrix}
+
+$$
+\vec{1} = \begin{bmatrix}
     1 \\
     \vdots \\
     1
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 ## Note: Operations Between Vectors and Scalars 
 

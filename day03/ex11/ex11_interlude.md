@@ -8,14 +8,18 @@ A single classification prediction is either right or wrong, nothing in between.
 You may not realize it yet, but this question involves measuring two very different error types, and the distinction is crucial.
 
 ## Error Types
-With respect to a given *Class A*, classification errors fall in two categories:  
+With respect to a given *Class A*, classification errors fall in two categories:
 
-**False positive:** when a *non-A* object is assigned to *Class A*. For example: 
+### **False positive:** when a *non-A* object is assigned to *Class A*.  
+  For example: 
   - Pulling the fire alarm when there is no fire.
+
   - Considering that someone is sick when she isn't.
+  
   - Identifying a face in an image when in fact it was a Teddy Bear.
 
-**False negative:** when an *A* object is assigned to another class than *Class A*. For example:  
+### **False negative:** when an *A* object is assigned to another class than *Class A*.  
+  For example: 
   - Not pulling the fire alarm when there is a fire.
   - Considering that someone is not sick when she isn't.
   - Failing to recognize a face in an image that does contain one.
