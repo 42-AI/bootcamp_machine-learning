@@ -9,13 +9,16 @@ You may not realize it yet, but this question involves measuring two very differ
 
 ## Error Types
 With respect to a given *Class A*, classification errors fall in two categories:
-- **false positive:** when a *non-A* object is assigned to *Class A*.  
+
+### **false positive:** when a *non-A* object is assigned to *Class A*.  
   For example: 
   - Pulling the fire alarm when there is no fire.
+
   - Considering that someone is sick when she isn't.
+  
   - Identifying a face in an image when in fact it was a Teddy Bear.
 
-- **false negative:** when an *A* object is assigned to another class than *Class A*.  
+### **false negative:** when an *A* object is assigned to another class than *Class A*.  
   For example: 
   - Not pulling the fire alarm when there is a fire.
   - Considering that someone is not sick when she isn't.
