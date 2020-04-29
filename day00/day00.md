@@ -47,7 +47,7 @@ Here are the sections of the MOOC that are relevant for today's exercises:
 * The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask questions in the `#bootcamps` channel in [42AI's Slack workspace](42-ai.slack.com).
+* You can also ask questions in the `#bootcamps` channel in [42AI's Slack workspace](https://42-ai.slack.com).
 * If you find any issues or mistakes in this document, please create an issue on our [dedicated Github repository](https://github.com/42-AI/bootcamp_machine-learning/issues).
 
 ## Helper
