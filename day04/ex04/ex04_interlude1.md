@@ -1,6 +1,6 @@
 # Interlude - Fighting Overfitting... With Regularization
 
-  ![The Learning Cycle - Evaluate](../assets/Evaluate.png){width=300px}  
+![The Learning Cycle - Evaluate](../assets/Evaluate.png){width=300px}  
 
 In the **day02**, we talked about the problem of **overfitting** and the necessity of splitting the dataset into a **training set** and a **test set** in order to spot it.  
 
@@ -42,8 +42,6 @@ X' =
     j = 0, \dots, n
 \end{matrix}}
 =     
-
-
 \left .
 \begin{bmatrix}
 x_0^{(1)} & x_1^{(1)} & \dots & x_n^{(1)} \\
@@ -58,17 +56,22 @@ It's precisely for this reason that you keep seeing that $X'$ is of dimension $m
 ## Terminology:
 The regularization technique we are introducing here is named **$L_2 \text{ regularization}$**, because it adds the squared $L_2 \text{ norm}$ of the $\theta$ vector to the cost function.  
 The $L_2 \text{ norm}$ of a given vector $x$, written
+
 $$
 L_2(x) = ||x||_2 = \sqrt{\sum_i x_i^2 } \\
 L_2(x)^2 = ||x||_2^2 = \sum_i x_i^2  \\
+$$
 
-$$ 
 is its **euclidean norm** (i.e. the sum of the components squared).  
 
 There is an infinite variety of norms that could be used as regularization terms, depending on the desired regularization effect. Here, we will only use $L_2$, the most common one.
 
 **Note:**
-$$\text{the notation }\sum_i \\ \text{ means: "the sum for all } i"$$
+
+$$
+\text{the notation }\sum_i \\ \text{ means: "the sum for all } i"
+$$
+
 There is no need to give explicitly the start and the end of the summation index if we want to sum over all the values of $i$.  
 However, it is better to do it anyway because it forces us to be sure of what we are doing. And in our case, we do not want to sum over $\theta_0$...
 

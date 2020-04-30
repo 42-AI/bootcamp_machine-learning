@@ -1,13 +1,15 @@
 # Interlude - Regularized Gradient
 
-  ![The Learning Cycle - Improve](../assets/Improve.png){width=300px}  
+![The Learning Cycle - Improve](../assets/Improve.png){width=300px}  
 
 To derive the gradient of the regularized cost function, $\nabla(J)$ you have to change a bit the formula of the unregularized gradient.  
 Given the fact that we are not penalizing $\theta_0$, the formula will remain the same as before for this parameter. For the other parameters ($\theta_1, \dots, \theta_n$), we must add the partial derivative of the regularization term: $\lambda \theta_j$.
 
 Therefore, we get:
 $$
-\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) \\
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})
+$$
+$$
 \nabla(J)_j = \frac{1}{m}\left(\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} + \lambda \theta_j\right) \text{ for j = 1, ..., n}
 $$
 
@@ -35,6 +37,7 @@ Where:
 - $\lambda$ is a constant, 
 - $\theta$ is a vector of dimension $(n + 1) * 1$, the parameter vector,
 - $\theta'$ is a vector of dimension $n * 1$, constructed using the following rules: 
+
 $$
 \begin{matrix}
 \theta'_0 & =  0 \\

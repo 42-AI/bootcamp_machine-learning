@@ -48,6 +48,5 @@ $$
 & = & 0 \cdot 0 + \theta_1 \cdot \theta_1 + \dots + \theta_n \cdot \theta_n \\ 
 \\
 & = & \sum_{j= 1}^n \theta_j^2
-  
 \end{matrix}
 $$
