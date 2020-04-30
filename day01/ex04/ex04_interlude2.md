@@ -5,11 +5,15 @@ If you tried to run your code on a very large dataset, you'd find that it takes 
 Remember the linear algebra trick of yesterday? Let's use it again!  
 If you concatenate a column of $1$'s to the left of the $x$ vector, you get what we called matrix $X'$.   
 
-$$X' = \begin{bmatrix} 1 & x^{(1)} \\ \vdots & \vdots \\ 1 & x^{(m)}\end{bmatrix}$$
+$$
+X' = \begin{bmatrix} 1 & x^{(1)} \\ \vdots & \vdots \\ 1 & x^{(m)}\end{bmatrix}
+$$
 
 This transformation is very convenient because we can rewrite each $1$ as $x_0^{(i)}$, and each $x^{(i)}$ as $x_1^{(i)}$. So now the $X'$ matrix looks like this:
 
-$$X' = \begin{bmatrix} x_0^{(1)} & x_1^{(1)} \\ \vdots & \vdots \\ x_0^{(m)} & x_1^{(m)}\end{bmatrix}$$
+$$
+X' = \begin{bmatrix} x_0^{(1)} & x_1^{(1)} \\ \vdots & \vdots \\ x_0^{(m)} & x_1^{(m)}\end{bmatrix}
+$$
 
 Notice that each $x^{(i)}$ example becomes e vector made of $(x^{(i)}_0, x^{(i)}_1)$.  
 The $0$ and $1$ indices on the $x$ features correspond to the indices of the $\theta$ parameters with which they will be multiplied.
@@ -19,21 +23,27 @@ Why does this matter? Well, if we take the equation from the previous exercise:
 $$
 \nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})
 $$
+
 We can multiply it by $1$ without changing its value:
+
 $$
 \nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) \cdot 1
 $$
-And rewrite $1$ as  $x_0^{(i)}$:
+
+And rewrite $1$ as $x_0^{(i)}$:
+
 $$
 \nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{0}^{(i)}
 $$
 
 This means that now the equation for $\nabla(J)_0$ is no different from the equation we had for $\nabla(J)_1$, so they can both be captured by ONE **generic equation**:
+
 $$
 \begin{matrix}
 \nabla(J)_j = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & & \text{ for j = 0, 1}    
 \end{matrix}
 $$
+
 And as you probably suspected, a generic equation opens the door to vectorization...
 
 ## Vectorizing the Gradient Calculation
@@ -46,10 +56,13 @@ $$
 \nabla(J)_j = \frac{1}{m} (X'\theta - y)X'_{j} & & \text{ for j = 0, 1}
 \end{matrix}
 $$
+
 - Second, we need to tweak the equation a bit so that it directly returns a $\nabla(J)$ vector containing both $\nabla(J)_0$ and $\nabla(J)_1$.
+
 $$
 \nabla(J) = \frac{1}{m} {X'}^T(X'\theta - y)    
-$$  
+$$
+
 If the equation does not seems obvious, play a bit with your vectors, on paper and in your code, until you get it. 
 
 ### Notation Remark: 
