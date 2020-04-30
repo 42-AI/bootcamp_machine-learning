@@ -1,34 +1,34 @@
-# Fighting overfitting... enter Regularization
+# Interlude - Fighting Overfitting... With Regularization
 
-  ![titre](../assets/Evaluate.png){width=300px}  
+  ![The Learning Cycle - Evaluate](../assets/Evaluate.png){width=300px}  
 
-In the **day02**, we talked about the problem of overfitting and how to be able to detect it by splitting the dataset into a **training set** and a **test set**.  
+In the **day02**, we talked about the problem of **overfitting** and the necessity of splitting the dataset into a **training set** and a **test set** in order to spot it.  
 
 However, being able to detect overfitting does not mean being able to avoid it.  
 
-To do so, we are now introducing an important new notion: the **regularization**.
+To address this important issue, it is time to introduce you to a new technique: **regularization**.
 
-The idea beahind regularization is to **penalize the model for putting too much weight on certain** (usually heavy polynomials) **features**.  
+If you remember well, overfitting happens because the model takes advantage of irrelevant signals in the training data. The basic idea beahind regularization is to **penalize the model for putting too much weight on certain** (usually heavy polynomial) **features**. We do this by adding an extra term in the cost function:  
 
 $$
 \text{regularized cost function} = \text{cost function} + \frac{\lambda}{2m} \sum_{j = 1}^n \theta_j^2
 $$
 
-By doing so, **we are encouraging the model to keep its** $\theta$ **values as small as possible**. Indeed, the values of $\theta$ are now took into account to calculate the loss function of the model.  
+By doing so, **we are encouraging the model to keep its** $\theta$ **values as small as possible**. Indeed, the values of $\theta$ *themselves* are now taken into account when calculating the cost.
 
-$\lambda$ (called 'lambda') is the parameter wich will directly determine how much we want the reglarization to drive the model's construction.  
-- If $\lambda = 0$, we are in the case usual models we built until now: there is no regularization.
-- If $\lambda$ is very big, it will drive all the $\theta$ to be $0$.
+$\lambda$ (called *lambda*) is the parameter through which you can modulate how reglarization should impact the model's construction.  
+- If $\lambda = 0$, there is no regularization (as we did until now)
+- If $\lambda$ is very large, it will drive all the $\theta$ parameters to $0$.
 
-You can see that we are starting the sum at $j = 1$, because we do not want to penalize the value of $\theta_0$, corresponding to the y-intercept.
+**Please notice:** in the regularization term, the sum starts at $j = 1$ because we do NOT want to penalize the value of $\theta_0$ (the y-intercept, which doesn't depend on a feature).
 
-## Be very carefull!  
-Machine Learning is essentially done by computer scientists (not mathematicians) which tends to be sometimes a bit messy in the way they represent things mathematically.  
-For example: the fact we are using the notation $\theta_0$ to represent the y-intercept makes things easy fo applying linear algebra tricks, **but** it completly messed the overall matrix notation!  
+## Be carefull!  
+Machine Learning was essentially developed by computer scientists (not mathematicians). This can cause problems when we try to represent things mathematically.  
+For example: using the $\theta_0$ notation to represent the y-intercept makes things easy when we apply the linear algebra trick, **but** it completly messes up the overall matrix notation!  
 
-According to that notation, the matrix $X'$ has the following properties: 
-* its row index, $x'^{(i)}$, use the mathematical indexing: starting at 1.
-* its column index, $x'_j$, use the computer indexing: starting at 0. 
+According to that notation, the $X'$ matrix  has the following properties: 
+* its rows, $x'^{(i)}$, follow the mathematical indexing: starting at 1.
+* its columns, $x'_j$, follow the computer science indexing: starting at 0. 
 
 $$
 X' =
@@ -53,8 +53,10 @@ x_0^{(m)} & x_1^{(m)} & \dots & x_n^{(m)} \\
 \right \} i = 1, \dots, m
 $$
 
+It's precisely for this reason that you keep seeing that $X'$ is of dimension $m * (n+1)$
+
 ## Terminology:
-The kind of regularization we are introducing here is named $L_2 \text{ regularization}$, because it add the squared $L_2 \text{ norm}$ of the vector $\theta$ to the cost function.  
+The regularization technique we are introducing here is named **$L_2 \text{ regularization}$**, because it adds the squared $L_2 \text{ norm}$ of the $\theta$ vector to the cost function.  
 The $L_2 \text{ norm}$ of a given vector $x$, written
 $$
 L_2(x) = ||x||_2 = \sqrt{\sum_i x_i^2 } \\
@@ -63,7 +65,7 @@ L_2(x)^2 = ||x||_2^2 = \sum_i x_i^2  \\
 $$ 
 is its **euclidean norm** (i.e. the sum of the components squared).  
 
-It exists an infinite number of norms which could be used as regularization terms, and which leads to different kinds of results. Here, we will use only $L_2$, which is the most commonly used.
+There is an infinite variety of norms that could be used as regularization terms, depending on the desired regularization effect. Here, we will only use $L_2$, the most common one.
 
 **Note:**
 $$\text{the notation }\sum_i \\ \text{ means: "the sum for all } i"$$
@@ -72,4 +74,4 @@ However, it is better to do it anyway because it forces us to be sure of what we
 
 ## Our old friend vectorization ...
 
-It is not a surprise, we can use vectorization to calculate $\sum_{j = 1}^n \theta_j^2$ more efficiently. It could be a good exercise for you to try to find by yourself how to do it. We suggest you to think by yourself about it and to check the answer on the next page.
+It is not a surprise, we can use vectorization to calculate $\sum_{j = 1}^n \theta_j^2$  more efficiently. It could be a good exercise for you to try to figure it out by yourself. We suggest you give it a try and then check the answer on the next page.

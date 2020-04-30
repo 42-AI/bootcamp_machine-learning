@@ -1,15 +1,15 @@
-# Answers to the vectorization problem
+# Interlude - Answers to the Vectorization Problem
 
-How to vectorize the following? 
+So, how do you vectorize the following? 
 
 $$
 \sum_{i = j}^n \theta_j^2
 $$ 
 
-It looks very much alike a **dot product** of $\theta$ by itself.  
+It's very similar to a **dot product** of $\theta$ with itself.  
 The only problem here is to find a way to not take $\theta_0$ into account.  
 
-Lets construct the following vector $\theta'$ with the following rules : 
+Let's construct a vector $\theta'$ with the following rules : 
 $$
 \begin{matrix}
 \theta'_0 & = 0 &\\
@@ -28,7 +28,7 @@ $$
 \end{bmatrix}
 $$
 
-Therefore, we can now do our dot product without having $\theta_0$ interfering in our calculations: 
+This way, we can perform the dot product without having $\theta_0$ interfering in our calculations: 
 
 $$
 \begin{matrix}
