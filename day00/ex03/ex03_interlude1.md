@@ -9,7 +9,7 @@ We have some data.   We want to model it.
 * Then we can *apply that hypothesis to our data to make predictions*. 
 
 $$
-    hypothesis(data) = predictions
+hypothesis(data) = predictions
 $$
 
 ### Hypothesis
@@ -18,6 +18,7 @@ We will consider that *the more powerful the engines are, the more expensive the
 Furthermore, we will assume that the price increase is **proportional** to the power increase. In other words, we will look for a **linear relationship** between the two variables.
 
 This means that we will formulate the price prediction with a **linear equation**, that you might be already familiar with :  
+
 $$
 \hat{y} = ax + b
 $$
@@ -49,17 +50,17 @@ Where:
 - $x^{(i)}$ is the $i^{th}$ component of vector $x$   
 
 Which can be experessed as:  
+
 $$
 \hat{y} = \begin{bmatrix}\theta_0 + \theta_1 \times x^{(1)} \\ \vdots \\  \theta_0 + \theta_1 \times x^{(m)}\ \end{bmatrix}
 $$  
 
 For example,
+
 $$
 \text{given } \theta = \begin{bmatrix}33 \\ 5 \end{bmatrix} \text{ and } x = \begin{bmatrix}1 \\ 3 \end{bmatrix} \text{: }$$
 $$\hat{y} = h_{\theta}(x) = \begin{bmatrix} 33 +  5 \times 1 \\ 33 + 5 \times 3\end{bmatrix}  = \begin{bmatrix} 38 \\ 48 \end{bmatrix} 
 $$    
-
-
 
 
 ## More information

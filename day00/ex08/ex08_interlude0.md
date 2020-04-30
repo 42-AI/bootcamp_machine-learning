@@ -6,8 +6,6 @@ As we did with the hypothesis, we can use a vectorized equation to improve the c
 
 So now let's look at how squaring and averaging can be performed (more or less) in a single matrix multiplication !
 
-
-
 $$
 J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2
 $$
