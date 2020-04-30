@@ -7,11 +7,12 @@
 From our multivariate linear hypothesis we can derive our multivariate gradient. It looks a lot like the one we saw yesterday, but instead of having just two components, the gradient now has as many as there are parameters. This means that now we need to calculate $\nabla(J)_0,\nabla(J)_1,\dots,\nabla(J)_n$  
 
 If we take the univariate equations we used yesterday and replace the formula for $\nabla(J)_1$ by a more general $\nabla(J)_j$, we get the following:
+
 $$
-\large\begin{matrix}
+\begin{matrix}
 \nabla(J)_0 &  = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
 \nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
-\end{matrix}\normalsize
+\end{matrix}
 $$
 
 Where:  
@@ -28,17 +29,18 @@ Where:
 As usual, we can use some linear algebra magic to get a more compact (and computationally efficient) formula.
 
 First we can use our convention that each training example has an extra $x_0 = 1$ feature, and replace the gradient formulas above by one single equation that is valid for all $j$ components:
+
 $$
-\large\begin{matrix}
+\begin{matrix}
 \nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 0, ..., n}
-\end{matrix}\normalsize
+\end{matrix}
 $$
 
 And this generic equation can then be rewritten in a vectorized form:
 
-$$\large
+$$
 \nabla(J) = \frac{1}{m} {X'}^T(X'\theta - y)
-\normalsize$$  
+$$  
 
 Where:  
 - $\nabla(J)$ is the gradient vector of size $(n + 1) * 1$
