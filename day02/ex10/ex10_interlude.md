@@ -11,8 +11,10 @@ First we get to do some *feature engineering*. We create new features by raising
 
 ## Polynomial Hypothesis
 Now that we created our new features, we can combine them in a linear hypothesis that looks just the same as what we're used to: 
+
 $$
 \hat{y} = \theta_0 + \theta_1 x  +\theta_2 x^{2} + \dots + \theta_n x^{n}
 $$  
+
 It's a little strange because we are building a linear combination, not with different features but with different powers of the same feature. This is a first way of introducing non-linearity in a regression model! 
 
