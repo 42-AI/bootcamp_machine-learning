@@ -9,13 +9,16 @@ How is our model doing?
 To evaluate our model, remember before we used a **metric** called the **cost function** (also known as **loss function**). The cost function is basically just a measure of how wrong the model is, in all of its predictions.   
 
 Two days ago, we defined the cost function as the average of the squared distances between each prediction and its expected value (distances represented by the dotted lines in the figure below) :   
-![Distances between predicted and expected values](../assets/bad_pred_with_distance.png){width=400px}
+![Distances between predicted and expected values](../assets/bad_pred_with_distance.png){width=600px}
 
 The formula was the following: 
+
 $$
 J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2
 $$
+
 And its vectorized form:
+
 $$
 \begin{matrix}
 J(\theta) = \frac{1}{2m}(\hat{y} - y)\cdot(\hat{y}- y)
