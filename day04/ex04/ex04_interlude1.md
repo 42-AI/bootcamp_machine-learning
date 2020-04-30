@@ -67,6 +67,11 @@ is its **euclidean norm** (i.e. the sum of the components squared).
 
 There is an infinite variety of norms that could be used as regularization terms, depending on the desired regularization effect. Here, we will only use $L_2$, the most common one.
 
+**Note:**
+$$\text{the notation }\sum_i \\ \text{ means: "the sum for all } i"$$
+There is no need to give explicitly the start and the end of the summation index if we want to sum over all the values of $i$.  
+However, it is better to do it anyway because it forces us to be sure of what we are doing. And in our case, we do not want to sum over $\theta_0$...
+
 ## Our old friend vectorization ...
 
-It is not a surprise, we can use vectorization to calculate $L_2(x)^2$ more efficiently. It could be a good exercise for you to try to figure it out by yourself. We suggest you give it a try and then check the answer on the next page.
+It is not a surprise, we can use vectorization to calculate $\sum_{j = 1}^n \theta_j^2$  more efficiently. It could be a good exercise for you to try to figure it out by yourself. We suggest you give it a try and then check the answer on the next page.
