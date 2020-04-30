@@ -22,7 +22,7 @@ $\lambda$ (called 'lambda') is the parameter wich will directly determine how mu
 
 You can see that we are starting the sum at $j = 1$, because we do not want to penalize the value of $\theta_0$, corresponding to the y-intercept.
 
-## Be carefull!  
+## Be very carefull!  
 Machine Learning is essentially done by computer scientists (not mathematicians) which tends to be sometimes a bit messy in the way they represent things mathematically.  
 For example: the fact we are using the notation $\theta_0$ to represent the y-intercept makes things easy fo applying linear algebra tricks, **but** it completly messed the overall matrix notation!  
 
@@ -65,6 +65,11 @@ is its **euclidean norm** (i.e. the sum of the components squared).
 
 It exists an infinite number of norms which could be used as regularization terms, and which leads to different kinds of results. Here, we will use only $L_2$, which is the most commonly used.
 
+**Note:**
+$$\text{the notation }\sum_i \\ \text{ means: "the sum for all } i"$$
+There is no need to give explicitly the start and the end of the summation index if we want to sum over all the values of $i$.  
+However, it is better to do it anyway because it forces us to be sure of what we are doing. And in our case, we do not want to sum over $\theta_0$...
+
 ## Our old friend vectorization ...
 
-It is not a surprise, we can use vectorization to calculate $L_2(x)^2$ more efficiently. It could be a good exercise for you to try to find by yourself how to do it. We suggest you to think by yourself about it and to check the answer on the next page.
+It is not a surprise, we can use vectorization to calculate $\sum_{j = 1}^n \theta_j^2$ more efficiently. It could be a good exercise for you to try to find by yourself how to do it. We suggest you to think by yourself about it and to check the answer on the next page.

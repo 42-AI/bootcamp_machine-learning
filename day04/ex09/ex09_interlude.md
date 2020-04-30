@@ -5,3 +5,7 @@ Until now we only talked about the L2 regularization and its implication on the 
 It is time to use proper terminology.  
 When we apply L2 regularization on linear regression model, the new model is called a **Ridge Regression**.  
 Bessides that brad new name, a Ridge regression is nothing more than that: a linear regression regularized with L2. 
+
+We suggest you to watch this nice explanation [very nice explanation of Ridge Regularization](https://www.youtube.com/watch?v=Q81RR3yKn30).   
+By the way, this channel **StatQuest** is very good to understand the gist of a lot of machine learning concepts.  
+You will not waste your time watching its statistics and machine learning playlists!
