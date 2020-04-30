@@ -3,7 +3,7 @@
   ![The Learning Cycle - Improve](../assets/Improve.png){width=300px}  
 
 To derive the gradient of the regularized cost function, $\nabla(J)$ you have to change a bit the formula of the unregularized gradient.  
-Given the fact that we are not penalizing $\theta_0$, the formula will remain the same as before for this parameter. For the other parameters ($\theta_1, \dots, \theta_n$), we must add the partial derivative of the regularization terms: $\lambda \theta_j$.
+Given the fact that we are not penalizing $\theta_0$, the formula will remain the same as before for this parameter. For the other parameters ($\theta_1, \dots, \theta_n$), we must add the partial derivative of the regularization term: $\lambda \theta_j$.
 
 Therefore, we get:
 $$
