@@ -16,6 +16,7 @@ $$
 	\} \hspace{0.5cm} 
 \end{matrix}
 $$
+
 A few remarks on this algorithm:
 - If you directly subtracted the gradient from $\theta$, your steps would be too big and you would quickly overshoot past the minimum. That's why we use $\alpha$ (alpha), called the *learning rate*. It's a small float number (usually between 0 and 1) that decreases the magnitude of each update.
 - The pseudocode says "repeat until convergence", but in your implementation, you will not actually check for convergence at each iteration. You will instead set a number of cycles that is sufficient for your gradient descent to converge. 
