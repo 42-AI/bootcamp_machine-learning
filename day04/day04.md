@@ -78,10 +78,14 @@ Python 3.7.*
 
 ### Exercise 08 - Regularized Logistic Gradient
 
-### Exercise 09 - 
+### Interlude - Linear Regression to the next level: Ridge Regression
 
-### Exercise 10 - 
+### Exercise 09 - Ridge Regression
 
-### Exercise 11 - 
+### Exercise 10 - Practicing Ridge Regression
 
-### Exercise 12 - 
+### Interlude - Regularized Logistic Regression is still Logistic Regression
+
+### Exercise 11 -  Regularized Logistic Regression
+
+### Exercise 12 - Practicing Regularized Logistic Regression
