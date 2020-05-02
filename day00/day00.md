@@ -1,15 +1,16 @@
-# Day00 - Mathematical Delights
+# Day00 - Stepping Into Machine Learning
 
-Let's start by recoding some useful functions and formulas that will be used later in the week.  
-The idea is to help the students to 'tame' the mathematical jargon. They will have to simply implement the functions following the formulas without knowing what it is about. Then magically this already 'tamed' material will be used in context and understood without having to fight with its abstract notation.
+You will start by reviewing some linear algebra and statistics. Then you will implement your first model and learn how to evaluate its performances. 
 
-## Notions of the day
-
-Sum, mean, variance, standard deviation, vectors and matrices operations.
+## Notions of the Day
+Sum, mean, variance, standard deviation, vectors and matrices operations.  
+Hypothesis, model, regression, cost function. 
 
 ## Useful Ressources  
   
+We strongly advise you to use the following resource:
 [Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/1)  
+Here are the sections of the MOOC that are relevant for today's exercises: 
 
 ### Week 1: 
 
@@ -20,6 +21,14 @@ Sum, mean, variance, standard deviation, vectors and matrices operations.
 * Unsupervised Learning (Video + Reading)
 * Review (Reading + Quiz)
     
+**Linear Regression with One Variable:**  
+
+* Model Representation (Video + Reading)
+* Cost Function (Video + Reading)
+* Cost Function - Intuition I (Video + Reading)
+* Cost Function - Intuition II (Video + Reading)
+* *Keep what remains for tomorow ;)*
+
 **Linear Algebra Review:**
 
 * Matrices and Vectors (Video + Reading)
@@ -30,17 +39,16 @@ Sum, mean, variance, standard deviation, vectors and matrices operations.
 * Inverse and Transpose (Video + Reading)
 * Review (Reading + Quiz)
 
-
 ## General rules
 
-* The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
-* The norm: during this bootcamp you will follow the Pep8 standards https://www.python.org/dev/peps/pep-0008/
-* The function eval is never allowed.
+* The Python version to use is 3.7, you can check with the following command: `python -V`
+* The norm: during this bootcamp you will follow the [Pep8 standards](https://www.python.org/dev/peps/pep-0008/)
+* The function `eval` is never allowed.
 * The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask questions in the dedicated channel in the 42 AI Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github:  https://github.com/42-AI/bootcamp_machine-learning/issues.
+* You can also ask questions in the `#bootcamps` channel in [42AI's Slack workspace](https://42-ai.slack.com).
+* If you find any issues or mistakes in this document, please create an issue on our [dedicated Github repository](https://github.com/42-AI/bootcamp_machine-learning/issues).
 
 ## Helper
 
@@ -55,28 +63,36 @@ Python 3.7.*
 /goinfre/miniconda/bin/pip
 ```
 
-### Exercise 00 - Sum
+### Exercise 00 - The Vector
 
-### Exercise 01 - Mean
+### Exercise 01 - The Matrix
 
-### Exercise 02 - Variance
+### Exercise 02 - TinyStatistician
 
-### Exercise 03 - Standard deviation
+### Interlude - Predict, Evaluate, Improve
 
-### Exercise 04 - Dot product
+### Interlude - Predict
 
-### Exercise 05 - Matrix-vector multiplication 
+### Exercise 03 - Simple Prediction
 
-### Exercise 06 - Matrix-matrix multiplication
+### Interlude - A Simple Linear Algebra Trick
 
-### Exercise 07 - Mean Squared Error - iterative
+### Exercise 04 - Add Intercept
 
-### Exercise 08 - Mean Squared Error - vectorized
+### Exercise 05 - Prediction
 
-### Exercise 09 - Mean Squared Error as linear cost function - iterative
+### Exercise 06 - Let's Make Nice Plots
 
-### Exercise 10 - Mean Squared Error as linear cost function - vectorized
+### Interlude - Evaluate
 
-### Exercise 11 - Linear Gradient - iterative
+### Exercise 07 - Cost Function
 
-### Exercise 12 - Linear Gradient - vectorized
+### Interlude - Fifty Shades of Linear Algebra
+
+### Exercise 08 - Vectorized Cost Function
+
+### Exercise 09 - Lets Make Nice Plots Again
+
+### Exercise 10 - Question time!
+
+### Exercise 11 - Other Cost Runctions
