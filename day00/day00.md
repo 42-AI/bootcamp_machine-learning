@@ -63,7 +63,6 @@ Python 3.7.*
 /goinfre/miniconda/bin/pip
 ```
 
-
 ### Exercise 00 - The Vector
 
 ### Exercise 01 - The Matrix
