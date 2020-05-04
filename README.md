@@ -19,7 +19,7 @@
 
 This project is a Machine Learning bootcamp created by [42 AI](http://www.42ai.fr).
 
-As notions seen during this bootcamp can be complex, we very strongly advise students to have previously done the following bootcamp :
+As notions seen during this bootcamp can be complex, we very strongly advise students to have previously done the following bootcamp:
 * [Python](https://github.com/42-AI/bootcamp_python)
 
 42 Artificial Intelligence is a student organization of the Paris campus of the school 42. Our purpose is to foster discussion, learning, and interest in the field of artificial intelligence, by organizing various activities such as lectures and workshops.
@@ -28,25 +28,29 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 
 ## Curriculum
 
-### Day00 - Mathematical Delights
-**Understand useful mathematical functions and formulas**
-> Sum, mean, variance, standard deviation, vectors and matrices operations.
+### Day00 - Stepping Into Machine Learning
+**Get started with some linear algebra and statistics**
+> Sum, mean, variance, standard deviation, vectors and matrices operations.  
+Hypothesis, model, regression, cost function. 
 
-### Day01 - Linear Regression
-**Get started with the first concepts constituting the field of Machine Learning**
-> Matrix operations, gradient descent, cost function, normal equation, MSE, RMSE R-score and learning rate.
+### Day01 - Univariate Linear Regression
+**Implement a method to improve your model's performance: **gradient descent**, and discover the notion of normalization**
+> Gradient descent, linear regression, normalization.
 
-### Day02 - Logistic Regression
-**Implement a Logistic Regression class using a Gradient Descent algorithm**
-> Sigmoid, log loss, gradient descent, logistic regression, model evaluation, confusion matrix.
+### Day02 - Multivariate Linear Regression
+**Extend the linear regression to handle more than one features, build polynomial models and detect overfitting**
+> Multivariate linear hypothesis, multivariate linear gradient descent, polynomial models.  
+Training and test sets, overfitting.
 
-### Day03 - Feature Engineering and Regularization
-**See the L2 regularization and a few ways to process your data in order to improve significantly the performance of your models!**
-> Regularization, regularized linear regression, regularized logistic regression, Z-score standardization, min-max standardization, polynomial features, interaction terms.
+### Day03 - Logistic Regression
+**Discover your first classification algorithm: logistic regression!**
+> Logistic hypothesis, logistic gradient descent, logistic regression, multiclass classification.  
+Accuracy, precision, recall, F1-score, confusion matrix.
 
-### Day04 - Decision Tree :deciduous_tree:
-**Be able to use Decision Trees algorithms wisely in the future**
-> Gini impurity, entropy, information gain and decision trees.
+### Day04 - Regularization
+**Fight overfitting!**
+> Regularization, overfitting. Regularized cost function, regularized gradient descent.  
+Regularized linear regression. Regularized logistic regression.
 <br/>
 
 ## Acknowledgements
