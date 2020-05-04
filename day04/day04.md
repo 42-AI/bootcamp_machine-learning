@@ -1,5 +1,5 @@
 # Day04 - Regularization
-To day you will fight overfitting!  
+Today you will fight overfitting!  
 You will discover the concepts of regularization and how to implement it into the algortihms you already saw until now. 
 
 ## Notions of the Day
