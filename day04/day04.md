@@ -1,51 +1,45 @@
-# Bootcamp ML
+# Day04 - Regularization
+Today you will fight overfitting!  
+You will discover the concepts of regularization and how to implement it into the algortihms you already saw until now. 
 
-# Day04 - Decision Tree
+## Notions of the Day
+Regularization, overfitting. Regularized cost function, regularized gradient descent.  
+Regularized linear regression. Regularized logistic regression.
 
-This day aims to present a different kind of ML algorithm: Decision Trees.
-Decision Trees are historically quite popular as demonstrating the thought process of the algorithm when 
-making a prediction is easy. They are also the base of more complex algorithms (random trees...) that are higly efficient.
+## Useful Ressources  
+  
+We strongly advise you to use the following resource:
+[Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/3)  
+Here are the sections of the MOOC that are relevant for today's exercises: 
 
-If you don't have the time to recode everything try to grasp at least the key concepts in order to be able to use them wisely in the future.
+### Week 3: 
 
+**Solving the Problem of Overfitting:**
+* Classification (Video + Reading)
+* Hypothesis Representation (Video + Reading)
+* Decision Boundary (Video + Reading)
 
-## Notions of the day
+**Logistic Regression Model:**
+* Cost Function (Video + Reading)
+* Simplified Cost Function and Gradient Descent (Video + Reading)
+ 
+**Multiclass Classification:**
+* Mutliclass Classification: One-vs-all (Video + Reading)
 
-* Gini impurity
-* Shannon entropy
-* Information gain. 
-* Decision trees.
-
-
-## Useful Ressources
-
-- Gini impurity:  
-  * [A Simple Explanation of Gini Impurity (with examples)](https://victorzhou.com/blog/gini-impurity/)  
-- Shannon entropy:  
-  * [Shannon Entropy and Information Gain](https://www.youtube.com/watch?v=9r7FIXEAGvs&feature=youtu.be)  
-- Decision trees:  
-  * [Statquest](https://www.youtube.com/watch?v=7VeUPuFGJHk&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=34)  
-  * [Building a decision tree step by step](https://www.youtube.com/watch?v=LDRbO9a6XPU&feature=youtu.be)  
-  * [Sklearn doc](https://scikit-learn.org/stable/modules/tree.html#tree)  
-  * [On decision tree regressors](https://gdcoder.com/decision-tree-regressor-explained-in-depth/)  
-  * [ML course on decision trees](https://www.youtube.com/watch?v=eKD5gxPPeY0&list=PLBv09BD7ez_4temBw7vLA19p3tdQH6FYO). Beware principles are the same but implementation algorithm is not sklearn's one.  
-- Digging deeper:  
-  * [Nice article](https://mlcourse.ai/articles/topic3-dt-knn/). Not everything relevant for the day.  
-  * [Stackoverflow on difference between several decision trees algorithms](https://stackoverflow.com/questions/9979461/different-decision-tree-algorithms-with-comparison-of-complexity-or-performance)  
-
+* Review (Reading + Quiz)
 
 ## General rules
 
-* The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
-* The norm: during this bootcamp you will follow the Pep8 standards https://www.python.org/dev/peps/pep-0008/
-* The function eval is never allowed.
+* The Python version to use is 3.7, you can check with the following command: `python -V`
+* The norm: during this bootcamp you will follow the [Pep8 standards](https://www.python.org/dev/peps/pep-0008/)
+* The function `eval` is never allowed.
 * The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask questions in the dedicated channel in the 42 AI Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github:  https://github.com/42-AI/bootcamp_machine-learning/issues.
+* You can also ask questions in the `#bootcamps` channel in [42AI's Slack workspace](https://42-ai.slack.com).
+* If you find any issues or mistakes in this document, please create an issue on our [dedicated Github repository](https://github.com/42-AI/bootcamp_machine-learning/issues).
 
-## Helper 
+## Helper
 
 Ensure that you have the right Python version.
 
@@ -58,20 +52,40 @@ Python 3.7.*
 /goinfre/miniconda/bin/pip
 ```
 
-## Exercices
+### Exercise 00 - Logistic Regression
 
-### Exercise 00 - Shannon's Entropy
+### Exercise 01 - Polynomial models
 
-### Exercise 01 - Gini Impurity
+### Exercise 02 - Ai Key Notions
 
-### Exercise 02 - Information Gain
+### Exercise 03 - Polynomial models II
 
-### Exercise 03 - Understanding the Mathematical Concepts
+### Interlude - Fighting overfitting... enter Regularization
 
-### Exercise 04 - Understanding better Decision Tree for Classification
+### Interlude - Answers to the vectorization problem
 
-### Exercise 05 - Code the DecisionTreeClassifier Fit Function
+### Exercise 04 - L2 Regularization
 
-### Exercise 06 - Code the DecisionTreeClassifier Prediction Functions
+### Interlude - Predict II: Hypothesis
 
-### Exercise 07 - Using Decision Trees for Regression 
+### Exercise 05 - Regularized Linear Cost Function
+
+### Exercise 06 - Regularized Logistic Cost Function
+
+### Interlude - Regularized Gradient
+
+### Exercise 07 - Regularized Linear Gradient
+
+### Exercise 08 - Regularized Logistic Gradient
+
+### Interlude - Linear Regression to the next level: Ridge Regression
+
+### Exercise 09 - Ridge Regression
+
+### Exercise 10 - Practicing Ridge Regression
+
+### Interlude - Regularized Logistic Regression is still Logistic Regression
+
+### Exercise 11 -  Regularized Logistic Regression
+
+### Exercise 12 - Practicing Regularized Logistic Regression
