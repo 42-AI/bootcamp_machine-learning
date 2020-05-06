@@ -1,32 +1,40 @@
-# Bootcamp ML
+# Day02 - Multivariate Linear Regression
 
-# Day02 - Logistic Regression
+Building on what you did on the previous days you will extend the linear regression to handle more than one features. 
+Then you will see how to build polynomial models and how to detect overfitting.
 
-Welcome to the day02 of the machine learning bootcamp! Today you will see how to implement a logistic regression
-class using a gradient descent algorithm. We will first go through a bit of maths, then we will implement our
-class and to finish we will build our model evaluation functions.
+## Notions of the Day
+Multivariate linear hypothesis, multivariate linear gradient descent, polynomial models. 
+Training and test sets, overfitting.
 
-## Notions of the day
+## Useful Ressources  
+  
+We strongly advise you to use the following resource:
+[Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/2)  
+Here are the sections of the MOOC that are relevant for today's exercises: 
 
-* Sigmoid
-* Log loss
-* Gradient descent
-* Logistic regression
-* Model evaluation
-* Confusion matrix
+### Week 2: 
+
+**Multivariate Linear Regression:**
+* Multiple Features (Video + Reading)
+* Gradient Descent for Multiple Variables (Video + Reading)
+* Gradient Descent in Practice I- Feature Scaling (Video + Reading)
+* Gradient Descent in Practice II- Learning Rate (Video + Reading)
+* Features and Polynomial Regression (Video + Reading)
+* Review (Reading + Quiz)
 
 ## General rules
 
-* The version of Python to use is 3.7, you can check the version of Python with the following command: `python -V`
-* The norm: during this bootcamp you will follow the Pep8 standards https://www.python.org/dev/peps/pep-0008/
-* The function eval is never allowed.
+* The Python version to use is 3.7, you can check with the following command: `python -V`
+* The norm: during this bootcamp you will follow the [Pep8 standards](https://www.python.org/dev/peps/pep-0008/)
+* The function `eval` is never allowed.
 * The exercises are ordered from the easiest to the hardest.
 * Your exercises are going to be evaluated by someone else, so make sure that your variable names and function names are appropriate and civil. 
 * Your manual is the internet.
-* You can also ask questions in the dedicated channel in the 42 AI Slack: 42-ai.slack.com.
-* If you find any issue or mistakes in the subject please create an issue on our dedicated repository on Github:  https://github.com/42-AI/bootcamp_machine-learning/issues.
+* You can also ask questions in the `#bootcamps` channel in [42AI's Slack workspace](https://42-ai.slack.com).
+* If you find any issues or mistakes in this document, please create an issue on our [dedicated Github repository](https://github.com/42-AI/bootcamp_machine-learning/issues).
 
-## Helper 
+## Helper
 
 Ensure that you have the right Python version.
 
@@ -39,31 +47,51 @@ Python 3.7.*
 /goinfre/miniconda/bin/pip
 ```
 
-## Mathematical delights (continued)
 
-### Exercise 00 - Sigmoid
+### Exercise 00 - Linear Regression with Class
 
-### Exercise 01 - Logistic Loss Function
+### Exercise 01 - Ai Key Notions
 
-### Exercise 02 - Logistic Gradient
+### Interlude -  To the Multivariate Universe and Beyond!
 
-### Exercise 03 - Vectorized Logistic Loss Function
+### Exercise 02 - Multivariate Hypothesis - Iterative Version
 
-### Exercise 04 - Vectorized Logistic Gradient
+### Interlude - Even More Linear Algebra Tricks!
 
-## Algorithm
+### Exercise 03 - Multivariate hypothesis - vectorized version
 
-### Exercise 05 - Logistic Regression
+### Interlude - Evaluate
 
-## Model Evaluation
+### Exercise 04 - Vectorized Cost Function
 
-### Exercise 06 - Accuracy
+### Interlude - Improve with the Gradient
 
-### Exercise 07 - Precision
+### Exercise 05 - Multivariate Linear Gradient
 
-### Exercise 08 - Recall
-  
-### Exercise 09 - F1 Score
+### Interlude - Gradient Descent
 
-### Exercise 10 - Confusion matrix
+### Exercise 06 - Multivariate Gradient Descent
 
+### Exercise 07 - Multivariate Linear Regression with Class
+
+### Exercise 08 - Practicing Multivariate Linear Regression
+
+### Exercise 9 - Question Time!
+
+### Interlude - Introducing Polynomial Models
+
+### Exercise 10 - Polynomial models
+
+### Exercise 11 - Let's Train Polynomial Models! 
+
+### Interlude - Plotting Curves With Matplotlib
+
+### Exercise 12 - Let's PLOT some Polynomial Models! 
+
+### Interlude - Lost in Overfitting
+
+### Exercise 13 - DataSpliter
+
+### Exercise 14 - Machine Learning for Grown-ups: Training and Test Sets
+
+### Exercise 15 - Question Time!
