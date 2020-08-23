@@ -1,5 +1,6 @@
 # Interlude - Classification: The Art of Labelling Things
-Over the last three days you have implemented your first machine learning algorithm. You also discovered the three main steps we follow when we build **learning algorithms**: 
+Over the last three days you have implemented your first machine learning algorithm. You also discovered the three main steps we follow when we build **learning algorithms**:
+
 ![The Learning Cycle](../assets/Default.png){width=300px}
 
 The first algorithm you discovered, **Multivariate Linear Regression**, can now be used to predict a numerical value, based on several features. This algorithm uses gradient descent to optimize its cost function.  
