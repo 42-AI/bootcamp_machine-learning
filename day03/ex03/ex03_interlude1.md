@@ -1,5 +1,6 @@
 # Interlude - Predict I: Introducing the Sigmoid Function
-  ![The Learning Cycle - Predict](../assets/Predict.png){width=300px}  
+
+![The Learning Cycle - Predict](../assets/Predict.png){width=300px}  
 
 ## Formulating a Hypothesis  
 Remember that a hypothesis, denoted $h(\theta)$, is an equation that combines a set of **features** (that characterize an example) with **parameters** in order to output a **prediction**. Remember the hypothesis we used in linear regression?  
