@@ -28,26 +28,26 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 
 ## Curriculum
 
-### Day00 - Stepping Into Machine Learning
+### Module05 - Stepping Into Machine Learning
 **Get started with some linear algebra and statistics**
 > Sum, mean, variance, standard deviation, vectors and matrices operations.  
 Hypothesis, model, regression, cost function. 
 
-### Day01 - Univariate Linear Regression
+### Module06 - Univariate Linear Regression
 **Implement a method to improve your model's performance: **gradient descent**, and discover the notion of normalization**
 > Gradient descent, linear regression, normalization.
 
-### Day02 - Multivariate Linear Regression
+### Module07 - Multivariate Linear Regression
 **Extend the linear regression to handle more than one features, build polynomial models and detect overfitting**
 > Multivariate linear hypothesis, multivariate linear gradient descent, polynomial models.  
 Training and test sets, overfitting.
 
-### Day03 - Logistic Regression
+### Module08 - Logistic Regression
 **Discover your first classification algorithm: logistic regression!**
 > Logistic hypothesis, logistic gradient descent, logistic regression, multiclass classification.  
 Accuracy, precision, recall, F1-score, confusion matrix.
 
-### Day04 - Regularization
+### Module09 - Regularization
 **Fight overfitting!**
 > Regularization, overfitting. Regularized cost function, regularized gradient descent.  
 Regularized linear regression. Regularized logistic regression.
