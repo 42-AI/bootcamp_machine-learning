@@ -95,4 +95,4 @@ Python 3.7.*
 
 ### Exercise 10 - Question time!
 
-### Exercise 11 - Other Cost Runctions
+### Exercise 11 - Other Cost Functions
