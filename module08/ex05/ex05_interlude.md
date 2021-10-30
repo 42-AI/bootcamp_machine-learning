@@ -24,7 +24,7 @@ $$
 Here we need a function that will penalize the classifier with a high cost if its prediction ( $\hat{y}$ ) gets close to $0$. What do you think of this function? (Have a look at its plot)  
 
 $$
-cost_1 = -\log(\hat{y})
+cost_{y=1} = -\log(\hat{y})
 $$
 
 \newpage
@@ -49,7 +49,7 @@ $$
 We just need to manipulate the last equation slightly in order to flip the curve the way we need:
 
 $$
-cost_0 = -\log(1 - \hat{y}^{(i)})
+cost_{y=0} = -\log(1 - \hat{y}^{(i)})
 $$
 
 ![Cost function when y = 0](../assets/-log_1-x.png){width=300px}  
@@ -69,26 +69,26 @@ Let's recap. We need a cost function that can alternate between these:
 * If $y^{(i)} = 1$
 
 $$
-cost = cost_1 = -\log(\hat{y}^{(i)})
+cost = cost_{y=1} = -\log(\hat{y}^{(i)})
 $$
 
 * If $y^{(i)} = 0$
 
 $$
-cost = cost_0 = -\log(1- \hat{y}^{(i)})
+cost = cost_{y=0} = -\log(1- \hat{y}^{(i)})
 $$
 
 And we can represent it like this:   
 
-![cost_0 and cost_1](../assets/log_loss.png){width=300px}  
+![cost_{y=0} and cost_1](../assets/log_loss.png){width=300px}  
 
-How do you switch between $cost_0$ and $cost_1$ depending on the value of $y^{(i)}$? We could use an if-else statement in the code, but that's not very pretty and it doesn't provide a cost function that can be expressed as a single mathematical expression. It turns out there is a little mathematical trick we can use to make everything stand in one equation.
+How do you switch between $cost_{y=0}$ and $cost_{y=1}$ depending on the value of $y^{(i)}$? We could use an if-else statement in the code, but that's not very pretty and it doesn't provide a cost function that can be expressed as a single mathematical expression. It turns out there is a little mathematical trick we can use to make everything stand in one equation.
 
 ## Building the equation for a single training example
 For this part let's go step by step. The strategy is to sum both expressions:
 
 $$
-cost = cost_1 + cost_0
+cost = cost_{y=1} + cost_{y=0}
 $$
 
 And then we need some kind of switch to "turn off" the term that shouldnt be use for the example $i$. It turns out we can use the $y^{(i)}$ value itself as a switch! 
@@ -96,9 +96,9 @@ And then we need some kind of switch to "turn off" the term that shouldnt be use
 
 $$
 \begin{matrix}
-cost & = & y^{(i)} \cdot cost_1 + cost_0 \\
-cost & = & 0 \cdot cost_1 + cost_0 \\
-cost & = & cost_0
+cost & = & y^{(i)} \cdot cost_{y=1} + cost_{y=0} \\
+cost & = & 0 \cdot cost_{y=1} + cost_{y=0} \\
+cost & = & cost_{y=0}
 \end{matrix}
 $$
 
@@ -106,10 +106,10 @@ $$
 
 $$
 \begin{matrix}
-cost & = & cost_1 + (1 - y^{(i)}) \cdot cost_0 \\
-cost & = & cost_1 + (1 - 1) \cdot cost_0 \\
-cost & = & cost_1 + 0 \cdot cost_0  \\
-cost & = & cost_1
+cost & = & cost_{y=1} + (1 - y^{(i)}) \cdot cost_{y=0} \\
+cost & = & cost_{y=1} + (1 - 1) \cdot cost_{y=0} \\
+cost & = & cost_{y=1} + 0 \cdot cost_{y=0}  \\
+cost & = & cost_{y=1}
 \end{matrix}
 $$
 
@@ -117,10 +117,10 @@ Now, to make a generic equation that works without knowing in advance the value 
 
 $$
 \begin{matrix}
-cost & = & y^{(i)} \cdot cost_1 & + & (1 - y^{(i)}) \cdot cost_0
+cost & = & y^{(i)} \cdot cost_{y=1} & + & (1 - y^{(i)}) \cdot cost_{y=0}
 \end{matrix}
 $$
-And then, if we develop $cost_0$ and $cost_1$:
+And then, if we develop $cost_{y=0}$ and $cost_{y=1}$:
 $$
 \begin{matrix}
 cost & = & y^{(i)} \cdot (-\log(\hat{y}^{(i)})) & + & (1 - y^{(i)}) \cdot (-\log(1 - \hat{y}^{(i)}))
@@ -142,7 +142,7 @@ $$
 J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
 $$
 
-This formula allows you to calculate the overall cost of a complete set of predictions. If you have enough, you can stop here and move on to the exercise. If you'd like to better understand how it works and have "automatic switch" process broken down for you, you here we go:
+This formula allows you to calculate the overall cost of a complete set of predictions. If you have enough, you can stop here and move on to the exercise. If you'd like to better understand how it works and have "automatic switch" process broken down for you, here we go:
 
 #### If the given example $x^{(i)}$ is not part of the predicted class, $y^{(i)} = 0$ :  
 
