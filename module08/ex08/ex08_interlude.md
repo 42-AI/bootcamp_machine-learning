@@ -1,7 +1,6 @@
 # Interlude -  Vectorized Logistic Gradient 
 
-Given the previous logistic gradient formula, it's quite easy to produce a vectorized version.  
-
+Given the previous logistic gradient formula, it's quite easy to produce a vectorized version.
 Actually, you almost already implemented it on module07!  
 
 As with the previous exercice, **the only thing you have to change is your hypothesis** in order to calculate your logistic gradient.  
