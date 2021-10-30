@@ -7,7 +7,7 @@ Gradient descent, linear regression, normalization.
 
 ## Useful Resources  
   
-We strongly advise you to use the following resources:
+You are strongly advise to use the following resources:
 [Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/1)  
 
 ### Week 1: 
