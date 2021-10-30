@@ -23,4 +23,4 @@ This situation is called overfitting, because the model is doing an excessively 
 ## The training set, the test set, and the happy data scientist
 To be able to detect overfitting, **you should always evaluate your model on new data**.  
   
-New data means, data that your model hasen't seen during training. It's the only way to make sure your model isn't *cheating*. To do so, now and forever, you must always divide your dataset in (at least) two parts: one for the training, and one for the evaluation of your model. 
+New data means, data that your model hasn't seen during training. It's the only way to make sure your model isn't *cheating*. To do so, now and forever, you must always divide your dataset in (at least) two parts: one for the training, and one for the evaluation of your model. 
