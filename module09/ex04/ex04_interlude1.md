@@ -8,7 +8,7 @@ However, being able to detect overfitting does not mean being able to avoid it.
 
 To address this important issue, it is time to introduce you to a new technique: **regularization**.
 
-If you remember well, overfitting happens because the model takes advantage of irrelevant signals in the training data. The basic idea beahind regularization is to **penalize the model for putting too much weight on certain** (usually heavy polynomial) **features**. We do this by adding an extra term in the cost function:  
+If you remember well, overfitting happens because the model takes advantage of irrelevant signals in the training data. The basic idea behind regularization is to **penalize the model for putting too much weight on certain** (usually heavy polynomial) **features**. We do this by adding an extra term in the cost function:  
 
 $$
 \text{regularized cost function} = \text{cost function} + \frac{\lambda}{2m} \sum_{j = 1}^n \theta_j^2
@@ -17,7 +17,7 @@ $$
 By doing so, **we are encouraging the model to keep its** $\theta$ **values as small as possible**. Indeed, the values of $\theta$ *themselves* are now taken into account when calculating the cost.
 
 $\lambda$ (called *lambda*) is the parameter through which you can modulate how reglarization should impact the model's construction.  
-- If $\lambda = 0$, there is no regularization (as we did until now)
+- If $\lambda = 0$, there is no regularization (as we did until now),
 - If $\lambda$ is very large, it will drive all the $\theta$ parameters to $0$.
 
 **Please notice:** in the regularization term, the sum starts at $j = 1$ because we do NOT want to penalize the value of $\theta_0$ (the y-intercept, which doesn't depend on a feature).
@@ -51,7 +51,7 @@ x_0^{(m)} & x_1^{(m)} & \dots & x_n^{(m)} \\
 \right \} i = 1, \dots, m
 $$
 
-It's precisely for this reason that you keep seeing that $X'$ is of dimension $m * (n+1)$
+It's precisely for this reason that you keep seeing that $X'$ is of dimensions $m \times (n+1)$
 
 ## Terminology:
 The regularization technique we are introducing here is named **$L_2 \text{ regularization}$**, because it adds the squared $L_2 \text{ norm}$ of the $\theta$ vector to the cost function.  
