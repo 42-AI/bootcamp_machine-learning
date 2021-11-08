@@ -13,13 +13,13 @@ With respect to a given *Class A*, classification errors fall in two categories:
 - **False positive:** when a *non-A* object is assigned to *Class A*.  
   For example: 
     - Pulling the fire alarm when there is no fire.
-    - Considering that someone is sick when she isn't.
-    - Identifying a face in an image when in fact it was a Teddy Bear.
+    - Considering that someone is sick when he/she isn't.
+    - Identifying a face in an image when in fact it is a Teddy Bear.
 
 - **False negative:** when an *A* object is assigned to another class than *Class A*.  
   For example: 
     - Not pulling the fire alarm when there is a fire.
-    - Considering that someone is not sick when she is.
+    - Considering that someone is not sick when he/she is.
     - Failing to recognize a face in an image that does contain one.
 
 It turns out that it's really hard to minimize both error types at the same time. At some point you'll need to decide which one is the most critical, depending on your use case. For example, if you want to detect cancer, of course it's not good if your model erroneously diagnoses cancer on a few healthy patients (**false positives**), but you absolutely want to avoid failing at diagnosing cancer on affected patients (**false negatives**) and let them go on with their lives while developing a potentially dangerous cancer. 

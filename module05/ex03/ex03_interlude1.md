@@ -96,5 +96,9 @@ Because $\hat{y}$ is calculated with our linear hypothesis using $\theta$ and $x
 The $h$ stands for *hypothesis*, and can be read as *"the result of our hypothesis h given x and theta"*.
 
 Then if $x = 7$, we can calculate:
-$\hat{y} = h_{\theta}(x) = 33 + 5 \times 7 = 68$
+
+$$
+\hat{y} = h_{\theta}(x) = 33 + 5 \times 7 = 68
+$$
+
 We can now say that according to our linear model, the **predicted value** of $y$ given ($x = 7$) is 68. 
