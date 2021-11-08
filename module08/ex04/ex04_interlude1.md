@@ -1,16 +1,13 @@
 # Interlude - Predict II : Hypothesis 
-
 We hope your curiosity led you to plot your sigmoid function. If you didn't, well here is what it looks like:
 
 ![Sigmoid](../assets/sigmoid.png){width=300px}  
 
-As you can see, **the sigmoid's output values range from $0$ to $1$**.  
+As you can see, **the sigmoid's output values ranging from $0$ to $1$**.  
 You can input real numbers as big as you want (positive or negative), the output will always land within this range. This will be very helpful for the next part.
 
 # Logistic Hypothesis
-
 Now you've written your sigmoid function, let's look at **the logistic regression hypothesis**.
-
 $$
 \begin{matrix}
 \hat{y}^{(i)} & = & h_\theta(x^{(i)}) & = & \text{sigmoid}(\theta \cdot x'^{(i)}) 
