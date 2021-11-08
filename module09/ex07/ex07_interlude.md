@@ -28,15 +28,15 @@ $$
 $$  
 
 Where:  
-- $\nabla(J)$ is a vector of dimension $(n + 1) * 1,$ the gradient vector,
+- $\nabla(J)$ is a vector of dimension $(n + 1),$ the gradient vector,
 - $m$ is the number of training examples used,
-- $X$ is a matrix of dimension $m * n$, the design matrix,
-- $X'$ is a matrix of dimension $m * (n + 1)$, the design matrix onto which a column of ones is added as a first column,
-- $y$ is a vector of dimension $m * 1$, the vector of expected values,
-- $h_\theta(X)$ is a vector of dimension $m * 1$, the vector of predicted values, 
+- $X$ is a matrix of dimensions $m \times n$, the design matrix,
+- $X'$ is a matrix of dimensions $m \times (n + 1)$, the design matrix onto which a column of ones is added as a first column,
+- $y$ is a vector of dimension $m$, the vector of expected values,
+- $h_\theta(X)$ is a vector of dimension $m$, the vector of predicted values, 
 - $\lambda$ is a constant, 
-- $\theta$ is a vector of dimension $(n + 1) * 1$, the parameter vector,
-- $\theta'$ is a vector of dimension $n * 1$, constructed using the following rules: 
+- $\theta$ is a vector of dimension $(n + 1)$, the parameter vector,
+- $\theta'$ is a vector of dimension $(n + 1)$, constructed using the following rules: 
 
 $$
 \begin{matrix}

@@ -1,6 +1,6 @@
 # Interlude - Plotting Curves With Matplotlib
 
-We asked you to plot straight lines in the module05. Now you are working with polynomial models, the hypothesis functions are not straight lines, but curves.   
+You have been asked to plot straight lines in the module05. Now you are working with polynomial models, the hypothesis functions are not straight lines, but curves.   
 Plotting curves is a bit more tricky, because if you do not have enough data point, you will get an ugly broken line instead of a smooth curve.  
 Here's a way to do it.  
 

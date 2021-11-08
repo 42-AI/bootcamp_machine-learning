@@ -20,6 +20,6 @@ Let's see what you can do now.
 
 ## To go further
 To keep learning Machine Learning, here are several options you should consider:
-- To complete the entire [Stanford's Machine Learning MOOC](https://www.coursera.org/learn/machine-learning/home/). It is a great ressource, **a classic** for those who want to study machine learning. This bootcamp followed thigthly the architecture of its first three weeks. This course is definitely worth your time! Also, someone did a great work to convert all the Octave assignments into [Python notebooks](https://github.com/dibgerge/ml-coursera-python-assignments).
+- To complete the entire [Stanford's Machine Learning MOOC](https://www.coursera.org/learn/machine-learning/home/). It is a great ressource, **a classic** for those who want to study machine learning. This bootcamp followed thigthly the architecture of its first three weeks. This course still worth your time even if it is old now! Also, someone did a great work to convert all the Octave assignments into [Python notebooks](https://github.com/dibgerge/ml-coursera-python-assignments). For the neural network part, it would be better to follow the [Deep Learning specialization  on coursera](https://www.coursera.org/specializations/deep-learning). There are much more formation about AI also on coursera made by [Deeplearning.ai](https://www.deeplearning.ai/).
   
-- To take [fast.ai Deep Learning MOOC](https://course.fast.ai/). It's a great way to learn Deep Learning following a top-down approach. 
+- To take [fast.ai Deep Learning MOOC](https://course.fast.ai/). It's a great way to learn Deep Learning following a top-down approach.

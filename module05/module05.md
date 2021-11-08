@@ -8,7 +8,7 @@ Hypothesis, model, regression, cost function.
 
 ## Useful Ressources  
   
-We strongly advise you to use the following resource:
+You are strongly advise to use the following resource:
 [Machine Learning MOOC - Stanford](https://www.coursera.org/learn/machine-learning/home/week/1)  
 Here are the sections of the MOOC that are relevant for today's exercises: 
 
@@ -95,4 +95,4 @@ Python 3.7.*
 
 ### Exercise 10 - Question time!
 
-### Exercise 11 - Other Cost Runctions
+### Exercise 11 - Other Cost Functions

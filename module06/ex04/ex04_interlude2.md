@@ -15,7 +15,7 @@ $$
 X' = \begin{bmatrix} x_0^{(1)} & x_1^{(1)} \\ \vdots & \vdots \\ x_0^{(m)} & x_1^{(m)}\end{bmatrix}
 $$
 
-Notice that each $x^{(i)}$ example becomes e vector made of $(x^{(i)}_0, x^{(i)}_1)$.  
+Notice that each $x^{(i)}$ example becomes a vector made of $(x^{(i)}_0, x^{(i)}_1)$.  
 The $0$ and $1$ indices on the $x$ features correspond to the indices of the $\theta$ parameters with which they will be multiplied.
 
 Why does this matter? Well, if we take the equation from the previous exercise:  
@@ -66,5 +66,5 @@ $$
 If the equation does not seems obvious, play a bit with your vectors, on paper and in your code, until you get it. 
 
 ### Notation Remark: 
-${X'}^T$ : You might wonder what the $^T$ is for. It means the $X'$ matrix must be **transposed**. Transposing a matrix flips it on its diagonal so that its rows become its columns and vice versa. Here we need to do it so that matrix dimensions are appropriate multiplication and to multiply the right elements together. 
+${X'}^T$ : You might wonder what the $^T$ is for. It means the $X'$ matrix is **transposed**. Transposing a matrix flips it on its diagonal so that its rows become its columns and vice versa. Here we need to do it so that matrix dimensions are appropriate multiplication and to multiply the right elements together. 
 
