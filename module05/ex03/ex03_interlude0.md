@@ -7,7 +7,7 @@
 '''
 ```
 
-To be said to learn you have to improve.  
+In other words to learn you have to improve.  
 To improve you have to evaluate your performance.  
 To evaluate your performance you need to start performing on the task you want to be good at.  
   

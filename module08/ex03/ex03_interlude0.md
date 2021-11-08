@@ -10,7 +10,7 @@ Now let's introduce you to your first **classification algorithm**: it is named 
 #### **Be careful!**  
 Don't be confused by the word *'regression'* in **Logistic Regression**. It really is a *classification task*! The name is a bit tricky but you will quickly get used to it.  
 
-Once again: **Logistic Regression is a classification algorithm** which assigns a given example to a category.  
+Once again: **Logistic Regression is a classification algorithm** which assigns to a given example a category.  
 
 ### **Terminolgy:**
-In this bootcamp we will use the following terms interchangeably: **class, category,** and **label**. They all refer to the *groups* to which each training example can be assigned to, in a classification task.
+In this module we will use the following terms interchangeably: **class, category,** and **label**. They all refer to the *groups* to which each training example can be assigned to, in a classification task.
