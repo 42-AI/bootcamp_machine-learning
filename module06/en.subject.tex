@@ -1,0 +1,916 @@
+% vim: set ts=4 sw=4 tw=80 noexpandtab:
+
+\documentclass{42-en}
+
+%******************************************************************************%
+%                                                                              %
+%                                   Prologue                                   %
+%                                                                              %
+%******************************************************************************%
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+\usepackage{amsmath} % The amsmath package provides commands to typeset matrices with different delimiters. 
+\usepackage{epigraph}
+\setlength\epigraphwidth{.95\textwidth}
+%****************************************************************%
+%                  Re/definition of commands                     %
+%****************************************************************%
+
+\newcommand{\ailogo}[1]{\def \@ailogo {#1}}\ailogo{assets/42ai_logo.pdf}
+
+%%  Redefine \maketitle
+\makeatletter
+\def \maketitle {
+  \begin{titlepage}
+    \begin{center}
+	%\begin{figure}[t]
+	  %\includegraphics[height=8cm]{\@ailogo}
+	  \includegraphics[height=8cm]{assets/42ai_logo.pdf}
+	%\end{figure}
+      \vskip 5em
+      {\huge \@title}
+      \vskip 2em
+      {\LARGE \@subtitle}
+      \vskip 4em
+    \end{center}
+    %\begin{center}
+	  %\@author
+    %\end{center}
+	%\vskip 5em
+  \vfill
+  \begin{center}
+    \emph{\summarytitle : \@summary}
+  \end{center}
+  \vspace{2cm}
+  %\vskip 5em
+  %\doclicenseThis
+  \end{titlepage}
+}
+\makeatother
+
+\makeatletter
+\def \makeheaderfilesforbidden
+{
+  \noindent
+  \begin{tabularx}{\textwidth}{|X X X X|}
+    \hline
+  \multicolumn{1}{|>{\raggedright}m{1cm}|}
+  {\vskip 2mm \includegraphics[height=1cm]{assets/42ai_logo.pdf}} &
+  \multicolumn{2}{>{\centering}m{12cm}}{\small Exercise : \@exnumber } &
+  \multicolumn{1}{ >{\raggedleft}p{1.5cm}|}
+%%              {\scriptsize points : \@exscore} \\ \hline
+              {} \\ \hline
+
+  \multicolumn{4}{|>{\centering}m{15cm}|}
+              {\small \@extitle} \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Turn-in directory : \ttfamily
+                $ex\@exnumber/$ }
+              \\ \hline
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Files to turn in : \ttfamily \@exfiles }
+              \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Forbidden functions : \ttfamily \@exforbidden }
+              \\ \hline
+
+%%  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+%%              {\small Remarks : \ttfamily \@exnotes }
+%%              \\ \hline
+\end{tabularx}
+%% \exnotes
+\exrules
+\exmake
+\exauthorize{None}
+\exforbidden{None}
+\extitle{}
+\exnumber{}
+}
+\makeatother
+
+%%  Syntactic highlights
+\makeatletter
+\newenvironment{pythoncode}{%
+  \VerbatimEnvironment
+  \usemintedstyle{emacs}
+  \minted@resetoptions
+  \setkeys{minted@opt}{bgcolor=black,formatcom=\color{lightgrey},fontsize=\scriptsize}
+  \begin{figure}[ht!]
+    \centering
+    \begin{minipage}{16cm}
+      \begin{VerbatimOut}{\jobname.pyg}}
+{%[
+      \end{VerbatimOut}
+      \minted@pygmentize{c}
+      \DeleteFile{\jobname.pyg}
+    \end{minipage}
+\end{figure}}
+\makeatother
+
+\usemintedstyle{native}
+
+\begin{document}
+
+% =============================================================================%
+%                     =====================================                    %
+
+\title{Machine Learning - Module 01}
+\subtitle{Univariate Linear Regression}
+\author{
+  Maxime Choulika (cmaxime), Pierre Peigné (ppeigne), Matthieu David (mdavid)
+}
+
+\summary
+{
+  Today you will implement a method to improve your model's performance: \textbf{gradient descent}.
+  Then you will discover the notion of normalization.
+}
+
+\maketitle
+\input{usefull_ressources.tex}
+\input{en.py_proj.tex}
+\newpage
+\tableofcontents
+\startexercices
+
+%                     =====================================                    %
+% =============================================================================%
+
+
+%******************************************************************************%
+%                                                                              %
+%                                   Exercises                                  %
+%                                                                              %
+%******************************************************************************%
+
+% ============================================== %
+% ===========================(start ex 00)       %
+\chapter{Exercise 00}
+\input{en.ex00_interlude.tex}
+\newpage
+\extitle{Linear Gradient - Iterative Version}
+\turnindir{ex00}
+\exnumber{00}
+\exfiles{gradient.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================== %
+\section*{Objective}
+% ---------------------------------- %
+Understand and manipulate the notion of gradient and gradient descent in machine learning.\
+You must write a function that computes the \textbf{\textit{gradient}} of the loss function.
+It must compute a partial derivative with respect to each theta parameter separately, and return the vector gradient.
+The partial derivatives can be calculated with the following formulas:  
+$$
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})
+$$
+
+$$
+\nabla(J)_1 = \frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}
+$$
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)$ is the gradient vector of size $2$, (this strange symbol : $\nabla$ is called nabla),
+  \item $x$ is a vector of dimension $m$,
+  \item $y$ is a vector of dimension $m$,
+  \item $x^{(i)}$ is the i$^\text{th}$ component of vector $x$,
+  \item $y^{(i)}$ is the i$^\text{th}$ component of vector $y$,
+  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$,
+  \item $h_{\theta}(x^{(i)})$ corresponds to the model's prediction of $y^{(i)}$.
+\end{itemize}
+
+% ================================== %
+\section*{Hypothesis Notation}
+% ---------------------------------- %
+$h_{\theta}(x^{(i)})$ is the same as what we previously noted $\hat{y}^{(i)}$.  
+The two notations are equivalent.
+They represent the model's prediction (or estimation) of the ${y}^{(i)}$ value.
+If you follow Andrew Ng's course material on Coursera, you will see him using the former notation.
+
+As a reminder:
+$h_{\theta}(x^{(i)}) = \theta_0 + \theta_1x^{(i)}$
+
+
+% ================================== %
+\section*{Instructions}
+% ---------------------------------- %
+
+In the \texttt{gradient.py} file create the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+  def simple_gradient(x, y, theta):
+    """Computes a gradient vector from three non-empty numpy.array, without any for-loop.
+       The three arrays must have compatible shapes.
+    Args:
+      x: has to be an numpy.array, a vector of shape m * 1.
+      y: has to be an numpy.array, a vector of shape m * 1.
+      theta: has to be an numpy.array, a 2 * 1 vector.
+    Return:
+      The gradient as a numpy.array, a vector of shape 2 * 1.
+      None if x, y, or theta are empty numpy.array.
+      None if x, y and theta do not have compatible shapes.
+      None if x, y or theta is not of the expected type.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================== %
+\section*{Examples}
+% ---------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+x = np.array([[12.4956442],[ 21.5007972],[ 31.5527382],[ 48.9145838],[ 57.5088733]])
+y = np.array([[37.4013816],[ 36.1473236],[ 45.7655287],[ 46.6793434],[ 59.5585554]])
+
+
+# Example 0:
+theta1 = np.array([[2],[ 0.7]])
+simple_gradient(x, y, theta1)
+# Output:
+array([[-19.0342574],[],[-586.66875564])
+
+
+# Example 1:
+theta2 = np.array([[1],[ -0.4]])
+simple_gradient(x, y, theta2)
+# Output:
+array([[-57.86823748],[-2230.12297889]])
+\end{minted}
+
+% ===========================(fin ex 00)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 01)       %
+\chapter{Exercise 01}
+\input{en.ex01_interlude.tex}
+\newpage
+\extitle{Linear Gradient - Vectorized Version}
+\turnindir{ex01}
+\exnumber{01}
+\exfiles{vec\_gradient.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understand and manipulate the notion of gradient and gradient descent in machine learning.\
+You must implement the following formula as a function:
+
+$$
+\nabla(J) = \frac{1}{m} {X'}^T(X'\theta - y)
+$$  
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)$ is a vector of dimension $2$,
+  \item $X'$ is a \textbf{matrix} of dimensions $(m \times 2)$,
+  \item ${X'}^T$ is the transpose of $X'$. Its dimensions are $(2 \times m)$,
+  \item $y$ is a vector of dimension $m$,
+  \item $\theta$ is a vector of dimension $2$. 
+\end{itemize}
+  
+Be careful:
+\begin{itemize}
+  \item the $x$ you will get as an input is an vector (of dimension $m$),
+  \item $\theta$ is a vector (of dimension $2$).
+\end{itemize}
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{vec\_gradient.py} file create the following function as per the instructions given below:
+\par
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def gradient(x, y, theta):
+    """Computes a gradient vector from three non-empty numpy.array, without any for loop.
+       The three arrays must have compatible shapes.
+    Args:
+      x: has to be a numpy.array, a matrix of shape m * 1.
+      y: has to be a numpy.array, a vector of shape m * 1.
+      theta: has to be a numpy.array, a 2 * 1 vector.
+    Return:
+      The gradient as a numpy.array, a vector of shape 2 * 1.
+      None if x, y, or theta is an empty numpy.array.
+      None if x, y and theta do not have compatible shapes.
+      None if x, y or theta is not of the expected type.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+x = np.array([[12.4956442],[ 21.5007972],[ 31.5527382],[ 48.9145838],[ 57.5088733]])
+y = np.array([[37.4013816],[ 36.1473236],[ 45.7655287],[ 46.6793434],[ 59.5585554]])
+
+
+# Example 0:
+theta1 = np.array([[2],[ 0.7]])
+gradient(x, y, theta1)
+# Output:
+array([[-19.0342574],[],[-586.66875564])
+
+
+# Example 1:
+theta2 = np.array([[1],[ -0.4]])
+gradient(x, y, theta2)
+# Output:
+array([[-57.86823748],[-2230.12297889]])
+\end{minted}
+
+% ===========================(fin ex 01)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 02)       %
+\chapter{Exercise 02}
+\input{en.ex02_interlude.tex}
+\newpage
+\extitle{Gradient Descent}
+\turnindir{ex02}
+\exnumber{02}
+\exfiles{fit.py}
+\exforbidden{any function that calculates derivatives for you}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understand and manipulate the notion of gradient and gradient descent in machine learning.\
+Be able to explain what it means to \textbf{\textit{fit}} a Machine Learning model to a dataset.\
+Implement a function that performs \textbf{Linear Gradient Descent} (LGD).
+
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In this exercise, you will implement linear gradient descent to fit your model to the dataset.
+
+The pseudocode for the algorithm is the following:
+
+$$
+\begin{matrix}
+&\text{repeat until convergence:} & \{ \\
+&	\text{compute } \nabla{(J)}  \\
+&	\theta_0 := \theta_0 - \alpha \nabla(J)_0  \\
+&	\theta_1 := \theta_1 - \alpha \nabla(J)_1\\
+	\}
+\end{matrix}
+$$
+
+Where:
+\begin{itemize}
+  \item $\alpha$ (alpha) is the \textit{learning rate}. It's a small float number (usually between 0 and 1),
+  \item For now, "reapeat until convergence" will mean to simply repeat for max\_iter (a number that you will choose wisely).
+\end{itemize}
+
+You are expected to write a function named \texttt{fit\_} as per the instructions below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def fit_(x, y, theta, alpha, max_iter):
+  """
+  Description:
+    Fits the model to the training dataset contained in x and y.
+  Args:
+    x: has to be a numpy.array, a vector of shape m * 1: (number of training examples, 1).
+    y: has to be a numpy.array, a vector of shape m * 1: (number of training examples, 1).
+    theta: has to be a numpy.array, a vector of shape 2 * 1.
+    alpha: has to be a float, the learning rate
+    max_iter: has to be an int, the number of iterations done during the gradient descent
+  Return:
+    new_theta: numpy.array, a vector of shape 2 * 1.
+    None if there is a matching shape problem.
+    None if x, y, theta, alpha or max_iter is not of the expected type.
+  Raises:
+    This function should not raise any Exception.
+  """
+  ... your code ...
+\end{minted}
+
+Hopefully, you have already written a function to calculate the linear gradient.
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+x = np.array([[12.4956442], [21.5007972], [31.5527382], [48.9145838], [57.5088733]])
+y = np.array([[37.4013816], [36.1473236], [45.7655287], [46.6793434], [59.5585554]])
+theta = np.array([[1],[ 1]])
+
+
+# Example 0:
+theta1 = fit_(x, y, theta, alpha=5e-6, max_iter=15000)
+# Output:
+array([[1.40709365],
+       [1.1150909 ]])
+
+
+# Example 1:
+predict(x, theta1)
+# Output:
+array([[15.3408728 ],
+       [25.38243697],
+       [36.59126492],
+       [55.95130097],
+       [65.53471499]])
+\end{minted}
+
+\info{
+\begin{itemize}
+  \item You can create more training data by generating an $x$ array with random values and computing the corresponding $y$ vector as a linear expression of $x$. You can then fit a model on this artificial data and find out if it comes out with the same $\theta$ coefficients that first you used.
+  \item It is possible that $\theta_0$ and $\theta_1$ become "nan". In that case, it means you probably used a learning rate that is too large.
+\end{itemize}
+}
+% ===========================(fin ex 02)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 03)       %
+\chapter{Exercise 03}
+\extitle{Linear Regression with Class}
+\turnindir{ex03}
+\exnumber{03}
+\exfiles{my\_linear\_regression.py}
+\exforbidden{any functions from sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Write a class that contains all methods necessary to perform linear regression.
+
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In this exercise, you will not learn anything new but don't worry, it's for your own good.
+You are expected to write your own \texttt{MyLinearRegression} class which looks similar to the class available in Scikit-learn:
+\texttt{sklearn.linear\_model.LinearRegression}
+\par
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+class MyLinearRegression():
+	"""
+	Description:
+		My personnal linear regression class to fit like a boss.
+	"""
+	def __init__(self,  thetas, alpha=0.001, max_iter=1000):
+              self.alpha = alpha
+              self.max_iter = max_iter
+              self.thetas = thetas
+              ... Your code ...
+
+	... other methods ...
+\end{minted}
+\newpage
+You will add the following methods:
+\begin{itemize}
+  \item \texttt{fit\_(self, x, y)},
+  \item \texttt{predict\_(self, x)},
+  \item \texttt{loss\_elem\_(self, y, y\_hat)},
+  \item \texttt{loss\_(self, y, y\_hat)}.
+\end{itemize}
+
+You have already implemented these functions,
+you just need a few adjustments so that they all work well within your \texttt{MyLinearRegression} class.
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+from mylinearregression import MyLinearRegression as MyLR
+x = np.array([[12.4956442], [21.5007972], [31.5527382], [48.9145838], [57.5088733]])
+y = np.array([[37.4013816], [36.1473236], [45.7655287], [46.6793434], [59.5585554]])
+
+lr1 = MyLR([2, 0.7])
+
+# Example 0.0:
+lr1.predict_(x)
+# Output:
+array([[10.74695094],
+       [17.05055804],
+       [24.08691674],
+       [36.24020866],
+       [42.25621131]])
+
+# Example 0.1:
+lr1.loss_elem_(lr1.predict(x),y)
+# Output:
+array([[710.45867381],
+       [364.68645485],
+       [469.96221651],
+       [108.97553412],
+       [299.37111101]])
+
+# Example 0.2:
+lr1.loss_(lr1.predict(x),y)
+# Output:
+195.34539903032385
+
+
+# Example 1.0:
+lr2 = MyLR([1, 1], 5e-8, 1500000)
+lr2.fit_(x, y)
+lr2.thetas
+# Output:
+array([[1.40709365],
+       [1.1150909 ]])
+
+# Example 1.1:
+lr2.predict_(x)
+# Output:
+array([[15.3408728 ],
+       [25.38243697],
+       [36.59126492],
+       [55.95130097],
+       [65.53471499]])
+
+# Example 1.2:
+MyLR.loss_elem_(lr2.predict(x),y)
+# Output:
+array([[486.66604863],
+       [115.88278416],
+       [ 84.16711596],
+       [ 85.96919719],
+       [ 35.71448348]])
+
+# Example 1.3:
+MyLR.loss_(lr2.predict(x),y)
+# Output:
+80.83996294128525
+\end{minted}
+
+% ===========================(fin ex 03)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 04)       %
+\chapter{Exercise 04}
+\extitle{Practicing Linear Regression}
+\turnindir{ex04}
+\exnumber{04}
+\exfiles{linear\_model.py, are\_blue\_pills\_magics.csv}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Evaluate a linear regression model on a very small dataset, with a given hypothesis function $h$.\
+Manipulate the loss function $J$, plot it, and briefly analyze the plot.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+You can find in the \texttt{resources} folder a tiny dataset called \texttt{are\_blue\_pills\_magics.csv} which gives you the driving performance of space pilots as a function of the quantity of the "blue pills" they took before the test.
+You have a description of the data in the file named \texttt{are\_blue\_pills\_magics.txt}.
+As your hypothesis function $h$, you will take:
+
+$$
+h_{\theta}(x) = \theta_0 + \theta_1x
+$$
+
+Where $x$ is the variable, and $\theta_0$ and $\theta_1$ are the coefficients of the hypothesis.
+The hypothesis is a function of $x$.
+
+\textbf{You are strongly encouraged to use the class you have implement in the previous exercise}.
+\newline
+
+Your code has to:
+\begin{itemize}
+  \item Read the dataset from the csv file,
+  \item perform a linear regression, 
+\end{itemize}
+\newpage
+Then you will model the data and plot 2 different graphs:
+\begin{itemize}
+  \item A graph with the data and the hypothesis you get for the spacecraft piloting score versus the quantity of "blue pills" (see figure \ref{best fit for score vs micrograms})
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.6]{assets/ex04_score_vs_bluepills.png}
+    \caption{Space driving score as a function of the quantity of blue pill (in micrograms). In blue the real values and in green the predicted values.}
+    \label{best fit for score vs micrograms}
+  \end{figure}
+  
+  \item The loss function $J(\theta)$ in function of the $\theta$ values (see figure \ref{loss function qs function of theta1 and theta0}),
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.6]{assets/ex04_J_vs_t1.png}
+    \caption{Evolution of the loss function $J$ as a function of $\theta_1$ for different values of $\theta_0$.}
+    \label{loss function qs function of theta1 and theta0}
+  \end{figure}
+   
+  \item You will calculate the MSE of the hypothesis you chose (you know how to do it already).
+\end{itemize}
+
+% ================================= %
+\section*{Examples}
+% ================================= %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import pandas as pd
+import numpy as np
+from sklearn.metrics import mean_squared_error
+from mylinearregression import MyLinearRegression as MyLR
+
+data = pd.read_csv("are_blue_pills_magics.csv")
+Xpill = np.array(data[Micrograms]).reshape(-1,1)
+Yscore = np.array(data[Score]).reshape(-1,1)
+
+
+# Example 1:
+linear_model1 = MyLR(np.array([[89.0], [-8]]))
+Y_model1 = linear_model1.predict_(Xpill)
+print(linear_model1.mse_(Yscore, Y_model1))
+print(mean_squared_error(Yscore, Y_model1))
+# Output:
+57.60304285714282
+57.60304285714282
+
+
+# Example 2:
+linear_model2 = MyLR(np.array([[89.0], [-6]]))
+Y_model2 = linear_model2.predict_(Xpill)
+print(linear_model2.mse_(Yscore, Y_model2))
+print(mean_squared_error(Yscore, Y_model2))
+# Output:
+232.16344285714285
+232.16344285714285
+\end{minted}
+\par
+Here, the use of scikit learn is to ensure that our code is performing as we expected. The use of scikit learn is forbidden in the code you will turn-in.
+
+\hint{
+There is no method named \texttt{.mse\_} in sklearn's LinearRegression class, but there is also a method named \texttt{.score}.
+The \texttt{.score} method corresponds to the $R^2$ score.
+The metric MSE is available in the \texttt{sklearn.metrics} module.
+}
+% ===========================(fin ex 04)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 05)       %
+\chapter{Exercise 05}
+\input{en.ex05_interlude.tex}
+\newpage
+\extitle{Normalization I: Z-score Standardization}
+\turnindir{ex05}
+\exnumber{05}
+\exfiles{z-score.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Introduction to standardization/normalization methods.\
+You must implement the following formula as a function:
+$$
+\begin{matrix}
+ x'^{(i)} = \frac{x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)}}{\sqrt{\frac{1}{m} \sum_{i = 1}^{m} (x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)})^{2}}} & &\text{ for $i$ in $1, ..., m$} 
+\end{matrix}
+$$
+
+Where:
+\begin{itemize}
+  \item $x$ is a vector of dimension $m$,
+  \item $x^{(i)}$ is the i$^\text{th}$ component of the $x$ vector,
+  \item $x'$ is the normalized version of the $x$ vector.
+\end{itemize}
+
+The equation is much easier to understand in the following form:
+
+$$
+\begin{matrix}
+x'^{(i)} = \frac{x^{(i)} - \mu}{\sigma} & &\text{ for $i$ in $1, ..., m$}
+\end{matrix}
+$$
+
+This should remind you something from \textbf{TinyStatistician}...
+
+Nope?
+
+Ok let's do a quick recap:
+\begin{itemize}
+  \item $\mu$ is the mean of $x$,
+  \item $\sigma$ is the standard deviation of $x$.
+\end{itemize}
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{zscore.py} file, write the \texttt{zscore} function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def zscore(x):
+    """Computes the normalized version of a non-empty numpy.array using the z-score standardization.
+    Args:
+      x: has to be an numpy.array, a vector.
+    Return:
+      x' as a numpy.array. 
+      None if x is a non-empty numpy.array or not a numpy.array.
+      None if x is not of the expected type.
+    Raises:
+      This function shouldn't raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+X = numpy.array([[0],[ 15],[ -9],[ 7],[ 12],[ 3],[ -21]])
+zscore(X)
+# Output:
+array([-0.08620324,  1.2068453 , -0.86203236,  0.51721942,  0.94823559,
+        0.17240647, -1.89647119])
+
+
+# Example 2:
+Y = numpy.array([[2],[ 14],[ -13],[ 5],[ 12],[ 4],[ -19]])
+zscore(Y)
+# Output:
+array([ 0.11267619,  1.16432067, -1.20187941,  0.37558731,  0.98904659,
+        0.28795027, -1.72770165])
+\end{minted}
+
+
+% ===========================(fin ex 05)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 06)       %
+\chapter{Exercise 06}
+\extitle{Normalization II: Min-max Standardization}
+\turnindir{ex06}
+\exnumber{06}
+\exfiles{minmax.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Introduction to standardization/normalization methods.\
+Implement another normalization method.
+
+You must implement the following formula as a function: 
+
+$$
+\begin{matrix}
+  x'^{(i)} = \frac{x^{(i)} - min(x)}{max(x) - min(x)} & & \text{ for $i = 1, ..., m$}
+\end{matrix}
+$$
+
+Where:
+\begin{itemize}
+  \item $x$ is a vector of dimension $m$,
+  \item $x^{(i)}$ is the i$^\text{th}$ component of vector $x$,
+  \item $min(x)$ is the minimum value found among the components of vector $x$,
+  \item $max(x)$ is the maximum value found among the components of vector $x$.
+\end{itemize}
+
+You will notice that this min-max standardization doesn't scale the values to the $[-1,1]$ range.
+What do you think the final range will be?
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{minmax.py} file, create the \texttt{minmax} function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def minmax(x):
+    """Computes the normalized version of a non-empty numpy.array using the min-max standardization.
+    Args:
+        x: has to be an numpy.array, a vector.
+    Return:
+        x' as a numpy.array. 
+        None if x is a non-empty numpy.array or not a numpy.array.
+        None if x is not of the expected type.
+    Raises:
+        This function shouldn't raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+X = np.array([[0],[ 15],[ -9],[ 7],[ 12],[ 3],[ -21]])
+minmax(X)
+# Output:
+array([0.58333333, 1., 0.33333333, 0.77777778, 0.91666667,
+       0.66666667, 0.])
+
+
+# Example 2:
+Y = np.array([[2],[ 14],[ -13],[ 5],[ 12],[ 4],[ -19]])
+minmax(Y)
+# Output:
+array([0.63636364, 1., 0.18181818, 0.72727273, 0.93939394,
+       0.6969697 , 0.])
+\end{minted}
+
+% ===========================(fin ex 06)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 07)       %
+\chapter{Conclusion - What you have learned}
+
+The excercises serie is finished, well done!
+Based on all the knowledges tackled today, you should be able to discuss and answer the following questions:
+
+\begin{enumerate}
+  \item What is a hypothesis and what is its goal?  
+  \item What is the loss function and what does it represent?   
+  \item What is Linear Gradient Descent and what does it do?  
+  (hint: you have to talk about J, its gradient and the theta parameters...)  
+  \item What happens if you choose a learning rate that is too large?
+  \item What happens if you choose a very small learning rate, but still a sufficient number of cycles?
+  \item Can you explain MSE and what it measures?
+\end{enumerate}
+
+
+% ===========================(fin ex 07)         %
+% ============================================== %
+
+\newpage
+
+% ================================= %
+\section*{Contact}
+% --------------------------------- %
+You can contact 42AI association by email: contact@42ai.fr\\
+You can join the association on \href{https://join.slack.com/t/42-ai/shared_invite/zt-ebccw5r7-YPkDM6xOiYRPjqJXkrKgcA}{42AI slack}
+and/or posutale to \href{https://forms.gle/VAFuREWaLmaqZw2D8}{one of the association teams}.
+
+% ================================= %
+\section*{Acknowledgements}
+% --------------------------------- %
+The modules Python \& ML is the result of a collective work, we would like to thanks:
+\begin{itemize}
+  \item Maxime Choulika (cmaxime),
+  \item Pierre Peigné (ppeigne),
+  \item Matthieu David (mdavid).
+\end{itemize}
+who supervised the creation, the enhancement and this present transcription.
+
+\begin{itemize}
+  \item Amric Trudel (amric@42ai.fr)
+  \item Benjamin Carlier (bcarlier@student.42.fr)
+  \item Pablo Clement (pclement@student.42.fr)
+\end{itemize}
+for your investment for the creation and development of these modules.
+
+\begin{itemize}
+  \item Richard Blanc (riblanc@student.42.fr)
+  \item Solveig Gaydon Ohl (sgaydon-@student.42.fr)
+  \item Quentin Feuillade Montixi (qfeuilla@student.42.fr)
+\end{itemize}
+who betatest the first version of the modules of Machine Learning.
+\vfill
+\doclicenseThis
+
+\end{document}
