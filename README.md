@@ -13,8 +13,16 @@
 
 ### Table of Contents
 
+- [Download](#download)
 - [Curriculum](#curriculum)
+	- [Module05 - Stepping Into Machine Learning](#module05---stepping-into-machine-learning)
+	- [Module06 - Univariate Linear Regression](#module06---univariate-linear-regression)
+	- [Module07 - Multivariate Linear Regression](#module07---multivariate-linear-regression)
+	- [Module08 - Logistic Regression](#module08---logistic-regression)
+	- [Module09 - Regularization](#module09---regularization)
 - [Acknowledgements](#acknowledgements)
+	- [Contributors](#contributors)
+	- [Beta-testers](#beta-testers)
 <br/>
 
 This project is a Machine Learning bootcamp created by [42 AI](http://www.42ai.fr).
@@ -25,6 +33,10 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 42 Artificial Intelligence is a student organization of the Paris campus of the school 42. Our purpose is to foster discussion, learning, and interest in the field of artificial intelligence, by organizing various activities such as lectures and workshops.
 <br/>
 
+## Download
+
+The pdf files of each module can be downloaded from our realease page:
+[https://github.com/42-AI/bootcamp_machine-learning/releases](https://github.com/42-AI/bootcamp_machine-learning/releases)
 
 ## Curriculum
 
