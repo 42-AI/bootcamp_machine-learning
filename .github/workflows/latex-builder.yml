@@ -48,3 +48,4 @@ jobs:
             module08.pdf
             module09.pdf
           asset_name: Modules.pdf
+          asset_content_type: application/zip
