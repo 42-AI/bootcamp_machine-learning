@@ -25,8 +25,12 @@ jobs:
     container:
       image: blang/latex:ubuntu
     steps:
-      - name: Upload pdf artifacts
-        run: "make"
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: where infos
+        run: ls -la . && pwd
+      - name: Make pdf
+        run: make
       - name: Upload pdf artifacts
         uses: actions/upload-artifact@v2
         with:
