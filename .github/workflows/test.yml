@@ -1,8 +1,8 @@
-name: Test
-on: push
-jobs:
-    test:
-        runs-on: [linux]
-        steps:
-            - uses: actions/checkout@v2
-            - run: "make"
+# name: Test
+# on: push
+# jobs:
+#     test:
+#         runs-on: [linux]
+#         steps:
+#             - uses: actions/checkout@v2
+#             - run: "make"
