@@ -8,7 +8,7 @@ DEPS = en.ex02_interlude.tex  en.ex03_interlude.tex  en.ex06_interlude.tex  en.e
 # Adapt as needed
 # RELPATH = $(shell git rev-parse --show-toplevel)/resources/latex/
 # RELPATH for github actions:
-RELPATH = $(shell $(dirname `pwd`))/resources/latex/
+RELPATH = $(shell dirname `pwd`)/resources/latex/
 
 # You should not touch this either
 include $(RELPATH)/Makefile.LaTeX

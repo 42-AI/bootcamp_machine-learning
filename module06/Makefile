@@ -14,7 +14,7 @@ DEPS = en.ex00_interlude.tex \
 # Adapt as needed
 # RELPATH = $(shell git rev-parse --show-toplevel)/resources/latex/
 # RELPATH for github actions:
-RELPATH = $(shell $(dirname `pwd`))/resources/latex/
+RELPATH = $(shell dirname `pwd`)/resources/latex/
 
 
 # You should not touch this either
