@@ -12,7 +12,9 @@ DEPS = en.ex00_interlude.tex \
 
 # Relative path to the LaTeX documentclass setup files
 # Adapt as needed
-RELPATH = $(shell git rev-parse --show-toplevel)/resources/latex/
+# RELPATH = $(shell git rev-parse --show-toplevel)/resources/latex/
+# RELPATH for github actions:
+RELPATH = $(shell pwd)/resources/latex/
 
 
 # You should not touch this either
