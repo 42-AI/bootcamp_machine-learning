@@ -26,7 +26,6 @@ jobs:
       image: blang/latex:ubuntu
     steps:
       - name: Upload pdf artifacts
-        uses: actions/checkout@v2
         run: "make"
       - name: Upload pdf artifacts
         uses: actions/upload-artifact@v2
