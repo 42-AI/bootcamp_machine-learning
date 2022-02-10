@@ -14,25 +14,29 @@ jobs:
         run: echo "${{ github.event.commits[0].message }}"
         id: version
       - name: where infos
-        run: ls -la . && pwd
+        run: ls -la . && pwd && ls -la /
       - name: Make pdf
         run: |
           make
-          mv module05.pdf /module05.pdf
-          mv module06.pdf /module06.pdf
-          mv module07.pdf /module07.pdf
-          mv module08.pdf /module08.pdf
-          mv module09.pdf /module09.pdf
-      # - name: Upload pdf artifacts
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Modules[05-09]
-      #     path: |
-      #       /module05.pdf
-      #       /module06.pdf
-      #       /module07.pdf
-      #       /module08.pdf
-      #       /module09.pdf
+          cp module05.pdf /module05.pdf
+          cp module06.pdf /module06.pdf
+          cp module07.pdf /module07.pdf
+          cp module08.pdf /module08.pdf
+          cp module09.pdf /module09.pdf
+      - name: where infos after build
+        run: ls -la . && pwd && ls -la /
+      - name: Upload pdf artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Modules[05-09]
+          path: |
+            /module05.pdf
+            /module06.pdf
+            /module07.pdf
+            /module08.pdf
+            /module09.pdf
+      - name: where infos after artifacts
+        run: ls -la . && pwd && ls -la /
       - name: create release
         uses: actions/create-release@v1
         id: create_release
@@ -40,10 +44,12 @@ jobs:
           draft: false
           prerelease: false
           release_name: ${{ steps.version.outputs.version }}
-          tag_name: v${{ github.ref }}
+          tag_name: v/${{ github.ref }}
           body_path: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: where infos after release
+        run: ls -la . && pwd && ls -la /
       - name: Release Module05
         uses: actions/upload-release-asset@v1
         env:
