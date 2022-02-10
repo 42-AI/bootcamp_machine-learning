@@ -7,11 +7,7 @@ DIRECTORIES = 	module05 \
 
 TARGETS_DIRS = $(DIRECTORIES:%=%/en.subject.pdf)
 
-TARGETS = 	module05.pdf \
-			module06.pdf \
-			module07.pdf \
-			module08.pdf \
-			module09.pdf
+TARGETS = 	$(DIRECTORIES:%=%.pdf)
 
 all: clean dirs
 
