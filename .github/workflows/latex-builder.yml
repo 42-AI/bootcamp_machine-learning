@@ -11,7 +11,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: version
-        run: cat version
+        run: echo `cat version`
         id: version
       - name: where infos
         run: ls -la . && pwd && ls -la /
