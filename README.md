@@ -25,6 +25,10 @@ As notions seen during this bootcamp can be complex, we very strongly advise stu
 42 Artificial Intelligence is a student organization of the Paris campus of the school 42. Our purpose is to foster discussion, learning, and interest in the field of artificial intelligence, by organizing various activities such as lectures and workshops.
 <br/>
 
+## Download
+
+The pdf files of each module can be downloaded from our realease page:
+[https://github.com/42-AI/bootcamp_machine-learning/releases](https://github.com/42-AI/bootcamp_machine-learning/releases)
 
 ## Curriculum
 
