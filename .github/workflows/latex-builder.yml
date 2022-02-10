@@ -42,10 +42,10 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           asset_path: |
-            `pwd`module05.pdf
+            /__w/bootcamp_machine-learning/bootcamp_machine-learning/module05.pdf
             /__w/bootcamp_machine-learning/bootcamp_machine-learning/module06.pdf
-            module07.pdf
-            module08.pdf
-            module09.pdf
+            /__w/bootcamp_machine-learning/bootcamp_machine-learning/module07.pdf
+            /__w/bootcamp_machine-learning/bootcamp_machine-learning/module08.pdf
+            /__w/bootcamp_machine-learning/bootcamp_machine-learning/module09.pdf
           asset_name: Modules.pdf
           asset_content_type: application/zip
