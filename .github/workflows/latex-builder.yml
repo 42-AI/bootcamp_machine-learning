@@ -18,11 +18,12 @@ jobs:
       - name: Make pdf
         run: |
           make
-          cp module05.pdf /module05.pdf
-          cp module06.pdf /module06.pdf
-          cp module07.pdf /module07.pdf
-          cp module08.pdf /module08.pdf
-          cp module09.pdf /module09.pdf
+          cp module05.pdf /
+          cp module06.pdf /
+          cp module07.pdf /
+          cp module08.pdf /
+          cp module09.pdf /
+          cp CHANGELOG.md /
       - name: where infos after build
         run: ls -la . && pwd && ls -la /
       - name: Upload pdf artifacts
@@ -45,7 +46,7 @@ jobs:
           prerelease: false
           release_name: ${{ steps.version.outputs.version }}
           tag_name: v/${{ github.ref }}
-          body_path: CHANGELOG.md
+          body_path: /CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: where infos after release
