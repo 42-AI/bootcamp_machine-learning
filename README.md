@@ -13,8 +13,16 @@
 
 ### Table of Contents
 
+- [Download](#download)
 - [Curriculum](#curriculum)
+	- [Module05 - Stepping Into Machine Learning](#module05---stepping-into-machine-learning)
+	- [Module06 - Univariate Linear Regression](#module06---univariate-linear-regression)
+	- [Module07 - Multivariate Linear Regression](#module07---multivariate-linear-regression)
+	- [Module08 - Logistic Regression](#module08---logistic-regression)
+	- [Module09 - Regularization](#module09---regularization)
 - [Acknowledgements](#acknowledgements)
+	- [Contributors](#contributors)
+	- [Beta-testers](#beta-testers)
 <br/>
 
 This project is a Machine Learning bootcamp created by [42 AI](http://www.42ai.fr).
