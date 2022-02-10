@@ -472,20 +472,19 @@ class MyLinearRegression():
 		My personnal linear regression class to fit like a boss.
 	"""
 	def __init__(self,  thetas, alpha=0.001, max_iter=1000):
-              self.alpha = alpha
-              self.max_iter = max_iter
-              self.thetas = thetas
-              ... Your code ...
+				self.alpha = alpha
+				self.max_iter = max_iter
+				self.thetas = thetas
 
-	... other methods ...
+	#... other methods ...
 \end{minted}
 \newpage
 You will add the following methods:
 \begin{itemize}
   \item \texttt{fit\_(self, x, y)},
   \item \texttt{predict\_(self, x)},
-  \item \texttt{loss\_elem\_(self, y, y\_hat)},
-  \item \texttt{loss\_(self, y, y\_hat)}.
+  \item \texttt{cost\_elem\_(self, y, y\_hat)},
+  \item \texttt{cost\_(self, y, y\_hat)}.
 \end{itemize}
 
 You have already implemented these functions,
@@ -507,25 +506,24 @@ lr1 = MyLR([2, 0.7])
 lr1.predict_(x)
 # Output:
 array([[10.74695094],
-       [17.05055804],
-       [24.08691674],
-       [36.24020866],
-       [42.25621131]])
+		[17.05055804],
+		[24.08691674],
+		[36.24020866],
+		[42.25621131]])
 
 # Example 0.1:
-lr1.loss_elem_(lr1.predict(x),y)
+MyLR.cost_elem_(y, lr1.predict(x))
 # Output:
 array([[710.45867381],
-       [364.68645485],
-       [469.96221651],
-       [108.97553412],
-       [299.37111101]])
+		[364.68645485],
+		[469.96221651],
+		[108.97553412],
+		[299.37111101]])
 
 # Example 0.2:
-lr1.loss_(lr1.predict(x),y)
+MyLR.cost_(y, lr1.predict(x))
 # Output:
 195.34539903032385
-
 
 # Example 1.0:
 lr2 = MyLR([1, 1], 5e-8, 1500000)
@@ -533,28 +531,28 @@ lr2.fit_(x, y)
 lr2.thetas
 # Output:
 array([[1.40709365],
-       [1.1150909 ]])
+		[1.1150909 ]])
 
 # Example 1.1:
 lr2.predict_(x)
 # Output:
 array([[15.3408728 ],
-       [25.38243697],
-       [36.59126492],
-       [55.95130097],
-       [65.53471499]])
+		[25.38243697],
+		[36.59126492],
+		[55.95130097],
+		[65.53471499]])
 
 # Example 1.2:
-MyLR.loss_elem_(lr2.predict(x),y)
+MyLR.cost_elem_(y, lr2.predict(x))
 # Output:
 array([[486.66604863],
-       [115.88278416],
-       [ 84.16711596],
-       [ 85.96919719],
-       [ 35.71448348]])
+		[115.88278416],
+		[ 84.16711596],
+		[ 85.96919719],
+		[ 35.71448348]])
 
 # Example 1.3:
-MyLR.loss_(lr2.predict(x),y)
+MyLR.cost_(y, lr2.predict(x))
 # Output:
 80.83996294128525
 \end{minted}
