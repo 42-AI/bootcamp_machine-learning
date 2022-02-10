@@ -23,16 +23,16 @@ jobs:
           mv module07.pdf /module07.pdf
           mv module08.pdf /module08.pdf
           mv module09.pdf /module09.pdf
-      - name: Upload pdf artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: Modules[05-09]
-          path: |
-            /module05.pdf
-            /module06.pdf
-            /module07.pdf
-            /module08.pdf
-            /module09.pdf
+      # - name: Upload pdf artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: Modules[05-09]
+      #     path: |
+      #       /module05.pdf
+      #       /module06.pdf
+      #       /module07.pdf
+      #       /module08.pdf
+      #       /module09.pdf
       - name: create release
         uses: actions/create-release@v1
         id: create_release
