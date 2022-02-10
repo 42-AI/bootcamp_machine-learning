@@ -684,7 +684,7 @@ Introduction to standardization/normalization methods.\
 You must implement the following formula as a function:
 $$
 \begin{matrix}
- x'^{(i)} = \frac{x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)}}{\sqrt{\frac{1}{m} \sum_{i = 1}^{m} (x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)})^{2}}} & &\text{ for $i$ in $1, ..., m$} 
+ x'^{(i)} = \frac{x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)}}{\sqrt{\frac{1}{m - 1} \sum_{i = 1}^{m} (x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)})^{2}}} & &\text{ for $i$ in $1, ..., m$} 
 \end{matrix}
 $$
 
@@ -720,17 +720,16 @@ In the \texttt{zscore.py} file, write the \texttt{zscore} function as per the in
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def zscore(x):
-    """Computes the normalized version of a non-empty numpy.array using the z-score standardization.
-    Args:
-      x: has to be an numpy.array, a vector.
-    Return:
-      x' as a numpy.array. 
-      None if x is a non-empty numpy.array or not a numpy.array.
-      None if x is not of the expected type.
-    Raises:
-      This function shouldn't raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the normalized version of a non-empty numpy.ndarray using the z-score standardization.
+	Args:
+		x: has to be an numpy.ndarray, a vector.
+	Returns:
+		x' as a numpy.ndarray. 
+		None if x is a non-empty numpy.ndarray or not a numpy.ndarray.
+	Raises:
+		This function shouldn't raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 
@@ -739,19 +738,18 @@ def zscore(x):
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 # Example 1:
-X = numpy.array([[0],[ 15],[ -9],[ 7],[ 12],[ 3],[ -21]])
+X = numpy.array([0, 15, -9, 7, 12, 3, -21])
 zscore(X)
 # Output:
 array([-0.08620324,  1.2068453 , -0.86203236,  0.51721942,  0.94823559,
-        0.17240647, -1.89647119])
-
+		0.17240647, -1.89647119])
 
 # Example 2:
-Y = numpy.array([[2],[ 14],[ -13],[ 5],[ 12],[ 4],[ -19]])
+Y = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
 zscore(Y)
 # Output:
 array([ 0.11267619,  1.16432067, -1.20187941,  0.37558731,  0.98904659,
-        0.28795027, -1.72770165])
+		0.28795027, -1.72770165])
 \end{minted}
 
 
