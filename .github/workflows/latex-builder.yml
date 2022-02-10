@@ -11,7 +11,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: version
-        run: echo `cat version`
+        run: echo "::set-output name=version::$(cat version)"
         id: version
       - name: where infos
         run: ls -la . && pwd && ls -la /
@@ -44,8 +44,8 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: name/${{ steps.version.outputs.version }}
-          tag_name: v/${{ steps.version.outputs.version }}
+          release_name: release_${{ steps.version.outputs.version }}
+          tag_name: version/${{ steps.version.outputs.version }}
           body_path: /CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ github.token }}
