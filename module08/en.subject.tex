@@ -763,7 +763,7 @@ array([[-0.55711039],
 The time to use everything you built so far has come! Demonstrate your knowledge by implementing a logistic regression classifier using the gradient descent algorithm.
 You must have seen the power of \texttt{numpy} for vectorized operations. Well let's make something more concrete with that.
 
-You may have to take a look at Scikit-Learn's implementation of logistic regression and noticed that the \textbf{sklearn.linear_model.LogisticRegression} class offers a lot of options.
+You may have to take a look at Scikit-Learn's implementation of logistic regression and noticed that the \textbf{sklearn.linear\_model.LogisticRegression} class offers a lot of options.
 
 The goal of this exercise is to make a simplified but nonetheless useful and powerful version, with fewer options.
 
@@ -865,7 +865,7 @@ mylr.cost_(X,Y)
 \section*{Objective}
 % --------------------------------- %
 Now it's time to test your Logistic Regression Classifier on real data!  
-You will use the \textbf{solar_system_census_dataset}. 
+You will use the \textbf{solar\_system\_census\_dataset}. 
 
 % ================================= %
 \section*{Instructions}
@@ -1305,11 +1305,11 @@ array([[2 1]
 
 \subsection{Objective(s):}
 
-For a more visual version, you can add an option to your previous confusion_matrix_ function to return a \texttt{pandas.DataFrame} instead of a numpy array.
+For a more visual version, you can add an option to your previous confusion\_matrix\_ function to return a \texttt{pandas.DataFrame} instead of a numpy array.
 
 \subsection{Instructions:}
 
-In the \texttt{confusion_matrix.py} file, write the following function as per the instructions below:
+In the \texttt{confusion\_matrix.py} file, write the following function as per the instructions below:
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def confusion_matrix_(y, y_hat, labels=None, df_option=False):
     """
