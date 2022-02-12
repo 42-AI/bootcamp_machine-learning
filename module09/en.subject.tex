@@ -378,7 +378,7 @@ $$
 In the \texttt{linear\_loss\_reg.py} file, write the following function as per the instructions given below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def reg_cost_(y, y_hat, theta, lambda_):
+def reg_loss_(y, y_hat, theta, lambda_):
 	"""Computes the regularized cost of a linear regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same dimensions.
 	Args:
 		y: has to be an numpy.ndarray, a vector of shape m * 1.
@@ -406,17 +406,17 @@ y_hat = np.array([3, 13, -11.5, 5, 11, 5, -20]).reshape((-1, 1))
 theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
 
 # Example :
-reg_cost_(y, y_hat, theta, .5)
+reg_loss_(y, y_hat, theta, .5)
 # Output:
 0.8503571428571429
 
 # Example :
-reg_cost_(y, y_hat, theta, .05)
+reg_loss_(y, y_hat, theta, .05)
 # Output:
 0.5511071428571429
 
 # Example :
-reg_cost_(y, y_hat, theta, .9)
+reg_loss_(y, y_hat, theta, .9)
 # Output:
 1.116357142857143
 \end{minted}
@@ -469,25 +469,21 @@ $$
 In the \texttt{logistic\_loss\_reg.py} file, write the following function as per the instructions given below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def reg_log_loss_(y, y_hat, theta, lambda_, eps=1e-15):
-    """Computes the regularized loss of a logistic regression model from two non-empty numpy.array,
-       without any for loop. The two arrays must have the same shapes.
-    Args:
-      y: has to be an numpy.array, a vector of shape m * 1.
-      y_hat: has to be an numpy.array, a vector of shape m * 1.
-      theta: has to be a numpy.array, a vector of shape n * 1.
-      lambda_: has to be a float.
-      eps: has to be a float, epsilon (default=1e-15).
-    Return:
-      The regularized loss as a float.
-      None if y, y_hat, or theta is empty numpy.array.
-      None if y or y_hat have component ouside [0 ; 1]
-      None if y and y_hat do not share the same shapes.
-      None if y or y_hat is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+def reg_log_loss_(y, y_hat, theta, lambda_):
+	"""Computes the regularized loss of a logistic regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same shapes.
+	Args:
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		The regularized loss as a float.
+		None if y, y_hat, or theta is empty numpy.ndarray.
+		None if y and y_hat do not share the same shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 \hint{
@@ -499,27 +495,24 @@ def reg_log_loss_(y, y_hat, theta, lambda_, eps=1e-15):
 \section*{Examples}
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-y = np.array([[1],[ 1],[ 0],[ 0],[ 1],[ 1],[ 0]])
-y_hat = np.array([[.9],[ .79],[ .12],[ .04],[ .89],[ .93],[ .01]])
-theta = np.array([[1],[ 2.5],[ 1.5],[ -0.9]])
+y = np.array([1, 1, 0, 0, 1, 1, 0]).reshape((-1, 1))
+y_hat = np.array([.9, .79, .12, .04, .89, .93, .01]).reshape((-1, 1))
+theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
 
-
-# Example 1:
+# Example :
 reg_log_loss_(y, y_hat, theta, .5)
 # Output:
-0.40824105118138265
+0.43377043716475955
 
-
-# Example 2:
+# Example :
 reg_log_loss_(y, y_hat, theta, .05)
 # Output:
-0.10899105118138264
+0.13452043716475953
 
-
-# Example 3:
+# Example :
 reg_log_loss_(y, y_hat, theta, .9)
 # Output:
-0.6742410511813826
+0.6997704371647596
 \end{minted}
 
 % ===========================(fin ex 03)         %
