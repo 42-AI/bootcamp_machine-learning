@@ -786,40 +786,36 @@ In the \texttt{reg\_logistic\_grad.py} file, create the following function as pe
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_logistic_grad(y, x, theta, lambda_):
-    """Computes the regularized logistic gradient of three non-empty numpy.array,
-       with two for-loops. The three arrays must have compatible shapes.
-    Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
-      lambda_: has to be a float.
-    Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
-      None if y, x or theta does not share compatibles shapes.
-      None if y, x or theta or lambda_ is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, with two for-loops. The three arrays must have compatible shapes.
+	Args:
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
+		None if y, x or theta does not share compatibles shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 
 def vec_reg_logistic_grad(y, x, theta, lambda_):
-    """Computes the regularized logistic gradient of three non-empty numpy.array,
-       without any for-loop. The three arrays must have compatible shapes.
-    Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
-      lambda_: has to be a float.
-    Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
-      None if y, x or theta does not share compatibles shapes.
-      None if y, x or theta or lambda_ is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.
+	Args:
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of shape m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
+		None if y, x or theta does not share compatibles shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 \hint{
@@ -831,67 +827,64 @@ def vec_reg_logistic_grad(y, x, theta, lambda_):
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 x = np.array([[0, 2, 3, 4], 
-              [2, 4, 5, 5], 
-              [1, 3, 2, 7]])
+				[2, 4, 5, 5], 
+				[1, 3, 2, 7]])
 y = np.array([[0], [1], [1]])
 theta = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
-
 
 # Example 1.1:
 reg_logistic_grad(y, x, theta, 1)
 # Output:
 array([[-0.55711039],
-       [-1.40334809],
-       [-1.91756886],
-       [-2.56737958],
-       [-3.03924017]])
+		[-1.40334809],
+		[-1.91756886],
+		[-2.56737958],
+		[-3.03924017]])
 
 # Example 1.2:
 vec_reg_logistic_grad(y, x, theta, 1)
 # Output:
 array([[-0.55711039],
-       [-1.40334809],
-       [-1.91756886],
-       [-2.56737958],
-       [-3.03924017]])
-
+		[-1.40334809],
+		[-1.91756886],
+		[-2.56737958],
+		[-3.03924017]])
 
 # Example 2.1:
 reg_logistic_grad(y, x, theta, 0.5)
 # Output:
 array([[-0.55711039],
-       [-1.15334809],
-       [-1.96756886],
-       [-2.33404624],
-       [-3.15590684]])
+		[-1.15334809],
+		[-1.96756886],
+		[-2.33404624],
+		[-3.15590684]])
 
 # Example 2.2:
 vec_reg_logistic_grad(y, x, theta, 0.5)
 # Output:
 array([[-0.55711039],
-       [-1.15334809],
-       [-1.96756886],
-       [-2.33404624],
-       [-3.15590684]])
-
+		[-1.15334809],
+		[-1.96756886],
+		[-2.33404624],
+		[-3.15590684]])
 
 # Example 3.1:
 reg_logistic_grad(y, x, theta, 0.0)
 # Output:
 array([[-0.55711039],
-       [-0.90334809],
-       [-2.01756886],
-       [-2.10071291],
-       [-3.27257351]])
+		[-0.90334809],
+		[-2.01756886],
+		[-2.10071291],
+		[-3.27257351]])
 
 # Example 3.2:
 vec_reg_logistic_grad(y, x, theta, 0.0)
 # Output:
 array([[-0.55711039],
-       [-0.90334809],
-       [-2.01756886],
-       [-2.10071291],
-       [-3.27257351]])
+		[-0.90334809],
+		[-2.01756886],
+		[-2.10071291],
+		[-3.27257351]])
 \end{minted}
 
 % ===========================(fin ex 05)         %
@@ -946,12 +939,11 @@ class MyRidge(ParentClass):
 		My personnal ridge regression class to fit like a boss.
 	"""
 	def __init__(self,  thetas, alpha=0.001, max_iter=1000, lambda_=0.5):
-              self.alpha = alpha
-              self.max_iter = max_iter
-              self.thetas = thetas
-			  self.lambda_ = lambda_
-              # Or you can used super built-in functions ...
-	... Your code ...
+		self.alpha = alpha
+		self.max_iter = max_iter
+		self.thetas = thetas
+		self.lambda_ = lambda_
+		... Your code here ...
 
 	... other methods ...
 \end{minted}
@@ -1006,7 +998,7 @@ To do this:
 \begin{itemize}
   \item Split your \texttt{space\_avocado.csv} dataset into a training, a cross-validation and a test sets.
   \item Use your \texttt{polynomial\_features} method on your training set.
-  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of 4.
+  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of $4$.
   \item For each hypothesis consider a regularized factor ranging from $0$ to $1$ with a step of $0.2$.
   \item Evaluate your models on the cross-validation set.
   \item Evaluate the best model on the test set.
@@ -1061,18 +1053,18 @@ In the \texttt{my\_logistic\_regression.py} file, update your \texttt{MyLogistic
 \end{itemize}
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 class MyLogisticRegression():
-  """
-  Description:
-    My personnal logistic regression to classify things.
-  """
-    def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2'):
-        self.alpha = alpha
-        self.max_iter = max_iter
-        self.theta = theta
-        self.penalty=penalty
-        ... Your code ...
+	"""
+	Description:
+		My personnal logistic regression to classify things.
+	"""
+	def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2'):
+		self.alpha = alpha
+		self.max_iter = max_iter
+		self.theta = theta
+		self.penalty=penalty
+		... Your code ...
 
-  ... other methods ...
+	... other methods ...
 \end{minted}
 
 \begin{itemize}
