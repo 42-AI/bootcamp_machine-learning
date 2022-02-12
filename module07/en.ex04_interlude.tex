@@ -17,7 +17,15 @@ that the $j$ indice needs to run from $0$ to $n$ instead of $0$
 to $1$. So all you need is a more generic algorithm, which can be 
 expressed in pseudocode as the following:
 
-$$ \text{\textbf{repeat} until convergence } {\ \hspace{1cm} \text{\textbf{compute} } \nabla{(J)} \ \hspace{1.4cm} \theta_j \gets \theta_j - \alpha \nabla(J)_j \ \hspace{5cm} \text{\textit{# simultaneously update} $\theta$ for $j=0,1,...,n$} \ }\hspace{4cm}\ $$
+$$ 
+\begin{matrix}
+\textbf{repeat} \text{ } \text{until convergence} \\
+\textbf{compute} \\
+\nabla{(J)} \text{ } \theta_j \gets \theta_j - \alpha \nabla(J)_j \\
+\textit{# simultaneously update} \\
+\theta \text{ for j=0,1,...,n}
+\end{matrix}
+$$
 
 
 
@@ -32,7 +40,15 @@ $$
 $$
 
 If you started to like vectorized forms, you might have noticed that that the $\theta_j$ notation is actually redundant here, since all components of $\theta$ need to be updated simultaneously. $\theta$ is a vector, $\nabla{(J)}$ also, they both have dimension $(n+1)$. So all we need to do is this:
-$$ \text{\textbf{repeat} until convergence } { \ \text{\textbf{compute} } \nabla{(J)} \ \theta \gets \theta - \alpha \nabla(J) \ } \hspace{4cm} $$
+
+
+$$ 
+\begin{matrix}
+\textbf{repeat} \ \text{until convergence} \\
+\textbf{compute} \\
+\nabla{(J)} \  \theta \gets \theta - \alpha \nabla(J)
+\end{matrix}
+$$
 
 Where:
 \begin{itemize}
