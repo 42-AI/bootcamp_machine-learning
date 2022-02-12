@@ -437,12 +437,12 @@ X = np.array([0, 15, -9, 7, 12, 3, -21]).reshape((-1, 1))
 Y = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
 
 # Example 1:
-cost_(X, Y)
+loss_(X, Y)
 # Output:
 2.142857142857143
 
 # Example 2:
-cost_(X, X)
+loss_(X, X)
 # Output:
 0.0
 \end{minted}
@@ -1077,7 +1077,7 @@ Write a program which:
         Add more prediction points to have smooth curves for the models.
 \end{itemize}
 
-You will used \texttt{Micrograms} as feature and \texttt{Score} as target.
+You will use \texttt{Micrograms} as feature and \texttt{Score} as target.
 The implementation of the method \texttt{fit\_} based on the simple gradient descent lakes of efficiency and sturdiness,
 which will lead to the impossibility of converging for polynomial models with high degree or with features having several orders of magnitude of difference.
 See the starting values for some thetas below to help you to get acceptable parameters values for the models.
@@ -1182,44 +1182,47 @@ The following examples are just an indication of possible outputs. As long as yo
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 import numpy as np
-x1 = np.array([[1],[ 42],[ 300],[ 10],[ 59]])
-y = np.array([[0],[1],[0],[1],[0]])
-
-# Example 0:
-data_spliter(x1, y, 0.8)
-# Output:
-(array([[  10],[  42],[  1],[ 300]]), array([[59]]), array([[1],[ 1],[ 0],[ 0]]), array([[0]]))
+x1 = np.array([1, 42, 300, 10, 59]).reshape((-1, 1))
+y = np.array([0, 1, 0, 1, 0]).reshape((-1, 1))
 
 # Example 1:
-data_spliter(x1, y, 0.5)
+data_spliter(x1, y, 0.8)
 # Output:
-(array([[42],[ 10]]), array([[ 59],[ 300],[  1]]), array([[1],[ 1]]), array([[0],[ 0],[ 0]]))
-
-x2 = np.array([ [  1,  42],
-                [300,  10],
-                [ 59,   1],
-                [300,  59],
-                [ 10,  42]])
-y = np.array([[0],[1],[0],[1],[0]])
+(array([  1,  59,  42, 300]), array([10]), array([0, 0, 1, 0]), array([1]))
 
 # Example 2:
+data_spliter(x1, y, 0.5)
+# Output:
+(array([59, 10]), array([  1, 300,  42]), array([0, 1]), array([0, 0, 1]))
+
+x2 = np.array([[  1, 42],
+               [300, 10],
+               [ 59,  1],
+               [300, 59],
+               [ 10, 42]])
+y = np.array([0, 1, 0, 1, 0]).reshape((-1, 1))
+
+# Example 3:
 data_spliter(x2, y, 0.8)
 # Output:
 (array([[ 10,  42],
+        [300,  59],
         [ 59,   1],
-        [  1,  42],
-        [300,  10]]), array([[300,  59]]), array([[0],[ 0],[ 0],[ 1]]),array([[1]]))
+        [300,  10]]),
+ array([[ 1, 42]]),
+ array([0, 1, 0, 1]),
+ array([0]))
 
-# Example 3:
+# Example 4:
 data_spliter(x2, y, 0.5)
 # Output:
-(array([[300,  10],
+(array([[59,  1],
+        [10, 42]]),
+ array([[300,  10],
+        [300,  59],
         [  1,  42]]),
-array([[ 10,  42],
-       [300,  59],
-       [ 59,   1]]),
- array([[1],[ 0]]),
- array([[0],[ 1],[ 0]]))
+ array([0, 0]),
+ array([1, 1, 0]))
 \end{minted}
 
 
@@ -1231,7 +1234,7 @@ array([[ 10,  42],
 % ============================================== %
 % ===========================(start ex 10)       %
 \chapter{Exercise 10}
-\extitle{Machine Learning for Grown-ups: Training and Test Sets}
+\extitle{Machine Learning for Grown-ups: Trantor guacamole business}
 \turnindir{ex10}
 \exnumber{10}
 \exfiles{space\_avocado.py, benchmark\_train.py,  models.[csv/yml/pickle]}
