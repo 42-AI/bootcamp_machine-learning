@@ -168,7 +168,9 @@ For each column $x_j$ of the matrix $X$, the new matrix contains
 $x_j$ raised to the power of $k$, for $k = 1, 2, ..., p$ :
 
 $$
-x_1  \mid  \ldots  \mid  x_n  \mid  x_1^2  \mid  \ldots  \mid  x_n^2  \mid  \ldots  \mid  x_1^p  \mid  \ldots  \mid  x_n^p
+\begin{matrix}
+x_1 &|& \dots &|& x_n &|& x_1^2 &|& \dots &|& x_n^2 &|& \dots &|& x_1^p &|& \dots &|& x_n^p
+\end{matrix}
 $$
 
 % ================================== %
@@ -178,21 +180,17 @@ In the \texttt{polynomial\_model\_extended.py} file, write the following functio
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def add_polynomial_features(x, power):
-    """Add polynomial features to matrix x by raising its columns to every power in the range
-       of 1 up to the power given in argument.  
-    Args:
-      x: has to be an numpy.array, where x.shape = (m,n) i.e. a matrix of shape m * n.
-      power: has to be a positive integer, the power up to which the columns of matrix x
-      are going to be raised.
-    Return:
-      - The matrix of polynomial features as a numpy.array, of shape m * (np),
-      containg the polynomial feature values for all training examples.
-      - None if x is an empty numpy.array.
-      - None if x or power is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Add polynomial features to matrix x by raising its columns to every power in the range of 1 up to the power given in argument.  
+	Args:
+		x: has to be an numpy.ndarray, a matrix of shape m * n.
+		power: has to be an int, the power up to which the columns of matrix x are going to be raised.
+	Returns:
+		The matrix of polynomial features as a numpy.ndarray, of shape m * (np), containg the polynomial feature values for all training examples.
+		None if x is an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 
@@ -204,25 +202,23 @@ def add_polynomial_features(x, power):
 import numpy as np
 x = np.arange(1,11).reshape(5, 2)
 
-
 # Example 1:
 add_polynomial_features(x, 3)
 # Output:
 array([[   1,    2,    1,    4,    1,    8],
-       [   3,    4,    9,   16,   27,   64],
-       [   5,    6,   25,   36,  125,  216],
-       [   7,    8,   49,   64,  343,  512],
-       [   9,   10,   81,  100,  729, 1000]])
-
+		[   3,    4,    9,   16,   27,   64],
+		[   5,    6,   25,   36,  125,  216],
+		[   7,    8,   49,   64,  343,  512],
+		[   9,   10,   81,  100,  729, 1000]])
 
 # Example 2:
-add_polynomial_features(x, 5)
+add_polynomial_features(x, 4)
 # Output:
 array([[    1,     2,     1,     4,     1,     8,     1,    16],
-       [    3,     4,     9,    16,    27,    64,    81,   256],
-       [    5,     6,    25,    36,   125,   216,   625,  1296],
-       [    7,     8,    49,    64,   343,   512,  2401,  4096],
-       [    9,    10,    81,   100,   729,  1000,  6561, 10000]])
+		[    3,     4,     9,    16,    27,    64,    81,   256],
+		[    5,     6,    25,    36,   125,   216,   625,  1296],
+		[    7,     8,    49,    64,   343,   512,  2401,  4096],
+		[    9,    10,    81,   100,   729,  1000,  6561, 10000]])
 \end{minted}
 
 % ===========================(fin ex 00)         %
