@@ -691,12 +691,12 @@ You must implement a function which adds an extra column of $1$'s on the left si
 In the tools.py file create the following function as per the instructions given below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def add_intercept(x):    
+def add_intercept(x):
     """Adds a column of 1's to the non-empty numpy.array x.
     Args:
-      x: has to be an numpy.array, a vector of shape m * 1.
+      x: has to be an numpy.array, a vector of dimension m * 1.
     Returns:
-      x as a numpy.array, a vector of shape m * 2.
+      X as a numpy.array, a vector of dimension m * 2.
       None if x is not a numpy.array.
       None if x is a empty numpy.array.
     Raises:
@@ -713,7 +713,7 @@ def add_intercept(x):
 import numpy as np
 
 # Example 1:
-x = np.arange(1,6).reshape((5,1))
+x = np.arange(1,6)
 add_intercept(x)
 # Output:
 array([[1., 1.],
