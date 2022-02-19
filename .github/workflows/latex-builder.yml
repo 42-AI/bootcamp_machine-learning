@@ -16,11 +16,11 @@ jobs:
       - name: Make pdf
         run: |
           make
-          cp module05.pdf /
-          cp module06.pdf /
-          cp module07.pdf /
-          cp module08.pdf /
-          cp module09.pdf /
+          cp build/module05.pdf /
+          cp build/module06.pdf /
+          cp build/module07.pdf /
+          cp build/module08.pdf /
+          cp build/module09.pdf /
       - name: Upload pdf artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -46,11 +46,11 @@ jobs:
       - name: Make pdf
         run: |
           make
-          cp module05.pdf /
-          cp module06.pdf /
-          cp module07.pdf /
-          cp module08.pdf /
-          cp module09.pdf /
+          cp build/module05.pdf /
+          cp build/module06.pdf /
+          cp build/module07.pdf /
+          cp build/module08.pdf /
+          cp build/module09.pdf /
           cp CHANGELOG.md /
       - name: create release
         uses: actions/create-release@v1
