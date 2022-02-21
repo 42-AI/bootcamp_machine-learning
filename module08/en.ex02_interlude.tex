@@ -125,8 +125,7 @@ And we can represent it like this:
     \caption{$\text{loss}_0$ and $\text{loss}_1$}
 \end{figure}
 
-How do you switch between $\text{loss}_0$ and $\text{loss}_1$ depending on the value of $y^{(i)}$?
-We could use an if-else statement in the code, but that's not very pretty and it doesn't provide a loss function that can be expressed as a single mathematical expression.
+How do you switch between $\text{cost}_{y=0}$ and $\text{cost}_{y=1}$ depending on the value of $y^{(i)}$? We could use an if-else statement in the code, but that's not very pretty and it doesn't provide a cost function that can be expressed as a single mathematical expression.
 It turns out there is a little mathematical trick we can use to make everything stand in one equation.
 
 \newpage
@@ -146,19 +145,19 @@ It turns out we can use the $y^{(i)}$ value itself as a switch!
     \item When $y^{(i)} = 0$, we just multiply it with the term we don't want and we'll cancel it out:
           $$
           \begin{matrix}
-          loss & = & y^{(i)} \cdot loss_{y=1} + loss_{y=0} \\
-          loss & = & 0 \cdot loss_{y=1} + loss_{y=0} \\
-          loss & = & loss_{y=0}
+          cost & = & y^{(i)} \cdot cost_{y=1} + cost_{y=0} \\
+          cost & = & 0 \cdot cost_{y=1} + cost_{y=0} \\
+          cost & = & cost_{y=0}
           \end{matrix}
           $$
     
     \item When $y^{(i)} = 1$, it's a little trickier. We have to multiply the term we want to cancel out by $(1 - y^{(i)})$:
           $$
           \begin{matrix}
-          loss & = & loss_{y=1} + (1 - y^{(i)}) \cdot loss_{y=0} \\
-          loss & = & loss_{y=1} + (1 - 1) \cdot loss_{y=0} \\
-          loss & = & loss_{y=1} + 0 \cdot loss_{y=0}  \\
-          loss & = & loss_{y=1}
+          cost & = & cost_{y=1} + (1 - y^{(i)}) \cdot cost_{y=0} \\
+          cost & = & cost_{y=1} + (1 - 1) \cdot cost_{y=0} \\
+          cost & = & cost_{y=1} + 0 \cdot cost_{y=0}  \\
+          cost & = & cost_{y=1}
           \end{matrix}
           $$
 \end{itemize}
@@ -167,7 +166,7 @@ Now, to make a generic equation that works without knowing in advance the value 
 
 $$
 \begin{matrix}
-loss & = & y^{(i)} \cdot loss_{y=1} & + & (1 - y^{(i)}) \cdot loss_{y=0}
+cost & = & y^{(i)} \cdot cost_{y=1} & + & (1 - y^{(i)}) \cdot cost_{y=0}
 \end{matrix}
 $$
 
@@ -175,7 +174,7 @@ And then, if we develop $\text{loss}_0$ and $\text{loss}_1$:
 
 $$
 \begin{matrix}
-loss & = & y^{(i)} \cdot (-\log(\hat{y}^{(i)})) & + & (1 - y^{(i)}) \cdot (-\log(1 - \hat{y}^{(i)}))
+cost & = & y^{(i)} \cdot (-\log(\hat{y}^{(i)})) & + & (1 - y^{(i)}) \cdot (-\log(1 - \hat{y}^{(i)}))
 \end{matrix}
 $$
 
@@ -183,7 +182,7 @@ Finally, if we simplify the sign notation just a bit:
 
 $$
 \begin{matrix}
-loss & = & -[y^{(i)}\cdot\log(\hat{y}^{(i)}) & + & (1 - y^{(i)})\cdot\log(1 - \hat{y}^{(i)})]
+cost & = & -[y^{(i)}\cdot\log(\hat{y}^{(i)}) & + & (1 - y^{(i)})\cdot\log(1 - \hat{y}^{(i)})]
 \end{matrix}
 $$
 
@@ -195,7 +194,7 @@ All we need to do is and average across all training examples and we end up with
 It has a name: \textbf{cross-entropy}. The equation is the following:  
 
 $$
-J( \theta) = -\frac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
 $$
 
 This formula allows you to calculate the overall loss of a complete set of predictions.
@@ -208,7 +207,7 @@ If you'd like to better understand how it works and have "automatic switch" proc
 $$
 \begin{matrix}
 y^{(i)} & = & 0 \\
-y^{(i)}\log(\hat{y}^{(i)})) & = & 0 \\
+y^{(i)}\log(\hat{y}^{(i)})) & = & 0   \\
 1 - y^{(i)} & = & 1 \\
 (1 - y^{(i)})\log(1 - \hat{y}^{(i)}) & = & \log(1 - \hat{y}^{(i)})
 \end{matrix}
@@ -216,15 +215,15 @@ $$
 
 Therefore
 $$
-J(\theta) = -\frac{1}{m} \left[ \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}\log(\hat{y}^{(i)})}}^{0} + \overbrace{\cancel{(1 - y^{(i)})}}^{1}\log(1 - \hat{y}^{(i)})\right]
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}\log(\hat{y}^{(i)})}}^{0} + \overbrace{\cancel{(1 - y^{(i)})}}^{1}\log(1 - \hat{y}^{(i)})\rbrack
 $$
 
 $$
-J(\theta) = -\frac{1}{m} \sum_{i = 1}^{m} \log(1 - \hat{y}^{(i)})
+J( \theta) = -\cfrac{1} {m} \sum_{i = 1}^{m} \log(1 - \hat{y}^{(i)})
 $$
 
 $$
-J(\theta) = \frac{1}{m} \sum_{i = 1}^{m} -\log(1 - \hat{y}^{(i)})
+J( \theta) = \cfrac{1} {m} \sum_{i = 1}^{m} -\log(1 - \hat{y}^{(i)})
 $$
 
 \begin{itemize}
@@ -243,13 +242,13 @@ $$
 Therefore
 
 $$
-J( \theta) = -\frac{1}{m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}}}^{1}\log(\hat{y}^{(i)}) + \overbrace{\cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}}^{0}\rbrack
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}}}^{1}\log(\hat{y}^{(i)}) + \overbrace{\cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}}^{0}\rbrack
 $$
 
 $$
-J( \theta) = -\frac{1}{m} \sum_{i = 1}^{m} \log(\hat{y}^{(i)})
+J( \theta) = -\cfrac{1} {m} \sum_{i = 1}^{m} \log(\hat{y}^{(i)})
 $$
 
 $$
-J( \theta) = \frac{1}{m} \sum_{i = 1}^{m} -\log(\hat{y}^{(i)})
+J( \theta) = \cfrac{1} {m} \sum_{i = 1}^{m} -\log(\hat{y}^{(i)})
 $$

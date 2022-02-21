@@ -178,21 +178,17 @@ In the \texttt{polynomial\_model\_extended.py} file, write the following functio
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def add_polynomial_features(x, power):
-    """Add polynomial features to matrix x by raising its columns to every power in the range
-       of 1 up to the power given in argument.  
-    Args:
-      x: has to be an numpy.array, where x.shape = (m,n) i.e. a matrix of shape m * n.
-      power: has to be a positive integer, the power up to which the columns of matrix x
-      are going to be raised.
-    Return:
-      - The matrix of polynomial features as a numpy.array, of shape m * (np),
-      containg the polynomial feature values for all training examples.
-      - None if x is an empty numpy.array.
-      - None if x or power is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Add polynomial features to matrix x by raising its columns to every power in the range of 1 up to the power given in argument.  
+	Args:
+		x: has to be an numpy.ndarray, a matrix of shape m * n.
+		power: has to be an int, the power up to which the columns of matrix x are going to be raised.
+	Returns:
+		The matrix of polynomial features as a numpy.ndarray, of shape m * (np), containg the polynomial feature values for all training examples.
+		None if x is an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 
@@ -204,25 +200,23 @@ def add_polynomial_features(x, power):
 import numpy as np
 x = np.arange(1,11).reshape(5, 2)
 
-
 # Example 1:
 add_polynomial_features(x, 3)
 # Output:
 array([[   1,    2,    1,    4,    1,    8],
-       [   3,    4,    9,   16,   27,   64],
-       [   5,    6,   25,   36,  125,  216],
-       [   7,    8,   49,   64,  343,  512],
-       [   9,   10,   81,  100,  729, 1000]])
-
+		[   3,    4,    9,   16,   27,   64],
+		[   5,    6,   25,   36,  125,  216],
+		[   7,    8,   49,   64,  343,  512],
+		[   9,   10,   81,  100,  729, 1000]])
 
 # Example 2:
-add_polynomial_features(x, 5)
+add_polynomial_features(x, 4)
 # Output:
 array([[    1,     2,     1,     4,     1,     8,     1,    16],
-       [    3,     4,     9,    16,    27,    64,    81,   256],
-       [    5,     6,    25,    36,   125,   216,   625,  1296],
-       [    7,     8,    49,    64,   343,   512,  2401,  4096],
-       [    9,    10,    81,   100,   729,  1000,  6561, 10000]])
+		[    3,     4,     9,    16,    27,    64,    81,   256],
+		[    5,     6,    25,    36,   125,   216,   625,  1296],
+		[    7,     8,    49,    64,   343,   512,  2401,  4096],
+		[    9,    10,    81,   100,   729,  1000,  6561, 10000]])
 \end{minted}
 
 % ===========================(fin ex 00)         %
@@ -285,30 +279,28 @@ In the \texttt{l2\_reg.py} file, write the following function as per the instruc
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def iterative_l2(theta):
-    """Computes the L2 regularization of a non-empty numpy.array, with a for-loop.
-    Args:
-      theta: has to be a numpy.array, a vector of shape n' * 1.
-    Return:
-      The L2 regularization as a float.
-      None if theta in an empty numpy.array.
-      None if theta is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the L2 regularization of a non-empty numpy.ndarray, with a for-loop.
+	Args:
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+	Returns:
+		The L2 regularization as a float.
+		None if theta in an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 
 def l2(theta):
-    """Computes the L2 regularization of a non-empty numpy.array, without any for-loop.
-    Args:
-      theta: has to be a numpy.array, a vector of shape n' * 1.
-    Return:
-      The L2 regularization as a float.
-      None if theta in an empty numpy.array.
-      None if theta is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    .. Your code ...
+	"""Computes the L2 regularization of a non-empty numpy.ndarray, without any for-loop.
+	Args:
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+	Returns:
+		The L2 regularization as a float.
+		None if theta in an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 % ================================= %
@@ -316,25 +308,23 @@ def l2(theta):
 % --------------------------------- %
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-x = np.array([[2],[ 14],[ -13],[ 5],[ 12],[ 4],[ -19]])
+x = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
+
 # Example 1: 
 iterative_l2(x)
 # Output:
 911.0
-
 
 # Example 2: 
 l2(x)
 # Output:
 911.0
 
-
-y = np.array([[3],[0.5],[-6]])
+y = np.array([3,0.5,-6]).reshape((-1, 1))
 # Example 3: 
 iterative_l2(y)
 # Output:
 36.25
-
 
 # Example 4: 
 l2(y)
@@ -389,22 +379,20 @@ In the \texttt{linear\_loss\_reg.py} file, write the following function as per t
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_loss_(y, y_hat, theta, lambda_):
-    """Computes the regularized loss of a linear regression model from two non-empty numpy.array,
-       without any for loop. The two arrays must have the same shapes.
-    Args:
-      y: has to be an numpy.array, a vector of shape m * 1.
-      y_hat: has to be an numpy.array, a vector of shape m * 1.
-      theta: has to be a numpy.array, a vector of shape n * 1.
-      lambda_: has to be a float.
-    Return:
-      The regularized loss as a float.
-      None if y, y_hat, or theta are empty numpy.array.
-      None if y and y_hat do not share the same shapes.
-      None if y or y_hat is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the regularized cost of a linear regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same dimensions.
+	Args:
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		The regularized cost as a float.
+		None if y, y_hat, or theta are empty numpy.ndarray.
+		None if y and y_hat do not share the same shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 \hint{such situation is a good use case for decorators...}
@@ -413,24 +401,21 @@ def reg_loss_(y, y_hat, theta, lambda_):
 \section*{Examples}
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-y = np.array([[2],[ 14],[ -13],[ 5],[ 12],[ 4],[ -19]])
-y_hat = np.array([[3],[ 13],[ -11.5],[ 5],[ 11],[ 5],[ -20]])
-theta = np.array([[1],[ 2.5],[ 1.5],[ -0.9]])
+y = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
+y_hat = np.array([3, 13, -11.5, 5, 11, 5, -20]).reshape((-1, 1))
+theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
 
-
-# Example 1:
+# Example :
 reg_loss_(y, y_hat, theta, .5)
 # Output:
 0.8503571428571429
 
-
-# Example 2:
+# Example :
 reg_loss_(y, y_hat, theta, .05)
 # Output:
 0.5511071428571429
 
-
-# Example 3:
+# Example :
 reg_loss_(y, y_hat, theta, .9)
 # Output:
 1.116357142857143
@@ -484,25 +469,21 @@ $$
 In the \texttt{logistic\_loss\_reg.py} file, write the following function as per the instructions given below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def reg_log_loss_(y, y_hat, theta, lambda_, eps=1e-15):
-    """Computes the regularized loss of a logistic regression model from two non-empty numpy.array,
-       without any for loop. The two arrays must have the same shapes.
-    Args:
-      y: has to be an numpy.array, a vector of shape m * 1.
-      y_hat: has to be an numpy.array, a vector of shape m * 1.
-      theta: has to be a numpy.array, a vector of shape n * 1.
-      lambda_: has to be a float.
-      eps: has to be a float, epsilon (default=1e-15).
-    Return:
-      The regularized loss as a float.
-      None if y, y_hat, or theta is empty numpy.array.
-      None if y or y_hat have component ouside [0 ; 1]
-      None if y and y_hat do not share the same shapes.
-      None if y or y_hat is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+def reg_log_loss_(y, y_hat, theta, lambda_):
+	"""Computes the regularized loss of a logistic regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same shapes.
+	Args:
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		The regularized loss as a float.
+		None if y, y_hat, or theta is empty numpy.ndarray.
+		None if y and y_hat do not share the same shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 \hint{
@@ -514,27 +495,24 @@ def reg_log_loss_(y, y_hat, theta, lambda_, eps=1e-15):
 \section*{Examples}
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-y = np.array([[1],[ 1],[ 0],[ 0],[ 1],[ 1],[ 0]])
-y_hat = np.array([[.9],[ .79],[ .12],[ .04],[ .89],[ .93],[ .01]])
-theta = np.array([[1],[ 2.5],[ 1.5],[ -0.9]])
+y = np.array([1, 1, 0, 0, 1, 1, 0]).reshape((-1, 1))
+y_hat = np.array([.9, .79, .12, .04, .89, .93, .01]).reshape((-1, 1))
+theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
 
-
-# Example 1:
+# Example :
 reg_log_loss_(y, y_hat, theta, .5)
 # Output:
-0.40824105118138265
+0.43377043716475955
 
-
-# Example 2:
+# Example :
 reg_log_loss_(y, y_hat, theta, .05)
 # Output:
-0.10899105118138264
+0.13452043716475953
 
-
-# Example 3:
+# Example :
 reg_log_loss_(y, y_hat, theta, .9)
 # Output:
-0.6742410511813826
+0.6997704371647596
 \end{minted}
 
 % ===========================(fin ex 03)         %
@@ -620,16 +598,16 @@ In the \texttt{reg\_linear\_grad.py} file, write the following functions as per 
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_linear_grad(y, x, theta, lambda_):
-    """Computes the regularized linear gradient of three non-empty numpy.array,
+    """Computes the regularized linear gradient of three non-empty numpy.ndarray,
        with two for-loop. The three arrays must have compatible shapes.
     Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
+      y: has to be a numpy.ndarray, a vector of shape m * 1.
+      x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+      theta: has to be a numpy.ndarray, a vector of shape (n + 1) * 1.
       lambda_: has to be a float.
     Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
+      A numpy.ndarray, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
+      None if y, x, or theta are empty numpy.ndarray.
       None if y, x or theta does not share compatibles shapes.
       None if y, x or theta or lambda_ is not of the expected type.
     Raises:
@@ -638,16 +616,16 @@ def reg_linear_grad(y, x, theta, lambda_):
     ... Your code ...
 
 def vec_reg_linear_grad(y, x, theta, lambda_):
-    """Computes the regularized linear gradient of three non-empty numpy.array,
+    """Computes the regularized linear gradient of three non-empty numpy.ndarray,
        without any for-loop. The three arrays must have compatible shapes.
     Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
+      y: has to be a numpy.ndarray, a vector of shape m * 1.
+      x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+      theta: has to be a numpy.ndarray, a vector of shape (n + 1) * 1.
       lambda_: has to be a float.
     Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
+      A numpy.ndarray, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
+      None if y, x, or theta are empty numpy.ndarray.
       None if y, x or theta does not share compatibles shapes.
       None if y, x or theta or lambda_ is not of the expected type.
     Raises:
@@ -665,66 +643,63 @@ def vec_reg_linear_grad(y, x, theta, lambda_):
 % ================================= %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 x = np.array([
-      [ -6,  -7,  -9],
-      [ 13,  -2,  14],
-      [ -7,  14,  -1],
-      [ -8,  -4,   6],
-      [ -5,  -9,   6],
-      [  1,  -5,  11],
-      [  9, -11,   8]])
+		[ -6,  -7,  -9],
+		[ 13,  -2,  14],
+		[ -7,  14,  -1],
+		[ -8,  -4,   6],
+		[ -5,  -9,   6],
+		[  1,  -5,  11],
+		[  9, -11,   8]])
 y = np.array([[2], [14], [-13], [5], [12], [4], [-19]])
 theta = np.array([[7.01], [3], [10.5], [-6]])
-
 
 # Example 1.1:
 reg_linear_grad(y, x, theta, 1)
 # Output:
 array([[ -60.99      ],
-       [-195.64714286],
-       [ 863.46571429],
-       [-644.52142857]])
+		[-195.64714286],
+		[ 863.46571429],
+		[-644.52142857]])
 
 # Example 1.2:
 vec_reg_linear_grad(y, x, theta, 1)
 # Output:
 array([[ -60.99      ],
-       [-195.64714286],
-       [ 863.46571429],
-       [-644.52142857]])
-
+		[-195.64714286],
+		[ 863.46571429],
+		[-644.52142857]])
 
 # Example 2.1:
 reg_linear_grad(y, x, theta, 0.5)
 # Output:
 array([[ -60.99      ],
-       [-195.86142857],
-       [ 862.71571429],
-       [-644.09285714]])
+		[-195.86142857],
+		[ 862.71571429],
+		[-644.09285714]])
 
 # Example 2.2:
 vec_reg_linear_grad(y, x, theta, 0.5)
 # Output:
 array([[ -60.99      ],
-       [-195.86142857],
-       [ 862.71571429],
-       [-644.09285714]])
-
+		[-195.86142857],
+		[ 862.71571429],
+		[-644.09285714]])
 
 # Example 3.1:
 reg_linear_grad(y, x, theta, 0.0)
 # Output:
 array([[ -60.99      ],
-       [-196.07571429],
-       [ 861.96571429],
-       [-643.66428571]])
+		[-196.07571429],
+		[ 861.96571429],
+		[-643.66428571]])
 
 # Example 3.2:
 vec_reg_linear_grad(y, x, theta, 0.0)
 # Output:
 array([[ -60.99      ],
-       [-196.07571429],
-       [ 861.96571429],
-       [-643.66428571]])
+		[-196.07571429],
+		[ 861.96571429],
+		[-643.66428571]])
 \end{minted}
 
 
@@ -811,40 +786,36 @@ In the \texttt{reg\_logistic\_grad.py} file, create the following function as pe
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_logistic_grad(y, x, theta, lambda_):
-    """Computes the regularized logistic gradient of three non-empty numpy.array,
-       with two for-loops. The three arrays must have compatible shapes.
-    Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
-      lambda_: has to be a float.
-    Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
-      None if y, x or theta does not share compatibles shapes.
-      None if y, x or theta or lambda_ is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, with two for-loops. The three arrays must have compatible shapes.
+	Args:
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
+		None if y, x or theta does not share compatibles shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 
 def vec_reg_logistic_grad(y, x, theta, lambda_):
-    """Computes the regularized logistic gradient of three non-empty numpy.array,
-       without any for-loop. The three arrays must have compatible shapes.
-    Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
-      lambda_: has to be a float.
-    Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
-      None if y, x or theta does not share compatibles shapes.
-      None if y, x or theta or lambda_ is not of the expected type.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.
+	Args:
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of shape m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
+		None if y, x or theta does not share compatibles shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
 \end{minted}
 
 \hint{
@@ -856,67 +827,64 @@ def vec_reg_logistic_grad(y, x, theta, lambda_):
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 x = np.array([[0, 2, 3, 4], 
-              [2, 4, 5, 5], 
-              [1, 3, 2, 7]])
+				[2, 4, 5, 5], 
+				[1, 3, 2, 7]])
 y = np.array([[0], [1], [1]])
 theta = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
-
 
 # Example 1.1:
 reg_logistic_grad(y, x, theta, 1)
 # Output:
 array([[-0.55711039],
-       [-1.40334809],
-       [-1.91756886],
-       [-2.56737958],
-       [-3.03924017]])
+		[-1.40334809],
+		[-1.91756886],
+		[-2.56737958],
+		[-3.03924017]])
 
 # Example 1.2:
 vec_reg_logistic_grad(y, x, theta, 1)
 # Output:
 array([[-0.55711039],
-       [-1.40334809],
-       [-1.91756886],
-       [-2.56737958],
-       [-3.03924017]])
-
+		[-1.40334809],
+		[-1.91756886],
+		[-2.56737958],
+		[-3.03924017]])
 
 # Example 2.1:
 reg_logistic_grad(y, x, theta, 0.5)
 # Output:
 array([[-0.55711039],
-       [-1.15334809],
-       [-1.96756886],
-       [-2.33404624],
-       [-3.15590684]])
+		[-1.15334809],
+		[-1.96756886],
+		[-2.33404624],
+		[-3.15590684]])
 
 # Example 2.2:
 vec_reg_logistic_grad(y, x, theta, 0.5)
 # Output:
 array([[-0.55711039],
-       [-1.15334809],
-       [-1.96756886],
-       [-2.33404624],
-       [-3.15590684]])
-
+		[-1.15334809],
+		[-1.96756886],
+		[-2.33404624],
+		[-3.15590684]])
 
 # Example 3.1:
 reg_logistic_grad(y, x, theta, 0.0)
 # Output:
 array([[-0.55711039],
-       [-0.90334809],
-       [-2.01756886],
-       [-2.10071291],
-       [-3.27257351]])
+		[-0.90334809],
+		[-2.01756886],
+		[-2.10071291],
+		[-3.27257351]])
 
 # Example 3.2:
 vec_reg_logistic_grad(y, x, theta, 0.0)
 # Output:
 array([[-0.55711039],
-       [-0.90334809],
-       [-2.01756886],
-       [-2.10071291],
-       [-3.27257351]])
+		[-0.90334809],
+		[-2.01756886],
+		[-2.10071291],
+		[-3.27257351]])
 \end{minted}
 
 % ===========================(fin ex 05)         %
@@ -971,12 +939,11 @@ class MyRidge(ParentClass):
 		My personnal ridge regression class to fit like a boss.
 	"""
 	def __init__(self,  thetas, alpha=0.001, max_iter=1000, lambda_=0.5):
-              self.alpha = alpha
-              self.max_iter = max_iter
-              self.thetas = thetas
-			  self.lambda_ = lambda_
-              # Or you can used super built-in functions ...
-	... Your code ...
+		self.alpha = alpha
+		self.max_iter = max_iter
+		self.thetas = thetas
+		self.lambda_ = lambda_
+		... Your code here ...
 
 	... other methods ...
 \end{minted}
@@ -1031,7 +998,7 @@ To do this:
 \begin{itemize}
   \item Split your \texttt{space\_avocado.csv} dataset into a training, a cross-validation and a test sets.
   \item Use your \texttt{polynomial\_features} method on your training set.
-  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of 4.
+  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of $4$.
   \item For each hypothesis consider a regularized factor ranging from $0$ to $1$ with a step of $0.2$.
   \item Evaluate your models on the cross-validation set.
   \item Evaluate the best model on the test set.
@@ -1086,18 +1053,18 @@ In the \texttt{my\_logistic\_regression.py} file, update your \texttt{MyLogistic
 \end{itemize}
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 class MyLogisticRegression():
-  """
-  Description:
-    My personnal logistic regression to classify things.
-  """
-    def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2'):
-        self.alpha = alpha
-        self.max_iter = max_iter
-        self.theta = theta
-        self.penalty=penalty
-        ... Your code ...
+	"""
+	Description:
+		My personnal logistic regression to classify things.
+	"""
+	def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2'):
+		self.alpha = alpha
+		self.max_iter = max_iter
+		self.theta = theta
+		self.penalty=penalty
+		... Your code ...
 
-  ... other methods ...
+	... other methods ...
 \end{minted}
 
 \begin{itemize}
@@ -1134,6 +1101,24 @@ class MyLogisticRegression():
 % --------------------------------- %
 It's training time!
 Let's practice our updated Logistic Regression with polynomial models.
+% ================================= %
+\section*{Introduction}
+% --------------------------------- %
+You have already used the dataset \texttt{solar\_system\_census.csv} and \texttt{solar\_system\_census\_planets.csv}.
+\begin{itemize}
+	\item The dataset is divided in two files which can be found in the \texttt{resources} folder: \texttt{solar\_system\_census.csv} and \texttt{solar\_system\_census\_planets.csv}.
+	\item The first file contains biometric information such as the height, weight, and bone density of several Solar System citizens.
+	\item The second file contains the homeland of each citizen, indicated by its Space Zipcode representation (i.e. one number for each planet... :)).  
+\end{itemize}
+
+As you should know, Solar citizens come from four registered areas (zipcodes): 
+
+\begin{itemize}
+	\item The flying cities of Venus ($0$), 
+	\item United Nations of Earth ($1$), 
+	\item Mars Republic ($2$), 
+	\item The Asteroids' Belt colonies ($3$).
+\end{itemize}
 
 % ================================= %
 \section*{Instructions}
