@@ -1,0 +1,1418 @@
+% vim: set ts=4 sw=4 tw=80 noexpandtab:
+
+\documentclass{42-en}
+
+%******************************************************************************%
+%                                                                              %
+%                                   Prologue                                   %
+%                                                                              %
+%******************************************************************************%
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+\usepackage{amsmath} % The amsmath package provides commands to typeset matrices with different delimiters. 
+\usepackage{epigraph}
+\setlength\epigraphwidth{.95\textwidth}
+\usepackage{multirow}
+\usepackage{cancel}
+%****************************************************************%
+%                  Re/definition of commands                     %
+%****************************************************************%
+
+\newcommand{\ailogo}[1]{\def \@ailogo {#1}}\ailogo{assets/42ai_logo.pdf}
+
+%%  Redefine \maketitle
+\makeatletter
+\def \maketitle {
+  \begin{titlepage}
+    \begin{center}
+	%\begin{figure}[t]
+	  %\includegraphics[height=8cm]{\@ailogo}
+	  \includegraphics[height=8cm]{assets/42ai_logo.pdf}
+	%\end{figure}
+      \vskip 5em
+      {\huge \@title}
+      \vskip 2em
+      {\LARGE \@subtitle}
+      \vskip 4em
+    \end{center}
+    %\begin{center}
+	  %\@author
+    %\end{center}
+	%\vskip 5em
+  \vfill
+  \begin{center}
+    \emph{\summarytitle : \@summary}
+  \end{center}
+  \vspace{2cm}
+  %\vskip 5em
+  %\doclicenseThis
+  \end{titlepage}
+}
+\makeatother
+
+\makeatletter
+\def \makeheaderfilesforbidden
+{
+  \noindent
+  \begin{tabularx}{\textwidth}{|X X  X X|}
+    \hline
+  \multicolumn{1}{|>{\raggedright}m{1cm}|}
+  {\vskip 2mm \includegraphics[height=1cm]{assets/42ai_logo.pdf}} &
+  \multicolumn{2}{>{\centering}m{12cm}}{\small Exercise : \@exnumber } &
+  \multicolumn{1}{ >{\raggedleft}p{1.5cm}|}
+%%              {\scriptsize points : \@exscore} \\ \hline
+              {} \\ \hline
+
+  \multicolumn{4}{|>{\centering}m{15cm}|}
+              {\small \@extitle} \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Turn-in directory : \ttfamily
+                $ex\@exnumber/$ }
+              \\ \hline
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Files to turn in : \ttfamily \@exfiles }
+              \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Forbidden functions : \ttfamily \@exforbidden }
+              \\ \hline
+
+%%  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+%%              {\small Remarks : \ttfamily \@exnotes }
+%%              \\ \hline
+\end{tabularx}
+%% \exnotes
+\exrules
+\exmake
+\exauthorize{None}
+\exforbidden{None}
+\extitle{}
+\exnumber{}
+}
+\makeatother
+
+%%  Syntactic highlights
+\makeatletter
+\newenvironment{pythoncode}{%
+  \VerbatimEnvironment
+  \usemintedstyle{emacs}
+  \minted@resetoptions
+  \setkeys{minted@opt}{bgcolor=black,formatcom=\color{lightgrey},fontsize=\scriptsize}
+  \begin{figure}[ht!]
+    \centering
+    \begin{minipage}{16cm}
+      \begin{VerbatimOut}{\jobname.pyg}}
+{%[
+      \end{VerbatimOut}
+      \minted@pygmentize{c}
+      \DeleteFile{\jobname.pyg}
+    \end{minipage}
+\end{figure}}
+\makeatother
+
+\usemintedstyle{native}
+
+\begin{document}
+
+% =============================================================================%
+%                     =====================================                    %
+
+\title{Machine Learning - Module 03}
+\subtitle{Logistic Regression}
+\author{
+  Maxime Choulika (cmaxime), Pierre Peigné (ppeigne), Matthieu David (mdavid)
+}
+
+\summary
+{
+  Discover your first classification algorithm: logistic regression.
+  You will learn its loss function, gradient descent and some metrics to evaluate its performance.
+}
+
+\maketitle
+\input{usefull_ressources.tex}
+\input{en.py_proj.tex}
+\newpage
+\tableofcontents
+\startexercices
+
+%                     =====================================                    %
+% =============================================================================%
+
+
+%******************************************************************************%
+%                                                                              %
+%                                   Exercises                                  %
+%                                                                              %
+%******************************************************************************%
+
+% ============================================== %
+% ===========================(start ex 00)       %
+\chapter{Exercise 00}
+\input{en.ex00_interlude.tex}
+\newpage
+\extitle{Sigmoid}
+\turnindir{ex00}
+\exnumber{00}
+\exfiles{sigmoid.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================== %
+\section*{Objective}
+% ---------------------------------- %
+Introduction to the hypothesis in the case of logistic regression.
+You must implement the sigmoid function, given by the following formula:  
+
+$$
+\text{sigmoid}(x) = \cfrac{1} {1 + e^{-x}}
+$$
+
+Where:
+\begin{itemize}
+  \item $x$ is a scalar or a vector,
+  \item $e$ is the contracted form for exponential function. It is also a mathematical constant, named Euler's number.
+\end{itemize}
+
+This function is also known as \textbf{Standard logistic sigmoid function}.
+This explains the name \textit{logistic regression}.
+
+The sigmoid function transforms an input into a probability value, i.e. a value between 0 and 1.  
+This probability value will then be used to classify the inputs.
+
+% ================================== %
+\section*{Instructions}
+% ---------------------------------- %
+In the \texttt{sigmoid.py} file, write the following function as per the instructions below:
+
+\par
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def sigmoid_(x):
+    """
+    Compute the sigmoid of a vector.
+    Args:
+        x: has to be a numpy.ndarray, a vector.
+    Returns: 
+        The sigmoid value as a numpy.ndarray.
+        None if x is an empty numpy.ndarray.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================== %
+\section*{Examples}
+% ---------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+x = np.array(-4)
+sigmoid_(x)
+# Output:
+array([[0.01798620996209156]])
+
+# Example 2:
+x = np.array(2)
+sigmoid_(x)
+# Output:
+array([[0.8807970779778823]])
+
+# Example 3:
+x = np.array([[-4], [2], [0]])
+sigmoid_(x)
+# Output:
+array([[0.01798620996209156], [0.8807970779778823], [0.5]])
+\end{minted}
+
+
+\info{
+  Our sigmoid formula is a special case of the logistic function below, with $L = 1$, $k = 1$ and $x_0 = 0$:
+  $$
+  f(x) = \cfrac{L}{1 + e^{-k(x-x_0)}}
+  $$
+}
+
+% ===========================(fin ex 00)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 01)       %
+\chapter{Exercise 01}
+\input{en.ex01_interlude.tex}
+\newpage
+\extitle{Logistic Hypothesis}
+\turnindir{ex01}
+\exnumber{01}
+\exfiles{log\_pred.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Introduction to the hypothesis notion in case of logistic regression.
+You must implement the following formula as a function:  
+
+$$
+\begin{matrix}
+\hat{y} & = & \text{sigmoid}(X' \cdot \theta) & = & \cfrac{1} {1 + e^{-X' \cdot \theta}}    
+\end{matrix}
+$$
+
+Where:
+\begin{itemize}
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of $1$'s is added as a first column,
+  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values,
+  \item $\theta$ is a vector of dimension $(n + 1)$, the vector of parameters.
+\end{itemize}
+
+Be careful: 
+\begin{itemize}
+  \item the $x$ your function will get as an input corresponds to $X$, the $(m \times n)$ matrix.
+        Not $X'$.
+  \item $\theta$ is an $(n + 1)$ vector.
+\end{itemize}
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{log\_pred.py} file, write the following function as per the instructions below:
+\par
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def logistic_predict_(x, theta):
+    """Computes the vector of prediction y_hat from two non-empty numpy.ndarray.
+    Args:
+      x: has to be an numpy.ndarray, a vector of dimension m * n.
+      theta: has to be an numpy.ndarray, a vector of dimension (n + 1) * 1.
+    Returns:
+      y_hat as a numpy.ndarray, a vector of dimension m * 1.
+      None if x or theta are empty numpy.ndarray.
+      None if x or theta dimensions are not appropriate.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1
+x = np.array([4]).reshape((-1, 1))
+theta = np.array([[2], [0.5]])
+logistic_predict(x, theta)
+# Output: 
+array([[0.98201379]])
+
+# Example 1
+x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
+theta2 = np.array([[2], [0.5]]) 
+logistic_predict(x2, theta2)
+# Output: 
+array([[0.98201379],
+       [0.99624161],
+       [0.97340301],
+       [0.99875204],
+       [0.90720705]])
+
+# Example 3
+x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
+theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+logistic_predict(x3, theta3)
+# Output: 
+array([[0.03916572],
+       [0.00045262],
+       [0.2890505 ]])
+\end{minted}
+
+% ===========================(fin ex 01)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 02)       %
+\chapter{Exercise 02}
+\input{en.ex02_interlude.tex}
+\newpage
+\extitle{Logistic Loss Function}
+\turnindir{ex02}
+\exnumber{02}
+\exfiles{log\_loss.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understanding and manipulation of the cost function concept in the case of logistic regression.
+You must implement the following formula as a function:  
+
+$$
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+$$
+
+Where:
+\begin{itemize}
+  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values,
+  \item $\hat{y}^{(i)}$ is the $i^{th}$ component of the $\hat{y}$ vector,
+  \item $y$ is a vector of dimension $m$, the vector of expected values,
+  \item $y^{(i)}$ is the $i^{th}$ component of the $y$ vector.
+\end{itemize}
+
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{log\_loss.py} file, write the following function as per the instructions below:
+\par
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def log_loss_(y, y_hat, eps=1e-15):
+    """
+    Computes the logistic loss value.
+    Args:
+        y: has to be an numpy.ndarray, a vector of shape m * 1.
+        y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+        eps: has to be a float, epsilon (default=1e-15)
+    Returns:
+        The logistic loss value as a float.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+\hint{
+  The logarithmic function isn't defined in $0$.  
+  This means that if $y^{(i)} = 0$ you will get an error when you try to compute $log(y^{(i)})$.
+  The purpose of the \texttt{eps} argument is to avoid $log(0)$ errors.
+  It is a very small residual value we add to \texttt{y}.
+}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+y1 = np.array([1]).reshape((-1, 1))
+x1 = np.array([4]).reshape((-1, 1))
+theta1 = np.array([[2], [0.5]])
+y_hat1 = logistic_predict(x1, theta1)
+log_loss_(y1, y_hat1)
+# Output:
+0.01814992791780973
+
+# Example 2:
+y2 = np.array([[1], [0], [1], [0], [1]])
+x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
+theta2 = np.array([[2], [0.5]])
+y_hat2 = logistic_predict(x2, theta2)
+log_loss_(y2, y_hat2)
+# Output:
+2.4825011602474483
+
+# Example 3:
+y3 = np.array([[0], [1], [1]])
+x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
+theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+y_hat3 = logistic_predict(x3, theta3)
+log_loss_(y3, y_hat3)
+# Output:
+2.9938533108607053
+\end{minted}
+
+\info{
+  This function is called \textbf{Cross-Entropy loss}, or \textbf{logistic loss}.
+  For more information you can look at \href{https://en.wikipedia.org/wiki/Cross_entropy\#Cross-entropy\_error\_function\_and\_logistic\_regression}{this section} of the Cross entropy Wikipedia.
+}
+
+% ===========================(fin ex 02)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 03)       %
+\chapter{Exercise 03}
+\extitle{Vectorized Logistic Loss Function}
+\input{en.ex03_interlude.tex}
+\newpage
+\turnindir{ex03}
+\exnumber{03}
+\exfiles{vec\_log\_loss.py}
+\exforbidden{any function that performs derivatives for you}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understanding and manipulation of cost function concept in case of logistic regression.
+You must implement the following formula as a function:  
+
+$$
+J( \theta) = -\cfrac{1} {m} \lbrack y \cdot \log(\hat{y}) + (\vec{1} - y) \cdot \log(\vec{1} - \hat{y})\rbrack
+$$
+
+Where:
+\begin{itemize}
+  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values
+  \item $y$ is a vector of dimension $m$, the vector of expected values
+  \item $\vec{1}$ is a vector of dimension $m$, a vector full of ones.
+\end{itemize}
+
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{vec\_log\_loss.py} file, write the following function as per the instructions below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def vec_log_loss_(y, y_hat, eps=1e-15):
+    """
+    Compute the logistic loss value.
+    Args:
+        y: has to be an numpy.ndarray, a vector of shape m * 1.
+        y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+        eps: epsilon (default=1e-15)
+    Returns:
+        The logistic loss value as a float.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+\end{minted}
+
+\hint{
+  The purpose of epsilon (eps) is to avoid $log(0)$ errors, it is a very small residual value we add to y.
+}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+y1 = np.array([1]).reshape((-1, 1))
+x1 = np.array([4]).reshape((-1, 1))
+theta1 = np.array([[2], [0.5]])
+y_hat1 = logistic_predict(x1, theta1)
+vec_log_loss_(y1, y_hat1)
+# Output:
+0.01814992791780973
+
+# Example 2:
+y2 = np.array([[1], [0], [1], [0], [1]])
+x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
+theta2 = np.array([[2], [0.5]])
+y_hat2 = logistic_predict(x2, theta2)
+vec_log_loss_(y2, y_hat2)
+# Output:
+2.4825011602474483
+
+# Example 3:
+y3 = np.array([[0], [1], [1]])
+x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
+theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+y_hat3 = logistic_predict(x3, theta3)
+vec_log_loss_(y3, y_hat3)
+# Output:
+2.9938533108607053
+\end{minted}
+
+% ===========================(fin ex 03)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 04)       %
+\chapter{Exercise 04}
+\extitle{Logistic Gradient}
+\input{en.ex04_interlude.tex}
+\newpage
+\turnindir{ex04}
+\exnumber{04}
+\exfiles{log\_gradient.py}
+\exforbidden{numpy and any function that performs derivatives for you}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understand and manipulate the concept of gradient in case of logistic formulation.
+You must implement the following formula as a function:  
+
+$$
+\begin{matrix}
+\nabla(J)_0 &  = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
+\nabla(J)_j & = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
+\end{matrix}
+$$
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)$ is a vector of size $(n + 1)$, the gradient vector.
+  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$, the partial derivative of $J$ with respect to $\theta_j$.
+  \item $y$ is a vector of dimension $m$, the vector of expected values.
+  \item $y^{(i)}$ is a scalar, the i$^\text{th}$ component of vector $y$.
+  \item $x^{(i)}$ is the feature vector of the i$^\text{th}$ example.
+  \item $x^{(i)}_j$ is a scalar, the j$^\text{th}$ feature value of the i$^\text{th}$ example.
+  \item $h_{\theta}(x^{(i)})$ is a scalar, the model's estimation of $y^{(i)}$.
+\end{itemize}
+
+Remember that with logistic regression, the hypothesis is slightly different:  
+
+$$
+h_{\theta}(x^{(i)}) = sigmoid( \theta \cdot x'^{(i)})
+$$
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{log\_gradient.py} file, write the following function as per the instructions below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def log_gradient(x, y, theta):
+    """Computes a gradient vector from three non-empty numpy.ndarray, with a for-loop. The three arrays must have compatible dimensions.
+    Args:
+      x: has to be an numpy.ndarray, a matrix of shape m * n.
+      y: has to be an numpy.ndarray, a vector of shape m * 1.
+      theta: has to be an numpy.ndarray, a vector of shape (n + 1) * 1.
+    Returns:
+      The gradient as a numpy.ndarray, a vector of shape n * 1, containing the result of the formula for all j.
+      None if x, y, or theta are empty numpy.ndarray.
+      None if x, y and theta do not have compatible dimensions.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% ================================= %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+y1 = np.array([1]).reshape((-1, 1))
+x1 = np.array([4]).reshape((-1, 1))
+theta1 = np.array([[2], [0.5]])
+
+log_gradient(x1, y1, theta1)
+# Output:
+array([[-0.01798621],
+       [-0.07194484]])
+
+# Example 2: 
+y2 = np.array([[1], [0], [1], [0], [1]])
+x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
+theta2 = np.array([[2], [0.5]])
+
+log_gradient(x2, y2, theta2)
+# Output:
+array([[0.3715235 ],
+       [3.25647547]])
+
+# Example 3: 
+y3 = np.array([[0], [1], [1]])
+x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
+theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+
+log_gradient(x3, y3, theta3)
+# Output:
+array([[-0.55711039],
+       [-0.90334809],
+       [-2.01756886],
+       [-2.10071291],
+       [-3.27257351]])
+\end{minted}
+
+
+% ===========================(fin ex 04)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 05)       %
+\chapter{Exercise 05}
+\extitle{Vectorized Logistic Gradient}
+\input{en.ex05_interlude.tex}
+\newpage
+\turnindir{ex05}
+\exnumber{05}
+\exfiles{vec\_log\_gradient.py}
+\exforbidden{any function that performs derivatives for you}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understand and manipulation of the concept of gradient in the case of logistic formulation.
+You must implement the following formula as a function:
+
+
+$$
+\nabla(J) = \cfrac{1}{m} X'^T(h_\theta(X) - y)
+$$  
+
+Where:  
+\begin{itemize}
+  \item $\nabla(J)$ is the gradient vector of size $(n + 1)$.
+  \item $X'$ is a matrix of dimension $(m \times (n + 1))$, the design matrix onto which a column of ones was added as the first column.
+  \item $X'^T$ means the matrix has been transposed.
+  \item $h_\theta(X)$ is a vector of dimension $m$, the vector of predicted values.
+  \item $y$ is a vector of dimension $m$, the vector of expected values.
+\end{itemize}
+
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{vec\_log\_gradient.py} file, write the following function as per the instructions below:
+
+\par
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def vec_log_gradient(x, y, theta):
+    """Computes a gradient vector from three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.
+    Args:
+      x: has to be an numpy.ndarray, a matrix of shape m * n.
+      y: has to be an numpy.ndarray, a vector of shape m * 1.
+      theta: has to be an numpy.ndarray, a vector (n +1) * 1.
+    Returns:
+      The gradient as a numpy.ndarray, a vector of shape n * 1, containg the result of the formula for all j.
+      None if x, y, or theta are empty numpy.ndarray.
+      None if x, y and theta do not have compatible shapes.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+y1 = np.array([1]).reshape((-1, 1))
+x1 = np.array([4]).reshape((-1, 1))
+theta1 = np.array([[2], [0.5]])
+
+vec_log_gradient(x1, y1, theta1)
+# Output:
+array([[-0.01798621],
+       [-0.07194484]])
+
+# Example 2: 
+y2 = np.array([[1], [0], [1], [0], [1]])
+x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
+theta2 = np.array([[2], [0.5]])
+
+vec_log_gradient(x2, y2, theta2)
+# Output:
+array([[0.3715235 ],
+       [3.25647547]])
+
+# Example 3: 
+y3 = np.array([[0], [1], [1]])
+x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
+theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+
+vec_log_gradient(x3, y3, theta3)
+# Output:
+array([[-0.55711039],
+       [-0.90334809],
+       [-2.01756886],
+       [-2.10071291],
+       [-3.27257351]])
+\end{minted}
+
+% ===========================(fin ex 05)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 06)       %
+\chapter{Exercise 06}
+\extitle{Logistic Regression}
+%\input{en.ex06_interlude.tex}
+%\newpage
+\turnindir{ex06}
+\exnumber{06}
+\exfiles{my\_logistic\_regression.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+The time to use everything you built so far has come! Demonstrate your knowledge by implementing a logistic regression classifier using the gradient descent algorithm.
+You must have seen the power of \texttt{numpy} for vectorized operations. Well let's make something more concrete with that.
+
+You may have to take a look at Scikit-Learn's implementation of logistic regression and noticed that the \textbf{sklearn.linear\_model.LogisticRegression} class offers a lot of options.
+
+The goal of this exercise is to make a simplified but nonetheless useful and powerful version, with fewer options.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{my\_logistic\_regression.py} file, write a \texttt{MyLogisticRegression} class as in the instructions below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+class MyLogisticRegression():
+	"""
+	Description:
+		My personnal logistic regression to classify things.
+	"""
+    def __init__(self, theta, alpha=0.001, max_iter=1000):
+        self.alpha = alpha
+        self.max_iter = max_iter
+        self.theta = theta
+        ... Your code here ...
+
+	... other methods ...
+\end{minted}
+
+You will add at least the following methods:
+\begin{itemize}
+  \item \texttt{predict\_(self, x)}
+  \item \texttt{cost\_elem\_(self, y, yhat)}
+  \item \texttt{cost\_(self, y, yhat)}
+  \item \texttt{fit\_(self, x, y)}
+\end{itemize}
+
+You have already written these functions, you will just need few adjustments so that they all work well within your \texttt{MyLogisticRegression} class.
+
+% ================================= %
+\subsection*{Examples}
+% --------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+from my_logistic_regression import MyLogisticRegression as MyLR
+X = np.array([[1., 1., 2., 3.], [5., 8., 13., 21.], [3., 5., 9., 14.]])
+Y = np.array([[1], [0], [1]])
+mylr = MyLR([2, 0.5, 7.1, -4.3, 2.09])
+
+# Example 0:
+mylr.predict_(X)
+# Output:
+array([[0.99930437],
+       [1.        ],
+       [1.        ]])
+
+# Example 1:
+mylr.cost_(X,Y)
+# Output:
+11.513157421577004
+
+# Example 2:
+mylr.fit_(X, Y)
+mylr.theta
+# Output:
+array([[ 1.04565272],
+       [ 0.62555148],
+       [ 0.38387466],
+       [ 0.15622435],
+       [-0.45990099]])
+
+# Example 3:
+mylr.predict_(X)
+# Output:
+array([[0.72865802],
+       [0.40550072],
+       [0.45241588]])
+
+# Example 4:
+mylr.cost_(X,Y)
+# Output:
+0.5432466580663214
+\end{minted}
+
+% ===========================(fin ex 06)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 07)       %
+\chapter{Exercise 07}
+\extitle{Practicing Logistic Regression}
+%\input{en.ex07_interlude.tex}
+%\newpage
+\turnindir{ex07}
+\exnumber{07}
+\exfiles{mono\_log.py, multi\_log.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Now it's time to test your Logistic Regression Classifier on real data!  
+You will use the \textbf{solar\_system\_census\_dataset}. 
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+Some words about the dataset:
+\begin{itemize}
+  \item You will work with data from the last Solar System Census.
+  \item The dataset is divided in two files which can be found in the \texttt{resources} folder: \texttt{solar\_system\_census.csv} and \texttt{solar\_system\_census\_planets.csv}.
+  \item The first file contains biometric information such as the height, weight, and bone density of several Solar System citizens.
+  \item The second file contains the homeland of each citizen, indicated by its Space Zipcode representation (i.e. one number for each planet... :)).
+\end{itemize}
+
+\newpage
+
+As you should know, Solar citizens come from four registered areas (zipcodes): 
+\begin{itemize}
+  \item The flying cities of Venus (0), 
+  \item United Nations of Earth (1), 
+  \item Mars Republic (2), 
+  \item The Asteroids' Belt colonies (3).
+\end{itemize}
+
+
+You are expected to produce 2 programs that will use Logistic Regression to predict from which planet each citizen comes from, based on the other variables found in the census dataset.  
+
+But wait... what? There are four different planets! How do you make a classifier discriminate between 4 categories? Let's go step by step...
+
+
+% ================================= %
+\section*{One Label to Discriminate Them All}
+% --------------------------------- %
+You already wrote a Logistic Regression Classifier that can discriminate between two classes.
+We can use it to solve the problem!
+Let's start by having it discriminate between citizens who come from your favorite planet and everybody else!
+
+Your program (in \texttt{mono\_log.py}) will:
+\begin{enumerate}
+  \item Take an argument: \texttt{--zipcode=x} with $x$ being $0$, $1$, $2$ or $3$.
+        If no argument, usage will be displayed.
+  \item Split the dataset into a training and a test set.
+  \item Select your favorite Space Zipcode and generate a new \texttt{numpy.array} to label each citizen according to your new selection criterion:
+  \begin{itemize}
+    \item $1$ if the citizen's zipcode corresponds to your favorite planet.
+    \item $0$ if the citizen has another zipcode.
+  \end{itemize}
+  \item Train a logistic model to predict if a citizen comes from your favorite planet or not, using your brand new label.
+  \item Calculate and display the fraction of correct predictions over the total number of predictions based on the test set.
+  \item Plot 3 scatter plots (one for each pair of citizen features) with the dataset and the final prediction of the model.
+\end{enumerate}
+
+\begin{quote}
+  You can use normalization on your dataset. The question is: Should you?
+\end{quote}
+
+You now have a model that can discriminate between citizens that come from one specific planet and everyone else.
+It's a first step, a good one, but we still have work to do before we can classify citizens among four planets!
+
+So how does \textbf{Multiclass Logistic Regression} work?  
+
+% ================================= %
+\section*{One Versus All}
+% --------------------------------- %
+The idea now is to apply what is called \textbf{one-versus-all classification}.
+It's quite straightforward:
+
+Your program (in \texttt{multi\_log.py}) will:
+\begin{enumerate}
+  \item Split the dataset into a training and a test set.
+  \item Train 4 logistic regression classifiers to discriminate each class from the others (the way you did in part one).
+  \item Predict for each example the class according to each classifiers and select the one with the highest output probability.
+  \item Calculate and display the fraction of correct predictions over the total number of predictions based on the test set.
+  \item Plot 3 scatter plots (one for each pair of citizen features) with the dataset and the final prediction of the model.
+\end{enumerate}
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+If a cititzen got the following classification probabilities: 
+\begin{itemize}
+  \item Planet 0 vs all: $0.38$
+  \item Planet 1 vs all: $0.51$
+  \item Planet 2 vs all: $0.12$
+  \item Planet 3 vs all: $0.89$
+\end{itemize}
+
+Then the citizen should be classified as coming from \textit{Planet 3}. 
+
+% ===========================(fin ex 07)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 08)       %
+\chapter{Exercise 08}
+\extitle{Other metrics}
+\input{en.ex08_interlude.tex}
+\newpage
+\turnindir{ex08}
+\exnumber{08}
+\exfiles{other\_metrics.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Understanding and manipulation of classification criteria (TP, FP, ...) and metrics.\
+The goal of this exercise is to write four metric functions (which are also available in \textbf{sklearn.metrics}) and to understand what they measure and how they are constructed.
+
+You must implement the following fomulas: 
+
+$$
+\text{accuracy} = \frac{\text{tp} + \text{tn}}{\text{tp} + \text{fp} + \text{tn} + \text{fn}}
+$$
+$$
+\text{precision} = \frac{\text{\text{tp}}}{\text{tp} + \text{fp}}
+$$
+$$
+\text{recall} = \frac{\text{tp}}{\text{tp} + \text{fn}}
+$$
+$$
+\text{F1score} = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}}
+$$
+
+Where:
+\begin{itemize}
+  \item $\text{tp}$ is the number of \textbf{true positives},
+  \item $\text{fp}$ is the number of \textbf{false positives},
+  \item $\text{tn}$ is the number of \textbf{true negatives},
+  \item $\text{fn}$ is the number of \textbf{false negatives}.
+\end{itemize}
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+For the sake of simplicity, we will only ask you to use two parameters.
+
+In the \texttt{other\_metrics.py} file, write the following functions as per the instructions below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def accuracy_score_(y, y_hat):
+    """
+    Compute the accuracy score.
+    Args:
+        y:a numpy.ndarray for the correct labels
+        y_hat:a numpy.ndarray for the predicted labels
+    Returns: 
+        The accuracy score as a float.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+
+def precision_score_(y, y_hat, pos_label=1):
+    """
+    Compute the precision score.
+    Args:
+        y:a numpy.ndarray for the correct labels
+        y_hat:a numpy.ndarray for the predicted labels
+        pos_label: str or int, the class on which to report the precision_score (default=1)
+    Returns: 
+        The precision score as a float.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+
+def recall_score_(y, y_hat, pos_label=1):
+    """
+    Compute the recall score.
+    Args:
+        y:a numpy.ndarray for the correct labels
+        y_hat:a numpy.ndarray for the predicted labels
+        pos_label: str or int, the class on which to report the precision_score (default=1)
+    Returns: 
+        The recall score as a float.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+
+def f1_score_(y, y_hat, pos_label=1):
+    """
+    Compute the f1 score.
+    Args:
+        y:a numpy.ndarray for the correct labels
+        y_hat:a numpy.ndarray for the predicted labels
+        pos_label: str or int, the class on which to report the precision_score (default=1)
+    Returns: 
+        The f1 score as a float.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score   
+
+# Example 1:
+y_hat = np.array([1, 1, 0, 1, 0, 0, 1, 1]).reshape((-1, 1))
+y = np.array([1, 0, 0, 1, 0, 1, 0, 0]).reshape((-1, 1))
+
+# Accuracy
+## your implementation
+accuracy_score_(y, y_hat)
+## Output:
+0.5
+## sklearn implementation
+accuracy_score(y, y_hat)
+## Output:
+0.5
+
+# Precision
+## your implementation
+precision_score_(y, y_hat)
+## Output:
+0.4
+## sklearn implementation
+precision_score(y, y_hat)
+## Output:
+0.4
+
+# Recall
+## your implementation
+recall_score_(y, y_hat)
+## Output:
+0.6666666666666666
+## sklearn implementation
+recall_score(y, y_hat)
+## Output:
+0.6666666666666666
+
+# F1-score
+## your implementation
+f1_score_(y, y_hat)
+## Output:
+0.5
+## sklearn implementation
+f1_score(y, y_hat)
+## Output:
+0.5
+\end{minted}
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 2:
+y_hat = np.array(['norminet', 'dog', 'norminet', 'norminet', 'dog', 'dog', 'dog', 'dog'])
+y = np.array(['dog', 'dog', 'norminet', 'norminet', 'dog', 'norminet', 'dog', 'norminet'])
+
+# Accuracy
+## your implementation
+accuracy_score_(y, y_hat)
+## Output:
+0.625
+## sklearn implementation
+accuracy_score(y, y_hat)
+## Output:
+0.625
+
+# Precision
+## your implementation
+precision_score_(y, y_hat, pos_label='dog')
+## Output:
+0.6
+## sklearn implementation
+precision_score(y, y_hat, pos_label='dog')
+## Output:
+0.6
+
+# Recall
+## your implementation
+recall_score_(y, y_hat, pos_label='dog')
+## Output:
+0.75
+## sklearn implementation
+recall_score(y, y_hat, pos_label='dog')
+## Output:
+0.75
+
+# F1-score
+## your implementation
+f1_score_(y, y_hat, pos_label='dog')
+## Output:
+0.6666666666666665
+## sklearn implementation
+f1_score(y, y_hat, pos_label='dog')
+## Output:
+0.6666666666666665
+\end{minted}
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 3:
+y_hat = np.array(['norminet', 'dog', 'norminet', 'norminet', 'dog', 'dog', 'dog', 'dog'])
+y = np.array(['dog', 'dog', 'norminet', 'norminet', 'dog', 'norminet', 'dog', 'norminet'])
+
+# Precision
+## your implementation
+precision_score_(y, y_hat, pos_label='norminet')
+## Output:
+0.6666666666666666
+## sklearn implementation
+precision_score(y, y_hat, pos_label='norminet')
+## Output:
+0.6666666666666666
+
+# Recall
+## your implementation
+recall_score_(y, y_hat, pos_label='norminet')
+## Output:
+0.5
+## sklearn implementation
+recall_score(y, y_hat, pos_label='norminet')
+## Output:
+0.5
+
+# F1-score
+## your implementation
+f1_score_(y, y_hat, pos_label='norminet')
+## Output:
+0.5714285714285715
+## sklearn implementation
+f1_score(y, y_hat, pos_label='norminet')
+## Output:
+0.5714285714285715
+\end{minted}
+
+% ===========================(fin ex 08)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 09)       %
+\chapter{Exercise 09}
+\extitle{Confusion Matrix}
+%\input{en.ex09_interlude.tex}
+%\newpage
+\turnindir{ex09}
+\exnumber{09}
+\exfiles{confusion\_matrix.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Manipulation of confusion matrix concept.\
+The goal of this exercise is to reimplement the function \texttt{confusion\_matrix} available in \textbf{sklearn.metrics} and to learn what does the confusion matrix represent.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+For the sake of simplicity, we will only ask you to use three parameters.
+Be careful to respect the order, true labels are rows and predicted labels are columns:
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \cline{3-4}
+    \multicolumn{2}{c|}{\multirow{2}{*}{}}  & \multicolumn{2}{|c|}{predicted labels} \\ \cline{3-4}
+    \multicolumn{2}{c|}{}       & label 1 & label 2 \\
+    \hline
+    \multirow{2}{*}{true label} & label 1 &         &         \\
+    \cline{2-4}
+                                & label 2 &         &         \\
+    \hline
+  \end{tabular}
+\end{center}
+
+In the \texttt{confusion\_matrix.py} file, write the following function as per the instructions below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def confusion_matrix_(y_true, y_hat, labels=None):
+    """
+    Compute confusion matrix to evaluate the accuracy of a classification.
+    Args:
+        y_true:a numpy.ndarray for the correct labels
+        y_hat:a numpy.ndarray for the predicted labels
+        labels: optional, a list of labels to index the matrix. This may be used to reorder or select a subset of labels. (default=None)
+    Returns: 
+        The confusion matrix as a numpy ndarray.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+from sklearn.metrics import confusion_matrix
+
+y_hat = np.array(['norminet', 'dog', 'norminet', 'norminet', 'dog', 'bird'])
+y = np.array(['dog', 'dog', 'norminet', 'norminet', 'dog', 'norminet'])
+
+# Example 1: 
+## your implementation
+confusion_matrix_(y, y_hat)
+## Output:
+array([[0 0 0]
+       [0 2 1]
+       [1 0 2]])
+## sklearn implementation
+confusion_matrix(y, y_hat)
+## Output:
+array([[0 0 0]
+       [0 2 1]
+       [1 0 2]])
+
+# Example 2:
+## your implementation
+confusion_matrix_(y, y_hat, labels=['dog', 'norminet'])
+## Output:
+array([[2 1]
+       [0 2]])
+## sklearn implementation
+confusion_matrix(y, y_hat, labels=['dog', 'norminet'])
+## Output:
+array([[2 1]
+       [0 2]])
+\end{minted}
+
+\section{Optional part}
+
+\subsection{Objective(s):}
+
+For a more visual version, you can add an option to your previous confusion\_matrix\_ function to return a \texttt{pandas.DataFrame} instead of a numpy array.
+
+\subsection{Instructions:}
+
+In the \texttt{confusion\_matrix.py} file, write the following function as per the instructions below:
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def confusion_matrix_(y, y_hat, labels=None, df_option=False):
+    """
+    Compute confusion matrix to evaluate the accuracy of a classification.
+    Args:
+        y:a numpy.ndarray for the correct labels
+        y_hat:a numpy.ndarray for the predicted labels
+        labels: optional, a list of labels to index the matrix. This may be used to reorder or select a subset of labels. (default=None)
+        df_option: optional, if set to True the function will return a pandas DataFrame instead of a numpy array. (default=False)
+    Returns: 
+        The confusion matrix as a numpy ndarray or a pandas DataFrame according to df_option value.
+        None on any error.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+\section{Examples:}
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+y_hat = np.array(['norminet', 'dog', 'norminet', 'norminet', 'dog', 'bird'])
+y_true = np.array(['dog', 'dog', 'norminet', 'norminet', 'dog', 'norminet'])
+
+# Example 1: 
+confusion_matrix_(y_true, y_hat, df_option=True)
+# Output:
+           bird  dog  norminet
+ bird         0    0         0
+ dog          0    2         1
+ norminet     1    0         2
+
+# Example 2:
+confusion_matrix_(y_true, y_hat, labels=['bird', 'dog'], df_option=True)
+# Output:
+           bird  dog
+ bird         0    0
+ dog          0    2
+\end{minted}
+
+\info{
+  If you fail this exercise on your first attempt, Norminet will curse you forever.
+  Yeah, you'd better do it right or you are in trouble my friend, big trouble!
+}
+
+% ===========================(fin ex 09)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(Conclusion)        %
+\chapter{Conclusion - What you have learnt}
+
+The excercises serie is finished, well done!
+Based on all the knowledges tackled today, you should be able to discuss and answer the following questions:
+
+\begin{enumerate}
+  \item Why do we use logistic hypothesis for a classfication problem rather than a linear hypothesis?
+  \item What is the decision boundary?
+  \item In the case we decide to use a linear hypothesis to tackle a classification problem, why the classification of some data points can be modified by considering more examples (for example, extra data points with extrem ordinate)?
+  \item In a one versus all classification approach, how many logisitic regressor do we need to distinguish between N classes?
+  \item Can you explain the difference between accuracy and precision? What is the type I and type II errors?
+  \item What is the interest of the F1-score?
+\end{enumerate}
+
+% ===========================(Conclusion)        %
+% ============================================== %
+
+\newpage
+
+% ================================= %
+\section*{Contact}
+% --------------------------------- %
+You can contact 42AI association by email: contact@42ai.fr\\
+You can join the association on \href{https://join.slack.com/t/42-ai/shared_invite/zt-ebccw5r7-YPkDM6xOiYRPjqJXkrKgcA}{42AI slack}
+and/or posutale to \href{https://forms.gle/VAFuREWaLmaqZw2D8}{one of the association teams}.
+
+% ================================= %
+\section*{Acknowledgements}
+% --------------------------------- %
+The modules Python \& ML is the result of a collective work, we would like to thanks:
+\begin{itemize}
+  \item Maxime Choulika (cmaxime),
+  \item Pierre Peigné (ppeigne),
+  \item Matthieu David (mdavid).
+\end{itemize}
+who supervised the creation, the enhancement and this present transcription.
+
+\begin{itemize}
+  \item Amric Trudel (amric@42ai.fr)
+  \item Benjamin Carlier (bcarlier@student.42.fr)
+  \item Pablo Clement (pclement@student.42.fr)
+\end{itemize}
+for your investment for the creation and development of these modules.
+
+\begin{itemize}
+  \item Richard Blanc (riblanc@student.42.fr)
+  \item Solveig Gaydon Ohl (sgaydon-@student.42.fr)
+  \item Quentin Feuillade Montixi (qfeuilla@student.42.fr)
+\end{itemize}
+who betatest the first version of the modules of Machine Learning.
+\vfill
+\doclicenseThis
+
+\end{document}
