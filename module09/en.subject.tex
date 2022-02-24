@@ -1,0 +1,1218 @@
+% vim: set ts=4 sw=4 tw=80 noexpandtab:
+
+\documentclass{42-en}
+
+%******************************************************************************%
+%                                                                              %
+%                                   Prologue                                   %
+%                                                                              %
+%******************************************************************************%
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+\usepackage{amsmath} % The amsmath package provides commands to typeset matrices with different delimiters. 
+\usepackage{epigraph}
+\setlength\epigraphwidth{.95\textwidth}
+\usepackage{multirow}
+\usepackage{cancel}
+%****************************************************************%
+%                  Re/definition of commands                     %
+%****************************************************************%
+
+\newcommand{\ailogo}[1]{\def \@ailogo {#1}}\ailogo{assets/42ai_logo.pdf}
+
+%%  Redefine \maketitle
+\makeatletter
+\def \maketitle {
+  \begin{titlepage}
+    \begin{center}
+	%\begin{figure}[t]
+	  %\includegraphics[height=8cm]{\@ailogo}
+	  \includegraphics[height=8cm]{assets/42ai_logo.pdf}
+	%\end{figure}
+      \vskip 5em
+      {\huge \@title}
+      \vskip 2em
+      {\LARGE \@subtitle}
+      \vskip 4em
+    \end{center}
+    %\begin{center}
+	  %\@author
+    %\end{center}
+	%\vskip 5em
+  \vfill
+  \begin{center}
+    \emph{\summarytitle : \@summary}
+  \end{center}
+  \vspace{2cm}
+  %\vskip 5em
+  %\doclicenseThis
+  \end{titlepage}
+}
+\makeatother
+
+\makeatletter
+\def \makeheaderfilesforbidden
+{
+  \noindent
+  \begin{tabularx}{\textwidth}{|X X  X X|}
+    \hline
+  \multicolumn{1}{|>{\raggedright}m{1cm}|}
+  {\vskip 2mm \includegraphics[height=1cm]{assets/42ai_logo.pdf}} &
+  \multicolumn{2}{>{\centering}m{12cm}}{\small Exercise : \@exnumber } &
+  \multicolumn{1}{ >{\raggedleft}p{1.5cm}|}
+%%              {\scriptsize points : \@exscore} \\ \hline
+              {} \\ \hline
+
+  \multicolumn{4}{|>{\centering}m{15cm}|}
+              {\small \@extitle} \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Turn-in directory : \ttfamily
+                $ex\@exnumber/$ }
+              \\ \hline
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Files to turn in : \ttfamily \@exfiles }
+              \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Forbidden functions : \ttfamily \@exforbidden }
+              \\ \hline
+
+%%  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+%%              {\small Remarks : \ttfamily \@exnotes }
+%%              \\ \hline
+\end{tabularx}
+%% \exnotes
+\exrules
+\exmake
+\exauthorize{None}
+\exforbidden{None}
+\extitle{}
+\exnumber{}
+}
+\makeatother
+
+%%  Syntactic highlights
+\makeatletter
+\newenvironment{pythoncode}{%
+  \VerbatimEnvironment
+  \usemintedstyle{emacs}
+  \minted@resetoptions
+  \setkeys{minted@opt}{bgcolor=black,formatcom=\color{lightgrey},fontsize=\scriptsize}
+  \begin{figure}[ht!]
+    \centering
+    \begin{minipage}{16cm}
+      \begin{VerbatimOut}{\jobname.pyg}}
+{%[
+      \end{VerbatimOut}
+      \minted@pygmentize{c}
+      \DeleteFile{\jobname.pyg}
+    \end{minipage}
+\end{figure}}
+\makeatother
+
+\usemintedstyle{native}
+
+\begin{document}
+
+% =============================================================================%
+%                     =====================================                    %
+
+\title{Machine Learning - Module 04}
+\subtitle{Regularization}
+\author{
+  Maxime Choulika (cmaxime), Pierre Peigné (ppeigne), Matthieu David (mdavid)
+}
+\summary
+{
+  Today you will fight overfitting!
+  You will discover the concepts of regularization and how to implement it into the algortihms you already saw until now.
+}
+\maketitle
+\input{usefull_ressources.tex}
+\input{en.py_proj.tex}
+\newpage
+\tableofcontents
+\startexercices
+
+%                     =====================================                    %
+% =============================================================================%
+
+
+%******************************************************************************%
+%                                                                              %
+%                                   Exercises                                  %
+%                                                                              %
+%******************************************************************************%
+
+% ============================================== %
+% ===========================(start ex 00)       %
+\chapter{Exercise 00}
+\extitle{Polynomial models II}
+%\input{en.ex00_interlude.tex}
+%\newpage
+\turnindir{ex00}
+\exnumber{00}
+\exfiles{polynomial\_model\_extended.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================== %
+\section*{Objective}
+% ---------------------------------- %
+Create a function that takes a matrix $X$ of dimensions $(m \times n)$ and an integer $p$ as input, and returns a matrix of dimension $(m \times (np))$.
+For each column $x_j$ of the matrix $X$, the new matrix contains
+$x_j$ raised to the power of $k$, for $k = 1, 2, ..., p$ :
+
+$$
+x_1  \mid  \ldots  \mid  x_n  \mid  x_1^2  \mid  \ldots  \mid  x_n^2  \mid  \ldots  \mid  x_1^p  \mid  \ldots  \mid  x_n^p
+$$
+
+% ================================== %
+\section*{Instructions}
+% ---------------------------------- %
+In the \texttt{polynomial\_model\_extended.py} file, write the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def add_polynomial_features(x, power):
+	"""Add polynomial features to matrix x by raising its columns to every power in the range of 1 up to the power given in argument.  
+	Args:
+		x: has to be an numpy.ndarray, a matrix of shape m * n.
+		power: has to be an int, the power up to which the columns of matrix x are going to be raised.
+	Returns:
+		The matrix of polynomial features as a numpy.ndarray, of shape m * (np), containg the polynomial feature values for all training examples.
+		None if x is an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+\end{minted}
+
+
+% ================================== %
+\section*{Examples}
+% ---------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+x = np.arange(1,11).reshape(5, 2)
+
+# Example 1:
+add_polynomial_features(x, 3)
+# Output:
+array([[   1,    2,    1,    4,    1,    8],
+		[   3,    4,    9,   16,   27,   64],
+		[   5,    6,   25,   36,  125,  216],
+		[   7,    8,   49,   64,  343,  512],
+		[   9,   10,   81,  100,  729, 1000]])
+
+# Example 2:
+add_polynomial_features(x, 4)
+# Output:
+array([[    1,     2,     1,     4,     1,     8,     1,    16],
+		[    3,     4,     9,    16,    27,    64,    81,   256],
+		[    5,     6,    25,    36,   125,   216,   625,  1296],
+		[    7,     8,    49,    64,   343,   512,  2401,  4096],
+		[    9,    10,    81,   100,   729,  1000,  6561, 10000]])
+\end{minted}
+
+% ===========================(fin ex 00)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 01)       %
+\chapter{Exercise 01}
+\extitle{L2 Regularization}
+\input{en.ex01_interlude.tex}
+\newpage
+\turnindir{ex01}
+\exnumber{01}
+\exfiles{l2\_reg.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+You must implement the following formulas as functions:  
+
+% ================================= %
+\subsection*{Iterative}
+% --------------------------------- %
+$$
+L_2(\theta)^2 = \sum_{j = 1}^n \theta_j^2
+$$
+
+Where:
+\begin{itemize}
+  \item $\theta$ is a vector of dimension $(n + 1)$.
+\end{itemize}
+
+% ================================= %
+\subsection*{Vectorized}
+% --------------------------------- %
+$$
+L_2(\theta)^2 = \theta' \cdot \theta'
+$$
+
+Where:
+\begin{itemize}
+  \item $\theta'$ is a vector of dimension $(n + 1)$, constructed using the following rules:
+\end{itemize}
+  
+$$
+\begin{matrix}
+\theta'_0 & =  0 \\
+\theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
+\end{matrix}
+$$
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{l2\_reg.py} file, write the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def iterative_l2(theta):
+	"""Computes the L2 regularization of a non-empty numpy.ndarray, with a for-loop.
+	Args:
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+	Returns:
+		The L2 regularization as a float.
+		None if theta in an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+
+def l2(theta):
+	"""Computes the L2 regularization of a non-empty numpy.ndarray, without any for-loop.
+	Args:
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+	Returns:
+		The L2 regularization as a float.
+		None if theta in an empty numpy.ndarray.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+x = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
+
+# Example 1: 
+iterative_l2(x)
+# Output:
+911.0
+
+# Example 2: 
+l2(x)
+# Output:
+911.0
+
+y = np.array([3,0.5,-6]).reshape((-1, 1))
+# Example 3: 
+iterative_l2(y)
+# Output:
+36.25
+
+# Example 4: 
+l2(y)
+# Output:
+36.25
+\end{minted}
+
+% ===========================(fin ex 01)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 02)       %
+\chapter{Exercise 02}
+\extitle{Regularized Linear Loss Function}
+
+\turnindir{ex02}
+\exnumber{02}
+\exfiles{linear\_loss\_reg.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+You must implement the following formula as a function:  
+
+$$
+J(\theta)  =  \frac{1}{2m}[(\hat{y} - y)\cdot(\hat{y} - y) + \lambda (\theta' \cdot \theta')]
+$$  
+
+Where:
+\begin{itemize}
+  \item $y$ is a vector of dimension $m$, the expected values,
+  \item $\hat{y}$ is a vector of dimension $m$, the predicted values,
+  \item $\lambda$ is a constant, the regularization hyperparameter,
+  \item $\theta'$ is a vector of dimension $n$, constructed using the following rules:
+\end{itemize}
+  
+$$
+\begin{matrix}
+\theta'_0 & =  0 \\
+\theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
+\end{matrix}
+$$
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{linear\_loss\_reg.py} file, write the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def reg_loss_(y, y_hat, theta, lambda_):
+	"""Computes the regularized cost of a linear regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same dimensions.
+	Args:
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		The regularized cost as a float.
+		None if y, y_hat, or theta are empty numpy.ndarray.
+		None if y and y_hat do not share the same shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+\end{minted}
+
+\hint{such situation is a good use case for decorators...}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+y = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
+y_hat = np.array([3, 13, -11.5, 5, 11, 5, -20]).reshape((-1, 1))
+theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
+
+# Example :
+reg_loss_(y, y_hat, theta, .5)
+# Output:
+0.8503571428571429
+
+# Example :
+reg_loss_(y, y_hat, theta, .05)
+# Output:
+0.5511071428571429
+
+# Example :
+reg_loss_(y, y_hat, theta, .9)
+# Output:
+1.116357142857143
+\end{minted}
+
+
+% ===========================(fin ex 02)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 03)       %
+\chapter{Exercise 03}
+\extitle{Regularized Logistic Loss Function}
+%\input{en.ex03_interlude.tex}
+%\newpage
+\turnindir{ex03}
+\exnumber{03}
+\exfiles{logistic\_loss\_reg.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+You must implement the following formula as a function:
+
+$$
+J( \theta) = -\frac{1} {m} \lbrack y \cdot \log(\hat{y}) + (\vec{1} - y) \cdot \log(\vec{1} - \hat{y})\rbrack + \frac{\lambda}{2m} (\theta' \cdot \theta')
+$$
+
+Where:
+\begin{itemize}
+  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values,
+  \item $y$ is a vector of dimension $m$, the vector of expected values,
+  \item $\vec{1}$ is a vector of dimension $m$, a vector full of ones,
+  \item $\lambda$ is a constant, the regularization hyperparameter,
+  \item $\theta'$ is a vector of dimension $n$, constructed using the following rules: 
+\end{itemize}
+$$
+\begin{matrix}
+\theta'_0 & =  0 \\
+\theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\    
+\end{matrix}
+$$
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{logistic\_loss\_reg.py} file, write the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def reg_log_loss_(y, y_hat, theta, lambda_):
+	"""Computes the regularized loss of a logistic regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same shapes.
+	Args:
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		The regularized loss as a float.
+		None if y, y_hat, or theta is empty numpy.ndarray.
+		None if y and y_hat do not share the same shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+\end{minted}
+
+\hint{
+  this is a good use case for decorators...
+}
+
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+y = np.array([1, 1, 0, 0, 1, 1, 0]).reshape((-1, 1))
+y_hat = np.array([.9, .79, .12, .04, .89, .93, .01]).reshape((-1, 1))
+theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
+
+# Example :
+reg_log_loss_(y, y_hat, theta, .5)
+# Output:
+0.43377043716475955
+
+# Example :
+reg_log_loss_(y, y_hat, theta, .05)
+# Output:
+0.13452043716475953
+
+# Example :
+reg_log_loss_(y, y_hat, theta, .9)
+# Output:
+0.6997704371647596
+\end{minted}
+
+% ===========================(fin ex 03)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 04)       %
+\chapter{Exercise 04}
+\extitle{Regularized Linear Gradient}
+\input{en.ex04_interlude.tex}
+\newpage
+\turnindir{ex04}
+\exnumber{04}
+\exfiles{reg\_linear\_grad.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+You must implement the following formulas as a functions for the \textbf{linear regression hypothesis}:
+
+% ================================= %
+\subsection*{Iterative}
+% --------------------------------- %
+$$
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})
+$$
+$$
+\nabla(J)_j = \frac{1}{m}\left(\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} + \lambda \theta_j\right) \text{ for j = 1, ..., n}
+$$
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$,
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
+  \item $m$ is a constant, the number of training examples used,
+  \item $h_\theta(x^{(i)})$ is the model's prediction for the i$^\text{th}$ training example,
+  \item $x^{(i)}$ is the feature vector (of dimension $n$) of the i$^\text{th}$ training example, found in the i$^\text{th}$ row of the $X$ matrix,
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
+  \item $y^{(i)}$ is the i$^\text{th}$ component of the $y$ vector,
+  \item $y$ is a vector of dimension $m$, the vector of expected values,
+  \item $\lambda$ is a constant, the regularization hyperparameter,
+  \item $\theta_j$ is the j$^\text{th}$ parameter of the $\theta$ vector,
+  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector.
+\end{itemize}
+
+% ================================= %
+\subsection*{Vectorized}
+% --------------------------------- %
+$$
+\nabla(J) = \frac{1}{m} [X'^T(h_\theta(X) - y) + \lambda \theta']
+$$  
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
+  \item $m$ is a constant, the number of training examples used,
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of ones is added as a first column,
+  \item $X'^T$ is the transpose of tha matrix, with dimensions $((n + 1) \times m)$,
+  \item $h_\theta(X)$ is a vector of dimension $m$, the vector of predicted values, 
+  \item $y$ is a vector of dimension $m$, the vector of expected values,
+  \item $\lambda$ is a constant, the regularization hyperparameter,
+  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector,
+  \item $\theta'$ is a vector of dimension $(n + 1)$, constructed using the following rules: 
+\end{itemize}
+
+$$
+\begin{matrix}
+\theta'_0 & =  0 \\
+\theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
+\end{matrix}
+$$
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{reg\_linear\_grad.py} file, write the following functions as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def reg_linear_grad(y, x, theta, lambda_):
+    """Computes the regularized linear gradient of three non-empty numpy.ndarray,
+       with two for-loop. The three arrays must have compatible shapes.
+    Args:
+      y: has to be a numpy.ndarray, a vector of shape m * 1.
+      x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+      theta: has to be a numpy.ndarray, a vector of shape (n + 1) * 1.
+      lambda_: has to be a float.
+    Return:
+      A numpy.ndarray, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
+      None if y, x, or theta are empty numpy.ndarray.
+      None if y, x or theta does not share compatibles shapes.
+      None if y, x or theta or lambda_ is not of the expected type.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+
+def vec_reg_linear_grad(y, x, theta, lambda_):
+    """Computes the regularized linear gradient of three non-empty numpy.ndarray,
+       without any for-loop. The three arrays must have compatible shapes.
+    Args:
+      y: has to be a numpy.ndarray, a vector of shape m * 1.
+      x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+      theta: has to be a numpy.ndarray, a vector of shape (n + 1) * 1.
+      lambda_: has to be a float.
+    Return:
+      A numpy.ndarray, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
+      None if y, x, or theta are empty numpy.ndarray.
+      None if y, x or theta does not share compatibles shapes.
+      None if y, x or theta or lambda_ is not of the expected type.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+\hint{
+  this is a good use case for decorators...
+}
+
+% ================================= %
+\section*{Examples}
+% ================================= %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+x = np.array([
+		[ -6,  -7,  -9],
+		[ 13,  -2,  14],
+		[ -7,  14,  -1],
+		[ -8,  -4,   6],
+		[ -5,  -9,   6],
+		[  1,  -5,  11],
+		[  9, -11,   8]])
+y = np.array([[2], [14], [-13], [5], [12], [4], [-19]])
+theta = np.array([[7.01], [3], [10.5], [-6]])
+
+# Example 1.1:
+reg_linear_grad(y, x, theta, 1)
+# Output:
+array([[ -60.99      ],
+		[-195.64714286],
+		[ 863.46571429],
+		[-644.52142857]])
+
+# Example 1.2:
+vec_reg_linear_grad(y, x, theta, 1)
+# Output:
+array([[ -60.99      ],
+		[-195.64714286],
+		[ 863.46571429],
+		[-644.52142857]])
+
+# Example 2.1:
+reg_linear_grad(y, x, theta, 0.5)
+# Output:
+array([[ -60.99      ],
+		[-195.86142857],
+		[ 862.71571429],
+		[-644.09285714]])
+
+# Example 2.2:
+vec_reg_linear_grad(y, x, theta, 0.5)
+# Output:
+array([[ -60.99      ],
+		[-195.86142857],
+		[ 862.71571429],
+		[-644.09285714]])
+
+# Example 3.1:
+reg_linear_grad(y, x, theta, 0.0)
+# Output:
+array([[ -60.99      ],
+		[-196.07571429],
+		[ 861.96571429],
+		[-643.66428571]])
+
+# Example 3.2:
+vec_reg_linear_grad(y, x, theta, 0.0)
+# Output:
+array([[ -60.99      ],
+		[-196.07571429],
+		[ 861.96571429],
+		[-643.66428571]])
+\end{minted}
+
+
+% ===========================(fin ex 04)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 05)       %
+\chapter{Exercise 05}
+\extitle{Regularized Logistic Gradient}
+%\input{en.ex05_interlude.tex}
+%\newpage
+\turnindir{ex05}
+\exnumber{05}
+\exfiles{reg\_logistic\_grad.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+You must implement the following formulas as a functions for the \textbf{logistic regression hypothesis}:
+
+% ================================= %
+\subsection*{Iterative}
+% --------------------------------- %
+
+$$
+\nabla(J)_0 = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})
+$$
+$$
+\nabla(J)_j = \frac{1}{m}\left(\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} + \lambda \theta_j\right) \text{ for j = 1, ..., n}
+$$
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$,
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
+  \item $m$ is a constant, the number of training examples used,
+  \item $h_\theta(x^{(i)})$ is the model's prediction for the i$^\text{th}$ training example,
+  \item $x^{(i)}$ is the feature vector of dimension $n$) of the i$^\text{th}$ training example, found in the i$^\text{th}$ row of the $X$ matrix,
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
+  \item $y^{(i)}$ is the i$^\text{th}$ component of the $y$ vector,
+  \item $y$ is a vector of dimension $m$, the vector of expected values,
+  \item $\lambda$ is a constant, the regularization hyperparameter,
+  \item $\theta_j$ is the j$^\text{th}$ parameter of the $\theta$ vector,
+  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector.
+\end{itemize}
+
+% ================================= %
+\subsection*{Vectorized}
+% --------------------------------- %
+$$
+\nabla(J) = \frac{1}{m} [X'^T(h_\theta(X) - y) + \lambda \theta']
+$$  
+
+Where:
+\begin{itemize}
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
+  \item $m$ is a constant, the number of training examples used,
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of ones is added as a first column,
+  \item $X'^T$ is the transpose of tha matrix, with dimensions $((n + 1) \times m)$,
+  \item $h_\theta(X)$ is a vector of dimension $m$, the vector of predicted values, 
+  \item $y$ is a vector of dimension $m$, the vector of expected values,
+  \item $\lambda$ is a constant, the regularization hyperparameter,
+  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector,
+  \item $\theta'$ is a vector of dimension $(n + 1)$, constructed using the following rules: 
+\end{itemize}
+
+$$
+\begin{matrix}
+\theta'_0 & =  0 \\
+\theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
+\end{matrix}
+$$
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{reg\_logistic\_grad.py} file, create the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def reg_logistic_grad(y, x, theta, lambda_):
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, with two for-loops. The three arrays must have compatible shapes.
+	Args:
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
+		None if y, x or theta does not share compatibles shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+
+def vec_reg_logistic_grad(y, x, theta, lambda_):
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.
+	Args:
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of shape m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
+		None if y, x or theta does not share compatibles shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+\end{minted}
+
+\hint{
+  this is a good use case for decorators...
+}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+x = np.array([[0, 2, 3, 4], 
+				[2, 4, 5, 5], 
+				[1, 3, 2, 7]])
+y = np.array([[0], [1], [1]])
+theta = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+
+# Example 1.1:
+reg_logistic_grad(y, x, theta, 1)
+# Output:
+array([[-0.55711039],
+		[-1.40334809],
+		[-1.91756886],
+		[-2.56737958],
+		[-3.03924017]])
+
+# Example 1.2:
+vec_reg_logistic_grad(y, x, theta, 1)
+# Output:
+array([[-0.55711039],
+		[-1.40334809],
+		[-1.91756886],
+		[-2.56737958],
+		[-3.03924017]])
+
+# Example 2.1:
+reg_logistic_grad(y, x, theta, 0.5)
+# Output:
+array([[-0.55711039],
+		[-1.15334809],
+		[-1.96756886],
+		[-2.33404624],
+		[-3.15590684]])
+
+# Example 2.2:
+vec_reg_logistic_grad(y, x, theta, 0.5)
+# Output:
+array([[-0.55711039],
+		[-1.15334809],
+		[-1.96756886],
+		[-2.33404624],
+		[-3.15590684]])
+
+# Example 3.1:
+reg_logistic_grad(y, x, theta, 0.0)
+# Output:
+array([[-0.55711039],
+		[-0.90334809],
+		[-2.01756886],
+		[-2.10071291],
+		[-3.27257351]])
+
+# Example 3.2:
+vec_reg_logistic_grad(y, x, theta, 0.0)
+# Output:
+array([[-0.55711039],
+		[-0.90334809],
+		[-2.01756886],
+		[-2.10071291],
+		[-3.27257351]])
+\end{minted}
+
+% ===========================(fin ex 05)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 06)       %
+\chapter{Exercise 06}
+\extitle{Ridge Regression}
+\input{en.ex06_interlude.tex}
+\newpage
+\turnindir{ex06}
+\exnumber{06}
+\exfiles{ridge.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Now it's time to implement your \texttt{MyRidge} class, similar to the class of the same name in \texttt{sklearn.linear\_model}.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{ridge.py} file, create the following class as per the instructions given below:
+
+Your \texttt{MyRidge} class will have at least the following methods:
+\begin{itemize}
+  \item \texttt{\_\_init\_\_}, special method, similar to the one you wrote in \texttt{MyLinearRegression} (module06),
+  \item \texttt{get\_params\_}, which get the parameters of the estimator, 
+  \item \texttt{set\_params\_}, which set the parameters of the estimator,
+  \item \texttt{loss\_}, which return the loss between 2 vectors (numpy arrays),
+  \item \texttt{loss\_elem\_}, which return a vector corresponding to the squared diffrence between 2 vectors (numpy arrays),  
+  \item \texttt{predict\_}, which generates predictions using a linear model,
+  \item \texttt{gradient\_}, which calculates the vectorized regularized gradient,
+  \item \texttt{fit\_}, which fits Ridge regression model to a training dataset.
+\end{itemize}
+
+\hint{
+  You should consider inheritance
+}
+
+The difference between \texttt{MyRidge}'s \texttt{loss\_elem\_}, \texttt{loss\_}, \texttt{gradient\_} and \texttt{fit\_} methods and \texttt{MyLinearRegression}'s \texttt{loss\_elem\_}, \texttt{loss\_}, \texttt{gradient\_} and \texttt{fit\_} methods implemented in module 06 is the use of a regularization term.
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+class MyRidge(ParentClass):
+	"""
+	Description:
+		My personnal ridge regression class to fit like a boss.
+	"""
+	def __init__(self,  thetas, alpha=0.001, max_iter=1000, lambda_=0.5):
+		self.alpha = alpha
+		self.max_iter = max_iter
+		self.thetas = thetas
+		self.lambda_ = lambda_
+		... Your code here ...
+
+	... other methods ...
+\end{minted}
+
+\hint{
+  again, this is a good use case for decorators...
+}
+
+% ===========================(fin ex 06)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 07)       %
+\chapter{Exercise 07}
+\extitle{Practicing Ridge Regression}
+%\input{en.ex07_interlude.tex}
+%\newpage
+\turnindir{ex07}
+\exnumber{07}
+\exfiles{space\_avocado.py, benchmark\_train.py,  models.[csv/yml/pickle]}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+It's training time!  
+Let's practice our brand new Ridge Regression with a polynomial model.
+
+% ================================= %
+\section*{Introduction}
+% --------------------------------- %
+You have already used the dataset \texttt{space\_avocado.csv}.
+The dataset is constituted of 5 columns:
+\begin{itemize}
+  \item \textbf{index}: not relevant,
+  \item \textbf{weight}: the avocado weight order (in ton),
+  \item \textbf{prod\_distance}: distance from where the avocado ordered is produced (in Mkm),
+  \item \textbf{time\_delivery}: time between the order and the receipt (in days),
+  \item \textbf{target}: price of the order (in trantorian unit).
+\end{itemize}
+It contains the data of all the avocado purchase made by Trantor administration (guacamole is a serious business there).
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+You have to explore different models and select the best you find.
+To do this:
+\begin{itemize}
+  \item Split your \texttt{space\_avocado.csv} dataset into a training, a cross-validation and a test sets.
+  \item Use your \texttt{polynomial\_features} method on your training set.
+  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of $4$.
+  \item For each hypothesis consider a regularized factor ranging from $0$ to $1$ with a step of $0.2$.
+  \item Evaluate your models on the cross-validation set.
+  \item Evaluate the best model on the test set.
+\end{itemize}
+
+According to your model evaluations, what is the best hypothesis you can get?
+\begin{itemize}
+  \item Plot the evaluation curve which help you to select the best model (evaluation metrics vs models + $\lambda$ factor).
+  \item Plot the true price and the predicted price obtain via your best model with the different $\lambda$ values (meaning the dataset + the 5 predicted curves).
+\end{itemize}
+
+
+The training of all your models can take a long time.
+Thus you need to train only the best one during the correction.
+But, you should return in \texttt{benchmark\_train.py} the program which perform the training of all the models and save the parameters of the different models into a file.
+In \texttt{models.[csv/yml/pickle]} one must find the parameters of all the models you have explored and trained.
+In \texttt{space\_avocado.py} train the model based on the best hypothesis you find and load the other models from \texttt{models.[csv/yml/pickle]}.
+Then evaluate the best model on the right set and plot the different graphics as asked before.
+
+% ===========================(fin ex 07)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 08)       %
+\chapter{Exercise 08}
+\extitle{Regularized Logistic Regression}
+\input{en.ex08_interlude.tex}
+\newpage
+\turnindir{ex08}
+\exnumber{08}
+\exfiles{my\_logistic\_regression.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+In the last exercise, you implemented of a regularized version of the linear regression algorithm, called Ridge regression.
+Now it's time to update your logistic regression classifier as well!
+In the \texttt{scikit-learn} library, the logistic regression implementation offers a few regularization techniques, which can be selected using the parameter \texttt{penalty} (L$_2$ is default).
+The goal of this exercise is to update your old \texttt{MyLogisticRegression} class to take that into account.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{my\_logistic\_regression.py} file, update your \texttt{MyLogisticRegression} class according to the following:
+
+\begin{itemize}
+  \item \textbf{add} a \texttt{penalty} parameter which can take the following values:\texttt{'l2'}, \texttt{'none'} (default value is \texttt{'l2'}).
+\end{itemize}
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+class MyLogisticRegression():
+	"""
+	Description:
+		My personnal logistic regression to classify things.
+	"""
+	def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2'):
+		self.alpha = alpha
+		self.max_iter = max_iter
+		self.theta = theta
+		self.penalty=penalty
+		... Your code ...
+
+	... other methods ...
+\end{minted}
+
+\begin{itemize}
+  \item \textbf{update} the \texttt{fit\_(self, x, y)} method: 
+  \begin{itemize}
+    \item \texttt{if penalty == 'l2'}: use a \textbf{regularized version} of the gradient descent.
+    \item \texttt{if penalty = 'none'}: use the \textbf{unregularized version} of the gradient descent from \texttt{module08}.
+  \end{itemize}
+\end{itemize}
+
+\hint{
+  this is also a great use case for decorators...
+}
+
+% ===========================(fin ex 08)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 09)       %
+\chapter{Exercise 09}
+\extitle{Practicing Regularized Logistic Regression}
+%\input{en.ex09_interlude.tex}
+%\newpage
+\turnindir{ex09}
+\exnumber{09}
+\exfiles{solar\_system\_census.py, benchmark\_train.py,  models.[csv/yml/pickle]}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+It's training time!
+Let's practice our updated Logistic Regression with polynomial models.
+% ================================= %
+\section*{Introduction}
+% --------------------------------- %
+You have already used the dataset \texttt{solar\_system\_census.csv} and \texttt{solar\_system\_census\_planets.csv}.
+\begin{itemize}
+	\item The dataset is divided in two files which can be found in the \texttt{resources} folder: \texttt{solar\_system\_census.csv} and \texttt{solar\_system\_census\_planets.csv}.
+	\item The first file contains biometric information such as the height, weight, and bone density of several Solar System citizens.
+	\item The second file contains the homeland of each citizen, indicated by its Space Zipcode representation (i.e. one number for each planet... :)).  
+\end{itemize}
+
+As you should know, Solar citizens come from four registered areas (zipcodes): 
+
+\begin{itemize}
+	\item The flying cities of Venus ($0$), 
+	\item United Nations of Earth ($1$), 
+	\item Mars Republic ($2$), 
+	\item The Asteroids' Belt colonies ($3$).
+\end{itemize}
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+% ================================= %
+\subsection*{Split the Data}
+% --------------------------------- %
+
+Take your \texttt{solar\_system\_census.csv} dataset and split it in a \textbf{training set}, a \textbf{cross-validation set}
+and  a \textbf{test set}.
+
+% ================================= %
+\subsection*{Training and benchmark}
+% --------------------------------- %
+One part of your submission will be find in \texttt{benchmark\_train.py} and \texttt{models.[csv/yml/pickle]} files.
+You have to:
+\begin{itemize}
+  \item Train different regularized logistic regression models with a polynomial hypothesis of \textbf{degree 3}.
+        The models will be trained with different $\lambda$ values, ranging from $0$ to $1$.
+        Use one-vs-all method.
+  \item Evaluate the \textbf{f1 score} of each of the models on the cross-validation set.
+        You can use the \texttt{f1\_score\_} function that you wrote in the \texttt{ex11} of \texttt{module08}.
+  \item Save the different models into a \texttt{models.[csv/yml/pickle]}.
+\end{itemize}
+
+% ================================= %
+\subsection*{Solar system census program}
+% --------------------------------- %
+The second and last part of your submission is in \texttt{solar\_system\_census.py}. You have to:
+\begin{itemize}
+  \item Loads the differents models from \texttt{models.[csv/yml/pickle]} and train from scratch the best one.
+  \item Visualize the performance of the different models with a bar plot showing the score of the models given their $\lambda$ value.
+  \item Print the \textbf{f1 score} of all the models calculated on the cross-validation set and the final score of the best model on
+        the test set.
+  \item Visualize the target values and the predicted values of the best model on the same scatterplot. Make some effort to have a readable figure.
+\end{itemize}
+
+% ===========================(fin ex 09)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(Conclusion)        %
+\chapter{Conclusion - What you have learnt}
+
+The excercises serie is finished, well done!
+Based on all the knowledges tackled today, you should be able to discuss and answer the following questions:
+
+\begin{enumerate}
+  \item Why do we use logistic hypothesis for a classfication problem rather than a linear hypothesis?
+  \item What is the decision boundary?
+  \item In the case we decide to use a linear hypothesis to tackle a classification problem, why the classification of some data points can be modified by considering more examples (for example, extra data points with extrem ordinate)?
+  \item In a one versus all classification approach, how many logisitic regressor do we need to distinguish between N classes?
+  \item Can you explain the difference between accuracy and precision? What is the type I and type II errors?
+  \item What is the interest of the F1-score?
+\end{enumerate}
+
+% ===========================(Conclusion)        %
+% ============================================== %
+
+\newpage
+
+% ================================= %
+\section*{Contact}
+% --------------------------------- %
+You can contact 42AI association by email: contact@42ai.fr\\
+You can join the association on \href{https://join.slack.com/t/42-ai/shared_invite/zt-ebccw5r7-YPkDM6xOiYRPjqJXkrKgcA}{42AI slack}
+and/or posutale to \href{https://forms.gle/VAFuREWaLmaqZw2D8}{one of the association teams}.
+
+% ================================= %
+\section*{Acknowledgements}
+% --------------------------------- %
+The modules Python \& ML is the result of a collective work, we would like to thanks:
+\begin{itemize}
+  \item Maxime Choulika (cmaxime),
+  \item Pierre Peigné (ppeigne),
+  \item Matthieu David (mdavid).
+\end{itemize}
+who supervised the creation, the enhancement and this present transcription.
+
+\begin{itemize}
+  \item Amric Trudel (amric@42ai.fr)
+  \item Benjamin Carlier (bcarlier@student.42.fr)
+  \item Pablo Clement (pclement@student.42.fr)
+\end{itemize}
+for your investment for the creation and development of these modules.
+
+\begin{itemize}
+  \item Richard Blanc (riblanc@student.42.fr)
+  \item Solveig Gaydon Ohl (sgaydon-@student.42.fr)
+  \item Quentin Feuillade Montixi (qfeuilla@student.42.fr)
+\end{itemize}
+who betatest the first version of the modules of Machine Learning.
+\vfill
+\doclicenseThis
+\end{document}
