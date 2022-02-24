@@ -70,3 +70,5 @@ Regularized linear regression. Regularized logistic regression.
 * Richard Blanc (riblanc@student.42.fr)
 * Solveig Gaydon Ohl (sgaydon-@student.42.fr)
 * Quentin Feuillade Montixi (qfeuilla@student.42.fr)
+
+
