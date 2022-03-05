@@ -687,19 +687,19 @@ mylr = MyLR([[1.], [1.], [1.], [1.], [1]])
 
 
 # Example 0:
-mylr.predict_(X)
+y_hat = mylr.predict_(X)
 # Output:
 array([[8.], [48.], [323.]])
 
 
 # Example 1:
-mylr.loss_elem_(X,Y)
+mylr.loss_elem_(Y, y_hat)
 # Output:
 array([[225.], [0.], [11025.]])
 
 
 # Example 2:
-mylr.loss_(X,Y)
+mylr.loss_(Y, y_hat)
 # Output:
 1875.0
 
@@ -714,19 +714,19 @@ array([[18.188..], [2.767..], [-0.374..], [1.392..], [0.017..]])
 
 
 # Example 4:
-mylr.predict_(X)
+y_hat = mylr.predict_(X)
 # Output:
 array([[23.417..], [47.489..], [218.065...]])
 
 
 # Example 5:
-mylr.loss_elem_(X,Y)
+mylr.loss_elem_(Y, y_hat)
 # Output:
 array([[0.174..], [0.260..], [0.004..]])
 
 
 # Example 6:
-mylr.loss_(X,Y)
+mylr.loss_(Y, y_hat)
 # Output:
 0.0732..
 \end{minted}
