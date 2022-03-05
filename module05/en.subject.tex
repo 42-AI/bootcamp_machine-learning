@@ -610,13 +610,13 @@ In the prediction.py file, write the following function as per the instructions 
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def simple_predict(x, theta):
-    """Computes the vector of prediction y_hat from two non-empty numpy.ndarray.
+    """Computes the vector of prediction y_hat from two non-empty numpy.array.
     Args:
-      x: has to be an numpy.ndarray, a vector of dimension m * 1.
-      theta: has to be an numpy.ndarray, a vector of dimension 2 * 1.
+      x: has to be an numpy.array, a vector of dimension m * 1.
+      theta: has to be an numpy.array, a vector of dimension 2 * 1.
     Returns:
-      y_hat as a numpy.ndarray, a vector of dimension m * 1.
-      None if x or theta are empty numpy.ndarray.
+      y_hat as a numpy.array, a vector of dimension m * 1.
+      None if x or theta are empty numpy.array.
       None if x or theta dimensions are not appropriate.
     Raises:
       This function should not raise any Exception.
@@ -1221,11 +1221,11 @@ Your function must also display the overall loss ($J$) in the title, and draw sm
 In the plot.py file create the following function as per the instructions given below:
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def plot_with_loss(x, y, theta):
-"""Plot the data and prediction line from three non-empty numpy.ndarray.
+"""Plot the data and prediction line from three non-empty numpy.array.
     Args:
-      x: has to be an numpy.ndarray, a vector of dimension m * 1.
-      y: has to be an numpy.ndarray, a vector of dimension m * 1.
-      theta: has to be an numpy.ndarray, a vector of dimension 2 * 1.
+      x: has to be an numpy.array, a vector of dimension m * 1.
+      y: has to be an numpy.array, a vector of dimension m * 1.
+      theta: has to be an numpy.array, a vector of dimension 2 * 1.
     Returns:
         Nothing.
     Raises:
@@ -1302,7 +1302,7 @@ plot_with_loss(x, y, theta3)
 Deepen the notion of loss function in machine learning.
 
 You certainly had a lot of fun implementing your loss function.
-Remember we told you it was \textbf{one among many possible ways of measuring the cost}.
+Remember we told you it was \textbf{one among many possible ways of measuring the loss}.
 Now, you will get to implement other metrics.  You already know about one of them: \textbf{MSE}.  
 There are several more which are quite common: \textbf{RMSE}, \textbf{MAE} and \textbf{R2score}.
 
@@ -1411,7 +1411,7 @@ def r2score_(y, y_hat):
 \end{minted}
 
 \hint{
-  You might consider implementing four more methods, similar to what you did for the cost function in exercise 07:
+  You might consider implementing four more methods, similar to what you did for the loss function in exercise 07:
 \begin{itemize}
   \item \texttt{mse\_elem()},
   \item \texttt{rmse\_elem()},

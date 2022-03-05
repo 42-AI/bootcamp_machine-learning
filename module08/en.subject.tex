@@ -196,10 +196,10 @@ def sigmoid_(x):
     """
     Compute the sigmoid of a vector.
     Args:
-        x: has to be a numpy.ndarray, a vector.
+        x: has to be a numpy.array, a vector.
     Returns: 
-        The sigmoid value as a numpy.ndarray.
-        None if x is an empty numpy.ndarray.
+        The sigmoid value as a numpy.array.
+        None if x is an empty numpy.array.
     Raises:
         This function should not raise any Exception.
     """
@@ -289,13 +289,13 @@ In the \texttt{log\_pred.py} file, write the following function as per the instr
 \par
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def logistic_predict_(x, theta):
-    """Computes the vector of prediction y_hat from two non-empty numpy.ndarray.
+    """Computes the vector of prediction y_hat from two non-empty numpy.array.
     Args:
-      x: has to be an numpy.ndarray, a vector of dimension m * n.
-      theta: has to be an numpy.ndarray, a vector of dimension (n + 1) * 1.
+      x: has to be an numpy.array, a vector of dimension m * n.
+      theta: has to be an numpy.array, a vector of dimension (n + 1) * 1.
     Returns:
-      y_hat as a numpy.ndarray, a vector of dimension m * 1.
-      None if x or theta are empty numpy.ndarray.
+      y_hat as a numpy.array, a vector of dimension m * 1.
+      None if x or theta are empty numpy.array.
       None if x or theta dimensions are not appropriate.
     Raises:
       This function should not raise any Exception.
@@ -356,7 +356,7 @@ array([[0.03916572],
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understanding and manipulation of the cost function concept in the case of logistic regression.
+Understanding and manipulation of the loss function concept in the case of logistic regression.
 You must implement the following formula as a function:  
 
 $$
@@ -382,8 +382,8 @@ def log_loss_(y, y_hat, eps=1e-15):
     """
     Computes the logistic loss value.
     Args:
-        y: has to be an numpy.ndarray, a vector of shape m * 1.
-        y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+        y: has to be an numpy.array, a vector of shape m * 1.
+        y_hat: has to be an numpy.array, a vector of shape m * 1.
         eps: has to be a float, epsilon (default=1e-15)
     Returns:
         The logistic loss value as a float.
@@ -458,7 +458,7 @@ log_loss_(y3, y_hat3)
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understanding and manipulation of cost function concept in case of logistic regression.
+Understanding and manipulation of loss function concept in case of logistic regression.
 You must implement the following formula as a function:  
 
 $$
@@ -483,8 +483,8 @@ def vec_log_loss_(y, y_hat, eps=1e-15):
     """
     Compute the logistic loss value.
     Args:
-        y: has to be an numpy.ndarray, a vector of shape m * 1.
-        y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+        y: has to be an numpy.array, a vector of shape m * 1.
+        y_hat: has to be an numpy.array, a vector of shape m * 1.
         eps: epsilon (default=1e-15)
     Returns:
         The logistic loss value as a float.
@@ -585,14 +585,14 @@ In the \texttt{log\_gradient.py} file, write the following function as per the i
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def log_gradient(x, y, theta):
-    """Computes a gradient vector from three non-empty numpy.ndarray, with a for-loop. The three arrays must have compatible dimensions.
+    """Computes a gradient vector from three non-empty numpy.array, with a for-loop. The three arrays must have compatible dimensions.
     Args:
-      x: has to be an numpy.ndarray, a matrix of shape m * n.
-      y: has to be an numpy.ndarray, a vector of shape m * 1.
-      theta: has to be an numpy.ndarray, a vector of shape (n + 1) * 1.
+      x: has to be an numpy.array, a matrix of shape m * n.
+      y: has to be an numpy.array, a vector of shape m * 1.
+      theta: has to be an numpy.array, a vector of shape (n + 1) * 1.
     Returns:
-      The gradient as a numpy.ndarray, a vector of shape n * 1, containing the result of the formula for all j.
-      None if x, y, or theta are empty numpy.ndarray.
+      The gradient as a numpy.array, a vector of shape n * 1, containing the result of the formula for all j.
+      None if x, y, or theta are empty numpy.array.
       None if x, y and theta do not have compatible dimensions.
     Raises:
       This function should not raise any Exception.
@@ -686,14 +686,14 @@ In the \texttt{vec\_log\_gradient.py} file, write the following function as per 
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def vec_log_gradient(x, y, theta):
-    """Computes a gradient vector from three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.
+    """Computes a gradient vector from three non-empty numpy.array, without any for-loop. The three arrays must have compatible shapes.
     Args:
-      x: has to be an numpy.ndarray, a matrix of shape m * n.
-      y: has to be an numpy.ndarray, a vector of shape m * 1.
-      theta: has to be an numpy.ndarray, a vector (n +1) * 1.
+      x: has to be an numpy.array, a matrix of shape m * n.
+      y: has to be an numpy.array, a vector of shape m * 1.
+      theta: has to be an numpy.array, a vector (n +1) * 1.
     Returns:
-      The gradient as a numpy.ndarray, a vector of shape n * 1, containg the result of the formula for all j.
-      None if x, y, or theta are empty numpy.ndarray.
+      The gradient as a numpy.array, a vector of shape n * 1, containg the result of the formula for all j.
+      None if x, y, or theta are empty numpy.array.
       None if x, y and theta do not have compatible shapes.
     Raises:
       This function should not raise any Exception.
@@ -790,8 +790,8 @@ class MyLogisticRegression():
 You will add at least the following methods:
 \begin{itemize}
   \item \texttt{predict\_(self, x)}
-  \item \texttt{cost\_elem\_(self, y, yhat)}
-  \item \texttt{cost\_(self, y, yhat)}
+  \item \texttt{loss\_elem\_(self, y, yhat)}
+  \item \texttt{loss\_(self, y, yhat)}
   \item \texttt{fit\_(self, x, y)}
 \end{itemize}
 
@@ -816,7 +816,7 @@ array([[0.99930437],
        [1.        ]])
 
 # Example 1:
-mylr.cost_(X,Y)
+mylr.loss_(X,Y)
 # Output:
 11.513157421577004
 
@@ -838,7 +838,7 @@ array([[0.72865802],
        [0.45241588]])
 
 # Example 4:
-mylr.cost_(X,Y)
+mylr.loss_(X,Y)
 # Output:
 0.5432466580663214
 \end{minted}
@@ -1012,8 +1012,8 @@ def accuracy_score_(y, y_hat):
     """
     Compute the accuracy score.
     Args:
-        y:a numpy.ndarray for the correct labels
-        y_hat:a numpy.ndarray for the predicted labels
+        y:a numpy.array for the correct labels
+        y_hat:a numpy.array for the predicted labels
     Returns: 
         The accuracy score as a float.
         None on any error.
@@ -1026,8 +1026,8 @@ def precision_score_(y, y_hat, pos_label=1):
     """
     Compute the precision score.
     Args:
-        y:a numpy.ndarray for the correct labels
-        y_hat:a numpy.ndarray for the predicted labels
+        y:a numpy.array for the correct labels
+        y_hat:a numpy.array for the predicted labels
         pos_label: str or int, the class on which to report the precision_score (default=1)
     Returns: 
         The precision score as a float.
@@ -1041,8 +1041,8 @@ def recall_score_(y, y_hat, pos_label=1):
     """
     Compute the recall score.
     Args:
-        y:a numpy.ndarray for the correct labels
-        y_hat:a numpy.ndarray for the predicted labels
+        y:a numpy.array for the correct labels
+        y_hat:a numpy.array for the predicted labels
         pos_label: str or int, the class on which to report the precision_score (default=1)
     Returns: 
         The recall score as a float.
@@ -1056,8 +1056,8 @@ def f1_score_(y, y_hat, pos_label=1):
     """
     Compute the f1 score.
     Args:
-        y:a numpy.ndarray for the correct labels
-        y_hat:a numpy.ndarray for the predicted labels
+        y:a numpy.array for the correct labels
+        y_hat:a numpy.array for the predicted labels
         pos_label: str or int, the class on which to report the precision_score (default=1)
     Returns: 
         The f1 score as a float.
@@ -1251,11 +1251,11 @@ def confusion_matrix_(y_true, y_hat, labels=None):
     """
     Compute confusion matrix to evaluate the accuracy of a classification.
     Args:
-        y_true:a numpy.ndarray for the correct labels
-        y_hat:a numpy.ndarray for the predicted labels
+        y_true:a numpy.array for the correct labels
+        y_hat:a numpy.array for the predicted labels
         labels: optional, a list of labels to index the matrix. This may be used to reorder or select a subset of labels. (default=None)
     Returns: 
-        The confusion matrix as a numpy ndarray.
+        The confusion matrix as a numpy array.
         None on any error.
     Raises:
         This function should not raise any Exception.
@@ -1315,12 +1315,12 @@ def confusion_matrix_(y, y_hat, labels=None, df_option=False):
     """
     Compute confusion matrix to evaluate the accuracy of a classification.
     Args:
-        y:a numpy.ndarray for the correct labels
-        y_hat:a numpy.ndarray for the predicted labels
+        y:a numpy.array for the correct labels
+        y_hat:a numpy.array for the predicted labels
         labels: optional, a list of labels to index the matrix. This may be used to reorder or select a subset of labels. (default=None)
         df_option: optional, if set to True the function will return a pandas DataFrame instead of a numpy array. (default=False)
     Returns: 
-        The confusion matrix as a numpy ndarray or a pandas DataFrame according to df_option value.
+        The confusion matrix as a numpy array or a pandas DataFrame according to df_option value.
         None on any error.
     Raises:
         This function should not raise any Exception.
