@@ -512,7 +512,7 @@ array([[10.74695094],
 		[42.25621131]])
 
 # Example 0.1:
-MyLR.cost_elem_(y, lr1.predict_(x))
+lr1.cost_elem_(y, lr1.predict_(x))
 # Output:
 array([[710.45867381],
 		[364.68645485],
@@ -521,7 +521,7 @@ array([[710.45867381],
 		[299.37111101]])
 
 # Example 0.2:
-MyLR.cost_(y, lr1.predict_(x))
+lr1.cost_(y, lr1.predict_(x))
 # Output:
 195.34539903032385
 
@@ -543,7 +543,7 @@ array([[15.3408728 ],
 		[65.53471499]])
 
 # Example 1.2:
-MyLR.cost_elem_(y, lr2.predict_(x))
+lr2.cost_elem_(y, lr2.predict_(x))
 # Output:
 array([[486.66604863],
 		[115.88278416],
@@ -552,7 +552,7 @@ array([[486.66604863],
 		[ 35.71448348]])
 
 # Example 1.3:
-MyLR.cost_(y, lr2.predict_(x))
+lr2.cost_(y, lr2.predict_(x))
 # Output:
 80.83996294128525
 \end{minted}
