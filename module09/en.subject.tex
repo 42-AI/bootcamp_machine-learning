@@ -1057,11 +1057,16 @@ class MyLogisticRegression():
 	Description:
 		My personnal logistic regression to classify things.
 	"""
-	def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2'):
-		self.alpha = alpha
+	def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2', lambda_=1.0):
+		# Check on type, data type, value ... if necessary
+    self.alpha = alpha
 		self.max_iter = max_iter
 		self.theta = theta
-		self.penalty=penalty
+		self.penalty = penalty
+    if penality == '...':
+        self.lambda_ = ...
+    else:
+        self.lambda_ = ...
 		... Your code ...
 
 	... other methods ...
@@ -1074,6 +1079,49 @@ class MyLogisticRegression():
     \item \texttt{if penalty = 'none'}: use the \textbf{unregularized version} of the gradient descent from \texttt{module08}.
   \end{itemize}
 \end{itemize}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+from my_logistic_regression import MyLogisticRegression as mylogr
+
+theta = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+
+# Example 1:
+model1 = mylogr(theta, lambda_=5.0)
+
+model1.penality
+# Output
+'l2'
+
+model1.lambda_
+# Output
+5.0
+
+# Example 2:
+model2 = mylogr(theta, penality=None)
+
+model2.penality
+# Output
+None
+
+model2.lambda_
+# Output
+0.0
+
+# Example 3:
+model3 = mylogr(theta, penality=None, lambda_=2.0)
+
+model3.penality
+# Output
+None
+
+model3.lambda_
+# Output
+0.0
+
+\end{minted}
 
 \hint{
   this is also a great use case for decorators...
