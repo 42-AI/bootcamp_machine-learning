@@ -19,8 +19,10 @@
   - [Module07 - Multivariate Linear Regression](#module07---multivariate-linear-regression)
   - [Module08 - Logistic Regression](#module08---logistic-regression)
   - [Module09 - Regularization](#module09---regularization)
-- [Acknowledgements](#acknowledgements) - [Contributors](#contributors) - [Beta-testers](#beta-testers)
-  <br/>
+- [Acknowledgements](#acknowledgements)
+  - [Contributors](#contributors)
+  - [Beta-testers](#beta-testers)
+<br/>
 
 This project is a Machine Learning bootcamp created by [42 AI](http://www.42ai.fr).
 
@@ -71,7 +73,8 @@ The pdf files of each module can be downloaded from our realease page:
 
 > Regularization, overfitting. Regularized loss function, regularized gradient descent.  
 > Regularized linear regression. Regularized logistic regression.
-> <br/>
+
+<br/>
 
 ## Acknowledgements
 

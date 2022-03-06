@@ -301,8 +301,8 @@ def gradient(x, y, theta):
       y: has to be a numpy.array, a vector of shape m * 1.
       theta: has to be a numpy.array, a 2 * 1 vector.
     Return:
-      The gradient as a numpy.array, a vector of dimension 2 * 1.
-      None if x, y, or theta is an empty numpy.array.
+      The gradient as a numpy.ndarray, a vector of dimension 2 * 1.
+      None if x, y, or theta is an empty numpy.ndarray.
       None if x, y and theta do not have compatible dimensions.
     Raises:
       This function should not raise any Exception.
@@ -388,13 +388,13 @@ def fit_(x, y, theta, alpha, max_iter):
 	Description:
 		Fits the model to the training dataset contained in x and y.
 	Args:
-		x: has to be a numpy.array, a vector of dimension m * 1: (number of training examples, 1).
-		y: has to be a numpy.array, a vector of dimension m * 1: (number of training examples, 1).
-		theta: has to be a numpy.array, a vector of dimension 2 * 1.
+		x: has to be a numpy.ndarray, a vector of dimension m * 1: (number of training examples, 1).
+		y: has to be a numpy.ndarray, a vector of dimension m * 1: (number of training examples, 1).
+		theta: has to be a numpy.ndarray, a vector of dimension 2 * 1.
 		alpha: has to be a float, the learning rate
 		max_iter: has to be an int, the number of iterations done during the gradient descent
 	Returns:
-		new_theta: numpy.array, a vector of dimension 2 * 1.
+		new_theta: numpy.ndarray, a vector of dimension 2 * 1.
 		None if there is a matching dimension problem.
 	Raises:
 		This function should not raise any Exception.
@@ -720,12 +720,12 @@ In the \texttt{zscore.py} file, write the \texttt{zscore} function as per the in
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def zscore(x):
-	"""Computes the normalized version of a non-empty numpy.array using the z-score standardization.
+	"""Computes the normalized version of a non-empty numpy.ndarray using the z-score standardization.
 	Args:
-		x: has to be an numpy.array, a vector.
+		x: has to be an numpy.ndarray, a vector.
 	Returns:
-		x' as a numpy.array. 
-		None if x is a non-empty numpy.array or not a numpy.array.
+		x' as a numpy.ndarray. 
+		None if x is a non-empty numpy.ndarray or not a numpy.ndarray.
 	Raises:
 		This function shouldn't raise any Exception.
 	"""
@@ -801,12 +801,12 @@ In the \texttt{minmax.py} file, create the \texttt{minmax} function as per the i
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def minmax(x):
-	"""Computes the normalized version of a non-empty numpy.array using the min-max standardization.
+	"""Computes the normalized version of a non-empty numpy.ndarray using the min-max standardization.
 	Args:
-		x: has to be an numpy.array, a vector.
+		x: has to be an numpy.ndarray, a vector.
 	Returns:
-		x' as a numpy.array. 
-		None if x is a non-empty numpy.array or not a numpy.array.
+		x' as a numpy.ndarray. 
+		None if x is a non-empty numpy.ndarray or not a numpy.ndarray.
 	Raises:
 		This function shouldn't raise any Exception.
 	"""

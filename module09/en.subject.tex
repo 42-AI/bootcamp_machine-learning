@@ -180,11 +180,11 @@ In the \texttt{polynomial\_model\_extended.py} file, write the following functio
 def add_polynomial_features(x, power):
 	"""Add polynomial features to matrix x by raising its columns to every power in the range of 1 up to the power given in argument.  
 	Args:
-		x: has to be an numpy.array, a matrix of shape m * n.
+		x: has to be an numpy.ndarray, a matrix of shape m * n.
 		power: has to be an int, the power up to which the columns of matrix x are going to be raised.
 	Returns:
-		The matrix of polynomial features as a numpy.array, of shape m * (np), containg the polynomial feature values for all training examples.
-		None if x is an empty numpy.array.
+		The matrix of polynomial features as a numpy.ndarray, of shape m * (np), containg the polynomial feature values for all training examples.
+		None if x is an empty numpy.ndarray.
 	Raises:
 		This function should not raise any Exception.
 	"""
@@ -279,24 +279,24 @@ In the \texttt{l2\_reg.py} file, write the following function as per the instruc
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def iterative_l2(theta):
-	"""Computes the L2 regularization of a non-empty numpy.array, with a for-loop.
+	"""Computes the L2 regularization of a non-empty numpy.ndarray, with a for-loop.
 	Args:
-		theta: has to be a numpy.array, a vector of shape n * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 	Returns:
 		The L2 regularization as a float.
-		None if theta in an empty numpy.array.
+		None if theta in an empty numpy.ndarray.
 	Raises:
 		This function should not raise any Exception.
 	"""
 	... Your code ...
 
 def l2(theta):
-	"""Computes the L2 regularization of a non-empty numpy.array, without any for-loop.
+	"""Computes the L2 regularization of a non-empty numpy.ndarray, without any for-loop.
 	Args:
-		theta: has to be a numpy.array, a vector of shape n * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 	Returns:
 		The L2 regularization as a float.
-		None if theta in an empty numpy.array.
+		None if theta in an empty numpy.ndarray.
 	Raises:
 		This function should not raise any Exception.
 	"""
@@ -381,13 +381,13 @@ In the \texttt{linear\_loss\_reg.py} file, write the following function as per t
 def reg_loss_(y, y_hat, theta, lambda_):
 	"""Computes the regularized loss of a linear regression model from two non-empty numpy.array, without any for loop. The two arrays must have the same dimensions.
 	Args:
-		y: has to be an numpy.array, a vector of shape m * 1.
-		y_hat: has to be an numpy.array, a vector of shape m * 1.
-		theta: has to be a numpy.array, a vector of shape n * 1.
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 		lambda_: has to be a float.
 	Returns:
 		The regularized loss as a float.
-		None if y, y_hat, or theta are empty numpy.array.
+		None if y, y_hat, or theta are empty numpy.ndarray.
 		None if y and y_hat do not share the same shapes.
 	Raises:
 		This function should not raise any Exception.
@@ -470,15 +470,15 @@ In the \texttt{logistic\_loss\_reg.py} file, write the following function as per
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_log_loss_(y, y_hat, theta, lambda_):
-	"""Computes the regularized loss of a logistic regression model from two non-empty numpy.array, without any for loop. The two arrays must have the same shapes.
+	"""Computes the regularized loss of a logistic regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same shapes.
 	Args:
-		y: has to be an numpy.array, a vector of shape m * 1.
-		y_hat: has to be an numpy.array, a vector of shape m * 1.
-		theta: has to be a numpy.array, a vector of shape n * 1.
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 		lambda_: has to be a float.
 	Returns:
 		The regularized loss as a float.
-		None if y, y_hat, or theta is empty numpy.array.
+		None if y, y_hat, or theta is empty numpy.ndarray.
 		None if y and y_hat do not share the same shapes.
 	Raises:
 		This function should not raise any Exception.
@@ -598,16 +598,16 @@ In the \texttt{reg\_linear\_grad.py} file, write the following functions as per 
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_linear_grad(y, x, theta, lambda_):
-    """Computes the regularized linear gradient of three non-empty numpy.array,
+    """Computes the regularized linear gradient of three non-empty numpy.ndarray,
        with two for-loop. The three arrays must have compatible shapes.
     Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
+      y: has to be a numpy.ndarray, a vector of shape m * 1.
+      x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+      theta: has to be a numpy.ndarray, a vector of shape (n + 1) * 1.
       lambda_: has to be a float.
     Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
+      A numpy.ndarray, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
+      None if y, x, or theta are empty numpy.ndarray.
       None if y, x or theta does not share compatibles shapes.
       None if y, x or theta or lambda_ is not of the expected type.
     Raises:
@@ -616,16 +616,16 @@ def reg_linear_grad(y, x, theta, lambda_):
     ... Your code ...
 
 def vec_reg_linear_grad(y, x, theta, lambda_):
-    """Computes the regularized linear gradient of three non-empty numpy.array,
+    """Computes the regularized linear gradient of three non-empty numpy.ndarray,
        without any for-loop. The three arrays must have compatible shapes.
     Args:
-      y: has to be a numpy.array, a vector of shape m * 1.
-      x: has to be a numpy.array, a matrix of dimesion m * n.
-      theta: has to be a numpy.array, a vector of shape (n + 1) * 1.
+      y: has to be a numpy.ndarray, a vector of shape m * 1.
+      x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+      theta: has to be a numpy.ndarray, a vector of shape (n + 1) * 1.
       lambda_: has to be a float.
     Return:
-      A numpy.array, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
-      None if y, x, or theta are empty numpy.array.
+      A numpy.ndarray, a vector of shape (n + 1) * 1, containing the results of the formula for all j.
+      None if y, x, or theta are empty numpy.ndarray.
       None if y, x or theta does not share compatibles shapes.
       None if y, x or theta or lambda_ is not of the expected type.
     Raises:
@@ -786,15 +786,15 @@ In the \texttt{reg\_logistic\_grad.py} file, create the following function as pe
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_logistic_grad(y, x, theta, lambda_):
-	"""Computes the regularized logistic gradient of three non-empty numpy.array, with two for-loops. The three arrays must have compatible shapes.
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, with two for-loops. The three arrays must have compatible shapes.
 	Args:
-		y: has to be a numpy.array, a vector of shape m * 1.
-		x: has to be a numpy.array, a matrix of dimesion m * n.
-		theta: has to be a numpy.array, a vector of shape n * 1.
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of dimesion m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 		lambda_: has to be a float.
 	Returns:
-		A numpy.array, a vector of shape n * 1, containing the results of the formula for all j.
-		None if y, x, or theta are empty numpy.array.
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
 		None if y, x or theta does not share compatibles shapes.
 	Raises:
 		This function should not raise any Exception.
@@ -802,15 +802,15 @@ def reg_logistic_grad(y, x, theta, lambda_):
 	... Your code ...
 
 def vec_reg_logistic_grad(y, x, theta, lambda_):
-	"""Computes the regularized logistic gradient of three non-empty numpy.array, without any for-loop. The three arrays must have compatible shapes.
+	"""Computes the regularized logistic gradient of three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.
 	Args:
-		y: has to be a numpy.array, a vector of shape m * 1.
-		x: has to be a numpy.array, a matrix of shape m * n.
-		theta: has to be a numpy.array, a vector of shape n * 1.
+		y: has to be a numpy.ndarray, a vector of shape m * 1.
+		x: has to be a numpy.ndarray, a matrix of shape m * n.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 		lambda_: has to be a float.
 	Returns:
-		A numpy.array, a vector of shape n * 1, containing the results of the formula for all j.
-		None if y, x, or theta are empty numpy.array.
+		A numpy.ndarray, a vector of shape n * 1, containing the results of the formula for all j.
+		None if y, x, or theta are empty numpy.ndarray.
 		None if y, x or theta does not share compatibles shapes.
 	Raises:
 		This function should not raise any Exception.
