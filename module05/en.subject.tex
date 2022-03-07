@@ -694,11 +694,11 @@ In the tools.py file create the following function as per the instructions given
 def add_intercept(x):
     """Adds a column of 1's to the non-empty numpy.array x.
     Args:
-      x: has to be an numpy.array, a vector of dimension m * 1.
+      x: has to be a numpy.array of dimension m * n.
     Returns:
-      X as a numpy.array, a vector of dimension m * 2.
+      X, a numpy.array of dimension m * (n + 1).
       None if x is not a numpy.array.
-      None if x is a empty numpy.array.
+      None if x is an empty numpy.array.
     Raises:
       This function should not raise any Exception.
     """
