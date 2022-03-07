@@ -172,17 +172,16 @@ and matrix-vector operations with them.
 % ---------------------------------- %
 You will provide a testing file to prove that your classes works as expected.\\
 
-Your \texttt{Matrix} class will have the following proprieties :
-2 attributes: 
+Your \texttt{Matrix} class must have the following 2 attributes: 
 \begin{itemize}
   \item \texttt{data}: list of lists
-  \item \texttt{shape}: by shape we mean the dimensions of the matrix as a tuple (rows, columns).
+  \item \texttt{shape}: the dimensions of the matrix as a tuple (rows, columns)
 \end{itemize}
 
-You should be able to initialize the object with:
+You should be able to initialize the object with either:
 \begin{itemize}
   \item the elements of the matrix as a list of lists: \texttt{Matrix([[1.0, 2.0], [3.0, 4.0]])}
-  \item a shape \texttt{Matrix((3, 3))} (the matrix will be filled by default with zeroes) 
+  \item a shape: \texttt{Matrix((3, 3))} (the matrix will be filled with zeros by default)
 \end{itemize}
 
 You will implement all the following built-in functions (called \texttt{magic/special methods}) for your \texttt{Matrix} class:
