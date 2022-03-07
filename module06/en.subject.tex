@@ -483,8 +483,8 @@ You will add the following methods:
 \begin{itemize}
   \item \texttt{fit\_(self, x, y)},
   \item \texttt{predict\_(self, x)},
-  \item \texttt{cost\_elem\_(self, y, y\_hat)},
-  \item \texttt{cost\_(self, y, y\_hat)}.
+  \item \texttt{loss\_elem\_(self, y, y\_hat)},
+  \item \texttt{loss\_(self, y, y\_hat)}.
 \end{itemize}
 
 You have already implemented these functions,
@@ -512,7 +512,7 @@ array([[10.74695094],
 		[42.25621131]])
 
 # Example 0.1:
-lr1.cost_elem_(y, lr1.predict_(x))
+MyLR.loss_elem_(y, lr1.predict_(x))
 # Output:
 array([[710.45867381],
 		[364.68645485],
@@ -521,7 +521,7 @@ array([[710.45867381],
 		[299.37111101]])
 
 # Example 0.2:
-lr1.cost_(y, lr1.predict_(x))
+MyLR.loss_(y, lr1.predict_(x))
 # Output:
 195.34539903032385
 
@@ -543,7 +543,7 @@ array([[15.3408728 ],
 		[65.53471499]])
 
 # Example 1.2:
-lr2.cost_elem_(y, lr2.predict_(x))
+MyLR.loss_elem_(y, lr2.predict_(x))
 # Output:
 array([[486.66604863],
 		[115.88278416],
@@ -552,7 +552,7 @@ array([[486.66604863],
 		[ 35.71448348]])
 
 # Example 1.3:
-lr2.cost_(y, lr2.predict_(x))
+MyLR.loss_(y, lr2.predict_(x))
 # Output:
 80.83996294128525
 \end{minted}
@@ -612,7 +612,7 @@ Then you will model the data and plot 2 different graphs:
     \label{best fit for score vs micrograms}
   \end{figure}
   
-  \item The cost function $J(\theta)$ in function of the $\theta$ values (see figure \ref{loss function qs function of theta1 and theta0}),
+  \item The loss function $J(\theta)$ in function of the $\theta$ values (see figure \ref{loss function qs function of theta1 and theta0}),
   \begin{figure}[!h]
     \centering
     \includegraphics[scale=0.6]{assets/ex04_J_vs_t1.png}

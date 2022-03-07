@@ -379,14 +379,14 @@ In the \texttt{linear\_loss\_reg.py} file, write the following function as per t
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_loss_(y, y_hat, theta, lambda_):
-	"""Computes the regularized cost of a linear regression model from two non-empty numpy.ndarray, without any for loop. The two arrays must have the same dimensions.
+	"""Computes the regularized loss of a linear regression model from two non-empty numpy.array, without any for loop. The two arrays must have the same dimensions.
 	Args:
 		y: has to be an numpy.ndarray, a vector of shape m * 1.
 		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
 		theta: has to be a numpy.ndarray, a vector of shape n * 1.
 		lambda_: has to be a float.
 	Returns:
-		The regularized cost as a float.
+		The regularized loss as a float.
 		None if y, y_hat, or theta are empty numpy.ndarray.
 		None if y and y_hat do not share the same shapes.
 	Raises:
