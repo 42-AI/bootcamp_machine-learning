@@ -1149,12 +1149,13 @@ You have to:
 % --------------------------------- %
 The second and last part of your submission is in \texttt{solar\_system\_census.py}. You have to:
 \begin{itemize}
-  \item Loads the differents models from \texttt{models.[csv/yml/pickle]} and train from scratch the best one.
+  \item Loads the differents models from \texttt{models.[csv/yml/pickle]} and train from scratch only the best one on a training set.
   \item Visualize the performance of the different models with a bar plot showing the score of the models given their $\lambda$ value.
-  \item Print the \textbf{f1 score} of all the models calculated on the cross-validation set and the final score of the best model on
-        the test set.
+  \item Print the \textbf{f1 score} of all the models calculated on the test set.
   \item Visualize the target values and the predicted values of the best model on the same scatterplot. Make some effort to have a readable figure.
 \end{itemize}
+
+\info{For the second script \texttt{solar\_system\_census.py}, only a train and test set are necessary as one is simply looking to the performance.}
 
 % ===========================(fin ex 09)         %
 % ============================================== %
