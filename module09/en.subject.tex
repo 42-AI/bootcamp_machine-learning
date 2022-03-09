@@ -927,10 +927,11 @@ Your \texttt{MyRidge} class will have at least the following methods:
 \end{itemize}
 
 \hint{
-  You should consider inheritance
+  You should consider inheritance from \texttt{MyLinearRegression}.
 }
+If \texttt{MyRidge} inheritates from \texttt{MyLinearRegression}, you may not need to reimplement \texttt{predict\_} method.
 
-The difference between \texttt{MyRidge}'s \texttt{loss\_elem\_}, \texttt{loss\_}, \texttt{gradient\_} and \texttt{fit\_} methods and \texttt{MyLinearRegression}'s \texttt{loss\_elem\_}, \texttt{loss\_}, \texttt{gradient\_} and \texttt{fit\_} methods implemented in module 06 is the use of a regularization term.
+The difference between \texttt{loss\_elem\_}, \texttt{loss\_}, \texttt{gradient\_} and \texttt{fit\_} methods implementation \texttt{MyRidge}'s and \texttt{MyLinearRegression} (implemented in module 02) is the use of a regularization term.
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 class MyRidge(ParentClass):
