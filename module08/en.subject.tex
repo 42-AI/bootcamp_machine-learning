@@ -1272,8 +1272,8 @@ def confusion_matrix_(y_true, y_hat, labels=None):
 import numpy as np
 from sklearn.metrics import confusion_matrix
 
-y_hat = np.array(['norminet', 'dog', 'norminet', 'norminet', 'dog', 'bird'])
-y = np.array(['dog', 'dog', 'norminet', 'norminet', 'dog', 'norminet'])
+y_hat = np.array([['norminet'], ['dog'], ['norminet'], ['norminet'], ['dog'], ['bird']])
+y = np.array([['dog'], ['dog'], ['norminet'], ['norminet'], ['dog'], ['norminet']])
 
 # Example 1: 
 ## your implementation
