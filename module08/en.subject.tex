@@ -1313,16 +1313,14 @@ For a more visual version, you can add an option to your previous confusion\_mat
 In the \texttt{confusion\_matrix.py} file, write the following function as per the instructions below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def confusion_matrix_(y, y_hat, labels=None, df_option=False):
+def confusion_matrix_(y_true, y_hat, labels=None, df_option=False):
     """
     Compute confusion matrix to evaluate the accuracy of a classification.
     Args:
-        y: numpy.ndarray for the correct labels
-        y_hat: numpy.ndarray for the predicted labels
-        labels: Optional, a list of labels to index the matrix.
-                This may be used to reorder or select a subset of labels. (default=None)
-        df_option: Optional, if set to True the return is a pandas DataFrame instead of a numpy array.
-                   (default=False)
+        y_true: a numpy.ndarray for the correct labels
+        y_hat: a numpy.ndarray for the predicted labels
+        labels: optional, a list of labels to index the matrix. This may be used to reorder or select a subset of labels. (default=None)
+        df_option: optional, if set to True the function will return a pandas DataFrame instead of a numpy array. (default=False)
     Returns: 
         Confusion matrix as a numpy ndarray or a pandas DataFrame according to df_option value.
         None on any error.
