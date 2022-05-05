@@ -293,7 +293,7 @@ Be careful:
 In the \texttt{vec\_gradient.py} file create the following function as per the instructions given below:
 \par
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def gradient(x, y, theta):
+def simple_gradient(x, y, theta):
     """Computes a gradient vector from three non-empty numpy.array, without any for loop.
        The three arrays must have compatible shapes.
     Args:
@@ -323,13 +323,13 @@ y = np.array([37.4013816, 36.1473236, 45.7655287, 46.6793434, 59.5585554]).resha
 theta1 = np.array([2, 0.7]).reshape((-1, 1))
 gradient(x, y, theta1)
 # Output:
-array([[-19.0342574], [-586.66875564]])
+array([[-19.0342...], [-586.6687...]])
 
 # Example 1:
 theta2 = np.array([1, -0.4]).reshape((-1, 1))
 gradient(x, y, theta2)
 # Output:
-array([[-57.86823748], [-2230.12297889]])
+array([[-57.8682...], [-2230.1229...]])
 \end{minted}
 
 % ===========================(fin ex 01)         %
