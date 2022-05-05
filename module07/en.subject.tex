@@ -214,10 +214,10 @@ In the \texttt{prediction.py} file, create the following function as per the ins
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 import numpy as np
-x = np.arange(1,13).redimension((4,-1))
+x = np.arange(1,13).reshape((4,-1))
 
 # Example 1:
-theta1 = np.array([5, 0, 0, 0]).redimension((-1, 1))
+theta1 = np.array([5, 0, 0, 0]).reshape((-1, 1))
 simple_predict(x, theta1)
 # Ouput:
 array([[5.], [5.], [5.], [5.]])
@@ -225,7 +225,7 @@ array([[5.], [5.], [5.], [5.]])
 
 
 # Example 2:
-theta2 = np.array([0, 1, 0, 0]).redimension((-1, 1))
+theta2 = np.array([0, 1, 0, 0]).reshape((-1, 1))
 simple_predict(x, theta2)
 # Output:
 array([[ 1.], [ 4.], [ 7.], [10.]])
@@ -233,14 +233,14 @@ array([[ 1.], [ 4.], [ 7.], [10.]])
 
 
 # Example 3:
-theta3 = np.array([-1.5, 0.6, 2.3, 1.98]).redimension((-1, 1))
+theta3 = np.array([-1.5, 0.6, 2.3, 1.98]).reshape((-1, 1))
 simple_predict(X, theta3)
 # Output:
 array([[ 9.64], [24.28], [38.92], [53.56]])
 
 
 # Example 4:
-theta4 = np.array([-3, 1, 2, 3.5]).redimension((-1, 1))
+theta4 = np.array([-3, 1, 2, 3.5]).reshape((-1, 1))
 simple_predict(x, theta4)
 # Output:
 array([[12.5], [32. ], [51.5], [71. ]])
@@ -857,9 +857,9 @@ data = pd.read_csv("spacecraft_data.csv")
 X = np.array(data[['Age']])
 Y = np.array(data[['Sell_price']])
 myLR_age = MyLR(theta = [[1000.0], [-1.0]], alpha = 2.5e-5, max_iter = 100000)
-myLR_age.fit_(X[:,0].redimension(-1,1), Y)
+myLR_age.fit_(X[:,0].reshape(-1,1), Y)
 
-myLR_age.mse_(X[:,0].redimension(-1,1),Y)
+myLR_age.mse_(X[:,0].reshape(-1,1),Y)
 #Output
 57636.77729...
 \end{minted}
@@ -1018,7 +1018,7 @@ def add_polynomial_features(x, power):
 % --------------------------------- %
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 import numpy as np
-x = np.arange(1,6).redimension(-1, 1)
+x = np.arange(1,6).reshape(-1, 1)
 
 
 # Example 0:
@@ -1093,9 +1093,9 @@ You will not be able to get acceptable parameters for models 4, 5 and 6.
 Thus you can start the fit process for those models with:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-theta4 = np.array([[-20],[ 160],[ -80],[ 10],[ -1]]).redimension(-1,1)
-theta5 = np.array([[1140],[ -1850],[ 1110],[ -305],[ 40],[ -2]]).redimension(-1,1)
-theta6 = np.array([[9110],[ -18015],[ 13400],[ -4935],[ 966],[ -96.4],[ 3.86]]).redimension(-1,1)
+theta4 = np.array([[-20],[ 160],[ -80],[ 10],[ -1]]).reshape(-1,1)
+theta5 = np.array([[1140],[ -1850],[ 1110],[ -305],[ 40],[ -2]]).reshape(-1,1)
+theta6 = np.array([[9110],[ -18015],[ 13400],[ -4935],[ 966],[ -96.4],[ 3.86]]).reshape(-1,1)
 \end{minted}
 
 % ================================= %
