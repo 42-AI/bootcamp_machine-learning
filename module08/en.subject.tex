@@ -806,7 +806,8 @@ import numpy as np
 from my_logistic_regression import MyLogisticRegression as MyLR
 X = np.array([[1., 1., 2., 3.], [5., 8., 13., 21.], [3., 5., 9., 14.]])
 Y = np.array([[1], [0], [1]])
-mylr = MyLR([2, 0.5, 7.1, -4.3, 2.09])
+thetas = np.array([[2], [0.5], [7.1], [-4.3], [2.09]])
+mylr = MyLR(thetas)
 
 # Example 0:
 mylr.predict_(X)
@@ -824,18 +825,18 @@ mylr.loss_(X,Y)
 mylr.fit_(X, Y)
 mylr.theta
 # Output:
-array([[ 1.04565272],
-       [ 0.62555148],
-       [ 0.38387466],
-       [ 0.15622435],
-       [-0.45990099]])
+array([[ 2.11826435]
+       [ 0.10154334]
+       [ 6.43942899]
+       [-5.10817488]
+       [ 0.6212541 ]])
 
 # Example 3:
 mylr.predict_(X)
 # Output:
-array([[0.72865802],
-       [0.40550072],
-       [0.45241588]])
+array([[0.57606717]
+       [0.68599807]
+       [0.06562156]])
 
 # Example 4:
 mylr.loss_(X,Y)
