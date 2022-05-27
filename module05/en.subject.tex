@@ -480,7 +480,7 @@ You have to protect your functions against input errors.
         \newline
         Given a vector $x$ of dimension m * 1, the mathematical formula of its mean is:
         $$
-        \mu = \frac{\sum_{i = 1}^{m}{x_i}}{m}
+        \bar{x} = \frac{\sum_{i = 1}^{m}{x_i}}{m}
         $$
 
   \item \texttt{median(x)}: computes the median, which is also the 50th percentile, of a given non-empty list or array $x$ .
@@ -500,24 +500,24 @@ You have to protect your functions against input errors.
         The second parameter is the wished percentile.
         This method should not raise any Exception.
 
-  \item \texttt{var(x)}: computes the variance of a given non-empty list or array $x$.
-        The method returns the variance as a float,
+  \item \texttt{var(x)}: computes the sample variance of a given non-empty list or array $x$.
+        The method returns the sample variance as a float,
         otherwise None if $x$ is an empty list or array or a non expected type object.
         This method should not raise any Exception.
         \newline
-        Given a vector $x$ of dimension m * 1, the mathematical formula of its variance is:
+        Given a vector $x$ of dimension m * 1 representing the a sample of a data population, the mathematical formula of its variance is:
         $$
-        \sigma^2 = \frac{\sum_{i = 1}^{m}{(x_i - \mu)^2}}{m} = \frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m}
+        \sigma^2 = \frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1} = \frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m - 1}
         $$
 
-  \item \texttt{std(x)}: computes the standard deviation of a given non-empty list or array $x$.
-        The method returns the standard deviation as a float,
+  \item \texttt{std(x)}: computes the sample standard deviation of a given non-empty list or array $x$.
+        The method returns the sample standard deviation as a float,
         otherwise None if $x$ is an empty list or array or a non expected type object.
         This method should not raise any Exception.
         \newline
-        Given a vector $x$ of dimension m * 1, the mathematical formula of its standard deviation is:
+        Given a vector $x$ of dimension m * 1, the mathematical formula of the sample standard deviation is:
         $$
-        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \mu)^2}}{m}} = \sqrt{\frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m}}
+        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1}} = \sqrt{\frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m - 1}}
         $$
 \end{itemize}
 
@@ -553,15 +553,16 @@ You have to protect your functions against input errors.
 
   TinyStatistician().var(a)
   # Output:
-  12279.439999999999
+  15349.3
 
   TinyStatistician().std(a)
   # Output:
-  110.81263465868862
+  123.89229193133849
 \end{minted}
 
 \info{
   numpy uses a different definition of percentile, it does linear interpolation between the two closest list element to the percentile.
+  Be sure to understand the difference between the population and the sample definition for the statistic metrics.
 }
 
 % ===========================(fin ex 01)         %
