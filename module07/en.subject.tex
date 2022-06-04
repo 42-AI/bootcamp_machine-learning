@@ -859,9 +859,11 @@ Y = np.array(data[['Sell_price']])
 myLR_age = MyLR(theta = [[1000.0], [-1.0]], alpha = 2.5e-5, max_iter = 100000)
 myLR_age.fit_(X[:,0].reshape(-1,1), Y)
 
-myLR_age.mse_(X[:,0].reshape(-1,1),Y)
+y_pred = myLR_age.predict_(X[:,0].reshape(-1,1)) 
+myLR_age.mse_(y_pred,Y)
+
 #Output
-57636.77729...
+55736.86719...
 \end{minted}
 
 How accurate is your model when you only take one feature into account?
@@ -994,7 +996,7 @@ Such a matrix is called a \textbf{Vandermonde matrix}.
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the texttt{polynomial\_model.py} file, create the following function as per the instructions given below:
+In the \texttt{polynomial\_model.py} file, create the following function as per the instructions given below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def add_polynomial_features(x, power):

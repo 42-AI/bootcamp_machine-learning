@@ -196,9 +196,9 @@ def sigmoid_(x):
     """
     Compute the sigmoid of a vector.
     Args:
-        x: has to be a numpy.ndarray, a vector.
+        x: has to be a numpy.ndarray of shape (m, 1).
     Returns: 
-        The sigmoid value as a numpy.ndarray.
+        The sigmoid value as a numpy.ndarray of shape (m, 1).
         None if x is an empty numpy.ndarray.
     Raises:
         This function should not raise any Exception.
@@ -409,7 +409,7 @@ def log_loss_(y, y_hat, eps=1e-15):
 y1 = np.array([1]).reshape((-1, 1))
 x1 = np.array([4]).reshape((-1, 1))
 theta1 = np.array([[2], [0.5]])
-y_hat1 = logistic_predict(x1, theta1)
+y_hat1 = logistic_predict_(x1, theta1)
 log_loss_(y1, y_hat1)
 # Output:
 0.01814992791780973
@@ -418,7 +418,7 @@ log_loss_(y1, y_hat1)
 y2 = np.array([[1], [0], [1], [0], [1]])
 x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
 theta2 = np.array([[2], [0.5]])
-y_hat2 = logistic_predict(x2, theta2)
+y_hat2 = logistic_predict_(x2, theta2)
 log_loss_(y2, y_hat2)
 # Output:
 2.4825011602474483
@@ -427,7 +427,7 @@ log_loss_(y2, y_hat2)
 y3 = np.array([[0], [1], [1]])
 x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
 theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
-y_hat3 = logistic_predict(x3, theta3)
+y_hat3 = logistic_predict_(x3, theta3)
 log_loss_(y3, y_hat3)
 # Output:
 2.9938533108607053
@@ -506,28 +506,28 @@ def vec_log_loss_(y, y_hat, eps=1e-15):
 y1 = np.array([1]).reshape((-1, 1))
 x1 = np.array([4]).reshape((-1, 1))
 theta1 = np.array([[2], [0.5]])
-y_hat1 = logistic_predict(x1, theta1)
+y_hat1 = logistic_predict_(x1, theta1)
 vec_log_loss_(y1, y_hat1)
 # Output:
-0.01814992791780973
+0.018149927917808714
 
 # Example 2:
 y2 = np.array([[1], [0], [1], [0], [1]])
 x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
 theta2 = np.array([[2], [0.5]])
-y_hat2 = logistic_predict(x2, theta2)
+y_hat2 = logistic_predict_(x2, theta2)
 vec_log_loss_(y2, y_hat2)
 # Output:
-2.4825011602474483
+2.4825011602472347
 
 # Example 3:
 y3 = np.array([[0], [1], [1]])
 x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
 theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
-y_hat3 = logistic_predict(x3, theta3)
+y_hat3 = logistic_predict_(x3, theta3)
 vec_log_loss_(y3, y_hat3)
 # Output:
-2.9938533108607053
+2.993853310859968
 \end{minted}
 
 % ===========================(fin ex 03)         %
@@ -806,7 +806,8 @@ import numpy as np
 from my_logistic_regression import MyLogisticRegression as MyLR
 X = np.array([[1., 1., 2., 3.], [5., 8., 13., 21.], [3., 5., 9., 14.]])
 Y = np.array([[1], [0], [1]])
-mylr = MyLR([2, 0.5, 7.1, -4.3, 2.09])
+thetas = np.array([[2], [0.5], [7.1], [-4.3], [2.09]])
+mylr = MyLR(thetas)
 
 # Example 0:
 mylr.predict_(X)
@@ -824,23 +825,23 @@ mylr.loss_(X,Y)
 mylr.fit_(X, Y)
 mylr.theta
 # Output:
-array([[ 1.04565272],
-       [ 0.62555148],
-       [ 0.38387466],
-       [ 0.15622435],
-       [-0.45990099]])
+array([[ 2.11826435]
+       [ 0.10154334]
+       [ 6.43942899]
+       [-5.10817488]
+       [ 0.6212541 ]])
 
 # Example 3:
 mylr.predict_(X)
 # Output:
-array([[0.72865802],
-       [0.40550072],
-       [0.45241588]])
+array([[0.57606717]
+       [0.68599807]
+       [0.06562156]])
 
 # Example 4:
 mylr.loss_(X,Y)
 # Output:
-0.5432466580663214
+1.4779126923052268
 \end{minted}
 
 % ===========================(fin ex 06)         %
