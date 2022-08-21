@@ -507,7 +507,7 @@ You have to protect your functions against input errors.
         \newline
         Given a vector $x$ of dimension m * 1 representing the a sample of a data population, the mathematical formula of its variance is:
         $$
-        \sigma^2 = \frac{\sum_{i = 1}^{m}(x_i - \bar{x})^2}{m - 1} = \frac{\sum_{i = 1}^{m - 1}(x_i - \bar{x})^2}
+        \sigma^2 = \frac{\sum_{i = 1}^{m}(x_i - \bar{x})^2}{m - 1} = \frac{\sum_{i = 1}^{m - 1}(x_i - \bar{x})^2}{m - 1}
         $$
 
   \item \texttt{std(x)}: computes the sample standard deviation of a given non-empty list or array $x$.
@@ -517,7 +517,7 @@ You have to protect your functions against input errors.
         \newline
         Given a vector $x$ of dimension m * 1, the mathematical formula of the sample standard deviation is:
         $$
-        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1}} = \sqrt{\frac{\sum_{i = 1}^{m - 1}{(x_i - \bar{x})^2}}{m-1}}
+        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \frac{\sum_{i = 1}^{m}{x_i}}{m})^2}}{m - 1}} = \sqrt{\frac{\sum_{i = 1}^{m - 1}{(x_i - \bar{x})^2}}{m-1}}
         $$
 \end{itemize}
 
