@@ -507,7 +507,7 @@ You have to protect your functions against input errors.
         \newline
         Given a vector $x$ of dimension m * 1 representing the a sample of a data population, the mathematical formula of its variance is:
         $$
-        \sigma^2 = \frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1} = \frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m - 1}
+        \sigma^2 = \frac{\sum_{i = 1}^{m}(x_i - \bar{x})^2}{m - 1} = \frac{\sum_{i = 1}^{m - 1}(x_i - \bar{x})^2}{m - 1}
         $$
 
   \item \texttt{std(x)}: computes the sample standard deviation of a given non-empty list or array $x$.
@@ -517,7 +517,7 @@ You have to protect your functions against input errors.
         \newline
         Given a vector $x$ of dimension m * 1, the mathematical formula of the sample standard deviation is:
         $$
-        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1}} = \sqrt{\frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m - 1}}
+        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \frac{\sum_{i = 1}^{m}{x_i}}{m})^2}}{m - 1}} = \sqrt{\frac{\sum_{i = 1}^{m - 1}{(x_i - \bar{x})^2}}{m-1}}
         $$
 \end{itemize}
 
@@ -543,13 +543,13 @@ You have to protect your functions against input errors.
   # Output:
   4.6
 
-  TinyStatistician().percentile(a, 15)
+  TinyStatistician().percentile(a, 28)
   # Output:
-  6.4
+  13.840000
 
-  TinyStatistician().percentile(a, 20)
+  TinyStatistician().percentile(a, 83)
   # Output:
-  8.2
+  136.119999...
 
   TinyStatistician().var(a)
   # Output:
@@ -561,7 +561,7 @@ You have to protect your functions against input errors.
 \end{minted}
 
 \info{
-  numpy uses a different definition of percentile, it does linear interpolation between the two closest list element to the percentile.
+  numpy has different definitions for \texttt{percentile}, the one we are expecting is the linear interpolation method.
   Be sure to understand the difference between the population and the sample definition for the statistic metrics.
 }
 
