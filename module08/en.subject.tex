@@ -344,113 +344,13 @@ array([[0.03916572],
 % ============================================== %
 % ===========================(start ex 02)       %
 \chapter{Exercise 02}
+\extitle{Vectorized Logistic Loss Function}
 \input{en.ex02_interlude.tex}
 \newpage
-\extitle{Logistic Loss Function}
-\turnindir{ex02}
-\exnumber{02}
-\exfiles{log\_loss.py}
-\exforbidden{None}
-\makeheaderfilesforbidden
-
-% ================================= %
-\section*{Objective}
-% --------------------------------- %
-Understanding and manipulation of the loss function concept in the case of logistic regression.
-You must implement the following formula as a function:  
-
-$$
-J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)})) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
-$$
-
-Where:
-\begin{itemize}
-  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values,
-  \item $\hat{y}^{(i)}$ is the $i^{th}$ component of the $\hat{y}$ vector,
-  \item $y$ is a vector of dimension $m$, the vector of expected values,
-  \item $y^{(i)}$ is the $i^{th}$ component of the $y$ vector.
-\end{itemize}
-
-
-% ================================= %
-\section*{Instructions}
-% --------------------------------- %
-In the \texttt{log\_loss.py} file, write the following function as per the instructions below:
-\par
-\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def log_loss_(y, y_hat, eps=1e-15):
-    """
-    Computes the logistic loss value.
-    Args:
-        y: has to be an numpy.ndarray, a vector of shape m * 1.
-        y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
-        eps: has to be a float, epsilon (default=1e-15)
-    Returns:
-        The logistic loss value as a float.
-        None on any error.
-    Raises:
-        This function should not raise any Exception.
-    """
-    ... Your code ...
-\end{minted}
-
-\hint{
-  The logarithmic function isn't defined in $0$.  
-  This means that if $y^{(i)} = 0$ you will get an error when you try to compute $log(y^{(i)})$.
-  The purpose of the \texttt{eps} argument is to avoid $log(0)$ errors.
-  It is a very small residual value we add to \texttt{y}.
-}
-
-% ================================= %
-\section*{Examples}
-% --------------------------------- %
-\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-# Example 1:
-y1 = np.array([1]).reshape((-1, 1))
-x1 = np.array([4]).reshape((-1, 1))
-theta1 = np.array([[2], [0.5]])
-y_hat1 = logistic_predict_(x1, theta1)
-log_loss_(y1, y_hat1)
-# Output:
-0.01814992791780973
-
-# Example 2:
-y2 = np.array([[1], [0], [1], [0], [1]])
-x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
-theta2 = np.array([[2], [0.5]])
-y_hat2 = logistic_predict_(x2, theta2)
-log_loss_(y2, y_hat2)
-# Output:
-2.4825011602474483
-
-# Example 3:
-y3 = np.array([[0], [1], [1]])
-x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
-theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
-y_hat3 = logistic_predict_(x3, theta3)
-log_loss_(y3, y_hat3)
-# Output:
-2.9938533108607053
-\end{minted}
-
-\info{
-  This function is called \textbf{Cross-Entropy loss}, or \textbf{logistic loss}.
-  For more information you can look at \href{https://en.wikipedia.org/wiki/Cross_entropy\#Cross-entropy\_error\_function\_and\_logistic\_regression}{this section} of the Cross entropy Wikipedia.
-}
-
-% ===========================(fin ex 02)         %
-% ============================================== %
-
-\newpage
-
-% ============================================== %
-% ===========================(start ex 03)       %
-\chapter{Exercise 03}
-\extitle{Vectorized Logistic Loss Function}
 \input{en.ex03_interlude.tex}
 \newpage
-\turnindir{ex03}
-\exnumber{03}
+\turnindir{ex02}
+\exnumber{02}
 \exfiles{vec\_log\_loss.py}
 \exforbidden{any function that performs derivatives for you}
 \makeheaderfilesforbidden
@@ -530,128 +430,21 @@ vec_log_loss_(y3, y_hat3)
 2.993853310859968
 \end{minted}
 
-% ===========================(fin ex 03)         %
+% ===========================(fin ex 02)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 04)       %
-\chapter{Exercise 04}
-\extitle{Logistic Gradient}
+% ===========================(start ex 03)       %
+\chapter{Exercise 03}
+\extitle{Vectorized Logistic Gradient}
 \input{en.ex04_interlude.tex}
 \newpage
-\turnindir{ex04}
-\exnumber{04}
-\exfiles{log\_gradient.py}
-\exforbidden{numpy and any function that performs derivatives for you}
-\makeheaderfilesforbidden
-
-
-% ================================= %
-\section*{Objective}
-% --------------------------------- %
-Understand and manipulate the concept of gradient in case of logistic formulation.
-You must implement the following formula as a function:  
-
-$$
-\begin{matrix}
-\nabla(J)_0 &  = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
-\nabla(J)_j & = &\cfrac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
-\end{matrix}
-$$
-
-Where:
-\begin{itemize}
-  \item $\nabla(J)$ is a vector of size $(n + 1)$, the gradient vector.
-  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$, the partial derivative of $J$ with respect to $\theta_j$.
-  \item $y$ is a vector of dimension $m$, the vector of expected values.
-  \item $y^{(i)}$ is a scalar, the i$^\text{th}$ component of vector $y$.
-  \item $x^{(i)}$ is the feature vector of the i$^\text{th}$ example.
-  \item $x^{(i)}_j$ is a scalar, the j$^\text{th}$ feature value of the i$^\text{th}$ example.
-  \item $h_{\theta}(x^{(i)})$ is a scalar, the model's estimation of $y^{(i)}$.
-\end{itemize}
-
-Remember that with logistic regression, the hypothesis is slightly different:  
-
-$$
-h_{\theta}(x^{(i)}) = sigmoid( \theta \cdot x'^{(i)})
-$$
-
-% ================================= %
-\section*{Instructions}
-% --------------------------------- %
-In the \texttt{log\_gradient.py} file, write the following function as per the instructions below:
-
-\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-def log_gradient(x, y, theta):
-    """Computes a gradient vector from three non-empty numpy.ndarray, with a for-loop. The three arrays must have compatible dimensions.
-    Args:
-      x: has to be an numpy.ndarray, a matrix of shape m * n.
-      y: has to be an numpy.ndarray, a vector of shape m * 1.
-      theta: has to be an numpy.ndarray, a vector of shape (n + 1) * 1.
-    Returns:
-      The gradient as a numpy.ndarray, a vector of shape n * 1, containing the result of the formula for all j.
-      None if x, y, or theta are empty numpy.ndarray.
-      None if x, y and theta do not have compatible dimensions.
-    Raises:
-      This function should not raise any Exception.
-    """
-    ... Your code ...
-\end{minted}
-
-% ================================= %
-\section*{Examples}
-% ================================= %
-\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-# Example 1:
-y1 = np.array([1]).reshape((-1, 1))
-x1 = np.array([4]).reshape((-1, 1))
-theta1 = np.array([[2], [0.5]])
-
-log_gradient(x1, y1, theta1)
-# Output:
-array([[-0.01798621],
-       [-0.07194484]])
-
-# Example 2: 
-y2 = np.array([[1], [0], [1], [0], [1]])
-x2 = np.array([[4], [7.16], [3.2], [9.37], [0.56]])
-theta2 = np.array([[2], [0.5]])
-
-log_gradient(x2, y2, theta2)
-# Output:
-array([[0.3715235 ],
-       [3.25647547]])
-
-# Example 3: 
-y3 = np.array([[0], [1], [1]])
-x3 = np.array([[0, 2, 3, 4], [2, 4, 5, 5], [1, 3, 2, 7]])
-theta3 = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
-
-log_gradient(x3, y3, theta3)
-# Output:
-array([[-0.55711039],
-       [-0.90334809],
-       [-2.01756886],
-       [-2.10071291],
-       [-3.27257351]])
-\end{minted}
-
-
-% ===========================(fin ex 04)         %
-% ============================================== %
-
-\newpage
-
-% ============================================== %
-% ===========================(start ex 05)       %
-\chapter{Exercise 05}
-\extitle{Vectorized Logistic Gradient}
 \input{en.ex05_interlude.tex}
 \newpage
-\turnindir{ex05}
-\exnumber{05}
+\turnindir{ex03}
+\exnumber{03}
 \exfiles{vec\_log\_gradient.py}
 \exforbidden{any function that performs derivatives for you}
 \makeheaderfilesforbidden
@@ -740,19 +533,19 @@ array([[-0.55711039],
        [-3.27257351]])
 \end{minted}
 
-% ===========================(fin ex 05)         %
+% ===========================(fin ex 03)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 06)       %
-\chapter{Exercise 06}
+% ===========================(start ex 04)       %
+\chapter{Exercise 04}
 \extitle{Logistic Regression}
 %\input{en.ex06_interlude.tex}
 %\newpage
-\turnindir{ex06}
-\exnumber{06}
+\turnindir{ex04}
+\exnumber{04}
 \exfiles{my\_logistic\_regression.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -844,19 +637,19 @@ mylr.loss_(X,Y)
 1.4779126923052268
 \end{minted}
 
-% ===========================(fin ex 06)         %
+% ===========================(fin ex 04)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 07)       %
-\chapter{Exercise 07}
+% ===========================(start ex 05)       %
+\chapter{Exercise 05}
 \extitle{Practicing Logistic Regression}
 %\input{en.ex07_interlude.tex}
 %\newpage
-\turnindir{ex07}
-\exnumber{07}
+\turnindir{ex05}
+\exnumber{05}
 \exfiles{mono\_log.py, multi\_log.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -955,19 +748,19 @@ If a cititzen got the following classification probabilities:
 
 Then the citizen should be classified as coming from \textit{Planet 3}. 
 
-% ===========================(fin ex 07)         %
+% ===========================(fin ex 05)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 08)       %
-\chapter{Exercise 08}
+% ===========================(start ex 06)       %
+\chapter{Exercise 06}
 \extitle{Other metrics}
 \input{en.ex08_interlude.tex}
 \newpage
-\turnindir{ex08}
-\exnumber{08}
+\turnindir{ex06}
+\exnumber{06}
 \exfiles{other\_metrics.py}
 \exforbidden{None}
 \makeheaderfilesforbidden
@@ -1203,19 +996,19 @@ f1_score(y, y_hat, pos_label='norminet')
 0.5714285714285715
 \end{minted}
 
-% ===========================(fin ex 08)         %
+% ===========================(fin ex 06)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 09)       %
-\chapter{Exercise 09}
+% ===========================(start ex 07)       %
+\chapter{Exercise 07}
 \extitle{Confusion Matrix}
 %\input{en.ex09_interlude.tex}
 %\newpage
-\turnindir{ex09}
-\exnumber{09}
+\turnindir{ex07}
+\exnumber{07}
 \exfiles{confusion\_matrix.py}
 \exforbidden{None}
 \makeheaderfilesforbidden
@@ -1359,7 +1152,7 @@ confusion_matrix_(y, y_hat, labels=['bird', 'dog'], df_option=True)
   Yeah, you'd better do it right or you are in trouble my friend, big trouble!
 }
 
-% ===========================(fin ex 09)         %
+% ===========================(fin ex 07)         %
 % ============================================== %
 
 \newpage
