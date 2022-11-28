@@ -153,112 +153,11 @@
 \chapter{Exercise 00}
 \input{en.ex00_interlude.tex}
 \newpage
-\extitle{Multivariate Hypothesis - Iterative Version}
-\turnindir{ex00}
-\exnumber{00}
-\exfiles{prediction.py}
-\exforbidden{None}
-\makeheaderfilesforbidden
-
-% ================================== %
-\section*{Objective}
-% ---------------------------------- %
-Manipulate the hypothesis to make prediction.\
-You must implement the following formula as a function:
-
-$$
-\begin{matrix}
-  \hat{y}^{(i)} = \theta_0 + \theta_1 x_{1}^{(i)}  + \dots + \theta_n x_{n}^{(i)} && & \text{ for i = 1, ..., m}
-\end{matrix}
-$$
-  
-Where:
-\begin{itemize}
-  \item $\hat{y}$ is a vector of dimension $m$: the vector of predicted values,
-  \item $\hat{y}^{(i)}$ is the i$^\text{th}$ component of the $\hat{y}$ vector: the predicted value for the i$^\text{th}$ example,
-  \item $\theta$ is a vector of dimension $(n + 1)$: the parameter vector,
-  \item $\theta_j$ is the j$^\text{th}$ component of the parameter vector,
-  \item $X$ is a matrix of dimensions $(m \times n)$: the design matrix,
-  \item $x^{(i)}$ is the i$^\text{th}$ row of the $X$ matrix: the feature vector of the i$^\text{th}$ example,
-  \item $x_{j}$ is the j$^\text{th}$ column of the $X$ matrix,
-  \item $x_j^{(i)}$ is the element at the intersection of the i$^\text{th}$ row and the j$^\text{th}$ column of the $X$ matrix: the j$^\text{th}$ feature of the i$^\text{th}$ example
-\end{itemize}
-
-
-% ================================== %
-\section*{Instructions}
-% ---------------------------------- %
-
-In the \texttt{prediction.py} file, create the following function as per the instructions given below:
-\par
-\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-  def simple_predict(x, theta):
-      """Computes the prediction vector y_hat from two non-empty numpy.array.
-      Args:
-        x: has to be an numpy.array, a matrix of dimension m * n.
-        theta: has to be an numpy.array, a vector of dimension (n + 1) * 1.
-      Return:
-        y_hat as a numpy.array, a vector of dimension m * 1.
-        None if x or theta are empty numpy.array.
-        None if x or theta dimensions are not matching.
-        None if x or theta is not of expected type.
-      Raises:
-        This function should not raise any Exception.
-      """
-      ... Your code ...
-\end{minted}
-
-% ================================== %
-\section*{Examples}
-% ---------------------------------- %
-
-\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
-import numpy as np
-x = np.arange(1,13).reshape((4,-1))
-
-# Example 1:
-theta1 = np.array([5, 0, 0, 0]).reshape((-1, 1))
-simple_predict(x, theta1)
-# Ouput:
-array([[5.], [5.], [5.], [5.]])
-# Do you understand why y_hat contains only 5's here?  
-
-
-# Example 2:
-theta2 = np.array([0, 1, 0, 0]).reshape((-1, 1))
-simple_predict(x, theta2)
-# Output:
-array([[ 1.], [ 4.], [ 7.], [10.]])
-# Do you understand why y_hat == x[:,0] here?  
-
-
-# Example 3:
-theta3 = np.array([-1.5, 0.6, 2.3, 1.98]).reshape((-1, 1))
-simple_predict(X, theta3)
-# Output:
-array([[ 9.64], [24.28], [38.92], [53.56]])
-
-
-# Example 4:
-theta4 = np.array([-3, 1, 2, 3.5]).reshape((-1, 1))
-simple_predict(x, theta4)
-# Output:
-array([[12.5], [32. ], [51.5], [71. ]])
-\end{minted}
-
-% ===========================(fin ex 00)         %
-% ============================================== %
-
-\newpage
-
-% ============================================== %
-% ===========================(start ex 01)       %
-\chapter{Exercise 01}
 \input{en.ex01_interlude.tex}
 \newpage
 \extitle{Multivariate hypothesis - vectorized version}
-\turnindir{ex01}
-\exnumber{01}
+\turnindir{ex00}
+\exnumber{00}
 \exfiles{prediction.py}
 \exforbidden{None}
 \makeheaderfilesforbidden
@@ -369,19 +268,19 @@ predict_(x, theta4)
 array([[12.5], [32. ], [51.5], [71. ]])
 \end{minted}
 
-% ===========================(fin ex 01)         %
+% ===========================(fin ex 00)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 02)       %
-\chapter{Exercise 02}
+% ===========================(start ex 01)       %
+\chapter{Exercise 01}
 \input{en.ex02_interlude.tex}
 \newpage
 \extitle{Vectorized Loss Function}
-\turnindir{ex02}
-\exnumber{02}
+\turnindir{ex01}
+\exnumber{01}
 \exfiles{loss.py}
 \exforbidden{None}
 \makeheaderfilesforbidden
@@ -448,19 +347,19 @@ loss_(X, X)
 \end{minted}
 
 
-% ===========================(fin ex 02)         %
+% ===========================(fin ex 01)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 03)       %
-\chapter{Exercise 03}
+% ===========================(start ex 02)       %
+\chapter{Exercise 02}
 \extitle{Multivariate Linear Gradient}
 \input{en.ex03_interlude.tex}
 \newpage
-\turnindir{ex03}
-\exnumber{03}
+\turnindir{ex02}
+\exnumber{02}
 \exfiles{gradient.py}
 \exforbidden{None}
 \makeheaderfilesforbidden
@@ -539,18 +438,18 @@ gradient(x, y, theta2)
 array([[ -0.71428571], [  0.85714286], [23.28571429], [-26.42857143]])
 \end{minted}
 
-% ===========================(fin ex 03)         %
+% ===========================(fin ex 02)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 04)       %
-\chapter{Exercise 04}
+% ===========================(start ex 03)       %
+\chapter{Exercise 03}
 \extitle{Multivariate Gradient Descent}
 \input{en.ex04_interlude.tex}
-\turnindir{ex04}
-\exnumber{04}
+\turnindir{ex03}
+\exnumber{03}
 \exfiles{fit.py}
 \exforbidden{any function that performs derivatives for you}
 \makeheaderfilesforbidden
@@ -644,17 +543,17 @@ array([[19.5992..], [-2.8003..], [-25.1999..], [-47.5996..]])
   \end{itemize}
 }
 
-% ===========================(fin ex 04)         %
+% ===========================(fin ex 03)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 05)       %
-\chapter{Exercise 05}
+% ===========================(start ex 04)       %
+\chapter{Exercise 04}
 \extitle{Multivariate Linear Regression with Class}
-\turnindir{ex05}
-\exnumber{05}
+\turnindir{ex04}
+\exnumber{04}
 \exfiles{mylinearregression.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -731,17 +630,17 @@ mylr.loss_(Y, y_hat)
 0.0732..
 \end{minted}
 
-% ===========================(fin ex 05)         %
+% ===========================(fin ex 04)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 06)       %
-\chapter{Exercise 06}
+% ===========================(start ex 05)       %
+\chapter{Exercise 05}
 \extitle{Practicing Multivariate Linear Regression}
-\turnindir{ex06}
-\exnumber{06}
+\turnindir{ex05}
+\exnumber{05}
 \exfiles{multivariate\_linear\_model.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -959,19 +858,19 @@ We'll make three graphs, each one displaying the predictions and the actual pric
 Can you see any improvement on these three graphs, compared to the three that you obtained in Part One?
 Can you relate your observations to the MSE value that you just calculated?
 
-% ===========================(fin ex 06)         %
+% ===========================(fin ex 05)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 07)       %
-\chapter{Exercise 07}
+% ===========================(start ex 06)       %
+\chapter{Exercise 06}
 \extitle{Polynomial models}
 \input{en.ex07_interlude.tex}
 \newpage
-\turnindir{ex07}
-\exnumber{07}
+\turnindir{ex06}
+\exnumber{06}
 \exfiles{polynomial\_model.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -1042,19 +941,19 @@ array([[    1,     1,     1,     1,     1,     1],
        [    5,    25,   125,   625,  3125, 15625]])
 \end{minted}
 
-% ===========================(fin ex 07)         %
+% ===========================(fin ex 06)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 08)       %
-\chapter{Exercise 08}
+% ===========================(start ex 07)       %
+\chapter{Exercise 07}
 \extitle{Let's Train Polynomial Models!}
 \input{en.ex08_interlude.tex}
 \newpage
-\turnindir{ex08}
-\exnumber{08}
+\turnindir{ex07}
+\exnumber{07}
 \exfiles{polynomial\_train.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -1114,19 +1013,19 @@ This means that a polynomial linear regression model can lower the impact of any
 % --------------------------------- %
 When you will be evaluated, it will be wised to run your program at the beginning of the evaluation as it can take several minutes to train the different models.
 
-% ===========================(fin ex 08)         %
+% ===========================(fin ex 07)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 09)       %
-\chapter{Exercise 09}
+% ===========================(start ex 08)       %
+\chapter{Exercise 08}
 \extitle{DataSpliter}
 \input{en.ex09_interlude.tex}
 \newpage
-\turnindir{ex09}
-\exnumber{09}
+\turnindir{ex08}
+\exnumber{08}
 \exfiles{data\_spliter.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -1227,17 +1126,17 @@ data_spliter(x2, y, 0.5)
 \end{minted}
 
 
-% ===========================(fin ex 09)         %
+% ===========================(fin ex 08)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 10)       %
-\chapter{Exercise 10}
+% ===========================(start ex 09)       %
+\chapter{Exercise 09}
 \extitle{Machine Learning for Grown-ups: Trantor guacamole business}
-\turnindir{ex10}
-\exnumber{10}
+\turnindir{ex09}
+\exnumber{09}
 \exfiles{space\_avocado.py, benchmark\_train.py,  models.[csv/yml/pickle]}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -1287,13 +1186,13 @@ In \texttt{models.[csv/yml/pickle]} one must find the parameters of all the mode
 In \texttt{space\_avocado.py} train the model based on the best hypothesis you find and load the other models from \texttt{models.[csv/yml/pickle]}.
 Then evaluate and plot the different graphics as asked before.
 
-% ===========================(fin ex 10)         %
+% ===========================(fin ex 09)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 11)       %
+% ===========================(start ex 10)       %
 \chapter{Conclusion - What you have learned}
 
 The excercises serie is finished, well done!
@@ -1313,7 +1212,7 @@ Based on all the knowledges tackled today, you should be able to discuss and ans
   \item If a model underfits, what do you think will happen when you compare its performance on the training set and the test set?
 \end{enumerate}
 
-% ===========================(fin ex 11)         %
+% ===========================(fin ex 10)         %
 % ============================================== %
 
 \newpage
