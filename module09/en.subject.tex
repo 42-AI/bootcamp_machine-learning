@@ -239,8 +239,23 @@ array([[    1,     2,     1,     4,     1,     8,     1,    16],
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-You must implement the following formula as a function:  
+You must implement the following formulas as functions:  
 
+% ================================= %
+\subsection*{Iterative}
+% --------------------------------- %
+$$
+L_2(\theta)^2 = \sum_{j = 1}^n \theta_j^2
+$$
+
+Where:
+\begin{itemize}
+  \item $\theta$ is a vector of dimension $(n + 1)$.
+\end{itemize}
+
+% ================================= %
+\subsection*{Vectorized}
+% --------------------------------- %
 $$
 L_2(\theta)^2 = \theta' \cdot \theta'
 $$
