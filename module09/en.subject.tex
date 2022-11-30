@@ -961,77 +961,11 @@ class MyRidge(ParentClass):
 % ============================================== %
 % ===========================(start ex 07)       %
 \chapter{Exercise 07}
-\extitle{Practicing Ridge Regression}
-%\input{en.ex07_interlude.tex}
-%\newpage
+\extitle{Regularized Logistic Regression}
+\input{en.ex07_interlude.tex}
+\newpage
 \turnindir{ex07}
 \exnumber{07}
-\exfiles{space\_avocado.py, benchmark\_train.py,  models.[csv/yml/pickle]}
-\exforbidden{sklearn}
-\makeheaderfilesforbidden
-
-
-% ================================= %
-\section*{Objective}
-% --------------------------------- %
-It's training time!  
-Let's practice our brand new Ridge Regression with a polynomial model.
-
-% ================================= %
-\section*{Introduction}
-% --------------------------------- %
-You have already used the dataset \texttt{space\_avocado.csv}.
-The dataset is constituted of 5 columns:
-\begin{itemize}
-  \item \textbf{index}: not relevant,
-  \item \textbf{weight}: the avocado weight order (in ton),
-  \item \textbf{prod\_distance}: distance from where the avocado ordered is produced (in Mkm),
-  \item \textbf{time\_delivery}: time between the order and the receipt (in days),
-  \item \textbf{target}: price of the order (in trantorian unit).
-\end{itemize}
-It contains the data of all the avocado purchase made by Trantor administration (guacamole is a serious business there).
-
-% ================================= %
-\section*{Instructions}
-% --------------------------------- %
-You have to explore different models and select the best you find.
-To do this:
-\begin{itemize}
-  \item Split your \texttt{space\_avocado.csv} dataset into a training, a cross-validation and a test sets.
-  \item Use your \texttt{polynomial\_features} method on your training set.
-  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of $4$.
-  \item For each hypothesis consider a regularized factor ranging from $0$ to $1$ with a step of $0.2$.
-  \item Evaluate your models on the cross-validation set.
-  \item Evaluate the best model on the test set.
-\end{itemize}
-
-According to your model evaluations, what is the best hypothesis you can get?
-\begin{itemize}
-  \item Plot the evaluation curve which help you to select the best model (evaluation metrics vs models + $\lambda$ factor).
-  \item Plot the true price and the predicted price obtain via your best model with the different $\lambda$ values (meaning the dataset + the 5 predicted curves).
-\end{itemize}
-
-
-The training of all your models can take a long time.
-Thus you need to train only the best one during the correction.
-But, you should return in \texttt{benchmark\_train.py} the program which perform the training of all the models and save the parameters of the different models into a file.
-In \texttt{models.[csv/yml/pickle]} one must find the parameters of all the models you have explored and trained.
-In \texttt{space\_avocado.py} train the model based on the best hypothesis you find and load the other models from \texttt{models.[csv/yml/pickle]}.
-Then evaluate the best model on the right set and plot the different graphics as asked before.
-
-% ===========================(fin ex 07)         %
-% ============================================== %
-
-\newpage
-
-% ============================================== %
-% ===========================(start ex 08)       %
-\chapter{Exercise 08}
-\extitle{Regularized Logistic Regression}
-\input{en.ex08_interlude.tex}
-\newpage
-\turnindir{ex08}
-\exnumber{08}
 \exfiles{my\_logistic\_regression.py}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -1127,19 +1061,19 @@ model3.lambda_
   this is also a great use case for decorators...
 }
 
-% ===========================(fin ex 08)         %
+% ===========================(fin ex 07)         %
 % ============================================== %
 
 \newpage
 
 % ============================================== %
-% ===========================(start ex 09)       %
-\chapter{Exercise 09}
+% ===========================(start ex 08)       %
+\chapter{Exercise 08}
 \extitle{Practicing Regularized Logistic Regression}
 %\input{en.ex09_interlude.tex}
 %\newpage
-\turnindir{ex09}
-\exnumber{09}
+\turnindir{ex08}
+\exnumber{08}
 \exfiles{solar\_system\_census.py, benchmark\_train.py,  models.[csv/yml/pickle]}
 \exforbidden{sklearn}
 \makeheaderfilesforbidden
@@ -1204,6 +1138,72 @@ The second and last part of your submission is in \texttt{solar\_system\_census.
 \end{itemize}
 
 \info{For the second script \texttt{solar\_system\_census.py}, only a train and test set are necessary as one is simply looking to the performance.}
+
+% ===========================(fin ex 08)         %
+% ============================================== %
+
+\newpage
+
+% ============================================== %
+% ===========================(start ex 09)       %
+\chapter{Exercise 09}
+\extitle{Practicing Ridge Regression}
+%\input{en.ex07_interlude.tex}
+%\newpage
+\turnindir{ex09}
+\exnumber{09}
+\exfiles{space\_avocado.py, benchmark\_train.py,  models.[csv/yml/pickle]}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+It's training time!  
+Let's practice our brand new Ridge Regression with a polynomial model.
+
+% ================================= %
+\section*{Introduction}
+% --------------------------------- %
+You have already used the dataset \texttt{space\_avocado.csv}.
+The dataset is constituted of 5 columns:
+\begin{itemize}
+  \item \textbf{index}: not relevant,
+  \item \textbf{weight}: the avocado weight order (in ton),
+  \item \textbf{prod\_distance}: distance from where the avocado ordered is produced (in Mkm),
+  \item \textbf{time\_delivery}: time between the order and the receipt (in days),
+  \item \textbf{target}: price of the order (in trantorian unit).
+\end{itemize}
+It contains the data of all the avocado purchase made by Trantor administration (guacamole is a serious business there).
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+You have to explore different models and select the best you find.
+To do this:
+\begin{itemize}
+  \item Split your \texttt{space\_avocado.csv} dataset into a training, a cross-validation and a test sets.
+  \item Use your \texttt{polynomial\_features} method on your training set.
+  \item Consider several Linear Regression models with polynomial hypotheses with a maximum degree of $4$.
+  \item For each hypothesis consider a regularized factor ranging from $0$ to $1$ with a step of $0.2$.
+  \item Evaluate your models on the cross-validation set.
+  \item Evaluate the best model on the test set.
+\end{itemize}
+
+According to your model evaluations, what is the best hypothesis you can get?
+\begin{itemize}
+  \item Plot the evaluation curve which help you to select the best model (evaluation metrics vs models + $\lambda$ factor).
+  \item Plot the true price and the predicted price obtain via your best model with the different $\lambda$ values (meaning the dataset + the 5 predicted curves).
+\end{itemize}
+
+
+The training of all your models can take a long time.
+Thus you need to train only the best one during the correction.
+But, you should return in \texttt{benchmark\_train.py} the program which perform the training of all the models and save the parameters of the different models into a file.
+In \texttt{models.[csv/yml/pickle]} one must find the parameters of all the models you have explored and trained.
+In \texttt{space\_avocado.py} train the model based on the best hypothesis you find and load the other models from \texttt{models.[csv/yml/pickle]}.
+Then evaluate the best model on the right set and plot the different graphics as asked before.
 
 % ===========================(fin ex 09)         %
 % ============================================== %
