@@ -297,7 +297,7 @@ def simple_gradient(x, y, theta):
     """Computes a gradient vector from three non-empty numpy.array, without any for loop.
        The three arrays must have compatible shapes.
     Args:
-      x: has to be a numpy.array, a matrix of shape m * 1.
+      x: has to be a numpy.array, a vector of shape m * 1.
       y: has to be a numpy.array, a vector of shape m * 1.
       theta: has to be a numpy.array, a 2 * 1 vector.
     Return:
@@ -630,11 +630,11 @@ Then you will model the data and plot 2 different graphs:
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_squared_error
-from mylinearregression import MyLinearRegression as MyLR
+from my_linear_regression import MyLinearRegression as MyLR
 
 data = pd.read_csv("are_blue_pills_magic.csv")
-Xpill = np.array(data[Micrograms]).reshape(-1,1)
-Yscore = np.array(data[Score]).reshape(-1,1)
+Xpill = np.array(data['Micrograms']).reshape(-1,1)
+Yscore = np.array(data['Score']).reshape(-1,1)
 
 linear_model1 = MyLR(np.array([[89.0], [-8]]))
 linear_model2 = MyLR(np.array([[89.0], [-6]]))

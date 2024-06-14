@@ -1060,12 +1060,12 @@ class MyLogisticRegression():
 	"""
   supported_penalities = ['l2'] # We consider l2 penality only. One may wants to implement other penalities
 
-	def __init__(self, theta, alpha=0.001, max_iter=1000, penalty='l2', lambda_=1.0):
+	def __init__(self, theta, alpha=0.001, max_iter=1000, penality='l2', lambda_=1.0):
 		# Check on type, data type, value ... if necessary
     self.alpha = alpha
 		self.max_iter = max_iter
 		self.theta = theta
-		self.penalty = penalty
+		self.penality = penality
     self.lambda_ = lambda_ if penality in self.supported_penalities else 0
 		#... Your code ...
 
@@ -1075,8 +1075,8 @@ class MyLogisticRegression():
 \begin{itemize}
   \item \textbf{update} the \texttt{fit\_(self, x, y)} method: 
   \begin{itemize}
-    \item \texttt{if penalty == 'l2'}: use a \textbf{regularized version} of the gradient descent.
-    \item \texttt{if penalty = 'none'}: use the \textbf{unregularized version} of the gradient descent from \texttt{module03}.
+    \item \texttt{if penality == 'l2'}: use a \textbf{regularized version} of the gradient descent.
+    \item \texttt{if penality = 'none'}: use the \textbf{unregularized version} of the gradient descent from \texttt{module03}.
   \end{itemize}
 \end{itemize}
 
