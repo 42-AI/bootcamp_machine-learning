@@ -615,7 +615,7 @@ def simple_predict(x, theta):
       x: has to be an numpy.ndarray, a one-dimensional vector of size m.
       theta: has to be an numpy.ndarray, a one-dimensional vector of size 2.
     Returns:
-      y_hat as a numpy.ndarray, a vector of dimension m * 1.
+      y_hat as a numpy.ndarray, a one-dimensional vector of size m.
       None if x or theta are empty numpy.ndarray.
       None if x or theta dimensions are not appropriate.
     Raises:
@@ -814,7 +814,7 @@ def predict_(x, theta):
       x: has to be an numpy.array, a one-dimensional vector of size m.
       theta: has to be an numpy.array, a two-dimensional vector of shape 2 * 1.
     Returns:
-      y_hat as a numpy.array, a vector of dimension m * 1.
+      y_hat as a numpy.array, a two-dimensional vector of shape m * 1.
       None if x and/or theta are not numpy.array.
       None if x or theta are empty numpy.array.
       None if x or theta dimensions are not appropriate.
@@ -1015,7 +1015,7 @@ def loss_elem_(y, y_hat):
       y_hat: has to be an numpy.array, a two-dimensional vector of shape m * 1.
 	Returns:
 		J_elem: numpy.array, a vector of dimension (number of the training examples,1).
-		None if there is a dimension matching problem between X, Y or theta.
+		None if there is a dimension matching problem.
 		None if any argument is not of the expected type.
 	Raises:
 		This function should not raise any Exception.
@@ -1031,7 +1031,7 @@ def loss_(y, y_hat):
       y_hat: has to be an numpy.array, a two-dimensional vector of shape m * 1.
 	Returns:
 		J_value : has to be a float.
-		None if there is a dimension matching problem between X, Y or theta.
+		None if there is a dimension matching problem.
 		None if any argument is not of the expected type.
 	Raises:
 		This function should not raise any Exception.
