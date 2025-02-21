@@ -2,13 +2,13 @@
 TARGETS = en.subject.pdf
 
 # List the files included in the slides
-DEPS = en.ex00_interlude.tex \
-	en.ex01_interlude.tex \
-	en.ex02_interlude.tex \
-	en.ex05_interlude.tex \
-	en.py_proj.tex \
+DEPS = exercises/en.ex00_interlude.tex \
+	exercises/en.ex01_interlude.tex \
+	exercises/en.ex02_interlude.tex \
+	exercises/en.ex05_interlude.tex \
+	en.instructions.tex \
 	en.subject.tex \
-	usefull_ressources.tex
+	useful_ressources.tex
 
 # Relative path to the LaTeX documentclass setup files
 # Adapt as needed
