@@ -9,6 +9,14 @@ __pycache__/
 # C extensions
 *.so
 
+# Latex compilation files
+*.fdb_latexmk 
+*.fls
+*.pdf.version
+
+# VSCode
+.vscode/
+
 # Distribution / packaging
 .Python
 develop-eggs/
