@@ -16,27 +16,26 @@ as measured by P, improves with experience E.}{\textit{Tom Mitchell,\\Machine Le
 
 \end{quote}
 
-In other words to learn you have to improve.\\
-To improve you have to evaluate your performance.\\
-To evaluate your performance you need to start performing on the task you want to be good at.
+In other words, to learn you have to improve.\\
+To improve, you have to evaluate your performances.\\
+To evaluate your performances, you need to start performing on the task you want to be good at...\\
+Repeat until convergence ...\\
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.25]{assets/Default.png}
+  % \caption{cycle neutral}
+\end{figure}
 
 One of the most common tasks in Machine Learning is \textbf{prediction}.\\  
 This will be your algorithm's task.\\
 This will be your task.  
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.25]{assets/Default.png}
-  \caption{cycle neutral}
-\end{figure}
-
+\newpage
 \section*{Predict}
-
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.25]{assets/Predict.png}
-  \caption{cycle predict}
 \end{figure}
 
 \subsection*{A very simple model}
@@ -54,7 +53,9 @@ $$
 \subsubsection*{Hypothesis}
 Let's start with a very simple and intuitive \textbf{hypothesis} on how the price of a spaceship can be predicted based on the power of its engines.\\
 We will consider that \textit{the more powerful the engines are, the more expensive the spaceship is}.\\
-Furthermore, we will assume that the price increase is \textbf{proportional} to the power increase. In other words, we will look for a \textbf{linear relationship} between the two variables.
+Furthermore, we will assume that the price increase is \textbf{proportional} to the power increase.\\
+\newline
+In other words, we will look for a \textbf{linear relationship} between the two variables.\\
 
 This means that we will formulate the price prediction with a \textbf{linear equation}, that you might be already familiar with:
 
@@ -74,11 +75,12 @@ $$
 
 So if $\theta_0 = 33$ and $\theta_1 = 5$, then $\hat{y} = 33+ 5x$.
 
-To recap, this linear equation is our \textbf{hypothesis}. Then, all we will need to do is find the right values for our parameters $\theta_0$ and $\theta_1$ and we will get a fully-functional prediction \textbf{model}.
+To recap, this linear equation is our \textbf{hypothesis}. Then, all we will need to do is find the right values for our parameters $\theta_0$ and $\theta_1$ and we will get a fully-functional predictive \textbf{model}.
 
 
 \subsubsection*{Predictions}
-Now, how can we generate a set of predictions on an entire dataset? Let's consider a dataset containing $m$ data points (or space ships), called \textbf{examples}.
+Now, how can we generate a set of predictions on an entire dataset?\\
+Let's consider a dataset containing $m$ data points (or space ships), called \textbf{examples}.
 
 What we do is stack the $x$ and $\hat{y}$ values of all examples in vectors of length $m$. The relation between the elements in our vectors can then be represented with the following formula:
 
@@ -118,16 +120,22 @@ $$
 
 You might have two questions at the moment:
 \begin{itemize}
-    \item \textbf{WTF is that weird  symbol?}
+    \item \textbf{WTF is that weird  symbol?}\\
+    \\
     This strange symbol, $\theta$, is called "theta".
-    
-    \item \textbf{Why use this notation instead of $a$ and $b$, like we're used to?}
-    Despite its seeming more complicated at first, the theta notation is actually meant to simplify your equations later on. Why?
-    $a$ and $b$ are good for a model with two parameters, but you will soon need to build more complex models that take into account more variables than just $x$.
-    You could add more letters like this:  $\hat{y} = ax_1 + bx_2 + cx_3 + ... + yx_{25} + z$  
-    But how do you go beyond 26 parameters? And how easily can you tell what parameter is associated with, let's say, $x_{19}$? That's why it becomes more handy to describe all your parameters using the theta notation and indices.
-    With $\theta$, you just have to increment the number to name the parameter:
-    $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_{2468} x_{2468}$ ... Easy right?
+    \\
+    \item \textbf{Why use this notation instead of $a$ and $b$, like we're used to?}\\
+    \\
+    Despite its seeming more complicated at first, the theta notation is actually meant to simplify your equations later on.Why?\\
+    \newline
+    $a$ and $b$ are good for a model with two parameters, but you will soon need to build more complex models that take into account more variables than just $x$.\\
+    You could add more letters like this:  $\hat{y} = ax_1 + bx_2 + cx_3 + ... + yx_{25} + z$\\
+    \newline
+    But how do you go beyond 26 parameters? And how easily can you tell what parameter is associated with, let's say, $x_{19}$? That's why it becomes more handy to describe all your parameters using the theta notation and indices.\\
+    \newline
+    With $\theta$, you just have to increment the number to name the parameter:\\
+    \newline
+                      $\hat{y} = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_{2468} x_{2468}$ ... Easy right?
 \end{itemize}
 
 

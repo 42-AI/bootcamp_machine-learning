@@ -12,7 +12,7 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understand and manipulate the notion of loss function in machine learning.
+Understand and experiment with the \textbf{loss function} in machine learning.
 
 You must implement the following formula as a function (and another one very close to it):
 
@@ -24,8 +24,8 @@ Where:
 \begin{itemize}
   \item $\hat{y}$ is a vector of dimension $m\times 1$, the vector of predicted values
   \item $y$ is a vector of dimension $m\times 1$, the vector of expected values
-  \item $\hat{y}^{(i)}$ is the ith component of vector $\hat{y}$,
-  \item $y^{(i)}$ is the ith component of vector $y$,
+  \item $\hat{y}^{(i)}$ is the ith component of vector $\hat{y}$
+  \item $y^{(i)}$ is the ith component of vector $y$
 \end{itemize}
 
 \newpage
@@ -35,7 +35,7 @@ Where:
 % --------------------------------- %
 The implementation of the loss function has been split in two functions:
 \begin{itemize}
-  \item \texttt{loss\_elem\_()}, which computes the squared distances for all examples ($\hat{y}^{(i)} - y^{(i)})^2$),
+  \item \texttt{loss\_elem\_()}, which computes the squared distances for all examples ($\hat{y}^{(i)} - y^{(i)})^2$,
   \item \texttt{loss\_()}, which averages the squared distances of all examples (the $J_(\theta)$ above).
 \end{itemize}
 
@@ -117,18 +117,18 @@ loss_(y2, y2)
 \end{minted}
 
 \info{
-  This loss function is very close to the one called \textbf{"Mean Squared Error"}, which is frequently mentioned in Machine Learning resources.
-  The difference is in the denominator as you can see in the formula of the $MSE = \frac{1}{m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2$.
-  
-  Except the division by $2m$ instead of $m$, these functions are rigourously identical: $J(\theta) = \frac{MSE}{2}$.  
-  
-  MSE is called like that because it represents the mean of the errors (i.e.: the differences between the predicted values and the true values), squared.
-  
-  You might wonder why we choose to divide by two instead of simply using the MSE?  
+This loss function is very close to the one called \textbf{"Mean Squared Error"}, which is frequently mentioned in Machine Learning resources.
+The difference is in the denominator as you can see in the formula of the $MSE = \frac{1}{m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2$.\
+\newline
+Except for the division by $2m$ instead of $m$, these functions are rigourously identical: $J(\theta) = \frac{MSE}{2}$.\
+\newline
+MSE is called like that because it represents the mean of the errors (i.e.: the differences between the predicted values and the true values), squared.\
+\newline
+You might wonder why we choose to divide by two instead of simply using the MSE?  
   \textbf{(It's a good question, by the way.)}
   \begin{itemize}
     \item First, it does not change the overall model evaluation: if all performance measures are divided by two, we can still compare different models and their performance ranking will remain the same.
-    \item Second, it will be convenient when we will calculate the gradient tomorow. Be patient, and trust us ;)
+    \item Second, it will be very convenient when we calculate the gradient tommorow. Be patient, and trust us ;)
   \end{itemize}
-  }
+}
   

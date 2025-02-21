@@ -9,17 +9,21 @@
 % ================================== %
 \section*{Objective}
 % ---------------------------------- %
-Manipulation and understanding of basic matrix operations.\\
-In this exercise, you have to create a \texttt{Matrix} and a \texttt{Vector} class.
-The goal is to have matrices and be able to perform both matrix-matrix operation
+Basic understanding and manipulation of elementary matrix operations.\\
+\\
+In this exercise, you have to create a \texttt{Matrix} and a \texttt{Vector} class.\\
+\\
+The goal is to have matrices and to be able to perform both matrix-matrix operations
 and matrix-vector operations with them.
 
 % ================================== %
 \section*{Instructions}
 % ---------------------------------- %
-You will provide a testing file to prove that your classes works as expected.\\
+You will provide a test file to prove that your classes work as expected.\\
 
-Your \texttt{Matrix} class must have the following 2 attributes: 
+\subsection*{Matrix class}
+
+Your \texttt{Matrix} class must have the 2 following attributes: 
 \begin{itemize}
   \item \texttt{data}: list of lists
   \item \texttt{shape}: the dimensions of the matrix as a tuple (rows, columns)
@@ -31,7 +35,7 @@ You should be able to initialize the object with either:
   \item a shape: \texttt{Matrix((3, 3))} (the matrix will be filled with zeros by default)
 \end{itemize}
 
-You will implement all the following built-in functions (called \texttt{magic/special methods}) for your \texttt{Matrix} class:
+You will implement all of the following built-in functions (called \texttt{magic/special methods}) for your \texttt{Matrix} class:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
     # add : only matrices of same dimensions.
@@ -53,11 +57,13 @@ You will implement all the following built-in functions (called \texttt{magic/sp
 
 You will also implement: 
 \begin{itemize}
-  \item a \texttt{.T()} method which returns the transpose of the matrix (see examples below),
+  \item a \texttt{.T()} method which returns the transpose of the matrix (see examples below)
 \end{itemize}
 
+\subsection*{Vector class}
 
-Then, you must create a \texttt{Vector} class that inherit from Matrix.
+Then, you must create a \texttt{Vector} class that inherits from the Matrix class.\\
+
 At initialization, you must check that a column or a row vector is passed as the data argument.
 If not, you must send an error message :
 
@@ -70,7 +76,7 @@ If not, you must send an error message :
 \par
 For \texttt{Vector}, you must implement:
 \begin{itemize}
-  \item a \texttt{.dot(self, v: Vector)} method which returns the dot product between the current vector and v. If shapes don't match, you must properly display errors.
+  \item a \texttt{.dot(self, v: Vector)} method which returns the dot product between the current vector and v. If shapes don't match, you must properly handle errors.
 \end{itemize}
 
 \warn{
@@ -290,6 +296,3 @@ X Y =
 \sum_{i = 1}^{n} x_{i}^{(m)} \cdot y_{1}^{(i)} & \dots & \sum_{i=1}^{n} x_{i}^{(m)} \cdot y_{p}^{(i)} \\
 \end{bmatrix}
 $$  
-
-Don't forget to handle all kinds of errors properly!\textit{You are expected to demonstrate the errors management between
-Matrix object and Vector object and scalar plus the functionality of the accepted operations}. 
