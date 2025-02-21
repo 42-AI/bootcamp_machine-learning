@@ -11,36 +11,36 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understand and manipulate the notion of gradient and gradient descent in machine learning.\
+Understand and experiment with the notions of \textbf{gradient} and \textbf{gradient descent} in machine learning.\\
+\newline
 You must implement the following formula as a function:
 
 $$
 \nabla(J) = \frac{1}{m} {X'}^T(X'\theta - y)
 $$  
-
 Where:
 \begin{itemize}
-  \item $\nabla(J)$ is a vector of dimension $2 \times 1$.
-  \item $X'$ is a \textbf{matrix} of dimensions $(m \times 2)$,
-  \item ${X'}^T$ is the transpose of $X'$. Its dimensions are $(2 \times m)$,
-  \item $y$ is a vector of dimension $m$,
-  \item $\theta$ is a vector of dimension $2 \times 1$. 
+  \item $\nabla(J)$ is a vector of dimension $2 \times 1$
+  \item $X'$ is a \textbf{matrix} of dimensions $(m \times 2)$
+  \item ${X'}^T$ is the transpose of $X'$. Its dimensions are $(2 \times m)$
+  \item $y$ is a vector of dimension $m$
+  \item $\theta$ is a vector of dimension $2 \times 1$ 
 \end{itemize}
-  
 Be careful:
 \begin{itemize}
   \item the $x$ you will get as an input is an $m$ vector,
   \item $\theta$ is a $2 \times 1$ vector. You have to transform $x$ to fit the dimension of $\theta$!
 \end{itemize}
-
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
 In the \texttt{vec\_gradient.py} file create the following function as per the instructions given below:
+\newline
 \par
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def simple_gradient(x, y, theta):
-    """Computes a gradient vector from three non-empty numpy.array, without any for loop.
+    """Computes a gradient vector from three non-empty numpy.arrays, without any for loop.
        The three arrays must have compatible shapes.
     Args:
       x: has to be a numpy.array, a vector of shape m * 1.

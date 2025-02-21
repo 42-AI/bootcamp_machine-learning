@@ -10,9 +10,9 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Introduction to standardization/normalization methods.\
-Implement another normalization method.
-
+Introduction to standardization/normalization methods.
+Implement another normalization method.\\
+\\
 You must implement the following formula as a function: 
 
 $$
@@ -20,23 +20,20 @@ $$
   x'^{(i)} = \frac{x^{(i)} - min(x)}{max(x) - min(x)} & & \text{ for $i = 1, ..., m$}
 \end{matrix}
 $$
-
 Where:
 \begin{itemize}
-  \item $x$ is a vector of dimension $m$,
-  \item $x^{(i)}$ is the i$^\text{th}$ component of vector $x$,
-  \item $min(x)$ is the minimum value found among the components of vector $x$,
-  \item $max(x)$ is the maximum value found among the components of vector $x$.
+  \item $x$ is a vector of dimension $m$
+  \item $x^{(i)}$ is the i$^\text{th}$ component of vector $x$
+  \item $min(x)$ is the minimum value found among the components of vector $x$
+  \item $max(x)$ is the maximum value found among the components of vector $x$
 \end{itemize}
-
 You will notice that this min-max standardization doesn't scale the values to the $[-1,1]$ range.
 What do you think the final range will be?
-
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{minmax.py} file, create the \texttt{minmax} function as per the instructions given below:
-
+In the \texttt{minmax.py} file, create the \texttt{minmax} function as per the instructions given below:\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def minmax(x):
 	"""Computes the normalized version of a non-empty numpy.ndarray using the min-max standardization.

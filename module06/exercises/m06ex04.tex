@@ -10,32 +10,28 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Evaluate a linear regression model on a very small dataset, with a given hypothesis function $h$.\
+Evaluate a linear regression model on a very small dataset, with a given hypothesis function $h$.
 Manipulate the loss function $J$, plot it, and briefly analyze the plot.
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
 You can find in the \texttt{resources} folder a tiny dataset called \texttt{are\_blue\_pills\_magics.csv} which gives you the driving performance of space pilots as a function of the quantity of the "blue pills" they took before the test.
+\newline
 You have a description of the data in the file named \texttt{are\_blue\_pills\_magics.txt}.
 As your hypothesis function $h$, you will choose:
-
 $$
 h_{\theta}(x) = \theta_0 + \theta_1x
 $$
-
 Where $x$ is the variable, and $\theta_0$ and $\theta_1$ are the coefficients of the hypothesis.
 The hypothesis is a function of $x$.
-
-\textbf{You are strongly encouraged to use the class you have implement in the previous exercise}.
-\newline
-
-Your program must:
-\begin{itemize}
-  \item Read the dataset from the csv file,
-  \item perform a linear regression, 
-\end{itemize}
+\info{You are strongly encouraged to use the class you have implemented in the previous exercise}
 \newpage
+\noindent{Your program must:}
+\begin{itemize}
+  \item Read the dataset from the csv file
+  \item Perform a linear regression
+\end{itemize}
 Then you will model the data and plot 2 different graphs:
 \begin{itemize}
   \item A graph with the data and the hypothesis you get for the spacecraft piloting score versus the quantity of "blue pills" (see figure \ref{best fit for score vs micrograms})
@@ -85,8 +81,9 @@ print(mean_squared_error(Yscore, Y_model2))
 # 232.16344285714285
 \end{minted}
 \par
-Here, the use of scikit learn is to ensure that our code is performing as expected. The use of scikit learn is forbidden in the code you will turn-in.
-
+\info{
+  Here, the use of scikit learn is to ensure that our code is performing as expected. The use of scikit learn is forbidden in the code you will turn-in.
+}
 \hint{
 There is no method named \texttt{.mse\_} in sklearn's LinearRegression class, but there is also a method named \texttt{.score}.
 The \texttt{.score} method corresponds to the $R^2$ score.

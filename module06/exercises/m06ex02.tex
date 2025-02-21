@@ -11,7 +11,8 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understand and manipulate the notion of gradient and gradient descent in machine learning.\
+Understand and experiment with the notions of \textbf{gradient} and \textbf{gradient descent} in machine learning.\\
+\newline
 Be able to explain what it means to \textbf{\textit{fit}} a Machine Learning model to a dataset.\
 Implement a function that performs \textbf{Linear Gradient Descent} (LGD).
 
@@ -19,10 +20,9 @@ Implement a function that performs \textbf{Linear Gradient Descent} (LGD).
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In this exercise, you will implement linear gradient descent to fit your model to the dataset.
-
+In this exercise, you will implement linear gradient descent to fit your model to the dataset.\\
+\newline
 The pseudocode for the algorithm is the following:
-
 $$
 \begin{matrix}
 &\text{repeat until convergence:} & \{ \\
@@ -38,9 +38,8 @@ Where:
   \item $\alpha$ (alpha) is the \textit{learning rate}. It's a small float number (usually between 0 and 1),
   \item For now, "reapeat until convergence" will mean to simply repeat for max\_iter (a number that you will choose wisely).
 \end{itemize}
-
-You are expected to write a function named \texttt{fit\_} as per the instructions below:
-
+You are expected to write a function named \texttt{fit\_} as per the instructions below:\\
+\newline
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def fit_(x, y, theta, alpha, max_iter):
 	"""
@@ -60,9 +59,7 @@ def fit_(x, y, theta, alpha, max_iter):
 	"""
 		... your code here ...
 \end{minted}
-
-Hopefully, you have already written a function to calculate the linear gradient.
-
+Hopefully, you have already written a function to calculate the linear gradient.\\
 
 % ================================= %
 \section*{Examples}
@@ -92,7 +89,7 @@ array([[15.3408728 ],
 
 \info{
 \begin{itemize}
-  \item You can create more training data by generating an $x$ array with random values and computing the corresponding $y$ vector as a linear expression of $x$. You can then fit a model on this artificial data and find out if it comes out with the same $\theta$ coefficients that first you used.
+  \item You can create more training data by generating an $x$ array with random values and computing the corresponding $y$ vector as a linear expression of $x$. You can then fit a model on this artificial data and find out if it comes out with the same $\theta$ coefficients that you first used.
   \item It is possible that $\theta_0$ and $\theta_1$ become "nan". In that case, it means you probably used a learning rate that is too large.
 \end{itemize}
 }

@@ -13,44 +13,39 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Introduction to standardization/normalization methods.\
+Introduction to standardization/normalization methods.\\
+\\
 You must implement the following formula as a function:
 $$
 \begin{matrix}
  x'^{(i)} = \frac{x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)}}{\sqrt{\frac{1}{m - 1} \sum_{i = 1}^{m} (x^{(i)} - \frac{1}{m} \sum_{i = 1}^{m} x^{(i)})^{2}}} & &\text{ for $i$ in $1, ..., m$} 
 \end{matrix}
 $$
-
 Where:
 \begin{itemize}
-  \item $x$ is a vector of dimension $m$,
-  \item $x^{(i)}$ is the i$^\text{th}$ component of the $x$ vector,
-  \item $x'$ is the normalized version of the $x$ vector.
+  \item $x$ is a vector of dimension $m$
+  \item $x^{(i)}$ is the i$^\text{th}$ component of the $x$ vector
+  \item $x'$ is the normalized version of the $x$ vector
 \end{itemize}
-
-The equation is much easier to understand in the following form:
-
+\noindent{The equation is much easier to understand in the following form:}
 $$
 \begin{matrix}
 x'^{(i)} = \frac{x^{(i)} - \mu}{\sigma} & &\text{ for $i$ in $1, ..., m$}
 \end{matrix}
 $$
-
-This should remind you something from \textbf{TinyStatistician}...
-
-Nope?
-
-Ok let's do a quick recap:
+This should remind you of something from \textbf{TinyStatistician}... doesn't it?!
+\\
+Ok, let's do a quick recap !
 \begin{itemize}
-  \item $\mu$ is the mean of $x$,
-  \item $\sigma$ is the standard deviation of $x$.
+  \item $\mu$ is the mean of $x$
+  \item $\sigma$ is the standard deviation of $x$
 \end{itemize}
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{zscore.py} file, write the \texttt{zscore} function as per the instructions given below:
-
+\noindent{In the \texttt{zscore.py} file, write the \texttt{zscore} function as per the instructions given below:}
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def zscore(x):
 	"""Computes the normalized version of a non-empty numpy.ndarray using the z-score standardization.
