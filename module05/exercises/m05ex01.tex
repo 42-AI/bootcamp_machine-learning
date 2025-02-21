@@ -1,0 +1,112 @@
+\chapter{Exercise 01}
+\extitle{TinyStatistician}
+\turnindir{ex01}
+\exnumber{01}
+\exfiles{TinyStatistician.py}
+\exforbidden{Any functions which calculates mean, median quartiles, percentiles, variance or standard deviation.}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+These exercises are key assignments from the last bootcamp. If you haven't completed them yet, you should finish them first before you continue with today's exercises.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+Create a class named \texttt{TinyStatistician} with the following methods.\\
+All methods take a list or a numpy.array as first parameter.
+You have to protect your functions against input errors.
+
+\begin{itemize}
+  \item \texttt{mean(x)}: computes the mean of a given non-empty list or array $x$, using a for-loop.
+        The method returns the mean as a float, otherwise None if $x$ is an empty list or array,
+        or a non expected type object.
+        This method should not raise any Exception.
+        \newline
+        Given a vector $x$ of dimension m * 1, the mathematical formula of its mean is:
+        $$
+        \bar{x} = \frac{\sum_{i = 1}^{m}{x_i}}{m}
+        $$
+
+  \item \texttt{median(x)}: computes the median, which is also the 50th percentile, of a given non-empty list or array $x$ .
+        The method returns the median as a float,
+        otherwise None if $x$ is an empty list or array or a non expected type object.
+        This method should not raise any Exception.
+
+  \item \texttt{quartile(x)}: computes the 1$^\text{st}$ and 3$^\text{rd}$ quartiles,
+        also called the 25$^\text{th}$ percentile and the 75$^\text{th}$ percentile, of a given non-empty list or array $x$.
+        The method returns the quartiles as a list of 2 floats,
+        otherwise None if $x$ is an empty list or array or a non expected type object.
+        This method should not raise any Exception.
+
+  \item \texttt{percentile(x, p)}: computes the expected percentile of a given non-empty list or array $x$.
+        The method returns the percentile as a float,
+        otherwise None if $x$ is an empty list or array or a non expected type object.
+        The second parameter is the wished percentile.
+        This method should not raise any Exception.
+
+  \item \texttt{var(x)}: computes the sample variance of a given non-empty list or array $x$.
+        The method returns the sample variance as a float,
+        otherwise None if $x$ is an empty list or array or a non expected type object.
+        This method should not raise any Exception.
+        \newline
+        Given a vector $x$ of dimension m * 1 representing the a sample of a data population, the mathematical formula of its variance is:
+        $$
+        \sigma^2 = \frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1} = \frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m - 1}
+        $$
+
+  \item \texttt{std(x)}: computes the sample standard deviation of a given non-empty list or array $x$.
+        The method returns the sample standard deviation as a float,
+        otherwise None if $x$ is an empty list or array or a non expected type object.
+        This method should not raise any Exception.
+        \newline
+        Given a vector $x$ of dimension m * 1, the mathematical formula of the sample standard deviation is:
+        $$
+        \sigma = \sqrt{\frac{\sum_{i = 1}^{m}{(x_i - \bar{x})^2}}{m - 1}} = \sqrt{\frac{\sum_{i = 1}^{m}{[x_i - (\frac{1}{m}\sum_{j = 1}^{m}{x_j}})]^2}{m - 1}}
+        $$
+\end{itemize}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}  
+  a = [1, 42, 300, 10, 59]
+  TinyStatistician().mean(a)
+  # Output:
+  82.4
+
+  TinyStatistician().median(a)
+  # Output:
+  42.0
+
+  TinyStatistician().quartile(a)
+  # Output:
+  [10.0, 59.0]
+
+  TinyStatistician().percentile(a, 10)
+  # Output:
+  4.6
+
+  TinyStatistician().percentile(a, 15)
+  # Output:
+  6.4
+
+  TinyStatistician().percentile(a, 20)
+  # Output:
+  8.2
+
+  TinyStatistician().var(a)
+  # Output:
+  15349.3
+
+  TinyStatistician().std(a)
+  # Output:
+  123.89229193133849
+\end{minted}
+
+\info{
+  numpy uses a different definition of percentile, it does linear interpolation between the two closest list element to the percentile.
+  Be sure to understand the difference between the population and the sample definition for the statistic metrics.
+}
