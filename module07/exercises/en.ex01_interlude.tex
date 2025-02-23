@@ -10,8 +10,8 @@
 % ******************************* %
 
 As you already did before with the univariate hypothesis,
-the multivariate hypothesis can be vectorized as well.  
-
+the multivariate hypothesis can be vectorized as well.\\
+\newline
 If you add a column of $1$'s as the first column of the $X$ matrix, you get what we'll call the $X'$ matrix.  
 Then, you can calculate $\hat{y}$ by multiplying $X'$ and $\theta$.
 
@@ -43,10 +43,10 @@ X' \cdot \theta =
 =
 \hat{y}
 $$
-
 Another way of understanding this algebra trick is to pretend that each training
-example has an artificial $x_0$ feature that is always equal to $1$.
-This simplifies the equations because now, each $x_j$ feature has its
+example has an artificial $x_0$ feature that is always equal to $1$.\\
+\newline
+This simplifies the equations as now, each $x_j$ feature has its
 corresponding $\theta_j$ parameter in the multiplication.
 
 $$

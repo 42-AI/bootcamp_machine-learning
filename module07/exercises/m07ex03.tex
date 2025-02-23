@@ -11,27 +11,27 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understand and manipulate concept of gradient in the case of multivariate formulation.\
+Understand and manipulate concept of gradient in the case of multivariate formulation.\\
+\newline
 You must implement the following formula as a function:    
 
 $$
 \nabla(J) = \frac{1}{m} {X'}^T(X'\theta - y)
 $$  
-
 Where:  
 \begin{itemize}
-  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
-  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
-  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of $1$'s was added as a first column,
-  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector,
-  \item $y$ is a vector of dimension $m$, the vector of expected values.
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of $1$'s was added as a first column
+  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector
+  \item $y$ is a vector of dimension $m$, the vector of expected values
 \end{itemize}
-
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{gradient.py} file, create the following function as per the instructions given below:
+In the \texttt{gradient.py} file, create the following function as per the instructions given below:\\
+\newline
 \par
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def gradient(x, y, theta):

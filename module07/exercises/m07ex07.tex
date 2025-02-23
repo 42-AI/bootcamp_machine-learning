@@ -12,7 +12,8 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Broaden the comprehension of the notion of hypothesis.\
+Broaden your comprehension of the concept of hypothesis.\\
+\newline
 Create a function that takes a vector $x$ of dimension $m$ and an integer $n$ as input, and returns a matrix of dimensions $(m \times n)$.
 Each column of the matrix contains $x$ raised to the power of $j$, for $j = 1, 2, ..., n$:
 
@@ -21,14 +22,13 @@ $$
 x &|& x^2 &|& x^3 &|& \ldots &|& x^n
 \end{matrix}
 $$
-
 Such a matrix is called a \textbf{Vandermonde matrix}.
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{polynomial\_model.py} file, create the following function as per the instructions given below:
-
+In the \texttt{polynomial\_model.py} file, create the following function as per the instructions given below:\\
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def add_polynomial_features(x, power):
     """Add polynomial features to vector x by raising its values up to the power given in argument.  

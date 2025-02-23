@@ -9,8 +9,8 @@
 \section*{Interlude - Gradient Descent}
 % ******************************* %
 
-Now comes the fun part: \textbf{gradient descent}!
-
+Now comes the fun part: \textbf{gradient descent}!\\
+\newline
 The algorithm is not that different from the one used in univariate 
 linear regression. As you might have guessed, what will change is 
 that the $j$ indice needs to run from $0$ to $n$ instead of $0$ 
@@ -26,19 +26,15 @@ $$
 \theta \text{ for j=0,1,...,n}
 \end{matrix}
 $$
-
-
-
-
-If we take the univariate equations we used during the previous module and replace the formula for $\nabla(J)_1$ by a more general $\nabla(J)_j$, we get the following:
-
+If we take the univariate equations we used during the previous module and replace the formula for $\nabla(J)_1$ by a more general $\nabla(J)_j$, we get the following:\\
+\newline
 $$
 \begin{matrix}
 \nabla(J)_0 &  = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)}) & \\
 \nabla(J)_j & = &\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)} & \text{ for j = 1, ..., n}    
 \end{matrix}
 $$
-
+\\
 If you started to like vectorized forms, you might have noticed that that the $\theta_j$ notation is actually redundant here, since all components of $\theta$ need to be updated simultaneously. $\theta$ is a vector, $\nabla{(J)}$ also, they both have dimension $(n+1)$. So all we need to do is this:
 
 
@@ -49,18 +45,16 @@ $$
 \nabla{(J)} \  \theta \gets \theta - \alpha \nabla(J)
 \end{matrix}
 $$
-
 Where:
 \begin{itemize}
-    \item $\theta$ is the entire parameter vector,
-    \item $\alpha$ (alpha) is the learning rate (a small number, usually between 0 and 1),
-    \item $\nabla{(J)}$ is the entire gradient vector.
+    \item $\theta$ is the entire parameter vector
+    \item $\alpha$ (alpha) is the learning rate (a small number, usually between 0 and 1)
+    \item $\nabla{(J)}$ is the entire gradient vector
 \end{itemize}
 
 % =============================== %
 \section*{Note: Do you still wonder why there is a subtraction in the equation?}
 % ******************************* %
-
 By definition, the gradient indicates the direction towards which we 
 should adjust the $\theta$ parameters if we wanted to increase the loss. 
 But since our optimization objective is to minimize the loss,

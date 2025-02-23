@@ -9,25 +9,27 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Fit a linear regression model to a dataset with multiple features.\
+Fit a linear regression model to a dataset with multiple features.\\
+\newline
 Plot the model's predictions and interpret the graphs.
 
 % ================================= %
 \section*{Dataset}
 % --------------------------------- %
-During last module, you performed a univariate linear regression on a dataset to make predictions based on ONE feature (well done!).
-Now, it's time to dream bigger.
-Lucky you are, we give you a new dataset with multiple features that you will find in the resources attached.
-The dataset is called \texttt{spacecraft\_data.csv} and it describes a set of spacecrafts with their price, as well as a few other features.
+In the last module, you performed a univariate linear regression on a dataset to make predictions based on ONE feature (well done!).
+Now, it's time to dream bigger.\\
+\newline
+Lucky you, you will a new dataset with multiple features find in the resources attached.\\
+\\
+The dataset is called \texttt{spacecraft\_data.csv} and it describes a set of spacecrafts with their prices, as well as a few other features.
 A description of the dataset is provided in the file named \texttt{spacecraft\_data\_description.txt}.
-
+\newpage
 % ================================= %
 \subsection*{Part One: Univariate Linear Regression}
 % --------------------------------- %
 To start, we'll build on the previous module's work and see how a univariate model can predict spaceship prices.
 As you know, univariate models can only process ONE feature at a time.
 So to train each model, you need to select a feature and ignore the other ones.
-\newpage
 % ================================= %
 \subsubsection*{Instructions}
 % --------------------------------- %
@@ -43,8 +45,8 @@ Select the \texttt{Age} feature as your $x$ vector, and \texttt{Sell\_price} as 
 Train a first model, \texttt{myLR\_age}, and generate price predictions ($\hat{y}$).
 Output a scatter plot with both sets of data points on the same graph, as follows:
 \begin{itemize}
-  \item The actual prices, given by $(x_{age}^{(i)}$, $y^{(i)})$  for $i=0....m$,
-  \item The predicted prices, represented by  $(x_{age}^{(i)}$, $\hat{y}^{(i)})$  for $i=0....m$ (see example below).
+  \item The actual prices, given by $(x_{age}^{(i)}$, $y^{(i)})$  for $i=0....m$
+  \item The predicted prices, represented by  $(x_{age}^{(i)}$, $\hat{y}^{(i)})$  for $i=0....m$ (see example below)
 \end{itemize}
 
 \begin{figure}[!h]
@@ -69,7 +71,6 @@ Output a scatter plot with both sets of data points on the same graph, as follow
   \includegraphics[scale=0.6]{assets/ex07_price_vs_thrust_part1.png}
   \caption{Plot of the selling prices of spacecrafts with respect to the thrust power of their engines, as well as our second model's price predictions.}
 \end{figure}
-\newpage
 % ================================= %
 \subsubsection*{Total distance}
 % --------------------------------- %
@@ -94,8 +95,8 @@ Output a scatter plot with both sets of data points on the same graph, as follow
   \item After executing the \texttt{fit\_} method, you may obtain  $\theta = array([["nan", "nan"]])$.
     If it happens, try reducing your learning rate.
   \item Be aware that you also need to set the appropriate number of cycles for the \texttt{fit\_} function.
-        If it's too low, you might not have allowed enough cycles for the gradient descent to carry out properly.
-        Try to find a value that gets you the best score, but that doesn't make the training last forever.
+        If it's too low, you might not have completed enough cycles for the gradient descent to carry out properly.
+        Try to find a value that gets you the best score, while not making the training last forever.
 \end{itemize}
 
 \hint{
@@ -124,8 +125,9 @@ myLR_age.mse_(Y, y_pred)
 #Output
 55736.867198...
 \end{minted}
-
-How accurate is your model when you only take one feature into account?
+\\
+How accurate is your model when you only take one feature into account?\\
+\newpage
 
 % ================================= %
 \subsection*{Part Two: Multivariate Linear Regression (A New Hope)}
@@ -137,7 +139,7 @@ Now, it's time for your first multivariate linear regression!
 \subsubsection*{Instructions}
 % --------------------------------- %
 Here, you will train a single model that will take all features into account.
-Your program is expected to perform steps similar to the ones in the part one (fitting, displaying or generating 3 graphs, printing the thetas and the MSE).
+Your program is expected to perform steps similar to the ones in part one (fitting, displaying or generating 3 graphs, printing the thetas and the MSE).
 
 % ================================= %
 \subsubsection*{Training the model}
@@ -218,6 +220,5 @@ We'll make three graphs, each one displaying the predictions and the actual pric
     \caption{Spacecraft sell prices and predicted sell prices with the multivariage hypothesis, with respect to the driven distance (in terameters)}
   \end{figure}
 \end{itemize}
-
-Can you see any improvement on these three graphs, compared to the three that you obtained in Part One?
-Can you relate your observations to the MSE value that you just calculated?
+\info{Can you see any improvement on these three graphs, compared to the three that you obtained in Part One?}
+\info{Can you relate your observations to the MSE value that you just calculated?}

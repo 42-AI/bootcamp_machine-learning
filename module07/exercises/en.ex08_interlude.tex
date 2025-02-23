@@ -10,10 +10,11 @@
 % ---------------------------------------------- %
 
 We asked you to plot straight lines in the \texttt{module05}.
-Now you are working with polynomial models, the hypothesis functions are not straight lines, but curves.
+Now you are working with polynomial models, the hypothesis functions are no longer straight lines, but \textbf{curves}.\\
+\newline
 Plotting curves is a bit more tricky, because if you do not have enough data point, you will get an ugly broken line instead of a smooth curve.
-Here's a way to do it.  
-
+Here's a way to do it.\\
+\newline
 Let's begin with a simple dataset:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
@@ -41,9 +42,9 @@ plt.show()
     \includegraphics[scale=0.6]{assets/ex12_data.png}
     \caption{Scatter plot of a dataset}
 \end{figure}
-
-Now, we build a polynomial model of degree 3 and plot its hypothesis function $h(\theta)$.
-
+\newpage
+\noindent{Now, we build a polynomial model of degree 3 and plot its hypothesis function $h(\theta)$.}
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 from polynomial_model import add_polynomial_features
 from mylinearregression import MyLinearRegression as MyLR

@@ -12,14 +12,15 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understand and manipulate the concept of gradient descent in the case of multivariate linear regression.\
+Understand and manipulate the concept of gradient descent in the case of multivariate linear regression.\\
+\newline
 Implement a function to perform linear gradient descent (LGD) for multivariate linear regression.
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In this exercise, you will implement linear gradient descent to fit your multivariate model to the dataset.
-
+In this exercise, you will implement linear gradient descent to fit your multivariate model to the dataset.\\
+\newline
 The pseudocode of the algorithm is the following:
 
 $$
@@ -30,17 +31,16 @@ $$
 \} 
 \end{matrix}
 $$
-
 Where:
 \begin{itemize}
-  \item $\nabla{(J)}$ is the entire gradient vector,
-  \item $\theta$ is the entire parameter vector,
-  \item $\alpha$ (alpha) is the learning rate (a small number, usually between 0 and 1).
+  \item $\nabla{(J)}$ is the entire gradient vector
+  \item $\theta$ is the entire parameter vector
+  \item $\alpha$ (alpha) is the learning rate (a small number, usually between 0 and 1)
 \end{itemize}
-
-
-You are expected to write a function named \textit{fit\_} as per the instructions bellow:
-
+% ================================= %
+\newpage
+\noindent{You are expected to write a function named \textit{fit\_} as per the instructions bellow:\\}
+\newline
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def fit_(x, y, theta, alpha, max_iter):
   """
@@ -64,9 +64,8 @@ def fit_(x, y, theta, alpha, max_iter):
   """
     ... your code here ...
 \end{minted}
-
+\\
 Hopefully, you have already implemented a function to calculate the multivariate gradient.
-
 % ================================= %
 \section*{Examples}
 % ================================= %

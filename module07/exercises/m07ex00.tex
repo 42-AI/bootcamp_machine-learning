@@ -11,7 +11,8 @@
 % ================================== %
 \section*{Objective}
 % ---------------------------------- %
-Manipulate the hypothesis to make prediction.\
+Manipulate the hypothesis to make a prediction.\\
+\newline
 You must implement the following formula as a function:
 
 $$
@@ -19,25 +20,24 @@ $$
   \hat{y}^{(i)} = \theta_0 + \theta_1 x_{1}^{(i)}  + \dots + \theta_n x_{n}^{(i)} && & \text{ for i = 1, ..., m}
 \end{matrix}
 $$
-  
 Where:
 \begin{itemize}
-  \item $\hat{y}$ is a vector of dimension $m$: the vector of predicted values,
-  \item $\hat{y}^{(i)}$ is the i$^\text{th}$ component of the $\hat{y}$ vector: the predicted value for the i$^\text{th}$ example,
-  \item $\theta$ is a vector of dimension $(n + 1)$: the parameter vector,
-  \item $\theta_j$ is the j$^\text{th}$ component of the parameter vector,
-  \item $X$ is a matrix of dimensions $(m \times n)$: the design matrix,
-  \item $x^{(i)}$ is the i$^\text{th}$ row of the $X$ matrix: the feature vector of the i$^\text{th}$ example,
-  \item $x_{j}$ is the j$^\text{th}$ column of the $X$ matrix,
+  \item $\hat{y}$ is a vector of dimension $m$: the vector of predicted values
+  \item $\hat{y}^{(i)}$ is the i$^\text{th}$ component of the $\hat{y}$ vector: the predicted value for the i$^\text{th}$ example
+  \item $\theta$ is a vector of dimension $(n + 1)$: the parameter vector
+  \item $\theta_j$ is the j$^\text{th}$ component of the parameter vector
+  \item $X$ is a matrix of dimensions $(m \times n)$: the design matrix
+  \item $x^{(i)}$ is the i$^\text{th}$ row of the $X$ matrix: the feature vector of the i$^\text{th}$ example
+  \item $x_{j}$ is the j$^\text{th}$ column of the $X$ matrix
   \item $x_j^{(i)}$ is the element at the intersection of the i$^\text{th}$ row and the j$^\text{th}$ column of the $X$ matrix: the j$^\text{th}$ feature of the i$^\text{th}$ example
 \end{itemize}
-
-
+\newpage
 % ================================== %
 \section*{Instructions}
 % ---------------------------------- %
 
-In the \texttt{prediction.py} file, create the following function as per the instructions given below:
+In the \texttt{prediction.py} file, create the following function as per the instructions given below:\\
+\newline
 \par
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
   def simple_predict(x, theta):
