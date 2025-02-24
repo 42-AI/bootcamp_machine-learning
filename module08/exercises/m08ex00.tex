@@ -11,32 +11,30 @@
 % ================================== %
 \section*{Objective}
 % ---------------------------------- %
-Introduction to the hypothesis in the case of logistic regression.
-You must implement the sigmoid function, given by the following formula:  
+Introduction to the hypothesis in the context of logistic regression.\\
+\\
+You must implement the sigmoid function, given by the following formula:
 
 $$
 \text{sigmoid}(x) = \cfrac{1} {1 + e^{-x}}
 $$
-
 Where:
 \begin{itemize}
   \item $x$ is a scalar or a vector,
-  \item $e$ is the contracted form for exponential function. It is also a mathematical constant, named Euler's number.
+  \item $e$ is the contracted form for the exponential function. It is also a mathematical constant, named Euler's number.
 \end{itemize}
-
 This function is also known as \textbf{Standard logistic sigmoid function}.
-This explains the name \textit{logistic regression}.
-
+This explains the name \textit{logistic regression}.\\
+\\
 The sigmoid function transforms an input into a probability value, i.e. a value between 0 and 1.  
 This probability value will then be used to classify the inputs.
-
+\\
 % ================================== %
 \section*{Instructions}
 % ---------------------------------- %
-In the \texttt{sigmoid.py} file, write the following function as per the instructions below:
-
+In the \texttt{sigmoid.py} file, write the following function as per the instructions below:\\
+\\
 \par
-
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def sigmoid_(x):
     """

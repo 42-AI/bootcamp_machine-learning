@@ -11,31 +11,30 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understand and manipulation of the concept of gradient in the case of logistic formulation.
+Understand and manipulate the gradient in the context of logistic formulation.\\
+\\
 You must implement the following formula as a function:
-
 
 $$
 \nabla(J) = \cfrac{1}{m} X'^T(h_\theta(X) - y)
 $$  
-
+\\
 Where:  
 \begin{itemize}
-  \item $\nabla(J)$ is the gradient vector of size $(n + 1)$.
-  \item $X'$ is a matrix of dimension $(m \times (n + 1))$, the design matrix onto which a column of ones was added as the first column.
-  \item $X'^T$ means the matrix has been transposed.
-  \item $h_\theta(X)$ is a vector of dimension $m$, the vector of predicted values.
-  \item $y$ is a vector of dimension $m$, the vector of expected values.
+  \item $\nabla(J)$ is the gradient vector of length $(n + 1)$
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of ones was added as the first column
+  \item $X'^T$ means the matrix has been transposed
+  \item $h_\theta(X)$ is a vector of length $m$, the vector of predicted values
+  \item $y$ is a vector of dimension $m$, the vector of expected values
 \end{itemize}
 
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{vec\_log\_gradient.py} file, write the following function as per the instructions below:
-
+In the \texttt{vec\_log\_gradient.py} file, write the following function as per the instructions given below:
+\\
 \par
-
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def vec_log_gradient(x, y, theta):
     """Computes a gradient vector from three non-empty numpy.ndarray, without any for-loop. The three arrays must have compatible shapes.

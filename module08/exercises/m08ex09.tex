@@ -11,14 +11,18 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Manipulation of confusion matrix concept.\
-The goal of this exercise is to reimplement the function \texttt{confusion\_matrix} available in \textbf{sklearn.metrics} and to learn what does the confusion matrix represent.
+Manipulate and experiment with the concept of \textbf{Confusion Matrix}.\\
+\\
+The goal of this exercise is to reimplement the function \texttt{confusion\_matrix} 
+available in \textbf{sklearn.metrics} and to understand what a confusion matrix is, and 
+what it is used for.\\
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-For the sake of simplicity, we will only ask you to use three parameters.
-Be careful to respect the order, true labels are rows and predicted labels are columns:
+For the sake of simplicity, we will only ask you to use three parameters.\\
+\
+Be careful to respect the order :  \textbf{true labels are rows and predicted labels are columns}\\
 
 \begin{center}
   \begin{tabular}{|c|c|c|c|}
@@ -32,8 +36,8 @@ Be careful to respect the order, true labels are rows and predicted labels are c
     \hline
   \end{tabular}
 \end{center}
-
-In the \texttt{confusion\_matrix.py} file, write the following function as per the instructions below:
+In the \texttt{confusion\_matrix.py} file, write the following 
+function as per the instructions given below:
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def confusion_matrix_(y_true, y_hat, labels=None):
@@ -91,25 +95,30 @@ array([[2 1]
        [0 2]])
 \end{minted}
 
-\section{Optional part}
+\section*{Optional part}
 
-\subsection{Objective(s):}
+\subsection*{Objective(s):}
 
-For a more visual version, you can add an option to your previous confusion\_matrix\_ function to return a \texttt{pandas.DataFrame} instead of a numpy array.
+For a more visual version, you can add an option to your previous 
+confusion\_matrix\_ function to return a \texttt{pandas.DataFrame} instead
+ of a numpy array.\\
 
-\subsection{Instructions:}
+\subsection*{Instructions:}
 
-In the \texttt{confusion\_matrix.py} file, write the following function as per the instructions below:
-
+In the \texttt{confusion\_matrix.py} file, write the following function 
+as per the instructions given below:\\
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def confusion_matrix_(y_true, y_hat, labels=None, df_option=False):
     """
     Compute confusion matrix to evaluate the accuracy of a classification.
     Args:
-        y_true: a numpy.ndarray for the correct labels
-        y_hat: a numpy.ndarray for the predicted labels
-        labels: optional, a list of labels to index the matrix. This may be used to reorder or select a subset of labels. (default=None)
-        df_option: optional, if set to True the function will return a pandas DataFrame instead of a numpy array. (default=False)
+        y_true:     a numpy.ndarray for the correct labels
+        y_hat:      a numpy.ndarray for the predicted labels
+        labels:     optional, a list of labels to index the matrix. 
+                        This may be used to reorder or select a subset of labels. (default=None)
+        df_option:  optional, if set to True the function will return 
+                        a pandas DataFrame instead of a numpy array. (default=False)
     Returns: 
         Confusion matrix as a numpy ndarray or a pandas DataFrame according to df_option value.
         None on any error.
@@ -119,7 +128,7 @@ def confusion_matrix_(y_true, y_hat, labels=None, df_option=False):
     ... Your code ...
 \end{minted}
 
-\section{Examples:}
+\subsection*{Examples:}
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 import numpy as np
@@ -143,6 +152,7 @@ confusion_matrix_(y, y_hat, labels=['bird', 'dog'], df_option=True)
 \end{minted}
 
 \info{
-  If you fail this exercise on your first attempt, Norminet will curse you forever.
-  Yeah, you'd better do it right or you are in trouble my friend, big trouble!
+  If you fail this exercise on your first attempt, 
+  the spirit of Norminet will haunt you until the end of times. MEOWWW ... 
+  Yeah, you'd better do it right or you are in trouble my friend, biiig trouble!
 }

@@ -11,34 +11,34 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Introduction to the hypothesis notion in case of logistic regression.
-You must implement the following formula as a function:  
+Introduction to the hypothesis notion in the context of logistic regression.\\
+\\
+You must implement the following formula as a function:\\
 
 $$
 \begin{matrix}
 \hat{y} & = & \text{sigmoid}(X' \cdot \theta) & = & \cfrac{1} {1 + e^{-X' \cdot \theta}}    
 \end{matrix}
 $$
-
 Where:
 \begin{itemize}
-  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
-  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of $1$'s is added as a first column,
-  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values,
-  \item $\theta$ is a vector of dimension $(n + 1)$, the vector of parameters.
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, 
+  the design matrix onto which a column of $1$'s is added as a first column
+  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values
+  \item $\theta$ is a vector of dimension $(n + 1)$, the vector of parameters
 \end{itemize}
-
 Be careful: 
 \begin{itemize}
   \item the $x$ your function will get as an input corresponds to $X$, the $(m \times n)$ matrix.
         Not $X'$.
-  \item $\theta$ is an $(n + 1)$ vector.
+  \item $\theta$ is a vector of length $(n + 1)$
 \end{itemize}
-
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{log\_pred.py} file, write the following function as per the instructions below:
+In the \texttt{log\_pred.py} file, write the following function as per the instructions below:\\
 \par
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def logistic_predict_(x, theta):

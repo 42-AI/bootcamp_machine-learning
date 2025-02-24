@@ -11,17 +11,26 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-The time to use everything you built so far has come! Demonstrate your knowledge by implementing a logistic regression classifier using the gradient descent algorithm.
-You must have seen the power of \texttt{numpy} for vectorized operations. Well let's make something more concrete with that.
-
-You may have to take a look at Scikit-Learn's implementation of logistic regression and noticed that the \textbf{sklearn.linear\_model.LogisticRegression} class offers a lot of options.
-
-The goal of this exercise is to make a simplified but nonetheless useful and powerful version, with fewer options.
-
+The time to use everything you built so far has (finally) come!\\
+\\
+Demonstrate your knowledge by implementing a logistic regression classifier using 
+the gradient descent algorithm.\\
+\\
+You must have seen the power of \texttt{numpy} for vectorized operations.
+ Well let's make something more concrete with that.\\
+\\
+You may have taken a look at Scikit-Learn's implementation of logistic regression 
+and noticed that the \textbf{sklearn.linear\_model.LogisticRegression} class 
+offers a lot of options.\\
+\\
+The goal of this exercise is to make a simplified but nonetheless useful and powerful
+ version, with fewer options.\\
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{my\_logistic\_regression.py} file, write a \texttt{MyLogisticRegression} class as in the instructions below:
+In the \texttt{my\_logistic\_regression.py} file, write a \texttt{MyLogisticRegression} 
+class as in the instructions given below:\\
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 class MyLogisticRegression():
@@ -37,7 +46,7 @@ class MyLogisticRegression():
 
 	... other methods ...
 \end{minted}
-
+\\
 You will add at least the following methods:
 \begin{itemize}
   \item \texttt{predict\_(self, x)}
@@ -45,8 +54,8 @@ You will add at least the following methods:
   \item \texttt{loss\_(self, y, yhat)}
   \item \texttt{fit\_(self, x, y)}
 \end{itemize}
-
-You have already written these functions, you will just need few adjustments so that they all work well within your \texttt{MyLogisticRegression} class.
+\hint{You have already written these functions, you will just need a 
+few adjustments in order for them to work well within your \textbf{MyLogisticRegression} class.}
 
 % ================================= %
 \subsection*{Examples}

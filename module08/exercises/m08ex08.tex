@@ -11,9 +11,11 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understanding and manipulation of classification criteria (TP, FP, ...) and metrics.\
-The goal of this exercise is to write four metric functions (which are also available in \textbf{sklearn.metrics}) and to understand what they measure and how they are constructed.
-
+Understand and experiment with the classification criteria (TP, FP, ...) and metrics.\\
+\\
+The goal of this exercise is to write four metric functions (which are also 
+available in \textbf{sklearn.metrics}) and to understand what they measure and how they are designed.\\
+\\
 You must implement the following fomulas: 
 
 $$
@@ -28,22 +30,22 @@ $$
 $$
 \text{F1score} = \frac{2 \times \text{precision} \times \text{recall}}{\text{precision} + \text{recall}}
 $$
-
 Where:
 \begin{itemize}
-  \item $\text{tp}$ is the number of \textbf{true positives},
-  \item $\text{fp}$ is the number of \textbf{false positives},
-  \item $\text{tn}$ is the number of \textbf{true negatives},
-  \item $\text{fn}$ is the number of \textbf{false negatives}.
+  \item $\text{tp}$ is the number of \textbf{true positives}
+  \item $\text{fp}$ is the number of \textbf{false positives}
+  \item $\text{tn}$ is the number of \textbf{true negatives}
+  \item $\text{fn}$ is the number of \textbf{false negatives}
 \end{itemize}
-
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-For the sake of simplicity, we will only ask you to use two parameters.
-
-In the \texttt{other\_metrics.py} file, write the following functions as per the instructions below:
-
+For the sake of simplicity, we will only ask you to use two parameters.\\
+\\
+In the \texttt{other\_metrics.py} file, write the following functions as per 
+the instructions given below:\\
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def accuracy_score_(y, y_hat):
     """

@@ -5,36 +5,37 @@
 \turnindir{ex03}
 \exnumber{03}
 \exfiles{vec\_log\_loss.py}
-\exforbidden{any function that performs derivatives for you}
+\exforbidden{any function that calculates the derivatives for you}
 \makeheaderfilesforbidden
 
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Understanding and manipulation of loss function concept in case of logistic regression.
+Understanding and manipulation of loss function in the context of logistic regression.\\
+\\
 You must implement the following formula as a function:  
 
 $$
 J( \theta) = -\cfrac{1} {m} \lbrack y \cdot \log(\hat{y}) + (\vec{1} - y) \cdot \log(\vec{1} - \hat{y})\rbrack
 $$
-
+\\
 Where:
 \begin{itemize}
-  \item $\hat{y}$ is a vector of dimension $m$, the vector of predicted values
-  \item $y$ is a vector of dimension $m$, the vector of expected values
-  \item $\vec{1}$ is a vector of dimension $m$, a vector full of ones.
+  \item $\hat{y}$ is a vector of length $m$, the vector of predicted values
+  \item $y$ is a vector of length $m$, the vector of expected values
+  \item $\vec{1}$ is a vector of length $m$, a vector full of 1's
 \end{itemize}
 
 
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{vec\_log\_loss.py} file, write the following function as per the instructions below:
-
+In the \texttt{vec\_log\_loss.py} file, write the following function as per the instructions below:\\
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def vec_log_loss_(y, y_hat, eps=1e-15):
     """
-    Compute the logistic loss value.
+    Computes the logistic loss value.
     Args:
         y: has to be an numpy.ndarray, a vector of shape m * 1.
         y_hat: has to be an numpy.ndarray, a vector of shape m * 1.

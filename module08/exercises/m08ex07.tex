@@ -12,8 +12,9 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-Now it's time to test your Logistic Regression Classifier on real data!  
-You will use the \textbf{solar\_system\_census\_dataset}. 
+Now it's time to test your Logistic Regression Classifier on real data!\\
+\\ 
+To do so, you will use the \textbf{solar\_system\_census\_dataset}.
 
 % ================================= %
 \section*{Instructions}
@@ -23,32 +24,34 @@ Some words about the dataset:
   \item You will work with data from the last Solar System Census.
   \item The dataset is divided in two files which can be found in the \texttt{resources} folder: \texttt{solar\_system\_census.csv} and \texttt{solar\_system\_census\_planets.csv}.
   \item The first file contains biometric information such as the height, weight, and bone density of several Solar System citizens.
-  \item The second file contains the homeland of each citizen, indicated by its Space Zipcode representation (i.e. one number for each planet... :)).
+  \item The second file contains the home planet of each citizen, indicated by its Space Zipcode representation (i.e. one number for each planet... :)).
 \end{itemize}
 
 \newpage
-
 As you should know, Solar citizens come from four registered areas (zipcodes): 
 \begin{itemize}
-  \item The flying cities of Venus (0), 
-  \item United Nations of Earth (1), 
-  \item Mars Republic (2), 
-  \item The Asteroids' Belt colonies (3).
+  \item The flying cities of Venus (0)
+  \item United Nations of Earth (1)
+  \item Mars Republic (2)
+  \item The Asteroids' Belt colonies (3)
 \end{itemize}
-
-
-You are expected to produce 2 programs that will use Logistic Regression to predict from which planet each citizen comes from, based on the other variables found in the census dataset.  
-
-But wait... what? There are four different planets! How do you make a classifier discriminate between 4 categories? Let's go step by step...
-
+\bigskip
+You are expected to produce 2 programs that will use Logistic Regression to predict which planet 
+each citizen comes from, based on the other variables found in the census dataset.\\
+\\
+But wait... what? There are four different planets! How do you make a classifier 
+discriminate between 4 categories?!!\\
+\\
+Keep calm and take a sip of water, we'll go one step at the time ...\\
 
 % ================================= %
-\section*{One Label to Discriminate Them All}
+\subsection*{One Label to Discriminate Them All}
 % --------------------------------- %
-You already wrote a Logistic Regression Classifier that can discriminate between two classes.
-We can use it to solve the problem!
-Let's start by having it discriminate between citizens who come from your favorite planet and everybody else!
-
+You already wrote a Logistic Regression Classifier that can discriminate between two classes. We can use it 
+to solve this problem!\\
+\\
+Let's start by having it discriminate between citizens who come from your favorite planet and everybody else!\\
+\\
 Your program (in \texttt{mono\_log.py}) will:
 \begin{enumerate}
   \item Take an argument: \texttt{--zipcode=x} with $x$ being $0$, $1$, $2$ or $3$.
@@ -63,31 +66,32 @@ Your program (in \texttt{mono\_log.py}) will:
   \item Calculate and display the fraction of correct predictions over the total number of predictions based on the test set.
   \item Plot 3 scatter plots (one for each pair of citizen features) with the dataset and the final prediction of the model.
 \end{enumerate}
-
-\begin{quote}
-  You can use normalization on your dataset. The question is: Should you?
-\end{quote}
-
-You now have a model that can discriminate between citizens that come from one specific planet and everyone else.
-It's a first step, a good one, but we still have work to do before we can classify citizens among four planets!
-
-So how does \textbf{Multiclass Logistic Regression} work?  
-
+\hint{You can use normalization on your dataset but the question is ... Should you?}
+\noindent{You now have a model that can discriminate between citizens that come 
+from one specific planet and everyone else.}\\
+\\
+It's a first step, and a good one, but we still have work to do before we can classify citizens 
+among the four planets of our dataset!\\
+\\
+So how does \textbf{Multiclass Logistic Regression} work?\\
 % ================================= %
-\section*{One Versus All}
+\subsection*{One Versus All}
 % --------------------------------- %
-The idea now is to apply what is called \textbf{one-versus-all classification}.
-It's quite straightforward:
-
+The idea now is to apply what is called \textbf{one-versus-all classification}. 
+As you will see, this is quite straightforward.\\
+\\
 Your program (in \texttt{multi\_log.py}) will:
 \begin{enumerate}
   \item Split the dataset into a training and a test set.
-  \item Train 4 logistic regression classifiers to discriminate each class from the others (the way you did in part one).
-  \item Predict for each example the class according to each classifiers and select the one with the highest output probability.
-  \item Calculate and display the fraction of correct predictions over the total number of predictions based on the test set.
-  \item Plot 3 scatter plots (one for each pair of citizen features) with the dataset and the final prediction of the model.
+  \item Train 4 logistic regression classifiers to discriminate each class 
+  from the others (the way you did in part one).
+  \item Predict for each example the class according to each classifier and
+   select the one with the highest output probability score.
+  \item Calculate and display the fraction of correct predictions over the 
+  total number of predictions based on the test set.
+  \item Plot 3 scatter plots (one for each pair of citizen features) with the
+   dataset and the final prediction of the model.
 \end{enumerate}
-
 
 % ================================= %
 \section*{Examples}
