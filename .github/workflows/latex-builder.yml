@@ -12,17 +12,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Install LaTex utilities
         run: sudo apt update && sudo apt-get install -y texlive-full
-      - name: version
+      - name: Get version from file
         run: echo "::set-output name=version::$(cat version)"
         id: version
       - name: Build PDFs
-        run: |
-          make
-          cp build/module05.pdf /
-          cp build/module06.pdf /
-          cp build/module07.pdf /
-          cp build/module08.pdf /
-          cp build/module09.pdf /
+        run: make
   release-it:
     permissions:
       contents: write
