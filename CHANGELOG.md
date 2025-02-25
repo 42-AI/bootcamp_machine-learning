@@ -7,3 +7,4 @@
 - Added satisfaction forms within PDFs
 - indentation and overflows fixs
 - corrected spelling mistakes
+- Updated Github actions
