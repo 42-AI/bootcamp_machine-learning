@@ -13,7 +13,7 @@ jobs:
       - name: Install LaTex utilities
         run: sudo apt update && sudo apt-get install -y texlive-full
       - name: Get version from file
-        run: echo "version=$(cat version)" >> $GITHUB_OUTPUT
+        run: echo "VERSION=$(cat version)" >> "$GITHUB_OUTPUT"
         id: version
       - name: Attempting to build PDFs
         run: make
@@ -26,14 +26,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install LaTex utilities
-        run: sudo apt update && sudo apt-get install -y texlive-full
       - name: Get version from file
         id: get_version
-        run: echo "VERSION=$(cat version)" >> $GITHUB_OUTPUT
-      - name: Name release from version
-        id: get_release
-        run: echo "RELEASE=release_$(cat version)" >> $GITHUB_OUTPUT
+        run: echo "VERSION=$(cat version)" >> "$GITHUB_OUTPUT"
       - name: Build PDFs
         run: make
       - name: Upload PDFs archives
@@ -55,7 +50,7 @@ jobs:
             build/module07.pdf
             build/module08.pdf
             build/module09.pdf
-          name: ${{env.RELEASE}}
-          tag_name: ${{env.VERSION}}
+          name: ${{steps.get_version.outputs.VERSION}}
+          tag_name: ${{steps.get_version.outputs.VERSION}}
           make_latest: true
           body_path: CHANGELOG.md
