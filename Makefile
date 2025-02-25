@@ -12,8 +12,8 @@ all: clean dirs
 
 %.pdf: 
 	@$(MAKE) -C `dirname $@`
-	cp $@ build/`dirname $@`.pdf
 	@$(MAKE) clean -C `dirname $@`
+	cp $@ build/`dirname $@`.pdf
 
 dirs: $(TARGETS_DIRS)
 

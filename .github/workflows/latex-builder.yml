@@ -13,8 +13,7 @@ jobs:
       - name: Install LaTex utilities
         run: sudo apt update && sudo apt-get install -y texlive-full
       - name: Get version from file
-        run: echo "VERSION=$(cat version)" >> "$GITHUB_OUTPUT"
-        id: version
+        run: echo "VERSION=version/$(cat version)" >> $GITHUB_ENV
       - name: Attempting to build PDFs
         run: make
   release-it:
@@ -50,7 +49,7 @@ jobs:
             build/module07.pdf
             build/module08.pdf
             build/module09.pdf
-          name: ${{steps.get_version.outputs.VERSION}}
-          tag_name: ${{steps.get_version.outputs.VERSION}}
+          name: ${{env.RELEASE}}
+          tag_name: ${{env.VERSION}}
           make_latest: true
           body_path: CHANGELOG.md

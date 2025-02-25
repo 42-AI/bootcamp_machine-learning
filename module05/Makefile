@@ -8,7 +8,7 @@ DEPS = exercises/en.ex02_interlude.tex \
   exercises/en.ex08_interlude.tex \
   en.instructions.tex \
   en.acknowledgements.tex \
-  useful_ressources.tex
+  useful_resources.tex
 
 # Relative path to the LaTeX documentclass setup files
 # Adapt as needed
