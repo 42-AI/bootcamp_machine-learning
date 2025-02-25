@@ -7,17 +7,15 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    container:
-      image: blang/latex:ubuntu
     steps:
-      - name: checkout repo
+      - name: Checkout repo
         uses: actions/checkout@v4
       - name: Install LaTex utilities
         run: sudo apt update && sudo apt-get install -y texlive-full
       - name: version
         run: echo "::set-output name=version::$(cat version)"
         id: version
-      - name: Make pdf
+      - name: Build PDFs
         run: |
           make
           cp build/module05.pdf /
