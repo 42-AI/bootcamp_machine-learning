@@ -12,7 +12,7 @@
 % ================================= %
 \section*{Objective}
 % --------------------------------- %
-You must implement the following formulas as a functions for the \textbf{linear regression hypothesis}:
+You must implement the following formulas as functions for the \textbf{linear regression hypothesis}\\
 
 % ================================= %
 \subsection*{Iterative}
@@ -23,20 +23,21 @@ $$
 $$
 \nabla(J)_j = \frac{1}{m}\left(\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} + \lambda \theta_j\right) \text{ for j = 1, ..., n}
 $$
-
+\\
 Where:
 \begin{itemize}
-  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$,
-  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
-  \item $m$ is a constant, the number of training examples used,
-  \item $h_\theta(x^{(i)})$ is the model's prediction for the i$^\text{th}$ training example,
-  \item $x^{(i)}$ is the feature vector (of dimension $n$) of the i$^\text{th}$ training example, found in the i$^\text{th}$ row of the $X$ matrix,
-  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
-  \item $y^{(i)}$ is the i$^\text{th}$ component of the $y$ vector,
-  \item $y$ is a vector of dimension $m$, the vector of expected values,
-  \item $\lambda$ is a constant, the regularization hyperparameter,
-  \item $\theta_j$ is the j$^\text{th}$ parameter of the $\theta$ vector,
-  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector.
+  \item $\nabla(J)_j$ is the j$^\text{th}$ component of $\nabla(J)$
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector
+  \item $m$ is a constant, the number of training examples used
+  \item $h_\theta(x^{(i)})$ is the model's prediction for the i$^\text{th}$ training example
+  \item $x^{(i)}$ is the feature vector (of dimension $n$) of the i$^\text{th}$ training example,
+   found in the i$^\text{th}$ row of the $X$ matrix
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix
+  \item $y^{(i)}$ is the i$^\text{th}$ component of the $y$ vector
+  \item $y$ is a vector of length $m$, the vector of expected values
+  \item $\lambda$ is a constant, the regularization hyperparameter
+  \item $\theta_j$ is the j$^\text{th}$ parameter of the $\theta$ vector
+  \item $\theta$ is a vector of length $(n + 1)$, the parameter vector
 \end{itemize}
 
 % ================================= %
@@ -45,19 +46,20 @@ Where:
 $$
 \nabla(J) = \frac{1}{m} [X'^T(h_\theta(X) - y) + \lambda \theta']
 $$  
-
+\\
 Where:
 \begin{itemize}
-  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector,
-  \item $m$ is a constant, the number of training examples used,
-  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix,
-  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix onto which a column of ones is added as a first column,
-  \item $X'^T$ is the transpose of tha matrix, with dimensions $((n + 1) \times m)$,
-  \item $h_\theta(X)$ is a vector of dimension $m$, the vector of predicted values, 
-  \item $y$ is a vector of dimension $m$, the vector of expected values,
-  \item $\lambda$ is a constant, the regularization hyperparameter,
-  \item $\theta$ is a vector of dimension $(n + 1)$, the parameter vector,
-  \item $\theta'$ is a vector of dimension $(n + 1)$, constructed using the following rules: 
+  \item $\nabla(J)$ is a vector of dimension $(n + 1)$, the gradient vector
+  \item $m$ is a constant, the number of training examples used
+  \item $X$ is a matrix of dimensions $(m \times n)$, the design matrix
+  \item $X'$ is a matrix of dimensions $(m \times (n + 1))$, the design matrix 
+  onto which a column of ones is added as a first column
+  \item $X'^T$ is the transpose of tha matrix, with dimensions $((n + 1) \times m)$
+  \item $h_\theta(X)$ is a vector of length $m$, the vector of predicted values 
+  \item $y$ is a vector of length $m$, the vector of expected values
+  \item $\lambda$ is a constant, the regularization hyperparameter
+  \item $\theta$ is a vector of length $(n + 1)$, the parameter vector
+  \item $\theta'$ is a vector of length $(n + 1)$, constructed using the following rules: 
 \end{itemize}
 
 $$
@@ -66,11 +68,12 @@ $$
 \theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
 \end{matrix}
 $$
-
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{reg\_linear\_grad.py} file, write the following functions as per the instructions given below:
+In the \texttt{reg\_linear\_grad.py} file, write the following functions 
+as per the instructions given below:\\
 
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def reg_linear_grad(y, x, theta, lambda_):

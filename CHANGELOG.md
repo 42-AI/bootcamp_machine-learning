@@ -1,6 +1,6 @@
 # 5.1.0
 
-- updated logo
+- updated logo, acknowledgements, and py_proj.tex
 - README
 - updated instructions
 - refacto : one file per exercise

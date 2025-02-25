@@ -11,28 +11,35 @@
 % ================================== %
 \section*{Objective}
 % ---------------------------------- %
-Create a function that takes a matrix $X$ of dimensions $(m \times n)$ and an integer $p$ as input, and returns a matrix of dimension $(m \times (np))$.
+Create a function that takes a matrix $X$ of dimensions $(m \times n)$ and an integer $p$ 
+as input, and returns a matrix of dimension $(m \times (np))$.\\
+\\
 For each column $x_j$ of the matrix $X$, the new matrix contains
 $x_j$ raised to the power of $k$, for $k = 1, 2, ..., p$ :
 
 $$
 x_1  \mid  \ldots  \mid  x_n  \mid  x_1^2  \mid  \ldots  \mid  x_n^2  \mid  \ldots  \mid  x_1^p  \mid  \ldots  \mid  x_n^p
 $$
-
+\newpage
 % ================================== %
 \section*{Instructions}
 % ---------------------------------- %
-In the \texttt{polynomial\_model\_extended.py} file, write the following function as per the instructions given below:
-
+In the \texttt{polynomial\_model\_extended.py} file, write the following function 
+as per the instructions given below:\\
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def add_polynomial_features(x, power):
-	"""Add polynomial features to matrix x by raising its columns to every power in the range of 1 up to the power given in argument.  
+	"""Add polynomial features to matrix x by raising its columns to every power in the range 
+		of 1 up to the power given in argument.  
 	Args:
-		x: has to be an numpy.ndarray, a matrix of shape m * n.
-		power: has to be an int, the power up to which the columns of matrix x are going to be raised.
+		x: 	has to be an numpy.ndarray, a matrix of shape m * n.
+		power: 	has to be an int, the power up to which the columns of matrix x are going
+			to be raised.
 	Returns:
-		The matrix of polynomial features as a numpy.ndarray, of shape m * (np), containg the polynomial feature values for all training examples.
-		None if x is an empty numpy.ndarray.
+				The matrix of polynomial features as a numpy.ndarray, of shape m * (np),
+					containg the polynomial feature values for all 
+					training examples.
+				None if x is an empty numpy.ndarray.
 	Raises:
 		This function should not raise any Exception.
 	"""

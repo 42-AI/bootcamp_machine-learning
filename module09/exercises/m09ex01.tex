@@ -19,7 +19,7 @@ You must implement the following formulas as functions:
 $$
 L_2(\theta)^2 = \sum_{j = 1}^n \theta_j^2
 $$
-
+\\
 Where:
 \begin{itemize}
   \item $\theta$ is a vector of dimension $(n + 1)$.
@@ -31,7 +31,7 @@ Where:
 $$
 L_2(\theta)^2 = \theta' \cdot \theta'
 $$
-
+\\
 Where:
 \begin{itemize}
   \item $\theta'$ is a vector of dimension $(n + 1)$, constructed using the following rules:
@@ -43,12 +43,12 @@ $$
 \theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
 \end{matrix}
 $$
-
+\newpage
 % ================================= %
 \section*{Instructions}
 % --------------------------------- %
-In the \texttt{l2\_reg.py} file, write the following function as per the instructions given below:
-
+In the \texttt{l2\_reg.py} file, write the following functions as per the instructions given below:\\
+\\
 \begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
 def iterative_l2(theta):
 	"""Computes the L2 regularization of a non-empty numpy.ndarray, with a for-loop.
