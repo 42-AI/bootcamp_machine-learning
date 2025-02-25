@@ -13,9 +13,9 @@ jobs:
       - name: Install LaTex utilities
         run: sudo apt update && sudo apt-get install -y texlive-full
       - name: Get version from file
-        run: echo "::set-output name=version::$(cat version)"
+        run: echo "version=$(cat version)" >> $GITHUB_OUTPUT
         id: version
-      - name: Build PDFs
+      - name: Attempting to build PDFs
         run: make
   release-it:
     permissions:
@@ -30,10 +30,10 @@ jobs:
         run: sudo apt update && sudo apt-get install -y texlive-full
       - name: Get version from file
         id: get_version
-        run: echo "VERSION=version/$(cat version)" >> $GITHUB_ENV
+        run: echo "VERSION=$(cat version)" >> $GITHUB_OUTPUT
       - name: Name release from version
         id: get_release
-        run: echo "RELEASE=release_$(cat version)" >> $GITHUB_ENV
+        run: echo "RELEASE=release_$(cat version)" >> $GITHUB_OUTPUT
       - name: Build PDFs
         run: make
       - name: Upload PDFs archives
