@@ -1,0 +1,298 @@
+\chapter{Exercise 00}
+\extitle{The Matrix}
+\turnindir{ex00}
+\exnumber{00}
+\exfiles{matrix.py, test.py}
+\exforbidden{Numpy}
+\makeheaderfilesforbidden
+
+% ================================== %
+\section*{Objective}
+% ---------------------------------- %
+Basic understanding and manipulation of elementary matrix operations.\\
+\\
+In this exercise, you have to create a \texttt{Matrix} and a \texttt{Vector} class.\\
+\\
+The goal is to have matrices and to be able to perform both matrix-matrix operations
+and matrix-vector operations with them.
+
+% ================================== %
+\section*{Instructions}
+% ---------------------------------- %
+You will provide a test file to prove that your classes work as expected.\\
+
+\subsection*{Matrix class}
+
+Your \texttt{Matrix} class must have the 2 following attributes: 
+\begin{itemize}
+  \item \texttt{data}: list of lists
+  \item \texttt{shape}: the dimensions of the matrix as a tuple (rows, columns)
+\end{itemize}
+
+You should be able to initialize the object with either:
+\begin{itemize}
+  \item the elements of the matrix as a list of lists: \texttt{Matrix([[1.0, 2.0], [3.0, 4.0]])}
+  \item a shape: \texttt{Matrix((3, 3))} (the matrix will be filled with zeros by default)
+\end{itemize}
+
+You will implement all of the following built-in functions (called \texttt{magic/special methods}) for your \texttt{Matrix} class:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+    # add : only matrices of same dimensions.
+    __add__
+    __radd__
+    # sub : only matrices of same dimensions.
+    __sub__
+    __rsub__
+    # div : only scalars.
+    __truediv__
+    __rtruediv__
+    # mul : scalars, vectors and matrices , can have errors with vectors and matrices, 
+    # returns a Vector if we perform Matrix * Vector mutliplication.
+    __mul__
+    __rmul__
+    __str__
+    __repr__
+\end{minted}
+
+You will also implement: 
+\begin{itemize}
+  \item a \texttt{.T()} method which returns the transpose of the matrix (see examples below)
+\end{itemize}
+
+\subsection*{Vector class}
+
+Then, you must create a \texttt{Vector} class that inherits from the Matrix class.\\
+
+At initialization, you must check that a column or a row vector is passed as the data argument.
+If not, you must send an error message :
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+  v1 = Vector([[1, 2, 3]]) # create a row vector
+  v2 = Vector([[1], [2], [3]]) # create a column vector
+  v3 = Vector([[1, 2], [3, 4]]) # return an error
+\end{minted}
+
+\par
+For \texttt{Vector}, you must implement:
+\begin{itemize}
+  \item a \texttt{.dot(self, v: Vector)} method which returns the dot product between the current vector and v. If shapes don't match, you must properly handle errors.
+\end{itemize}
+
+\warn{
+  Caution: when you do operations between Vector, it must return a Vector and not a Matrix 
+}
+\hint{
+  type(self)
+}
+
+\section*{Examples}
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+m1 = Matrix([[0.0, 1.0], [2.0, 3.0], [4.0, 5.0]])
+m1.shape
+# Output:
+(3, 2)
+
+m1.T()
+# Output:
+Matrix([[0., 2., 4.], [1., 3., 5.]])
+
+m1.T().shape
+# Output:
+(2, 3)
+\end{minted}
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+m1 = Matrix([[0., 2., 4.], [1., 3., 5.]])
+m1.shape
+# Output:
+(2, 3)
+
+m1.T()
+# Output:
+Matrix([[0.0, 1.0], [2.0, 3.0], [4.0, 5.0]])
+
+m1.T().shape
+# Output:
+(3, 2)
+\end{minted}
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+m1 = Matrix([[0.0, 1.0, 2.0, 3.0], 
+             [0.0, 2.0, 4.0, 6.0]])
+
+m2 = Matrix([[0.0, 1.0],
+             [2.0, 3.0],
+             [4.0, 5.0],
+             [6.0, 7.0]])
+
+m1 * m2
+# Output:
+Matrix([[28., 34.], [56., 68.]])
+\end{minted}
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+m1 = Matrix([[0.0, 1.0, 2.0],
+             [0.0, 2.0, 4.0]])
+v1 = Vector([[1], [2], [3]])
+
+m1 * v1
+# Output:
+Matrix([[8], [16]])
+# Or: Vector([[8], [16]
+\end{minted}
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+v1 = Vector([[1], [2], [3]])
+v2 = Vector([[2], [4], [8]])
+
+v1 + v2
+# Output:
+Vector([[3],[6],[11]])
+\end{minted}
+
+\newpage
+
+% ================================== %
+\section*{Mathematical notions}
+% ---------------------------------- %
+% ----------------------- %
+\subsection*{Matrix - vector operations}
+% ----------------------- %
+\begin{itemize}
+  \item Multiplication between a $(m \times n)$ matrix and a vector of dimension $n$
+\end{itemize}
+
+\begin{equation*}
+  X y = 
+  \begin{bmatrix}
+    x^{(1)}_{1} & \dots& x^{(1)}_n \\ 
+    \vdots & \ddots & \vdots \\ 
+    x^{(m)}_1 & \dots & x^{(m)}_n
+  \end{bmatrix}  
+  \cdot
+  \begin{bmatrix} 
+    y_1 \\
+    \vdots \\ 
+    y_n 
+  \end{bmatrix} 
+  = 
+  \begin{bmatrix}
+    x^{(1)} \cdot y \\
+    \vdots \\
+    x^{(m)} \cdot y
+  \end{bmatrix}
+\end{equation*}
+
+
+In other words:
+
+$$
+X y =
+\begin{bmatrix}
+  \sum_{i = 1}^{n} x_{i}^{(1)} \cdot y_i \\
+  \vdots \\
+ \sum_{i = 1}^{n} x_{i}^{(m)} \cdot y_i
+\end{bmatrix}
+$$
+
+% ----------------------- %
+\subsection*{Matrix - matrix operations}
+% ----------------------- %
+\begin{itemize}
+  \item Addition between two matrices of same dimension $(m \times n)$,
+\end{itemize}
+
+$$
+X + Y = 
+\begin{bmatrix}
+  x_{1}^{(1)} & \dots & x_{n}^{(1)} \\
+  \vdots & \ddots & \vdots \\ 
+  x_{1}^{(m)} & \dots & x_{n}^{(m)} 
+\end{bmatrix} +  
+\begin{bmatrix}
+  y_{1}^{(1)} & \dots & y_{n}^{(1)}  \\
+  \vdots & \ddots & \vdots \\
+  y_{1}^{(m)} & \dots & y_{n}^{(m)} 
+\end{bmatrix} = 
+\begin{bmatrix}
+  x_{1}^{(1)} + y_{1}^{(1)}  & \dots & x_{n}^{(1)} + y_{n}^{(1)}  \\
+  \vdots & \ddots & \vdots \\
+  x_{1}^{(m)} + y_{1}^{(m)} & \dots & x_{n}^{(m)} + y_{n}^{(m)}
+\end{bmatrix}
+$$
+
+\begin{itemize}
+  \item Substraction between two matrices of same dimension $(m \times n)$,
+\end{itemize}
+
+$$
+X - Y = 
+\begin{bmatrix} 
+x_{1}^{(1)} & \dots & x_{n}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+x_{1}^{(m)} & \dots & x_{n}^{(m)} 
+\end{bmatrix} - 
+\begin{bmatrix} 
+y_{1}^{(1)} & \dots & y_{n}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+y_{1}^{(m)} & \dots & y_{n}^{(m)} 
+\end{bmatrix} = 
+\begin{bmatrix} 
+x_{1}^{(1)} - y_{1}^{(1)}  & \dots & x_{n}^{(1)} - y_{n}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+x_{1}^{(m)} - y_{1}^{(m)} & \dots & x_{n}^{(m)} - y_{n}^{(m)}
+\end{bmatrix}
+$$
+
+\begin{itemize}
+  \item Multiplication or division between one matrix $(m \times n)$ and one scalar,
+\end{itemize}
+
+$$
+\alpha X = 
+\alpha \begin{bmatrix} 
+x_{1}^{(1)} & \dots & x_{n}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+x_{1}^{(m)} & \dots & x_{n}^{(m)} 
+\end{bmatrix} 
+= 
+\begin{bmatrix} 
+\alpha x_{1}^{(1)}  & \dots & \alpha x_{n}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+\alpha x_{1}^{(m)} & \dots & \alpha x_{n}^{(m)}
+\end{bmatrix}
+$$
+
+\newpage
+
+\begin{itemize}
+  \item Mutiplication between two matrices of compatible dimension: $(m \times n)$ and $(n \times p)$,
+\end{itemize}
+
+$$
+X  Y = 
+\begin{bmatrix} 
+x_{1}^{(1)} & \dots & x_{n}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+x_{1}^{(m)} & \dots & x_{n}^{(m)} 
+\end{bmatrix}  
+\begin{bmatrix} 
+y_{1}^{(1)} & \dots & y_{p}^{(1)}  \\ 
+\vdots & \ddots & \vdots \\ 
+y_{1}^{(n)} & \dots & y_{p}^{(n)} 
+\end{bmatrix} = 
+\begin{bmatrix} 
+x^{(1)} \cdot y_1  & \dots & x^{(1)} \cdot y_{p} \\ 
+\vdots & \ddots & \vdots \\ 
+x^{(m)} \cdot y_1 & \dots & x^{(m)} \cdot y_{p}
+\end{bmatrix}
+$$
+
+In other words:
+
+$$
+X Y = 
+\begin{bmatrix} 
+\sum_{i = 1}^{n} x_{i}^{(1)} \cdot y_{1}^{(i)} & \dots & \sum_{i=1}^{n} x_{i}^{(1)} \cdot y_{p}^{(i)} \\
+\vdots & \ddots & \vdots \\ 
+\sum_{i = 1}^{n} x_{i}^{(m)} \cdot y_{1}^{(i)} & \dots & \sum_{i=1}^{n} x_{i}^{(m)} \cdot y_{p}^{(i)} \\
+\end{bmatrix}
+$$  

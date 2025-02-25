@@ -4,16 +4,15 @@ DIRECTORIES = 	module05 \
 				module08 \
 				module09
 
-
 TARGETS_DIRS = $(DIRECTORIES:%=%/en.subject.pdf)
 
 TARGETS = 	$(DIRECTORIES:%=%.pdf)
 
 all: clean dirs
 
-
 %.pdf: 
 	@$(MAKE) -C `dirname $@`
+	@$(MAKE) clean -C `dirname $@`
 	cp $@ build/`dirname $@`.pdf
 
 dirs: $(TARGETS_DIRS)

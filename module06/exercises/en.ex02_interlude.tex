@@ -1,0 +1,45 @@
+%******************************************************************************%
+%                                                                              %
+%                                 Interlude                                    %
+%                         for Machine Learning module                          %
+%                                                                              %
+%******************************************************************************%
+
+% =============================== %
+\section*{Interlude - Gradient Descent}
+% ------------------------------- %
+
+So far we've calculated the \textit{gradient},
+which indicates whether and by how much we should increase or decrease $\theta_0$ and $\theta_1$ in order to reduce the loss.\\
+\newline
+What we have to do next is to update the theta parameters accordingly,
+step by step, until we reach the minimum.
+This iterative process, called \textbf{Gradient Descent},
+will progressively improve the performance of your regression model on the training data.\\
+\newline
+The gradient descent \textbf{algorithm} can be summed up to this:
+for a certain number of cycles, at each step,
+both $\theta$ parameters are slightly moved in the opposite directions than what the gradient indicates.\\
+\newline
+The algorithm can be expressed in pseudocode as the following:
+$$
+\begin{matrix}
+&\text{repeat until convergence:} & \{\\
+&    \text{compute } \nabla{(J)}  \\
+&	\theta_0 := \theta_0 - \alpha \nabla(J)_0  \\ 
+&	\theta_1 := \theta_1 - \alpha \nabla(J)_1\\
+	\} \hspace{0.5cm} 
+\end{matrix}
+$$
+A few remarks on this algorithm:
+\begin{itemize}
+  \item If you directly subtracted the gradient from $\theta$,
+        your steps would be too big and you would quickly overshoot past the minimum.
+        That's why we use $\alpha$ (alpha), called the \textit{learning rate}.
+        It's a small float number (usually between 0 and 1) that decreases the magnitude of each update.
+  \item The pseudocode says "repeat until convergence",
+        but in your implementation, you will not actually check for convergence at each iteration.
+        You will instead set a number of cycles that is sufficient for your gradient descent to converge. 
+  \item When training a linear regression model on a new dataset,
+        you will have to choose appropriate alpha and the number of cycles through trial and error.
+\end{itemize}

@@ -1,0 +1,24 @@
+%******************************************************************************%
+%                                                                              %
+%                                 Interlude                                    %
+%                         for Machine Learning module                          %
+%                                                                              %
+%******************************************************************************%
+
+% ============================================== %
+\section*{Interlude}
+% ============================================== %
+\subsection*{Regularized Logistic Regression is still Logistic Regression}
+% ---------------------------------------------- %
+As opposed to linear regression, \textbf{regularized logistic regression is still 
+called logistic regression}.\\
+\\
+Working without regularization parameters can simply be regarded as a special 
+case where $\lambda = 0$.\\
+
+if $\lambda = 0$:
+\begin{eqnarray*}
+    \nabla(J)   & = & \frac{1}{m} [X'^T(h_\theta(X) - y) + \lambda \theta'] \\
+                & = & \frac{1}{m} [X'^T(h_\theta(X) - y) + 0 \cdot \theta'] \\
+                & = & \frac{1}{m} [X'^T(h_\theta(X) - y)]    
+\end{eqnarray*}

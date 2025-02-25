@@ -1,0 +1,61 @@
+\chapter{Exercise 06}
+\extitle{Ridge Regression}
+\input{exercises/en.ex06_interlude.tex}
+\newpage
+\turnindir{ex06}
+\exnumber{06}
+\exfiles{ridge.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Now it's time to implement your \texttt{MyRidge} class, similar to
+ the class of the same name in \texttt{sklearn.linear\_model}.\\
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{ridge.py} file, create the following class as per the instructions given below:\\
+\\
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+	class MyRidge(ParentClass):
+		"""
+		Description:
+			My personnal ridge regression class to fit like a boss.
+		"""
+		def __init__(self,  thetas, alpha=0.001, max_iter=1000, lambda_=0.5):
+			self.alpha = alpha
+			self.max_iter = max_iter
+			self.thetas = thetas
+			self.lambda_ = lambda_
+			... Your code here ...
+	
+		... other methods ...
+	\end{minted}
+\\
+Your \texttt{MyRidge} class will have at least the following methods:
+\begin{itemize}
+  \item \texttt{\_\_init\_\_}, special method, similar to the one you 
+  wrote in \texttt{MyLinearRegression} (module06)
+  \item \texttt{get\_params\_}, which gets the parameters of the estimator
+  \item \texttt{set\_params\_}, which sets the parameters of the estimator
+  \item \texttt{loss\_}, which returns the loss between 2 vectors (numpy arrays)
+  \item \texttt{loss\_elem\_}, which returns a vector corresponding to the squared 
+  diffrence between 2 vectors (numpy arrays)  
+  \item \texttt{predict\_}, which generates predictions using a linear model
+  \item \texttt{gradient\_}, which calculates the vectorized regularized gradient
+  \item \texttt{fit\_}, which fits Ridge regression model to a training dataset
+\end{itemize}
+
+\hint{You should consider inheritance from \texttt{MyLinearRegression}.}
+\noindent{If \texttt{MyRidge} inheritates from \texttt{MyLinearRegression}, you may not 
+need to reimplement the \texttt{predict\_} method.}\\
+\\
+The difference between the \texttt{MyRidge}'s implementations of \texttt{loss\_elem\_}, \texttt{loss\_}, \texttt{gradient\_} and 
+\texttt{fit\_} and the ones in your \texttt{MyLinearRegression} class 
+(implemented in module 02) is the use of a regularization term.\\
+\hint{
+  again, this is a good use case for decorators...
+}

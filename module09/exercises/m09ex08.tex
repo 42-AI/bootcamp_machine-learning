@@ -1,0 +1,107 @@
+\chapter{Exercise 08}
+\extitle{Regularized Logistic Regression}
+\input{exercises/en.ex08_interlude.tex}
+\newpage
+\turnindir{ex08}
+\exnumber{08}
+\exfiles{my\_logistic\_regression.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+In the last exercise, you implemented a regularized version 
+of the linear regression algorithm, called Ridge regression.\\
+\\
+Now it's time to update your logistic regression classifier as well!\\
+\\
+In the \texttt{scikit-learn} library, the logistic regression implementation 
+offers a few regularization techniques, which can be selected using 
+the parameter \texttt{penalty} (L$_2$ is default).\\
+The goal of this exercise is to update your old \texttt{MyLogisticRegression} class to 
+take that into account.\\
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{my\_logistic\_regression.py} file, update your \texttt{MyLogisticRegression} 
+class according to the following instructions:\\
+\\
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+class MyLogisticRegression():
+	"""
+	Description:
+		My personnal logistic regression to classify things.
+	"""
+  supported_penalities = ['l2'] #We consider l2 penalities only. One may want to implement other penalities
+
+	def __init__(self, theta, alpha=0.001, max_iter=1000, penality='l2', lambda_=1.0):
+		# Check on type, data type, value ... if necessary
+    self.alpha = alpha
+		self.max_iter = max_iter
+		self.theta = theta
+		self.penality = penality
+    self.lambda_ = lambda_ if penality in self.supported_penalities else 0
+		#... Your code ...
+
+	... other methods ...
+\end{minted}
+\begin{itemize}
+	\item \textbf{add} a \texttt{penalty} parameter which can take the following values:\texttt{'l2'}, \texttt{'none'} (default value is \texttt{'l2'}).
+  \end{itemize}
+\begin{itemize}
+  \item \textbf{update} the \texttt{fit\_(self, x, y)} method: 
+  \begin{itemize}
+    \item \texttt{if penality == 'l2'}: use a \textbf{regularized version} of the gradient descent.
+    \item \texttt{if penality = 'none'}: use the \textbf{unregularized version} of the gradient descent from \texttt{module03}.
+  \end{itemize}
+\end{itemize}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+from my_logistic_regression import MyLogisticRegression as mylogr
+
+theta = np.array([[-2.4], [-1.5], [0.3], [-1.4], [0.7]])
+
+# Example 1:
+model1 = mylogr(theta, lambda_=5.0)
+
+model1.penality
+# Output
+'l2'
+
+model1.lambda_
+# Output
+5.0
+
+# Example 2:
+model2 = mylogr(theta, penality=None)
+
+model2.penality
+# Output
+None
+
+model2.lambda_
+# Output
+0.0
+
+# Example 3:
+model3 = mylogr(theta, penality=None, lambda_=2.0)
+
+model3.penality
+# Output
+None
+
+model3.lambda_
+# Output
+0.0
+
+\end{minted}
+
+\hint{
+  this is also a great use case for decorators...
+}

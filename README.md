@@ -6,7 +6,7 @@
   Bootcamp Machine Learning
 </h1>
 <h3 align="center">
-  One week to learn basics in Machine Learning! :robot:
+  One week to learn the basics in Machine Learning! :robot:
 </h3>
 <br/>
 
@@ -86,9 +86,11 @@ The pdf files of each module can be downloaded from our realease page:
 - Matthieu David (mdavid@student.42.fr)
 - Benjamin Carlier (bcarlier@student.42.fr)
 - Pablo Clement (pclement@student.42.fr)
+- Amir Mahla (amahla@42ai.fr)
+- Mathieu Perez (mathieu.perez@42ai.fr)
 
 ### Beta-testers
 
 - Richard Blanc (riblanc@student.42.fr)
 - Solveig Gaydon Ohl (sgaydon-@student.42.fr)
-- Quentin Feuillade Montixi (qfeuilla@student.42.fr)
+- Quentin Feuillade--Montixi (qfeuilla@student.42.fr)

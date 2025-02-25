@@ -1,0 +1,66 @@
+\chapter{Exercise 08}
+\extitle{Let's Train Polynomial Models!}
+\input{exercises/en.ex08_interlude.tex}
+\newpage
+\turnindir{ex08}
+\exnumber{08}
+\exfiles{polynomial\_train.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Manipulation of polynomial hypothesis.\\
+\newline
+It's training time! Let's train some polynomial models, and see if those with higher polynomial degree perform better!\\
+\\
+Write a program which:
+\begin{itemize}
+  \item Reads and loads \texttt{are\_blue\_pills\_magics.csv} dataset
+  \item Trains \textbf{six} separate Linear Regression models with polynomial hypothesis with degrees ranging from 1 to 6
+  \item Evaluates and prints evaluation score (MSE) of each of the six models
+  \item Plots a bar plot showing the MSE score of the models in function of the polynomial degree of the hypothesis
+  \item Plots the 6 models and the data points on the same figure
+        Use lineplot style for the models and scatterplot for the data points
+        Add more prediction points to have smooth curves for the models
+\end{itemize}
+You will use \texttt{Micrograms} as feature and \texttt{Score} as target.\\
+\\
+The implementation of the method \texttt{fit\_} based on the simple gradient descent lacks of efficiency and sturdiness,
+which will lead to the impossibility of converging for polynomial models with high degree or with features having several orders of magnitude of difference.
+See the starting values below for some thetas to help you get acceptable parameters values for your models.\\
+\\
+\hint{
+  According to evaluation score only, what is the best hypothesis (or model) between the trained models?
+  According to the last plot, why is it not true?
+  Which phenomenon do you observe here?
+}
+
+\newpage
+% ================================= %
+\subsection*{Starting points}
+% --------------------------------- %
+You will not be able to get acceptable parameters for models 4, 5 and 6.
+Thus you can start the fit process for those models with:\\
+\newline
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+theta4 = np.array([[-20],[ 160],[ -80],[ 10],[ -1]]).reshape(-1,1)
+theta5 = np.array([[1140],[ -1850],[ 1110],[ -305],[ 40],[ -2]]).reshape(-1,1)
+theta6 = np.array([[9110],[ -18015],[ 13400],[ -4935],[ 966],[ -96.4],[ 3.86]]).reshape(-1,1)
+\end{minted}
+
+% ================================= %
+\subsection*{Teminology Note}
+% --------------------------------- %
+The \textbf{degree} of a polynomial expression is its highest exponent.  
+E.g.: The polynomial degree of $5x^3 - x^6 + 2 x^2$ is $6$.\\
+\\
+In this equation, you don't see any terms with $x$, $x^4$ and $x^5$,but we can still say they exist. It's just that their coefficient is $0$.
+This means that a polynomial linear regression model can lower the impact of any term by bringing its corresponding $\theta_j$ closer to $0$.
+
+% ================================= %
+\subsection*{Remark}
+% --------------------------------- %
+When you are evaluated, it will be wise to run your program at the beginning of the evaluation as it can take several minutes to train the models.

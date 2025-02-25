@@ -1,0 +1,65 @@
+\chapter{Exercise 03}
+\input{exercises/en.ex03_interlude.tex}
+\newpage
+\extitle{Add Intercept}
+\turnindir{ex03}
+\exnumber{03}
+\exfiles{tools.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+
+Understand and manipulate the notion of hypothesis in machine learning.
+\\
+You must implement a function which adds an extra column of $1$'s on the left side of a given vector or matrix.
+
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the tools.py file create the following function as per the instructions given below:
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def add_intercept(x):
+    """Adds a column of 1's to the non-empty numpy.array x.
+    Args:
+      x: has to be a numpy.array. x can be a one-dimensional (m * 1) or two-dimensional (m * n) array.
+    Returns:
+      X, a numpy.array of dimension m * (n + 1).
+      None if x is not a numpy.array.
+      None if x is an empty numpy.array.
+    Raises:
+      This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+import numpy as np
+
+# Example 1:
+x = np.arange(1,6)
+add_intercept(x)
+# Output:
+array([[1., 1.],
+       [1., 2.],
+       [1., 3.],
+       [1., 4.],
+       [1., 5.]])
+
+
+# Example 2:
+y = np.arange(1,10).reshape((3,3))
+add_intercept(y)
+# Output:
+array([[1., 1., 2., 3.],
+       [1., 4., 5., 6.],
+       [1., 7., 8., 9.]])
+\end{minted}
+

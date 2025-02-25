@@ -1,0 +1,80 @@
+%******************************************************************************%
+%                                                                              %
+%                                 Interlude                                    %
+%                         for Machine Learning module                          %
+%                                                                              %
+%******************************************************************************%
+
+% ============================================== %
+\section*{Interlude}
+% ============================================== %
+\subsection*{More Evaluation Metrics!}
+% ---------------------------------------------- %
+Once your classifier is trained, evaluating its performances is key.\\
+\\
+You already know about \textit{cross-entropy}, as you have implemented it as your \textit{loss function}.
+But when it comes to classification, there are more informative metrics we can use besides the loss function.
+Each metric focuses on different error types.  
+But what is an error type?\\
+\\
+A single classification prediction is either right or wrong, nothing in between.
+Either an object is assigned to the right class, or to the wrong class.\\
+When calculating performance scores for a multiclass classifier, we like to compute a 
+separate score for each class that your classifier learned to discriminate (in a one-vs-all manner).\\
+\\
+In other words, for a given \textit{Class A}, we want a score that can answer the question: "how good is 
+the model at assigning \textit{A} objects to \textit{Class A}, and at NOT assigning 
+\textit{non-A} objects to \textit{Class A}?" \\
+\\
+You may not realize it yet, but this question involves measuring two 
+very different error types, and this distinction is crucial.\\
+\newpage
+% ============================================== %
+\subsection*{Error Types}
+% ---------------------------------------------- %
+With respect to a given \textit{Class A}, classification errors fall in two categories:
+\begin{itemize}
+    \item \textbf{False positive:} when a \textit{non-A} object is assigned to \textit{Class A}.\\
+      For example:
+      \begin{itemize}
+          \item Pulling the fire alarm when there is no fire.
+          \item Considering that someone is sick when she isn't.
+          \item Identifying a face in an image when in fact it was a Teddy Bear.
+      \end{itemize}
+    
+    \item \textbf{False negative:} when an \textit{A} object is assigned to another class than \textit{Class A}.\\
+      For example:
+      \begin{itemize}
+          \item Not pulling the fire alarm when there is a fire.
+          \item Considering that someone is not sick when she is.
+          \item Failing to recognize a face in an image that does contain one.
+      \end{itemize}
+\end{itemize}
+\bigskip
+\noindent{It turns out that it's really hard to minimize both error types at the same time.}\\
+\\
+At some point you'll need to decide which one is the most critical, depending on your use case.\\
+\\
+For example, if you want to detect cancer, of course it's not good if your model 
+erroneously diagnoses cancer on a few healthy patients (\textbf{false positives}), 
+but you absolutely want to avoid failing at diagnosing cancer on affected patients (\textbf{false negatives}) 
+and let them go on with their lives while developing a potentially dangerous cancer.\\
+
+% ============================================== %
+\subsection*{Metrics}
+% ---------------------------------------------- %
+A metric is computed on a set of predictions along with the corresponding set of actual categories.
+The metric you choose will focus more or less on those two error types.
+If we come back to the \textbf{Class A} classifier:
+\begin{itemize}
+    \item \textbf{Accuracy}: tells you the percentage of predictions that are accurate (i.e. the correct class was predicted).
+          Accuracy doesn't give information about either error type.
+    \item \textbf{Precision}: tells you how much you can trust your model when it says that an object belongs to \textit{Class A}.
+          More precisely, it is the percentage of the objects assigned to \textit{Class A} that really were \textit{A} objects.
+          You use precision when you want to control for \textbf{False positives}.
+    \item \textbf{Recall}: tells you how much you can trust that your model is able to recognize ALL \textit{Class A} objects.
+          It is the percentage of all \textbf{A} objects that were properly classified by the model as \textit{Class A}.
+          You use recall when you want to control for \textbf{False negatives}.
+    \item \textbf{F1 score}: combines precision and recall in one single measure.
+          You use the F1 score when you want to control both \textbf{False positives} and \textbf{False negatives}.
+\end{itemize}

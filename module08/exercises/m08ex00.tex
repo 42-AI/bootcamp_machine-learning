@@ -1,0 +1,83 @@
+\chapter{Exercise 00}
+\input{exercises/en.ex00_interlude.tex}
+\newpage
+\extitle{Sigmoid}
+\turnindir{ex00}
+\exnumber{00}
+\exfiles{sigmoid.py}
+\exforbidden{None}
+\makeheaderfilesforbidden
+
+% ================================== %
+\section*{Objective}
+% ---------------------------------- %
+Introduction to the hypothesis in the context of logistic regression.\\
+\\
+You must implement the sigmoid function, given by the following formula:
+
+$$
+\text{sigmoid}(x) = \cfrac{1} {1 + e^{-x}}
+$$
+Where:
+\begin{itemize}
+  \item $x$ is a scalar or a vector,
+  \item $e$ is the contracted form for the exponential function. It is also a mathematical constant, named Euler's number.
+\end{itemize}
+This function is also known as \textbf{Standard logistic sigmoid function}.
+This explains the name \textit{logistic regression}.\\
+\\
+The sigmoid function transforms an input into a probability value, i.e. a value between 0 and 1.  
+This probability value will then be used to classify the inputs.
+\\
+% ================================== %
+\section*{Instructions}
+% ---------------------------------- %
+In the \texttt{sigmoid.py} file, write the following function as per the instructions below:\\
+\\
+\par
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def sigmoid_(x):
+    """
+    Compute the sigmoid of a vector.
+    Args:
+        x: has to be a numpy.ndarray of shape (m, 1).
+    Returns: 
+        The sigmoid value as a numpy.ndarray of shape (m, 1).
+        None if x is an empty numpy.ndarray.
+    Raises:
+        This function should not raise any Exception.
+    """
+    ... Your code ...
+\end{minted}
+
+% ================================== %
+\section*{Examples}
+% ---------------------------------- %
+
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+# Example 1:
+x = np.array([[-4]])
+sigmoid_(x)
+# Output:
+array([[0.01798620996209156]])
+
+# Example 2:
+x = np.array([[2]])
+sigmoid_(x)
+# Output:
+array([[0.8807970779778823]])
+
+# Example 3:
+x = np.array([[-4], [2], [0]])
+sigmoid_(x)
+# Output:
+array([[0.01798620996209156], [0.8807970779778823], [0.5]])
+\end{minted}
+
+
+\info{
+  Our sigmoid formula is a special case of the logistic function below, with $L = 1$, $k = 1$ and $x_0 = 0$:
+  $$
+  f(x) = \cfrac{L}{1 + e^{-k(x-x_0)}}
+  $$
+}

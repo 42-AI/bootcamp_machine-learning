@@ -1,0 +1,82 @@
+\chapter{Exercise 02}
+\extitle{Regularized Linear Loss Function}
+\turnindir{ex02}
+\exnumber{02}
+\exfiles{linear\_loss\_reg.py}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+You must implement the following formula as a function:  
+
+$$
+J(\theta)  =  \frac{1}{2m}[(\hat{y} - y)\cdot(\hat{y} - y) + \lambda (\theta' \cdot \theta')]
+$$  
+\\
+Where:
+\begin{itemize}
+  \item $y$ is a vector of length $m$, the expected values
+  \item $\hat{y}$ is a vector of length $m$, the predicted values
+  \item $\lambda$ is a constant, the regularization hyperparameter
+  \item $\theta'$ is a vector of length $n$, constructed using the following rules:
+\end{itemize}
+  
+$$
+\begin{matrix}
+\theta'_0 & =  0 \\
+\theta'_j & =  \theta_j & \text{ for } j = 1, \dots, n\\
+\end{matrix}
+$$
+\newpage
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+In the \texttt{linear\_loss\_reg.py} file, write the following function 
+as per the instructions given below:\\
+\\
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+def reg_loss_(y, y_hat, theta, lambda_):
+	"""Computes the regularized loss of a linear regression model from two non-empty numpy.array, 
+without any for loop. The two arrays must have the same dimensions.
+	Args:
+		y: has to be an numpy.ndarray, a vector of shape m * 1.
+		y_hat: has to be an numpy.ndarray, a vector of shape m * 1.
+		theta: has to be a numpy.ndarray, a vector of shape n * 1.
+		lambda_: has to be a float.
+	Returns:
+		The regularized loss as a float.
+		None if y, y_hat, or theta are empty numpy.ndarray.
+		None if y and y_hat do not share the same shapes.
+	Raises:
+		This function should not raise any Exception.
+	"""
+	... Your code ...
+\end{minted}
+
+\hint{such a situation could be a good use case for decorators...}
+
+% ================================= %
+\section*{Examples}
+% --------------------------------- %
+\begin{minted}[bgcolor=darcula-back,formatcom=\color{lightgrey},fontsize=\scriptsize]{python}
+y = np.array([2, 14, -13, 5, 12, 4, -19]).reshape((-1, 1))
+y_hat = np.array([3, 13, -11.5, 5, 11, 5, -20]).reshape((-1, 1))
+theta = np.array([1, 2.5, 1.5, -0.9]).reshape((-1, 1))
+
+# Example :
+reg_loss_(y, y_hat, theta, .5)
+# Output:
+0.8503571428571429
+
+# Example :
+reg_loss_(y, y_hat, theta, .05)
+# Output:
+0.5511071428571429
+
+# Example :
+reg_loss_(y, y_hat, theta, .9)
+# Output:
+1.116357142857143
+\end{minted}

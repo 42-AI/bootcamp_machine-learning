@@ -1,0 +1,47 @@
+%******************************************************************************%
+%                                                                              %
+%                                 Interlude                                    %
+%                         for Machine Learning module                          %
+%                                                                              %
+%******************************************************************************%
+
+\section*{Interlude - Evaluate}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.25]{assets/Evaluate.png}
+  % \caption{cycle evaluate}
+\end{figure}
+
+\subsection*{Introducing the loss function}
+
+How good is our model?  
+It is hard to say just by simply looking at the plots!
+We can clearly observe that certain regression lines seem to fit the data better than others, but it would be convenient to find a way to measure it. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.55]{assets/bad_prediction.png}
+  \caption{bad prediction}
+\end{figure}
+
+To evaluate our model, we are going to use a \textbf{metric} called \textbf{the loss function} (sometimes called \textbf{cost function}).\\
+\newline
+The loss function tells us how bad our model is performing, how much it \textit{costs} us to use it, how much information we \textit{lose} when we use it.
+If the model is good, we won't lose that much; if it's terrible instead, we will have a high loss!
+
+The metric you choose will deeply impact the evaluation (and therefore also the training) of your model.
+
+A frequent way to evaluate the performance of a regression model is to measure the distance between each predicted value ($\hat{y}^{(i)}$) and the real value it tries to predict (${y}^{(i)}$). The distances are then squared, and averaged to get one single metric, denoted $J$:
+
+$$
+J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)} - y^{(i)})^2
+$$
+
+The smaller, the better! 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.55]{assets/bad_pred_with_distance.png}
+  \caption{bad prediction with distance}
+\end{figure}

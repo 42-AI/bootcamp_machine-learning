@@ -1,0 +1,56 @@
+\chapter{Exercise 10}
+\extitle{Machine Learning for Grown-ups: Trantor guacamole business}
+\turnindir{ex10}
+\exnumber{10}
+\exfiles{space\_avocado.py, benchmark\_train.py,  models.[csv/yml/pickle]}
+\exforbidden{sklearn}
+\makeheaderfilesforbidden
+
+% ================================= %
+\section*{Objective}
+% --------------------------------- %
+Let's do Machine Learning for "real"!
+
+% ================================= %
+\section*{Introduction}
+% --------------------------------- %
+The dataset is made of 5 columns:
+\begin{itemize}
+  \item \textbf{index}: not relevant
+  \item \textbf{weight}: the avocado weight order (in tons)
+  \item \textbf{prod\_distance}: distance from where the avocado ordered is produced (in Mkm)
+  \item \textbf{time\_delivery}: time between the order and the receipt (in days)
+  \item \textbf{target}: price of the order (in trantorian unit)
+\end{itemize}
+It contains the data of all the avocado purchases made by Trantor administration (guacamole is a serious business there).
+\newpage
+% ================================= %
+\section*{Instructions}
+% --------------------------------- %
+You have to explore different models and select the best you find.\\
+\newline
+To do this:
+\begin{itemize}
+  \item Split your \texttt{space\_avocado.csv} dataset into a training and a test set.
+  \item Use your \texttt{polynomial\_features} method on your training set.
+  \item Consider several Linear Regression models with polynomial hypothesis with a maximum degree of 4.
+  \item Evaluate your models on the test set.
+\end{itemize}
+
+According to your model evaluations, what is the best hypothesis you can get?
+\begin{itemize}
+  \item Plot the evaluation curve which help you to select the best model (evaluation metrics vs models).
+  \item Plot the true price and the predicted price obtained via your best model (3D representation or 3 scatterplots).
+\end{itemize}
+
+The training of all your models can take a long time.\\
+\\
+Thus you need to train only the best one during the correction.\\
+\\
+But, you should return in \texttt{benchmark\_train.py} the program which performs the training of all the models and save the parameters of the different models into a file.\\
+\\
+In \texttt{models.[csv/yml/pickle]} one must find the parameters of all the models you have explored and trained.\\
+\\
+In \texttt{space\_avocado.py} train the model based on the best hypothesis you find and load the other models from \texttt{models.[csv/yml/pickle]}.\\
+\newline
+Then evaluate and plot the different graphics as asked before.

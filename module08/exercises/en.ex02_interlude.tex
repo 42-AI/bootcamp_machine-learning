@@ -1,0 +1,265 @@
+%******************************************************************************%
+%                                                                              %
+%                                 Interlude                                    %
+%                         for Machine Learning module                          %
+%                                                                              %
+%******************************************************************************%
+
+% =============================== %
+\section*{Interlude}
+% =============================== %
+\subsection*{Evaluate}
+% ------------------------------- %
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.25]{assets/Evaluate.png}
+    %\caption{The Learning Cycle: Evaluate}
+\end{figure}
+Our \textbf{model} can \textbf{predict the probability} for a given example \textbf{to be part of the class labeled as 1}.  
+Now it's time to evaluate how good it is.\\
+\\
+The previous loss function, used to evaluate linear regression, is not appropriate in a classification context.\\
+\\
+Given the fact that classification tasks only imply two possible values:
+\begin{itemize}
+    \item \textbf{zero}, if the element is not a member of the predicted class
+    \item \textbf{one}, if the element is a member of the predicted class
+\end{itemize}
+Measuring the \texttt{'distance'} between the prediction and the label 
+is not going to be the best way to evaluate the performance of a classification model.\\
+\\
+We'll prefer the \textbf{logarithmic} function because it can penalize the wrong 
+predictions even more harshly.\\
+\\
+Let's go through the two possible cases !
+
+\newpage
+
+% =============================== %
+\subsection*{Case 1: The expected output is 1}
+% ------------------------------- %
+In mathematical terms, we write:
+
+$$
+y^{(i)} = 1
+$$  
+Here we need a function that will penalize the classifier with a high loss if its prediction ($\hat{y}$) gets close to $0$.
+What do you think of this function? (Have a look at its plot).\\
+\\
+$$
+loss_{y=1} = -\log(\hat{y})
+$$
+\\
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.55]{assets/-log_x.png}
+    \caption{Loss function when y = 1}
+\end{figure}
+\newline
+\\
+You can see from the plot that:
+
+\begin{itemize}
+    \item if the prediction ($\hat{y}$) is close to $0$, the loss will be great.
+    \item if the prediction ($\hat{y}$) is close to $1$, the loss will be small.
+\end{itemize}
+So we got our function to harshly penalize predictions that get close to $0$.\\
+\\
+But sometimes, $y^{(i)}$ is NOT equal to $1$.\\
+\\
+\textbf{What if we \textit{want} $\hat{y}$ to be closer to $0$ instead?}\\
+
+\newpage
+
+% =============================== %
+\subsection*{Case 2: The expected output is 0}
+% ------------------------------- %
+
+In this case we have:
+$$
+y^{(i)} = 0
+$$  
+\\
+We just need to modify the last equation slightly to flip the curve the way we need:\\
+\\
+$$
+loss_{y=0} = -\log(1 - \hat{y}^{(i)})
+$$
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.55]{assets/-log_1-x.png}
+    \caption{Loss function when y = 0}
+\end{figure}
+\newline
+\\
+You can see from the plot that:
+\begin{itemize}
+    \item if the prediction is close to $1$, the loss will be great.
+    \item if the prediction is close to $0$, the loss will be small.  
+\end{itemize}
+So this second equation works like the first one, but penalizes the other way around: 
+this time $\hat{y}^{(i)}$ gets penalized harder when it gets close to 1.\\
+\\
+Now, all we need is a smart way to automatically choose which loss function 
+to use depending on the value of $y^{(i)}$.\\
+
+% =============================== %
+\subsection*{Putting it all together}
+% ------------------------------- %
+Let's recap. We need a loss function that can alternate between these:\\
+\begin{itemize}
+    \item If $y^{(i)} = 1$
+          $$
+          loss = loss_{y=1} = -\log(\hat{y}^{(i)})
+          $$
+    
+    \item If $y^{(i)} = 0$
+          $$
+          loss = loss_{y=0} = -\log(1- \hat{y}^{(i)})
+          $$
+\end{itemize}
+\newpage
+And we can represent it like this:\\
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.55]{assets/log_loss.png}
+    \caption{$\text{loss}_0$ and $\text{loss}_1$}
+\end{figure}
+\\
+\textbf{How do you switch between $\text{loss}_{y=0}$ and $\text{loss}_{y=1}$ 
+depending on the value of $y^{(i)}$?}\\
+\\
+We could use an if-else statement in the code, but that's not very pretty
+ and it doesn't provide a loss function that can be expressed as
+  a single mathematical expression.\\
+\\
+It turns out there is a (yet another one) little mathematical trick 
+we can use to make everything stand in one equation.\\
+
+\newpage
+% =============================== %
+\subsection*{Building the equation for a single training example}
+% ------------------------------- %
+For this part, we'll go step by step.
+The strategy is to sum both expressions:
+
+$$
+loss = loss_{y=1} + loss_{y=0}
+$$
+Then we need some kind of switch to "turn off" the term 
+that shouldn't be used for the example $i$.
+It turns out we can use the $y^{(i)}$ value itself as a switch! 
+\begin{itemize}
+    \item When $y^{(i)} = 0$, we just multiply it with the term we don't 
+    want and we'll cancel it out:
+          $$
+          \begin{matrix}
+          loss & = & y^{(i)} \cdot loss_{y=1} + loss_{y=0} \\
+          loss & = & 0 \cdot loss_{y=1} + loss_{y=0} \\
+          loss & = & loss_{y=0}
+          \end{matrix}
+          $$
+    
+    \item When $y^{(i)} = 1$, it's a little trickier. We have to multiply the term we want to cancel out by $(1 - y^{(i)})$:
+          $$
+          \begin{matrix}
+          loss & = & loss_{y=1} + (1 - y^{(i)}) \cdot loss_{y=0} \\
+          loss & = & loss_{y=1} + (1 - 1) \cdot loss_{y=0} \\
+          loss & = & loss_{y=1} + 0 \cdot loss_{y=0}  \\
+          loss & = & loss_{y=1}
+          \end{matrix}
+          $$
+\end{itemize}
+\noindent{Now, to make a generic equation that works without knowing in advance the value of $y^{(i)}$, all
+ we need is to sum the two loss functions along with their "switches":}
+
+$$
+\begin{matrix}
+loss & = & y^{(i)} \cdot loss_{y=1} & + & (1 - y^{(i)}) \cdot loss_{y=0}
+\end{matrix}
+$$
+And then, if we develop $\text{loss}_0$ and $\text{loss}_1$:
+$$
+\begin{matrix}
+loss & = & y^{(i)} \cdot (-\log(\hat{y}^{(i)})) & + & (1 - y^{(i)}) \cdot (-\log(1 - \hat{y}^{(i)}))
+\end{matrix}
+$$
+Finally, if we simplify the sign notation just a bit:
+
+$$
+\begin{matrix}
+loss & = & -[y^{(i)}\cdot\log(\hat{y}^{(i)}) & + & (1 - y^{(i)})\cdot\log(1 - \hat{y}^{(i)})]
+\end{matrix}
+$$
+
+% =============================== %
+\subsection*{Cross-Entropy}
+% ------------------------------- %
+We are finally reaching our goal!\\
+\\
+All we need to do is to compute the average across all training examples
+ and we will end up with our final loss function !\\
+\\
+This has a name: \textbf{cross-entropy}. Its equation is the following:  
+
+$$
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} y^{(i)}\log(\hat{y}^{(i)}) + (1 - y^{(i)})\log(1 - \hat{y}^{(i)})\rbrack
+$$
+This formula allows you to calculate the overall loss of a complete set of predictions.\\
+\newpage
+\info{If you have enough already, you can stop here and move on to the exercise.
+If you'd like to better understand how it works and have the "automatic switch" 
+process broken down for you, here it goes !
+}
+\begin{itemize}
+    \item If the given example $x^{(i)}$ is not part of the predicted class, $y^{(i)} = 0$:
+\end{itemize}
+$$
+\begin{matrix}
+y^{(i)} & = & 0 \\
+y^{(i)}\log(\hat{y}^{(i)})) & = & 0   \\
+1 - y^{(i)} & = & 1 \\
+(1 - y^{(i)})\log(1 - \hat{y}^{(i)}) & = & \log(1 - \hat{y}^{(i)})
+\end{matrix}
+$$
+
+Therefore
+$$
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}\log(\hat{y}^{(i)})}}^{0} + \overbrace{\cancel{(1 - y^{(i)})}}^{1}\log(1 - \hat{y}^{(i)})\rbrack
+$$
+
+$$
+J( \theta) = -\cfrac{1} {m} \sum_{i = 1}^{m} \log(1 - \hat{y}^{(i)})
+$$
+
+$$
+J( \theta) = \cfrac{1} {m} \sum_{i = 1}^{m} -\log(1 - \hat{y}^{(i)})
+$$
+
+\begin{itemize}
+    \item If the given example $x^{(i)}$ is part of the predicted class, $y^{(i)} = 1$:
+\end{itemize}
+
+$$
+\begin{matrix}
+y^{(i)} & = & 1 \\
+y^{(i)}\log(\hat{y}^{(i)}) & = & \log(\hat{y}^{(i)})\\
+1 - y^{(i)} & = & 0 \\ 
+(1 - y^{(i)})\log(1 - \hat{y}^{(i)}) & = & 0  
+\end{matrix}
+$$
+
+Therefore
+
+$$
+J( \theta) = -\cfrac{1} {m} \lbrack \sum_{i = 1}^{m} \overbrace{\cancel{y^{(i)}}}^{1}\log(\hat{y}^{(i)}) + \overbrace{\cancel{(1 - y^{(i)})\log(1 - \hat{y}^{(i)})}}^{0}\rbrack
+$$
+
+$$
+J( \theta) = -\cfrac{1} {m} \sum_{i = 1}^{m} \log(\hat{y}^{(i)})
+$$
+
+$$
+J( \theta) = \cfrac{1} {m} \sum_{i = 1}^{m} -\log(\hat{y}^{(i)})
+$$
