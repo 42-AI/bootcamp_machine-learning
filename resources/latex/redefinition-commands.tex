@@ -1,0 +1,93 @@
+
+\newcommand{\ailogo}[1]{\def \@ailogo {#1}}\ailogo{assets/42ai_logo.pdf}
+
+%%  Redefine \maketitle
+\makeatletter
+\def \maketitle {
+  \begin{titlepage}
+    \begin{center}
+	%\begin{figure}[t]
+	  %\includegraphics[height=8cm]{\@ailogo}
+	  \includegraphics[height=8cm]{assets/42ai_logo.pdf}
+	%\end{figure}
+      \vskip 5em
+      {\huge \@title}
+      \vskip 2em
+      {\LARGE \@subtitle}
+      \vskip 4em
+    \end{center}
+    %\begin{center}
+	  %\@author
+    %\end{center}
+	%\vskip 5em
+  \vfill
+  \begin{center}
+    \emph{\summarytitle : \@summary}
+  \end{center}
+  \vspace{2cm}
+  %\vskip 5em
+  %\doclicenseThis
+  \end{titlepage}
+}
+\makeatother
+
+\makeatletter
+\def \makeheaderfilesforbidden
+{
+  \noindent
+  \begin{tabularx}{\textwidth}{|X X  X X|}
+    \hline
+  \multicolumn{1}{|>{\raggedright}m{1cm}|}
+  {\vskip 2mm \includegraphics[height=1cm]{assets/42ai_logo.pdf}} &
+  \multicolumn{2}{>{\centering}m{12cm}}{\small Exercise : \@exnumber } &
+  \multicolumn{1}{ >{\raggedleft}p{1.5cm}|}
+%%              {\scriptsize points : \@exscore} \\ \hline
+              {} \\ \hline
+
+  \multicolumn{4}{|>{\centering}m{15cm}|}
+              {\small \@extitle} \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Turn-in directory : \ttfamily
+                $ex\@exnumber/$ }
+              \\ \hline
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Files to turn in : \ttfamily \@exfiles }
+              \\ \hline
+
+  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+              {\small Forbidden functions : \ttfamily \@exforbidden }
+              \\ \hline
+
+%%  \multicolumn{4}{|>{\raggedright}m{15cm}|}
+%%              {\small Remarks : \ttfamily \@exnotes }
+%%              \\ \hline
+\end{tabularx}
+%% \exnotes
+\exrules
+\exmake
+\exauthorize{None}
+\exforbidden{None}
+\extitle{}
+\exnumber{}
+}
+\makeatother
+
+%%  Syntactic highlights
+\makeatletter
+\newenvironment{pythoncode}{%
+  \VerbatimEnvironment
+  \usemintedstyle{emacs}
+  \minted@resetoptions
+  \setkeys{minted@opt}{bgcolor=black,formatcom=\color{lightgrey},fontsize=\scriptsize}
+  \begin{figure}[ht!]
+    \centering
+    \begin{minipage}{16cm}
+      \begin{VerbatimOut}{\jobname.pyg}}
+{%[
+      \end{VerbatimOut}
+      \minted@pygmentize{c}
+      \DeleteFile{\jobname.pyg}
+    \end{minipage}
+\end{figure}}
+\makeatother

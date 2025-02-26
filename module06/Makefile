@@ -6,7 +6,9 @@ DEPS = exercises/en.ex00_interlude.tex \
 	exercises/en.ex01_interlude.tex \
 	exercises/en.ex02_interlude.tex \
 	exercises/en.ex05_interlude.tex \
-	en.instructions.tex \
+	../resources/42ai_bootcamps/en.instructions.tex \
+	../resources/42ai_bootcamps/en.acknowledgements.tex \
+	../resources/latex/redefinition-commands.tex \
 	en.subject.tex \
 	useful_resources.tex
 

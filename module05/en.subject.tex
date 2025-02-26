@@ -19,102 +19,11 @@
 %****************************************************************%
 %                  Re/definition of commands                     %
 %****************************************************************%
-
-\newcommand{\ailogo}[1]{\def \@ailogo {#1}}\ailogo{assets/42ai_logo.pdf}
-
-%%  Redefine \maketitle
-\makeatletter
-\def \maketitle {
-  \begin{titlepage}
-    \begin{center}
-	%\begin{figure}[t]
-	  %\includegraphics[height=8cm]{\@ailogo}
-	  \includegraphics[height=8cm]{assets/42ai_logo.pdf}
-	%\end{figure}
-      \vskip 5em
-      {\huge \@title}
-      \vskip 2em
-      {\LARGE \@subtitle}
-      \vskip 4em
-    \end{center}
-    %\begin{center}
-	  %\@author
-    %\end{center}
-	%\vskip 5em
-  \vfill
-  \begin{center}
-    \emph{\summarytitle : \@summary}
-  \end{center}
-  \vspace{2cm}
-  %\vskip 5em
-  %\doclicenseThis
-  \end{titlepage}
-}
-\makeatother
-
-\makeatletter
-\def \makeheaderfilesforbidden
-{
-  \noindent
-  \begin{tabularx}{\textwidth}{|X X  X X|}
-    \hline
-  \multicolumn{1}{|>{\raggedright}m{1cm}|}
-  {\vskip 2mm \includegraphics[height=1cm]{assets/42ai_logo.pdf}} &
-  \multicolumn{2}{>{\centering}m{12cm}}{\small Exercise : \@exnumber } &
-  \multicolumn{1}{ >{\raggedleft}p{1.5cm}|}
-%%              {\scriptsize points : \@exscore} \\ \hline
-              {} \\ \hline
-
-  \multicolumn{4}{|>{\centering}m{15cm}|}
-              {\small \@extitle} \\ \hline
-
-  \multicolumn{4}{|>{\raggedright}m{15cm}|}
-              {\small Turn-in directory : \ttfamily
-                $ex\@exnumber/$ }
-              \\ \hline
-  \multicolumn{4}{|>{\raggedright}m{15cm}|}
-              {\small Files to turn in : \ttfamily \@exfiles }
-              \\ \hline
-
-  \multicolumn{4}{|>{\raggedright}m{15cm}|}
-              {\small Forbidden functions : \ttfamily \@exforbidden }
-              \\ \hline
-
-%%  \multicolumn{4}{|>{\raggedright}m{15cm}|}
-%%              {\small Remarks : \ttfamily \@exnotes }
-%%              \\ \hline
-\end{tabularx}
-%% \exnotes
-\exrules
-\exmake
-\exauthorize{None}
-\exforbidden{None}
-\extitle{}
-\exnumber{}
-}
-\makeatother
-
-%%  Syntactic highlights
-\makeatletter
-\newenvironment{pythoncode}{%
-  \VerbatimEnvironment
-  \usemintedstyle{emacs}
-  \minted@resetoptions
-  \setkeys{minted@opt}{bgcolor=black,formatcom=\color{lightgrey},fontsize=\scriptsize}
-  \begin{figure}[ht!]
-    \centering
-    \begin{minipage}{16cm}
-      \begin{VerbatimOut}{\jobname.pyg}}
-{%[
-      \end{VerbatimOut}
-      \minted@pygmentize{c}
-      \DeleteFile{\jobname.pyg}
-    \end{minipage}
-\end{figure}}
-\makeatother
-
+\input{../resources/latex/redefinition-commands.tex}
+%****************************************************************%
+%                 END Re/definition of commands                  %
+%****************************************************************%
 \usemintedstyle{native}
-
 \begin{document}
 
 % =============================================================================%
@@ -135,7 +44,7 @@ Then, you will implement your first model and learn how to evaluate its performa
 
 \maketitle
 \input{useful_resources.tex}
-\input{en.instructions.tex}
+\input{../resources/42ai_bootcamps/en.instructions.tex}
 \newpage
 \tableofcontents
 \startexercices
@@ -229,12 +138,18 @@ Based on all the notions and problems tackled today, you should be able to discu
   \item Do you understand why matrix multiplications are not commutative?
 \end{enumerate}
 
-These questions are an opportunity for discussion among your peers, or to simply reflect on your own acquired understanding during this day ! 
+These questions are an opportunity for discussion among your peers, or to simply reflect on your own acquired understanding during this day !\\
+\newline
+\info{
+  Your feedbacks are essential for us to improve these bootcamps !\newline
+  Please take a few minutes to tell us about your experience in this module by filling 
+  \href{https://forms.gle/RnXgzgZZJh7V8h9D8}{this form}. Thank you in advance ! 
+}
 
 % ============================================== %
 \newpage
 % ================================= %
 
-\input{en.acknowledgements.tex}
+\input{../resources/42ai_bootcamps/en.acknowledgements.tex}
 
 \end{document}
