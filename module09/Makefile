@@ -7,8 +7,8 @@ DEPS = exercises/en.ex01_interlude.tex \
 	exercises/en.ex06_interlude.tex \
 	exercises/en.ex08_interlude.tex \
 	exercises/en.ex10_interlude.tex \
-	en.instructions.tex \
-	en.acknowledgements.tex \
+	../resources/42ai_bootcamps/en.instructions.tex \
+	../resources/42ai_bootcamps/en.acknowledgements.tex \
 	useful_resources.tex
 
 # Relative path to the LaTeX documentclass setup files
